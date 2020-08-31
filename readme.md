@@ -17,11 +17,11 @@ JAVASCRIPT "studied by 생활코딩" javascript part 1
 3. 객체(기초만)
 4. javascript에서의 정규표현식
 
-##javascriptBySHCD2 index
+## javascriptBySHCD2 index
 JAVASCRIPT "studied by 생활코딩" javascript part 2
 1. 유효범위 scope
 2. 함수 function(심화)
 3. 클로저 closure
 
-##javascriptBySHCD3 index
+## javascriptBySHCD3 index
 JAVASCRIPT "studied by 생활코딩" javascript part 3
