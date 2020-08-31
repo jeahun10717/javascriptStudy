@@ -41,7 +41,7 @@ global
 이는 javascript의 에서 지역변수와 전역변수를 사용할 시 이름이 같아도 따로
 생성하기 때문인데 밑의 그림을 보면서 이해하면 된다
 
-<img src="javascriptBySHCD2_global_Local_variableIMG1.png" style="width: 60%; height: auto;" >
+<img src="/imgFolder/javascriptBySHCD2_global_Local_variableIMG1.png" style="width: 60%; height: auto;" >
 
 <span style = "font-size:small">**[SOURCE]**</span>
 ```javascript
@@ -80,7 +80,7 @@ hello?
 문자열을 삽입했다. 이는 vscope라는 전역변수에 직접 대입을 한 것이기 때문에
 지역변수는 선언조차 되지 않은 것이다.
 밑의 그림을 참고하면 된다
-<img src="javascriptBySHCD2_global_Local_variableIMG2.png" style="width: 60%; height: auto;" >
+<img src="/imgFolder/javascriptBySHCD2_global_Local_variableIMG2.png" style="width: 60%; height: auto;" >
 
 **정리하자면 거의 대부분의 상황에서는 지역변수를 쓰는 것이 타당하다**
 **하지만 프로그램 내에서 전역으로 써야하는 상황이 분명히 존재하므로**
