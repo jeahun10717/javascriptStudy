@@ -397,10 +397,12 @@ All Match : who is `who`
 ## Boolean() 함수
 ## for of / for in 구문
 ## arrow 함수
+## new와 생성자
 ## this 속성
+## 생성자 함수 : var 변수 = new Function('','','', '본문')
 ## 함수의 선언종류
 ## for each, map, filter
-## sort() 메소
+## sort() 메소드
 ## 콜백 함수
 ## closure 자세히
 ## apply와 call 메소드

@@ -51,16 +51,17 @@ My name is egoing
 function person(){}
 var p1=person()
 var p2=new person()
-console.log(p1, p2);
+console.log(p1+'\n'+p2);
 ```
 
 <span style = "font-size:small">**[CONSOLE]**</span>
 ```
-undefined person {}
+undefined
+person {}
 ```
 
 위의 코드에서 `p1` 변수에 함수를 저장하면 현재 `person()` 이라는 함수에 리턴값이 없으므로 `undefined` 가 출력된다.
-하지만 밑의 `new` 기능을 사용하여 `p2` 변수에 저장하면 `person{}` 이라고 하는 객체가 나오게 된다.
+하지만 밑의 `new` 기능을 사용하여 `p2` 변수에 저장하면 `person{}` 이라고 하는 객체를 만들고 이를 `p2`에 저장하는 것이다.
 이러한 `javascript`에서의 기능을 생성자라고 한다.
 
 <span style = "font-size:small">**[SOURCE]**</span>
@@ -144,3 +145,93 @@ console.log(p2);
 <span style = "font-size:small">**[BROWSER]**</span>
 
 <img src="/imgFolder/javascriptBySHCD3_GlobalObjectIMG.png" ></img>
+
+#### 2. Node.js 환경
+
+
+<span style = "font-size:small">**[SOURCE]**</span>
+```javascript
+
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+```
+
+```
+
+### 3. this
+
+#### 1. 함수와 this
+
+<span style = "font-size:small">**[SOURCE]**</span>
+```javascript
+function func() {
+  if(global===this){
+    console.log("global===this");
+  }
+}
+
+func();
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+```
+global===this
+```
+위의 소스에서 알 수 있듯이 `func()` 라는 함수 안에서 `this` 와 전역객체인 `global` 과 같음을 알 수 있다.
+
+#### 2. 메소드와 this
+
+<span style = "font-size:small">**[SOURCE]**</span>
+```javascript
+var o = {
+  func : function(){
+    if(o===this){
+      console.log("o===this");
+    }
+  }
+}
+o.func();
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+```
+o===this
+```
+사실 이 결과는 위의 **함수와 this**의 소스와 같은 것을 보여준다.
+**함수와 this** 에서의 `func()` 의 `this` 는 브라우저에서의 `window`, nodejs에서의 `global`을 의미한다.
+**2. 메소드와 this** 에서의 소스는 `o`라는 객체에 `func`라는 메소드에서의 `this`는 바로 위의 객체인 `o` 를 의미한다.
+
+#### 3. 생성자와 this
+
+<span style = "font-size:small">**[SOURCE]**</span>
+```javascript
+
+var funcThis = null;
+
+function Func() {
+    funcThis=this;
+}
+var o1=Func();
+if(funcThis===global){
+    console.log('global');
+}
+
+var o2=new Func();
+if(funcThis===o2){
+    console.log('o2');
+}
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+global
+o2
+```
+
+`var o1=Func()` 에서는 `Func()` 라는 함수를 실행 한 후 리턴값을 `o1` 에 저장한다.(이 때 리턴 값이 없으므로 `o1` 은 `undefined`가 뜰 것이다.)
+`Func()` 라는 함수가 실행 되면 `funcThis`라는 변수에 `this`가 들어가는데 이 때 `this`는 `Func()` 라는 함수가 선언 될 때 전역이기 때문에 `global` 이 들어간다. 따라서 그 밑의 if문은 참이며 ``console.log()`` 가 실행된다.
+밑의 `var o2=new Func()` 는 `Func()`라는 함수를 생성자 함수로 만들었다. 이렇게 되면 기본적으로 `Func{}` 라는 객체가 만들어 지고 이를 `o2`에 저장하는 것이다. 이에 따라 `Func()` 라는 함수를 실행하면 `this` 는 `Func{}` 라는 생성자 함수를 포함하는 객체인 `o2`를 가리킨다. 이에 따라 바로 밑의 if문은 참이며 `console.log()` 가 실행된다.
+
+### 4. 객체로서의 함수
