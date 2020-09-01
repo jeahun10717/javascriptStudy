@@ -151,14 +151,23 @@ console.log(p2);
 
 <span style = "font-size:small">**[SOURCE]**</span>
 ```javascript
-
+var o = {
+  func:function(){
+    console.log('hello?');
+  }
+}
+o.func();
+global.o.func();
 ```
 
 <span style = "font-size:small">**[CONSOLE]**</span>
 ```
-
+hello?
+hello?
 ```
 
+기본적으로 browser 환경에서 전역객체는 `window` 를 사용한다.
+하지만 Node.js환경에서는 `global`이 전역객체이다. 또한 Node.js 에서는 file.js 파일 자체를 node file.js 로 실행 할 때 `global`은 전역객체로 취급을 하지 않는다. Node.js 는 기본적으로 파일 자체를 모듈로 취급하기 때문인데 이는 나중에 Node.js 공부할 때 정리하겠다
 ### 3. this
 
 #### 1. 함수와 this
@@ -234,4 +243,42 @@ o2
 `Func()` 라는 함수가 실행 되면 `funcThis`라는 변수에 `this`가 들어가는데 이 때 `this`는 `Func()` 라는 함수가 선언 될 때 전역이기 때문에 `global` 이 들어간다. 따라서 그 밑의 if문은 참이며 ``console.log()`` 가 실행된다.
 밑의 `var o2=new Func()` 는 `Func()`라는 함수를 생성자 함수로 만들었다. 이렇게 되면 기본적으로 `Func{}` 라는 객체가 만들어 지고 이를 `o2`에 저장하는 것이다. 이에 따라 `Func()` 라는 함수를 실행하면 `this` 는 `Func{}` 라는 객체를 포함하는 객체인 `o2`를 가리킨다. 이에 따라 바로 밑의 if문은 참이며 `console.log()` 가 실행된다.
 
-### 4. 객체로서의 함수
+#### 4. apply와 this
+
+<span style = "font-size:small">**[SOURCE]**</span>
+```javascript
+var o={}
+var p={}
+
+function func() {
+    switch (this) {
+        case o:
+            console.log('o');
+            break;
+
+        case p:
+            console.log('p');
+            break;
+        case global:
+            console.log('global');
+            break;
+    }
+}
+
+func()
+func.apply(o);
+func.apply(p);
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+global
+o
+p
+```
+
+여기서 func() 를 했을 때의 func()는 전역객체인 global의 메소드가 된다.
+func.apply(o) 를 했을 때의 func()는 o의 메소드가 되며 func.apply(p) 를 했을 때의 func()는 p 의 메소드가 된다. 이해를 돕기 위해 밑의 그림을 참조하라.
+
+<img src="/imgFolder/javascriptBySHCD3_applyMethodIMG.png"></img>
