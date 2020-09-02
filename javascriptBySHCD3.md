@@ -44,7 +44,7 @@ My name is egoing
 
 ### 2. 생성자와 new
 
-#### 1. 생성자<span style="font-size : 12px"> Object</span>
+#### 1. 생성자
 
 <span style = "font-size:small">**[SOURCE]**</span>
 ```javascript
@@ -282,3 +282,32 @@ p
 func.apply(o) 를 했을 때의 func()는 o의 메소드가 되며 func.apply(p) 를 했을 때의 func()는 p 의 메소드가 된다. 이해를 돕기 위해 밑의 그림을 참조하라.
 
 <img src="/imgFolder/javascriptBySHCD3_applyMethodIMG.png"></img>
+
+### 4. 상속 <span style="font-size : 12px"> inheritance</span>
+
+
+<span style = "font-size:small">**[SOURCE]**</span>
+```javascript
+function Person(name) {
+    this.name=name;
+}
+
+Person.prototype.name=null;
+Person.prototype.introduce=function () {
+    return 'My name is '+this.name;
+}
+
+function Programmer(name) {
+    this.name=name;
+}
+Programmer.prototype=new Person();
+
+var p1=new Programmer('egoing')
+console.log(p1.introduce());
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+My name is egoing
+```

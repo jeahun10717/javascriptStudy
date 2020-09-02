@@ -49,7 +49,7 @@ console.log(person.introduce());</code></pre>
 console.log(person.introduce());</code></pre>
 <p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
 <pre><code>My name is egoing</code></pre><h3 id="2-new">2. &#xC0DD;&#xC131;&#xC790;&#xC640; new</h3>
-<h4 id="1-span-style-font-size-12px-object-span-">1. &#xC0DD;&#xC131;&#xC790;<span style="font-size : 12px"> Object</span></h4>
+<h4 id="1-">1. &#xC0DD;&#xC131;&#xC790;</h4>
 <p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
 <pre><code class="language-javascript">function person(){}
 var p1=person()
@@ -208,7 +208,26 @@ o
 p</code></pre><p>&#xC5EC;&#xAE30;&#xC11C; func() &#xB97C; &#xD588;&#xC744; &#xB54C;&#xC758; func()&#xB294; &#xC804;&#xC5ED;&#xAC1D;&#xCCB4;&#xC778; global&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xB41C;&#xB2E4;.
 func.apply(o) &#xB97C; &#xD588;&#xC744; &#xB54C;&#xC758; func()&#xB294; o&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xB418;&#xBA70; func.apply(p) &#xB97C; &#xD588;&#xC744; &#xB54C;&#xC758; func()&#xB294; p &#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xB41C;&#xB2E4;. &#xC774;&#xD574;&#xB97C; &#xB3D5;&#xAE30; &#xC704;&#xD574; &#xBC11;&#xC758; &#xADF8;&#xB9BC;&#xC744; &#xCC38;&#xC870;&#xD558;&#xB77C;.</p>
 <p><img src="/imgFolder/javascriptBySHCD3_applyMethodIMG.png"></p>
-</article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
+<h3 id="4-span-style-font-size-12px-inheritance-span-">4. &#xC0C1;&#xC18D; <span style="font-size : 12px"> inheritance</span></h3>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">function Person(name) {
+    this.name=name;
+}
+
+Person.prototype.name=null;
+Person.prototype.introduce=function () {
+    return &apos;My name is &apos;+this.name;
+}
+
+function Programmer(name) {
+    this.name=name;
+}
+Programmer.prototype=new Person();
+
+var p1=new Programmer(&apos;egoing&apos;)
+console.log(p1.introduce());</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>My name is egoing</code></pre></article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
   <svg t="1533629773982" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1035" xlink="http://www.w3.org/1999/xlink" width="40" height="40"><defs><style type="text/css">@font-face { font-family: uc-nexus-iconfont; src: url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff") format("woff"), url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf") format("truetype"); }
   </style></defs><path d="M536.255427 195.182354c-7.804756-7.804756-17.966187-11.615549-28.311813-11.615549-9.43693 0-18.874883 3.449565-26.496467 10.163477-2.360767 1.452071-4.356214 3.267417-6.352685 5.262864L218.47792 455.611735c-15.607466 15.60542-15.607466 40.834011 0 56.43943 15.607466 15.607466 41.558511 15.607466 57.167001 0l193.46013-192.733583 0 600.526219c0 22.1423 17.787108 39.927361 39.927361 39.927361 22.140253 0 39.927361-17.785062 39.927361-39.927361L548.959773 319.317583 737.15704 508.422522c15.607466 15.607466 40.469714 15.607466 56.078203 0 15.607466-15.607466 15.425318-40.834011-0.182149-56.441477L536.255427 195.182354 536.255427 195.182354z" p-id="1036" fill="#333"/><path d="M101.784174 143.097092l816.674071 0c22.140253 0 39.925315-17.785062 39.925315-39.927361 0-22.140253-17.784038-39.925315-39.925315-39.925315L101.784174 63.244416c-22.140253 0-39.927361 17.785062-39.927361 39.925315C61.856813 125.31203 79.643921 143.097092 101.784174 143.097092L101.784174 143.097092z" p-id="1037" fill="#333"/></svg>
 </div>
