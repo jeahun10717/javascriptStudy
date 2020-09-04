@@ -278,13 +278,16 @@ o
 p
 ```
 
-여기서 func() 를 했을 때의 func()는 전역객체인 global의 메소드가 된다.
-func.apply(o) 를 했을 때의 func()는 o의 메소드가 되며 func.apply(p) 를 했을 때의 func()는 p 의 메소드가 된다. 이해를 돕기 위해 밑의 그림을 참조하라.
+여기서 `func()` 를 했을 때의 `func()`는 전역객체인 `global`의 메소드가 된다.
+`func.apply(o)` 를 했을 때의 `func()`는 `o`의 메소드가 되며 `func.apply(p)` 를 했을 때의 `func()`는 `p` 의 메소드가 된다. 이해를 돕기 위해 밑의 그림을 참조하라.
 
 <img src="/imgFolder/javascriptBySHCD3_applyMethodIMG.png"></img>
 
 ### 4. 상속 <span style="font-size : 12px"> inheritance</span>
 
+javascript 에서의 상속은 상위 객체의 로직을 이어 받되 자신의 기능을 수정하고 변경하여 새로운 객체를 만들 수 있도록 도와준다.
+
+#### 1. 상속의 기본 사용법
 
 <span style = "font-size:small">**[SOURCE]**</span>
 ```javascript
@@ -311,3 +314,15 @@ console.log(p1.introduce());
 ```
 My name is egoing
 ```
+
+위의 `Person()` 이라는 함수 정의 밑에 `Person()` 이라는 객체(기본적으로 javascript에서의 함수는 객체로 취급한다.)에 `name`이라는 프로퍼티를 선언하면서 동시에 `introduce()` 라고 하는 메소드를 선언하였다.
+
+```javascript
+Programmer.prototype=new Person();
+```
+
+이 부분에서 `Programmer`의 `prototpye`이라는 프로퍼티에 `Person`이라고 하는 객체를 할당하였다. 이러한 할당을 상속이라고 하며 `Programmer`라고 하는 객체에 `Person`이라고 하는 객체를 상속시킨 것이다. 이에 따라 `p1.introduce()`를 하면 `p1` 이라는 변수 안에 `Programmer`라는 객체가 존재하고 `Programmer`라는 객체 안에 `Person` 이라는 객체가 존재하며 `Person` 이라고 하는 객체 안에 `introduce()` 라고 하는 메소드가 존재하므로 `p1.introduce()`는 `My name is egoing` 이라는 결과 값이 나온다.
+
+여기서 당장 이해하기는 힘들다. `prototype` 이라는 프로퍼티에 대해서도 배우지 않았기에 추후에 이러한 프로퍼티들을 공부한 후 제대로 이해하자. 이 부분에서 중요한 것은 `A` 객체에 `B` 객체를 상속시키기 위해서는 `A.prototpye=B` 같은 형태를 사용해야 함만을 기억하자.
+
+#### 2. 상속하는 객체의 기능추가(자식객체의 기능추가)
