@@ -323,6 +323,122 @@ Programmer.prototype=new Person();
 
 이 부분에서 `Programmer`의 `prototpye`이라는 프로퍼티에 `Person`이라고 하는 객체를 할당하였다. 이러한 할당을 상속이라고 하며 `Programmer`라고 하는 객체에 `Person`이라고 하는 객체를 상속시킨 것이다. 이에 따라 `p1.introduce()`를 하면 `p1` 이라는 변수 안에 `Programmer`라는 객체가 존재하고 `Programmer`라는 객체 안에 `Person` 이라는 객체가 존재하며 `Person` 이라고 하는 객체 안에 `introduce()` 라고 하는 메소드가 존재하므로 `p1.introduce()`는 `My name is egoing` 이라는 결과 값이 나온다.
 
-여기서 당장 이해하기는 힘들다. `prototype` 이라는 프로퍼티에 대해서도 배우지 않았기에 추후에 이러한 프로퍼티들을 공부한 후 제대로 이해하자. 이 부분에서 중요한 것은 `A` 객체에 `B` 객체를 상속시키기 위해서는 `A.prototpye=B` 같은 형태를 사용해야 함만을 기억하자.
+여기서 당장 이해하기는 힘들다. `prototype` 이라는 프로퍼티에 대해서도 배우지 않았기에 추후에 이러한 프로퍼티들을 공부한 후 제대로 이해하자. 이 부분에서 중요한 것은 부모객체인 `A` 객체에 자식객체인 `B` 객체를 상속시키기 위해서는 `B.prototpye=new A` 같은 형태를 사용해야 함만을 기억하자.
+
+
 
 #### 2. 상속하는 객체의 기능추가(자식객체의 기능추가)
+
+바로 위의 상속의 기본 사용에서의 예제는 상속을 굳이 쓸 이유가 없다. 상속은 자식객체가 부모객체의 로직은 그대로 가지고 있되 기능을 추가하거나 수정하여 쓰는 것이 상속의 장점이다. 밑의 예제를 통해 이를 확인해 보자
+
+<span style = "font-size:small">**[SOURCE]**</span>
+```javascript
+function Person(name) {
+    this.name=name;
+}
+
+Person.prototype.name=null;
+Person.prototype.introduce=function () {
+    return 'My name is '+this.name;
+}
+
+function Programmer(name) {
+    this.name=name;
+}
+Programmer.prototype=new Person();
+Programmer.prototype.coding=function () {
+    return "hello world"
+}
+
+function Designer(name) {
+    this.name=name;
+}
+Designer.prototype=new Person();
+Designer.prototype.design=function () {
+    return "beautiful!"
+}
+
+var p1=new Programmer('egoing');
+console.log(p1.introduce());
+console.log(p1.coding());
+
+var p2=new Designer('leeche');
+console.log(p2.introduce());
+console.log(p2.design());
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+My name is egoing
+hello world
+My name is leezche
+beautiful!
+```
+
+위의 소스는 `Person` 이라는 부모객체에 `Programmer`, `Designer` 라는 자식객체를 상속시킨다.
+`Person` 객체의 기본 기능은 `My name is + this.name` 이라는 문장을 console 에 출력시키는 기능이다. 자식객체인 `Programmer`와 `Designer` 역시 이러한 기능을 가지고 있지만 이 2개의 자식객체는 그 기능에 더해 `hello world` 를 출력하는 `coding`이라는 메소드, `beautiful` 을 출력하는 `design` 메소드를 추가로 가지고 있다. 이것이 상속에서 자식객체가 부모객체의 로직이나 기능은 유지하되 자신의 기능을 추가한 부분이다.
+
+<img src="/imgFolder/javascriptBySHCD3_inheritance_diagram.png"></img>
+
+여기서 만약 부모객체의 정보를 바꾼다면 어떻게 될까?
+
+```javascript
+Person.prototype.name=null;
+Person.prototype.introduce=function () {
+    return 'My name is '+this.name;
+}
+```
+
+위의 이 소스를 밑의 소스로 바꾸면
+
+```javascript
+Person.prototype.name=null;
+Person.prototype.introduce=function () {
+    return 'My nickname is '+this.name;
+}
+```
+
+밑의 결과값이 나온다.
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+My nickname is egoing
+hello world
+My nickname is leezche
+beautiful!
+```
+
+위의 결과와 같이 부모객체만 바꾸면 자식객체 역시 출력이 동시에 바뀐다. 이러한 점이 상속의 장점으로 볼 수 있다.
+
+이제까지 상속에 대한 개념과 그 장점에 대해 알아보았다. 하지만 우리는 상속에 쓰이는 `prototpye` 이라는 프로퍼티에 대해 잘 알지 못한다. 밑에서 이제 그 `prototpye` 이라는 프로퍼티에 대해 알아보자.
+
+### 5. 프로토타입<span style = "font-size : medium"> prototype</span>
+
+<span style = "font-size:small">**[SOURCE]**</span>
+
+```javascript
+function Ultra() {}
+Ultra.prototype.ultraProp = true;
+
+function Super() {}
+Super.prototype = new Ultra();
+
+function Sub() {}
+Sub.prototype = new Super();
+
+var o = new Sub();
+console.log(o.ultraProp);
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+true
+```
+
+`new` 라고 하는 속성에 대해 복기해 보자. `var 변수 = new 함수();` 이런식으로 `new` 를 쓰게 되는데 기본적으로 함수를 객체로 return 하여 변수에 저장한다고 이해했다. 하지만 그런 기능만을 가지고 있다면 `var 변수 = 객체;` 이런식으로 선언하면 되는데 굳이 `new` 를 쓰는 이유가 뭘까? 이는 `new 함수` 부분의 함수가 가지고 있는 프로퍼티나 메소드를 쓰고 싶기에 이렇게 쓰는 것이다.
+이제 프로토타입에 대해서 알아보자. 프로토타입은 기본적으로 javascript 에서 객체를 상속하고 싶을 때 사용한다. 위의 소스에서 `o` 라는 변수에 `Sub()` 라는 함수를 생성자 함수로서 객체로 저장하였다. 또한 `Sub`의 `prototpye`에 `Super`를 생성자함수로서 객체로 저장하고 `Super`의 `prototpye`에 `Ultra`를 생성자함수로서 객체로 저장하였다. 또한 `Ultra` 라는 객체의 `prototpye`의 프로퍼티로 `ultraProp`에 `true`를 저장하였다. 이러한 과정을 통해 `o.ultraProp` 을 호출하면 `o`라고 객체를 포함하는 변수에 `ultraProp` 이라는 프로퍼티가 직접적으로 존재하지 않아도 호출할 수 있게 된다. 이렇게 상속을 연속적으로 `prototpye` 을 통해 발생시켜 접근할 수 있도록 하는 것을 **prototpye chain** 이라고 한다. 밑의 그림을 참고하라.
+
+<img src="/imgFolder/javascriptBySHCD3_PrototypeChain.png" ></img>
