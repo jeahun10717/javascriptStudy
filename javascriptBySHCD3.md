@@ -442,3 +442,71 @@ true
 이제 프로토타입에 대해서 알아보자. 프로토타입은 기본적으로 javascript 에서 객체를 상속하고 싶을 때 사용한다. 위의 소스에서 `o` 라는 변수에 `Sub()` 라는 함수를 생성자 함수로서 객체로 저장하였다. 또한 `Sub`의 `prototpye`에 `Super`를 생성자함수로서 객체로 저장하고 `Super`의 `prototpye`에 `Ultra`를 생성자함수로서 객체로 저장하였다. 또한 `Ultra` 라는 객체의 `prototpye`의 프로퍼티로 `ultraProp`에 `true`를 저장하였다. 이러한 과정을 통해 `o.ultraProp` 을 호출하면 `o`라고 객체를 포함하는 변수에 `ultraProp` 이라는 프로퍼티가 직접적으로 존재하지 않아도 호출할 수 있게 된다. 이렇게 상속을 연속적으로 `prototpye` 을 통해 발생시켜 접근할 수 있도록 하는 것을 **prototpye chain** 이라고 한다. 밑의 그림을 참고하라.
 
 <img src="/imgFolder/javascriptBySHCD3_PrototypeChain.png" ></img>
+
+
+### 6. 표준 내장 객체<span style = "font-size : medium"> Standard Built in Object</span>
+
+표준 내장 객체란 javascript 가 기본적으로 제공하는 객체를 말한다. 우리가 정의하고 만들어낸 객체는 사용자 정의 객체라 하며 표준 내장 객체와 사용자 정의 객체를 적절히 섞어서 사용할 수도 있다.
+
+#### 1. 표준내장객체의 기본적인 사용법
+
+javascript 는 기본적으로 아래와 같은 내장 객체를 가지고 있다
+
+* Object
+* Function
+* Array
+* String
+* Boolean
+* Number
+* Math
+* Date
+* RegExp
+
+위의 내장객체에 대한 자세한 사용법은 추가공부에서 천천히 공부한다. 밑에서는 표준내장객체의 기본적인 사용법과 사용자가 수정하고 기능을 추가하는 사용자 정의 객체에 대해서 알아보자
+
+
+<span style = "font-size:small">**[SOURCE]**</span>
+
+```javascript
+var arr = new Array('Seoul', 'NewYork', 'Ladarkh', 'Busan', 'Tsukuba')
+
+function getRandomValueFromArray(arr) {
+    var index = Math.floor(arr.length*Math.random());
+    return arr[index];
+}
+console.log(getRandomValueFromArray(arr));
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+Tsukuba
+//값은 랜덤으로 도출됨!
+```
+
+위의 소스는 Math, Array 등을 사용하였다. 이러한 표준내장객체 역시 **객체** 이므로 기본적으로 우리가 사용하던 객체의 형식과 문법에 맞게 사용하면 된다.
+
+#### 2. 사용자 정의 객체의 선언과 사용법
+
+사용자정의객체는 표준내장객체를 수정하거나 기능을 추가하여 만들 수 있다. 밑의 소스를 보자.
+
+<span style = "font-size:small">**[SOURCE]**</span>
+
+```javascript
+Array.prototype.random = function () {
+    var index = Math.floor(this.length*Math.random());
+    return this[index];
+}
+var capitalCityArr = new Array('Seoul', 'NewYork', 'Ladarkh', 'Busan', 'Tsukuba')
+console.log(capitalCityArr.random());
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+NewYork
+//값은 랜덤으로 도출됨!
+```
+
+위의 소스를 해석해 보자.
+`Array` 라고 하는 표준내장객체의 `prototpye`에 `random()` 이라는 메소드를 선언하고 정의 하였다. 이 때 this는 이 메소드가 사용될 객체 자체를 가르키게 된다. 그렇다면 밑의 `new Array` 를 통해 만들어진 객체인 `capitalCityArr` 를 `random()` 메소드 안의 `this`가 가르키게 되는 것이다. 이렇듯 `Array.random();` 이라는 메소드는 기본적으로 존재하는 메소드가 아니고 우리가 정의하여 사용할 수 있게 되었다. 이러한 기능을 **사용자정의객체** 라고 한다. 이러한 방식으로 코드를 작성한다면 우리는 `random()` 이라고 하는 메소드가 배열과 관련된 객체인 `Array` 의 상속으로 처리되었기에 `random()` 메소드는 배열과 관련되어 있음을 간접적으로 알 수 있다.

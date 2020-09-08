@@ -488,7 +488,7 @@ Matrix
 이러한 title 같은 변수를 **`private variable`** 이라고 한다.
 이 같은 `private variable` 은 외부에서 접근이 불가하기에 협업하는 과정에서 코더의 실수로 잘못된 접근이나 사용을 막을 수 있다.
 
-### 3. 함수가 받는 인자의 개수<span style="font-size : 18px">  arguments 객체</span>
+### 4. 함수가 받는 인자의 개수<span style="font-size : 18px">  arguments 객체</span>
 
 arguments는 javascript가 제공하는 객체 중 하나로 배열과 유사하게 동작하며 사용자가 작성한 인자를 담고 있다.
 밑의 소스를 보며 이해해 보자
@@ -522,7 +522,7 @@ javascript에서는 함수의 매개변수를 작성하지 않고 사용하여�
 이에 따라 위의 소스에서 `sum(1, 2, 3, 4)` 를 실행한 후의 위의 소스에서 `arguments[0]==1`(`arguments[1]==2`) 이다.
 받은 인자가 몇개인지 모를 때 `arguments.length`를 사용하여 받은 인자의 갯수를 알아내어 위의 소스처럼 동작하게 만들 수 있다.
 
-### 4. `functionName.length` 와 `agunemts`
+### 5. `functionName.length` 와 `agunemts`
 
 <span style = "font-size:small">**[SOURCE]**</span>
 
@@ -567,7 +567,7 @@ two.length 2 arguments 4
 
 <span style="font-size : 12px">참고 : javascript 에서는 변수에 객체, 변수, 함수 등을 모두 받을 수 있으나 위에서는 설명의 용의성을 위해 변수라고만 칭함</span>
 
-### 5. 함수의 호출<span style="font-size : 18px">  apply 메소드</span>
+### 6. 함수의 호출<span style="font-size : 18px">  apply 메소드</span>
 
 <span style = "font-size:small">**[SOURCE]**</span>
 

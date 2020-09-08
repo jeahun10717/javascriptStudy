@@ -32,43 +32,7 @@ PS D:\2. 공부&&과제\nodejs_study> node test123.js
 위의 2개의 코드에서 볼 수 있듯 기존의 '' 기호나 "" 기호는 공백을 +기호로 따로 표현해야 하나
 \` \`기호는 \` \`가 감싸고 있는 공백은 바로 출력 가능하다
 
-
-## 2. 프로토타입 체인(prototpye chain)
----
-기초적인 프로토타입 체인만 간단히 정리했다
-
-```javascript
-function Ultra(){};
-Ultra.prototype.Ultraprop=true;
-function Super(){};
-Super.prototype=new Ultra();
-function Sub(){};
-Sub.prototype=new Super();
-
-var o = new Sub();
-console.log(o.Ultraprop);
-```
-
-```
-PS D:\2. 공부&&과제\nodejs_study> node test123.js
-true
-```
-
-o.ultraprop 호출시
-Ultra() -> super() -> sub -> o
-a. o 확인
-b. sub() 의 prototype 확인
-c. super() 확인
-d. super()의 prototype이 존재하는지 확인
-e. ultra() 확인
-f. ultra()의 prototype 확인
-g. ultra()의 prototype에 ultraprop 존재 확인
-h. true 출력
-prototype으로 상속을 해 줄 때 반드시 객체로 넣을 것
-객체.prototype이라는 문법은 존재하지 않음!
-<br>
-
-## 3. 정규표현식
+## 2. 정규표현식
 ---
 ### 1.1 `string`
 <span style="color: rgb(34, 139, 180); font-size: 13px;">   string 문자열 그대로 탐</span>
