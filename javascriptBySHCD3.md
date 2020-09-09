@@ -510,3 +510,195 @@ NewYork
 
 위의 소스를 해석해 보자.
 `Array` 라고 하는 표준내장객체의 `prototpye`에 `random()` 이라는 메소드를 선언하고 정의 하였다. 이 때 this는 이 메소드가 사용될 객체 자체를 가르키게 된다. 그렇다면 밑의 `new Array` 를 통해 만들어진 객체인 `capitalCityArr` 를 `random()` 메소드 안의 `this`가 가르키게 되는 것이다. 이렇듯 `Array.random();` 이라는 메소드는 기본적으로 존재하는 메소드가 아니고 우리가 정의하여 사용할 수 있게 되었다. 이러한 기능을 **사용자정의객체** 라고 한다. 이러한 방식으로 코드를 작성한다면 우리는 `random()` 이라고 하는 메소드가 배열과 관련된 객체인 `Array` 의 상속으로 처리되었기에 `random()` 메소드는 배열과 관련되어 있음을 간접적으로 알 수 있다.
+
+#### 3. 표준내장객체-Object
+
+Object 객체는 표준내장객체 중 하나로 기본적으로 아무것도 상속받지 않은 상태의 객체를 말한다. 또한 javascript 의 모든 객체는 기본적으로 Object 객체를 상속받는다. 이러한 이유로 javascript에서 사용자가 정의한 객체 역시 Object 표준내장객체를 상속받으며 이에 따라 Object 표준내장객체의 프로퍼티와 메소드를 사용할 수 있다.
+
+##### Object.method, Object.prototpye.method
+
+<span style = "font-size:small">**[SOURCE]**</span>
+
+```javascript
+var o = {'name':'eoing', 'age':'20', 'city':'Seoul'}
+console.log('Object.keys(o) : ',Object.keys(o));
+
+var o = new Array(1, "apple", "???");
+console.log('o.toString() : ',o.toString());
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+Object.keys(o) :  [ 'name', 'age', 'city' ]
+o.toString() :  1,apple,???
+```
+
+우리가 여기서 알아야 할 것은 keys()나 toString()이라는 메소드가 아니다. 우리는 Object.method와 Object.prototpye.method의 차이점을 알고 싶은 것이다.
+
+위의 소스에서 Object.keys(var)는 아래의 소스와 동일하다.
+```javascript
+Object.keys=function(){}
+```
+또한 object.prototpye.toString()은 아래의 소스와 동일하다.
+```javascript
+object.prototype.toString=function(){}
+```
+
+`Object.method` 는 `Object`라는 표준내장객체 자체의 메소드 이므로 기본적으로 `Object.keys(변수)` 같은 형태로 사용한다. 하지만 `object.prototpye.method`와 같은 형태는 `object`라는 객체에서 모두 사용이 가능하다. 즉 `object`가 아닌 다른 변수 `o`, `listjeahun` 같은 사용자가 정의한 객체에서도 사용이 가능하다.
+`Object` 라고 하는 내장객체는 모든 객체의 부모객체이다. 그렇기 때문에 `Object.prototpye.method` 의 `method` 는 사용자가 정의한 객체건 표준내장객체건 **javascript 에서 사용하는 모든 객체에서 사용이 가능하다**. 이를 바꿔 말하면 `Object.prototpye.변수` 에 우리가 원하는 메소드를 삽입하면 마찬가지로 javascript에서 사용하는 모든 객체에서 접근이 가능하다.
+
+
+#### 4. 모든 객체에서 사용할 수 있는 method 정의
+
+위에서 Object.prototpye.method 는 javascript의 모든 객체에서 사용할 수 있음을 알게되었다. 이제 그 method 의 정의와 사용에 대해서 알아보자.
+
+<span style = "font-size:small">**[SOURCE]**</span>
+
+```javascript
+Object.prototype.contain=function (needle) {
+    for(var name in this){
+        if(this[name]===needle){
+            return true;
+        }
+        return false;
+    }
+}
+
+var obj = {'name' : 'jeahun', 'nickName' : 'LiaLi', 'age' : '24'}
+console.log(obj.contain('name'));
+var arr = ['jeahun', 'LiaLi', '24']
+console.log(arr.contain('jeahun'));
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+false
+true
+```
+
+위의 소스는 javascript 의 모든 객체에서 사용할 수 있는 어떠한 객체 안의 element 들 중에 인자로 받는 문자열이 존재하는 지를 판별하는 method를 만들었다. 하지만 이러한 방식은 큰 단점을 가지고 있는데 이는 밑에서 알아보겠다.
+
+#### 5. Object 확장의 위험성
+
+이제 위의 소스에서 obj 라고 하는 객체와 arr 라고 하는 배열의 요소를 출력하기 위해 for in 문을 사용하여 보자.
+
+<span style = "font-size:small">**[SOURCE]**</span>
+
+```javascript
+Object.prototype.contain=function (needle) {
+    for(var name in this){
+        if(this[name]===needle){
+            return true;
+        }
+        return false;
+    }
+}
+
+var obj =
+{'name' : 'jeahun', 'nickName' : 'LiaLi', 'age' : '24'}
+obj.contain('name');
+var arr =
+['jeahun', 'LiaLi', '24']
+arr.contain('jeahun');
+
+for(var name in obj){
+    console.log(name);
+}
+for(var name in arr){
+    console.log(name);
+}
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+name
+nickName
+age
+contain
+0
+1
+2
+contain
+```
+
+결과 값은 우리가 원하는 값이 아니라 contain 을 포함하고 있다. 이러한 문제는 Object.prototpye.contain을 for in 문에서 출력하고 있기에 생성되었다. 물론 이러한 문제를 해결하는 방법이 있기는 하지만 굳이 이러한 번거로움을 감수할 필요는 없다. 해결방법은 밑에서 제시하겠다.
+
+```javascript
+for(var name in obj){
+    console.log(name);
+}
+```
+
+```javascript
+for(var name in obj){
+    if(o.hasOwnProperty(name)){
+      console.log(name);
+    }
+}
+```
+`hasOwnProperty(인자)` 메소드는 인자로 받은 변수가 자신 즉 위의 소스에서는 `obj` 의 프로퍼티로 가지고 있는지를 확인하고 가지고 있다면 `True` 를 가지고 있지 않다면 `False` 를 출력하는 메소드이다. 만약에 객체의 확장을 반드시 사용해야 한다면 쓸 수는 있지만 다시 한 번 말하지만 이러한 번거로움을 감수할 필요는 없다.
+
+## 2. 원시 데이터 타입<span style="font-size : 18px"> primitive type</span>
+javascript에서의 데이터 타입은 크게 2가지로 구분할 수 있다. 객체와 객체가 아닌것으로 구분을 한다. 객체가 아닌 데이터 타입은 아래와 같다.
+
+* 숫자
+* 문자열
+* 불리언(true/false)
+* null
+* undefined
+
+객체가 아닌 데이터 타입을 원시 데이터 타입(primitive type) 이라고 한다.
+
+<span style = "font-size:small">**[SOURCE]**</span>
+
+```javascript
+var str = 'coding'
+console.log(str.length);
+console.log(str.charAt(0));
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+6
+c
+```
+
+위에서 문자열은 객체가 아닌 원시데이터 타입이라고 했다. 하지만 바로 위의 소스에서는 문자열을 마치 객체처럼 사용하여 메소드와 프로퍼티를 사용하였다. 이렇게 되면 str 이라고 하는 문자열은 객체로 취급되는 것처럼 보인다. 하지만 이는 일시적으로 사용하는 것으므로 메소드나 프로퍼티가 사용될 때 임시로 사용되고 그 객체는 버려진다.
+
+```javascript
+var str = 'coding'
+//str = new String('coding');
+console.log(str.length);
+console.log(str.charAt(0));
+```
+
+위의 소스에서 주석에서 처럼 임시적으로 객체를 만들어주고 해당 메소드나 프로퍼티의 사용이 종료되면 기본적으로 그 객체는 사라진다. 이는 밑의 소스를 참고하면 자명해진다.
+
+<span style = "font-size:small">**[SOURCE]**</span>
+
+```javascript
+var str = 'coding'
+str.prop='everybody'
+console.log(str.prop);
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+undefined
+```
+
+`str` 이라는 문자열이 만약 지속적으로 객체로 취급된다면 `str.prop` 은 정상적으로 출력이 되어야 하나 결과값을 보면 `undefined` 가 뜨게 된다. 이는 위의 이유와 같다.
+이렇게 원시 데이터 타입들을 일시적으로 javascript 에서 제공하는 메소드와 프로퍼티를 사용하기 위해 임시적으로 그 원시 데이터 타입을 객체화 시켜 주는 것을 **Wrapper Object** 라고 한다. 주의 할 것은 javascript 는 이러한 Wrapper Object 를 자동으로 지원하지만 다른 언어들의 동작은 다를 수 있으므로 조심하자. 밑은 각 원시데이터 타입으로 만들어지는 Wrapper Object 이다.
+
+|원시 데이터 타입|Wrapper Object|
+|------|------|
+|숫자|Number|
+|문자열|String|
+|불리안(true/false)|Boolean|
+|null|없음|
+|undefined|없음|

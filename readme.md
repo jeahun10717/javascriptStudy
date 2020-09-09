@@ -94,3 +94,8 @@ JAVASCRIPT "studied by 생활코딩" javascript part 3
   * 6. 표준 내장 객체 Standard Built in Object
     * 1. 표준내장객체의 기본적인 사용법
     * 2. 사용자 정의 객체의 선언과 사용법
+    * 3. 표준내장객체-Object
+      * Object.method, Object.prototpye.method
+    * 4. 모든 객체에서 사용할 수 있는 method 정의
+    * 5. Object 확장의 위험성
+* 2. 원시 데이터 타입 primitive type
