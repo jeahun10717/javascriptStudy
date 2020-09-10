@@ -702,3 +702,144 @@ undefined
 |불리안(true/false)|Boolean|
 |null|없음|
 |undefined|없음|
+
+## 3. 복제
+
+### 1. 복제
+
+<span style = "font-size:small">**[SOURCE]**</span>
+
+```javascript
+var a=1;
+var b=a;
+b=2;
+console.log(a);
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+1
+```
+
+위의 소스를 그림으로 나타내면 아래와 같다
+
+<img src="imgFolder/javascriptBySHCD3_copyDiagram.png">
+
+위는 당연한 것처럼 보인다. 하지만 밑의 소스를 보면 이는 꽤 복잡한 문제임을 알 수 있다.
+
+### 2. 참조
+
+<span style = "font-size:small">**[SOURCE]**</span>
+
+```javascript
+var a={'id':1};
+var b=a;
+b.id=2;
+console.log(a.id);
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+2
+```
+
+복제 부분에서 알아보았던 소스와 달리 위의 소스는 `b.id` 의 값 만을 건드렸음에도 `a.id` 의 값이 변화하였다. 이는 원시데이터타입과는 달리 객체는 다르게 동작하기 때문이다. 아래의 그림을 참조하라.
+
+<img src="imgFolder/javascriptBySHCD3_copyDiagram2.png">
+
+왜 이런일이 발생하는 것일까? 이는 원시데이터타입과 객체가 저장하는 정보가 다르기 때문이다. 원시데이터타입은 기본적으로 실제 값을 가지고 있다. 하지만 객체가 변수에게 전달하는 정보는 실제 값이 아닌 참조의 방법이기 때문이다.
+
+정리하자면 javascript 에서의 **변수는 원시데이터타입을 저장할 경우에는 그 원시데이터의 값 자체를 저장하지만, 변수에 객체를 저장한다면 변수는 객체의 주소를 저장하고 있는 것이다.**
+
+<span style = "font-size:small">**[SOURCE]**</span>
+
+```javascript
+var a={'id':1};
+var b=a;
+b.id=2;
+console.log(a.id);
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+1
+```
+
+### 3. 함수에서의 참조와 복제
+
+위에서 살펴본 내용은 함수에서의 동작에서도 마찬가지로 작동한다. 이 함수에서의 참조와 복제에 대해 알아보자
+
+<span style = "font-size:small">**[SOURCE]**</span>
+
+```javascript
+var a = 1;
+function func(b) {
+    b=2;
+}
+func(a);
+console.log(a);
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+1
+```
+
+위의 소스는 `a`를 선언하고 함수 `b` 의 인자로 `a` 를 사용하여 `a` 값을 바꾸었다. 이 때 결과값은 자명하게 `1`이 나온다.
+
+<span style = "font-size:small">**[SOURCE]**</span>
+
+```javascript
+var a = {'id':1};
+function func(b) {
+    b = {'id':2};
+}
+func(a);
+console.log(a);
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+{ id: 1 }
+```
+
+위 소스는 위의 위 소스에서처럼 동작한다고 생각하여 결과값을 예측하면 `{id: 2}` 가 나와야 하나 결과값은 `a`가 선언될 때 할당되었던 `{id: 1}` 이 나온다. 이러한 결과는 위에서 살펴보았던 변수에 객체가 할당될 때의 문제와 같다.
+`func(a)`가 실행된다면 아래의 소스와 같은 과정을 거치게 된다.
+
+```javascript
+b = a;
+b = {'id':2};
+```
+
+이 부분의 소스를 도식화 하면 아래와 같다.
+
+<img src="imgFolder/javascriptBySHCD3_copyDiagram3.png">
+
+`b = a` 가 실행되면 `a` 는 `{ 'id' : 1 }` 객체를 가리키고 있고 `b` 에 `a` 를 대입했기 때문에 `a` 가 가지고 있는 참조인 `{ 'id' : 1 }` 객체를 똑같이 가리키게 된다. 하지만 `b = { 'id' : 2 }` 가 실행되면 `a` 는 여전히 `{ 'id' : 1 }` 객체를 가리키지만 `b` 는 `{ 'id' : 2 }` 객체를 가리키게 된다. 따라서 최종 `a` 의 값은 `{ 'id' : 1 }` 인 것이다. 그렇다면 정상적으로 a 의 값을 바꾸려면 어떻게 해야 할까? 아래의 소스를 참조하라.
+
+```javascript
+var a={'id':1};
+function func(b) {
+    b.id=2;
+}
+
+func(a);
+console.log(a.id);
+```
+
+<span style = "font-size:small">**[CONSOLE]**</span>
+
+```
+2
+```
+
+이 소스를 도식화 하면 아래와 같다.
+
+<img src="imgFolder/javascriptBySHCD3_copyDiagram4.png">
+
+`b = a` 가 실행되면 `a` 와 `b` 모두 `{ 'id' : 1 }` 객체를 가리킨다. `b.id = 2` 가 실행될 때 `a` 와 `b` 모두 `{ 'id' : 1 }` 객체를 가리키고 있으므로 `{ 'id' : 1 }` 에서 `{ 'id' : 2 }` 로 수정이 된다.

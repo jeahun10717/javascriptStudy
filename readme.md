@@ -100,3 +100,7 @@ JAVASCRIPT "studied by 생활코딩" javascript part 3
     * 4. 모든 객체에서 사용할 수 있는 method 정의
     * 5. Object 확장의 위험성
 * 2. 원시 데이터 타입 primitive type
+* 3. 복제
+  * 1. 복제
+  * 2. 참조
+  * 3. 함수에서의 참조와 복제

@@ -486,6 +486,75 @@ console.log(str.prop);</code></pre>
 <td>&#xC5C6;&#xC74C;</td>
 </tr>
 </tbody></table>
+<h2 id="3-">3. &#xBCF5;&#xC81C;</h2>
+<h3 id="1-">1. &#xBCF5;&#xC81C;</h3>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var a=1;
+var b=a;
+b=2;
+console.log(a);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>1</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xADF8;&#xB9BC;&#xC73C;&#xB85C; &#xB098;&#xD0C0;&#xB0B4;&#xBA74; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;</p>
+<img src="imgFolder/javascriptBySHCD3_copyDiagram.png">
+
+<p>&#xC704;&#xB294; &#xB2F9;&#xC5F0;&#xD55C; &#xAC83;&#xCC98;&#xB7FC; &#xBCF4;&#xC778;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xBA74; &#xC774;&#xB294; &#xAF64; &#xBCF5;&#xC7A1;&#xD55C; &#xBB38;&#xC81C;&#xC784;&#xC744; &#xC54C; &#xC218; &#xC788;&#xB2E4;.</p>
+<h3 id="2-">2. &#xCC38;&#xC870;</h3>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var a={&apos;id&apos;:1};
+var b=a;
+b.id=2;
+console.log(a.id);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>2</code></pre><p>&#xBCF5;&#xC81C; &#xBD80;&#xBD84;&#xC5D0;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xC558;&#xB358; &#xC18C;&#xC2A4;&#xC640; &#xB2EC;&#xB9AC; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; <code>b.id</code> &#xC758; &#xAC12; &#xB9CC;&#xC744; &#xAC74;&#xB4DC;&#xB838;&#xC74C;&#xC5D0;&#xB3C4; <code>a.id</code> &#xC758; &#xAC12;&#xC774; &#xBCC0;&#xD654;&#xD558;&#xC600;&#xB2E4;. &#xC774;&#xB294; &#xC6D0;&#xC2DC;&#xB370;&#xC774;&#xD130;&#xD0C0;&#xC785;&#xACFC;&#xB294; &#xB2EC;&#xB9AC; &#xAC1D;&#xCCB4;&#xB294; &#xB2E4;&#xB974;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;. &#xC544;&#xB798;&#xC758; &#xADF8;&#xB9BC;&#xC744; &#xCC38;&#xC870;&#xD558;&#xB77C;.</p>
+<img src="imgFolder/javascriptBySHCD3_copyDiagram2.png">
+
+<p>&#xC65C; &#xC774;&#xB7F0;&#xC77C;&#xC774; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xAC83;&#xC77C;&#xAE4C;? &#xC774;&#xB294; &#xC6D0;&#xC2DC;&#xB370;&#xC774;&#xD130;&#xD0C0;&#xC785;&#xACFC; &#xAC1D;&#xCCB4;&#xAC00; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xC815;&#xBCF4;&#xAC00; &#xB2E4;&#xB974;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;. &#xC6D0;&#xC2DC;&#xB370;&#xC774;&#xD130;&#xD0C0;&#xC785;&#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC2E4;&#xC81C; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xAC1D;&#xCCB4;&#xAC00; &#xBCC0;&#xC218;&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xC815;&#xBCF4;&#xB294; &#xC2E4;&#xC81C; &#xAC12;&#xC774; &#xC544;&#xB2CC; &#xCC38;&#xC870;&#xC758; &#xBC29;&#xBC95;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;.</p>
+<p>&#xC815;&#xB9AC;&#xD558;&#xC790;&#xBA74; javascript &#xC5D0;&#xC11C;&#xC758; <strong>&#xBCC0;&#xC218;&#xB294; &#xC6D0;&#xC2DC;&#xB370;&#xC774;&#xD130;&#xD0C0;&#xC785;&#xC744; &#xC800;&#xC7A5;&#xD560; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xADF8; &#xC6D0;&#xC2DC;&#xB370;&#xC774;&#xD130;&#xC758; &#xAC12; &#xC790;&#xCCB4;&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xC9C0;&#xB9CC;, &#xBCC0;&#xC218;&#xC5D0; &#xAC1D;&#xCCB4;&#xB97C; &#xC800;&#xC7A5;&#xD55C;&#xB2E4;&#xBA74; &#xBCC0;&#xC218;&#xB294; &#xAC1D;&#xCCB4;&#xC758; &#xC8FC;&#xC18C;&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xACE0; &#xC788;&#xB294; &#xAC83;&#xC774;&#xB2E4;.</strong></p>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var a={&apos;id&apos;:1};
+var b=a;
+b.id=2;
+console.log(a.id);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>1</code></pre><h3 id="3-">3. &#xD568;&#xC218;&#xC5D0;&#xC11C;&#xC758; &#xCC38;&#xC870;&#xC640; &#xBCF5;&#xC81C;</h3>
+<p>&#xC704;&#xC5D0;&#xC11C; &#xC0B4;&#xD3B4;&#xBCF8; &#xB0B4;&#xC6A9;&#xC740; &#xD568;&#xC218;&#xC5D0;&#xC11C;&#xC758; &#xB3D9;&#xC791;&#xC5D0;&#xC11C;&#xB3C4; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xC791;&#xB3D9;&#xD55C;&#xB2E4;. &#xC774; &#xD568;&#xC218;&#xC5D0;&#xC11C;&#xC758; &#xCC38;&#xC870;&#xC640; &#xBCF5;&#xC81C;&#xC5D0; &#xB300;&#xD574; &#xC54C;&#xC544;&#xBCF4;&#xC790;</p>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var a = 1;
+function func(b) {
+    b=2;
+}
+func(a);
+console.log(a);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>1</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; <code>a</code>&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xACE0; &#xD568;&#xC218; <code>b</code> &#xC758; &#xC778;&#xC790;&#xB85C; <code>a</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>a</code> &#xAC12;&#xC744; &#xBC14;&#xAFB8;&#xC5C8;&#xB2E4;. &#xC774; &#xB54C; &#xACB0;&#xACFC;&#xAC12;&#xC740; &#xC790;&#xBA85;&#xD558;&#xAC8C; <code>1</code>&#xC774; &#xB098;&#xC628;&#xB2E4;.</p>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var a = {&apos;id&apos;:1};
+function func(b) {
+    b = {&apos;id&apos;:2};
+}
+func(a);
+console.log(a);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>{ id: 1 }</code></pre><p>&#xC704; &#xC18C;&#xC2A4;&#xB294; &#xC704;&#xC758; &#xC704; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; &#xB3D9;&#xC791;&#xD55C;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xC5EC; &#xACB0;&#xACFC;&#xAC12;&#xC744; &#xC608;&#xCE21;&#xD558;&#xBA74; <code>{id: 2}</code> &#xAC00; &#xB098;&#xC640;&#xC57C; &#xD558;&#xB098; &#xACB0;&#xACFC;&#xAC12;&#xC740; <code>a</code>&#xAC00; &#xC120;&#xC5B8;&#xB420; &#xB54C; &#xD560;&#xB2F9;&#xB418;&#xC5C8;&#xB358; <code>{id: 1}</code> &#xC774; &#xB098;&#xC628;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xACB0;&#xACFC;&#xB294; &#xC704;&#xC5D0;&#xC11C; &#xC0B4;&#xD3B4;&#xBCF4;&#xC558;&#xB358; &#xBCC0;&#xC218;&#xC5D0; &#xAC1D;&#xCCB4;&#xAC00; &#xD560;&#xB2F9;&#xB420; &#xB54C;&#xC758; &#xBB38;&#xC81C;&#xC640; &#xAC19;&#xB2E4;.
+<code>func(a)</code>&#xAC00; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;&#xBA74; &#xC544;&#xB798;&#xC758; &#xC18C;&#xC2A4;&#xC640; &#xAC19;&#xC740; &#xACFC;&#xC815;&#xC744; &#xAC70;&#xCE58;&#xAC8C; &#xB41C;&#xB2E4;.</p>
+<pre><code class="language-javascript">b = a;
+b = {&apos;id&apos;:2};</code></pre>
+<p>&#xC774; &#xBD80;&#xBD84;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xB3C4;&#xC2DD;&#xD654; &#xD558;&#xBA74; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;.</p>
+<img src="imgFolder/javascriptBySHCD3_copyDiagram3.png">
+
+<p><code>b = a</code> &#xAC00; &#xC2E4;&#xD589;&#xB418;&#xBA74; <code>a</code> &#xB294; <code>{ &apos;id&apos; : 1 }</code> &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xB9AC;&#xD0A4;&#xACE0; &#xC788;&#xACE0; <code>b</code> &#xC5D0; <code>a</code> &#xB97C; &#xB300;&#xC785;&#xD588;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>a</code> &#xAC00; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xCC38;&#xC870;&#xC778; <code>{ &apos;id&apos; : 1 }</code> &#xAC1D;&#xCCB4;&#xB97C; &#xB611;&#xAC19;&#xC774; &#xAC00;&#xB9AC;&#xD0A4;&#xAC8C; &#xB41C;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; <code>b = { &apos;id&apos; : 2 }</code> &#xAC00; &#xC2E4;&#xD589;&#xB418;&#xBA74; <code>a</code> &#xB294; &#xC5EC;&#xC804;&#xD788; <code>{ &apos;id&apos; : 1 }</code> &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xB9AC;&#xD0A4;&#xC9C0;&#xB9CC; <code>b</code> &#xB294; <code>{ &apos;id&apos; : 2 }</code> &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xB9AC;&#xD0A4;&#xAC8C; &#xB41C;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xCD5C;&#xC885; <code>a</code> &#xC758; &#xAC12;&#xC740; <code>{ &apos;id&apos; : 1 }</code> &#xC778; &#xAC83;&#xC774;&#xB2E4;. &#xADF8;&#xB807;&#xB2E4;&#xBA74; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; a &#xC758; &#xAC12;&#xC744; &#xBC14;&#xAFB8;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD574;&#xC57C; &#xD560;&#xAE4C;? &#xC544;&#xB798;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xB77C;.</p>
+<pre><code class="language-javascript">var a={&apos;id&apos;:1};
+function func(b) {
+    b.id=2;
+}
+
+func(a);
+console.log(a.id);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>2</code></pre><p>&#xC774; &#xC18C;&#xC2A4;&#xB97C; &#xB3C4;&#xC2DD;&#xD654; &#xD558;&#xBA74; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;.</p>
+<img src="imgFolder/javascriptBySHCD3_copyDiagram4.png">
+
+<p><code>b = a</code> &#xAC00; &#xC2E4;&#xD589;&#xB418;&#xBA74; <code>a</code> &#xC640; <code>b</code> &#xBAA8;&#xB450; <code>{ &apos;id&apos; : 1 }</code> &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xB9AC;&#xD0A8;&#xB2E4;. <code>b.id = 2</code> &#xAC00; &#xC2E4;&#xD589;&#xB420; &#xB54C; <code>a</code> &#xC640; <code>b</code> &#xBAA8;&#xB450; <code>{ &apos;id&apos; : 1 }</code> &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xB9AC;&#xD0A4;&#xACE0; &#xC788;&#xC73C;&#xBBC0;&#xB85C; <code>{ &apos;id&apos; : 1 }</code> &#xC5D0;&#xC11C; <code>{ &apos;id&apos; : 2 }</code> &#xB85C; &#xC218;&#xC815;&#xC774; &#xB41C;&#xB2E4;.</p>
 </article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
   <svg t="1533629773982" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1035" xlink="http://www.w3.org/1999/xlink" width="40" height="40"><defs><style type="text/css">@font-face { font-family: uc-nexus-iconfont; src: url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff") format("woff"), url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf") format("truetype"); }
   </style></defs><path d="M536.255427 195.182354c-7.804756-7.804756-17.966187-11.615549-28.311813-11.615549-9.43693 0-18.874883 3.449565-26.496467 10.163477-2.360767 1.452071-4.356214 3.267417-6.352685 5.262864L218.47792 455.611735c-15.607466 15.60542-15.607466 40.834011 0 56.43943 15.607466 15.607466 41.558511 15.607466 57.167001 0l193.46013-192.733583 0 600.526219c0 22.1423 17.787108 39.927361 39.927361 39.927361 22.140253 0 39.927361-17.785062 39.927361-39.927361L548.959773 319.317583 737.15704 508.422522c15.607466 15.607466 40.469714 15.607466 56.078203 0 15.607466-15.607466 15.425318-40.834011-0.182149-56.441477L536.255427 195.182354 536.255427 195.182354z" p-id="1036" fill="#333"/><path d="M101.784174 143.097092l816.674071 0c22.140253 0 39.925315-17.785062 39.925315-39.927361 0-22.140253-17.784038-39.925315-39.925315-39.925315L101.784174 63.244416c-22.140253 0-39.927361 17.785062-39.927361 39.925315C61.856813 125.31203 79.643921 143.097092 101.784174 143.097092L101.784174 143.097092z" p-id="1037" fill="#333"/></svg>
