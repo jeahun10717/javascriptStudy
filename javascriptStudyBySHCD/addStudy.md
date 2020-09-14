@@ -35,7 +35,7 @@ PS D:\2. 공부&&과제\nodejs_study> node test123.js
 ## 2. 정규표현식
 ---
 ### 1.1 `string`
-<span style="color: rgb(34, 139, 180); font-size: 13px;">   string 문자열 그대로 탐</span>
+<span style="color: blue; font-size: 13px;">   string 문자열 그대로 탐</span>
 
 **source : who is who**
 
@@ -170,7 +170,7 @@ All Match : who is `who`
 
 ### 3.1 `*`, `+`, `?`
 
-<span style="color: rgb(34, 139, 180); font-size: 13px;"></span>
+<span style="color: rgb(34, 139, 180); font-size: 13px;"></span></br>
 
 **source : aabc abc bc**
 <span style='color : rgb(34, 139, 180);'>case1 : `*` : <span style="color: rgb(34, 139, 180); font-size: small;">b 기준으로 앞에 a가 **0개~N개** 존재하면 블럭선택(b는 반드시 선택됨)</span></span></br>
