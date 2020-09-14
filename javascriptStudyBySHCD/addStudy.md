@@ -36,7 +36,8 @@ PS D:\2. 공부&&과제\nodejs_study> node test123.js
 ---
 ### 1.1 `string`
 
-<span style="color: rgb(34, 139, 180); font-size: 13px;">   string 문자열 그대로 탐</span>
+
+<span style="color:rgb(34, 139, 180); font-size: 13px;">   string 문자열 그대로 탐색</span>
 
 **source : who is who**
 
