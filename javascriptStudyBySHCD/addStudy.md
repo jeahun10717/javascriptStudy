@@ -69,45 +69,47 @@ All Match : who is `who`
 
 #### example : 1.1~1.3
 
-&emsp;**source : \$12\$\\-\\\$25\$**
-<span style='color : rgb(34, 139, 180)'>case1 :</span>
-&emsp;&emsp;&emsp;&emsp;Regular Expression : `^$`(기능문자+기능문자 이므로 작동 안됨)
-&emsp;&emsp;&emsp;&emsp;First Match : \$12\$\\-\\\$25\$
-&emsp;&emsp;&emsp;&emsp;All Match : \$12\$\\-\\\$25\$
+&emsp;**source : \$12\$\\-\\\$25\$**</br>
+<span style='color : rgb(34, 139, 180)'>case1 :</span></br>
+&emsp;&emsp;&emsp;&emsp;Regular Expression : `^$`(기능문자+기능문자 이므로 작동 안됨)</br>
+&emsp;&emsp;&emsp;&emsp;First Match : \$12\$\\-\\\$25\$</br>
+&emsp;&emsp;&emsp;&emsp;All Match : \$12\$\\-\\\$25\$</br>
 
-<span style='color : rgb(34, 139, 180)'>case2 :</span>
-&emsp;&emsp;&emsp;&emsp;Regular Expression : `\$`(기능문자+기능문자를 사용하려면 \\(백틱)사용)
-&emsp;&emsp;&emsp;&emsp;First Match : `$`12\$\\-\\\$25\$
-&emsp;&emsp;&emsp;&emsp;All Match : `$`12`$`\\-\\`$`25`$`
+<span style='color : rgb(34, 139, 180)'>case2 :</span></br>
+&emsp;&emsp;&emsp;&emsp;Regular Expression : `\$`(기능문자+기능문자를 사용하려면 \\(백틱)사용)</br>
+&emsp;&emsp;&emsp;&emsp;First Match : `$`12\$\\-\\\$25\$</br>
+&emsp;&emsp;&emsp;&emsp;All Match : `$`12`$`\\-\\`$`25`$`</br>
 
-<span style='color : rgb(34, 139, 180)'>case3 :</span>
-&emsp;&emsp;&emsp;&emsp;Regular Expression : `^\$`
-&emsp;&emsp;&emsp;&emsp;First Match : `$`12\$\\-\\\$25\$
-&emsp;&emsp;&emsp;&emsp;All Match : `$`12\$\\-\\\$25\$
+<span style='color : rgb(34, 139, 180)'>case3 :</span></br>
+&emsp;&emsp;&emsp;&emsp;Regular Expression : `^\$`</br>
+&emsp;&emsp;&emsp;&emsp;First Match : `$`12\$\\-\\\$25\$</br>
+&emsp;&emsp;&emsp;&emsp;All Match : `$`12\$\\-\\\$25\$</br>
 
-<span style='color : rgb(34, 139, 180)'>case4 :</span>
-&emsp;&emsp;&emsp;&emsp;Regular Expression : `\$$`
-&emsp;&emsp;&emsp;&emsp;First Match : \$12\$\\-\\\$25`$`
-&emsp;&emsp;&emsp;&emsp;All Match : \$12\$\\-\\\$25`$`
+<span style='color : rgb(34, 139, 180)'>case4 :</span></br>
+&emsp;&emsp;&emsp;&emsp;Regular Expression : `\$$`</br>
+&emsp;&emsp;&emsp;&emsp;First Match : \$12\$\\-\\\$25`$`</br>
+&emsp;&emsp;&emsp;&emsp;All Match : \$12\$\\-\\\$25`$`</br>
 
 ### 2.1 `.`
+
 <span style="color: rgb(34, 139, 180); font-size: 13px;">모든 종류의 문자열 탐색</span>
 
-**source : I love apple!!!!!**
-<span style='color : rgb(34, 139, 180)'>case1 :</span>
-&emsp;&emsp;&emsp;&emsp;Regular Expression : `.`
-&emsp;&emsp;&emsp;&emsp;First Match : `I` love apple!!!!!
-&emsp;&emsp;&emsp;&emsp;All Match : `I love apple!!!!!`
-<span style='color : rgb(34, 139, 180)'>case2 :</span>
-&emsp;&emsp;&emsp;&emsp;Regular Expression : `...`<span style='color : rgb(34, 139, 180); font-size : small'>  (3개 단위로 끊어서 탐색)</span>
-&emsp;&emsp;&emsp;&emsp;First Match : `I l`ove apple!!!!!
-&emsp;&emsp;&emsp;&emsp;All Match : `I love apple!!!`!!
+**source : I love apple!!!!!**</br>
+<span style='color : rgb(34, 139, 180)'>case1 :</span></br>
+&emsp;&emsp;&emsp;&emsp;Regular Expression : `.`</br>
+&emsp;&emsp;&emsp;&emsp;First Match : `I` love apple!!!!!</br>
+&emsp;&emsp;&emsp;&emsp;All Match : `I love apple!!!!!`</br>
+<span style='color : rgb(34, 139, 180)'>case2 :</span></br>
+&emsp;&emsp;&emsp;&emsp;Regular Expression : `...`<span style='color : rgb(34, 139, 180); font-size : small'>  (3개 단위로 끊어서 탐색)</span></br>
+&emsp;&emsp;&emsp;&emsp;First Match : `I l`ove apple!!!!!</br>
+&emsp;&emsp;&emsp;&emsp;All Match : `I love apple!!!`!!</br>
 
 ### 2.1 `[string]`
+
 <span style="color: rgb(34, 139, 180); font-size: 13px;">대괄호 안의 문자중  하나라도 존재하면 탐색->[stirng]은 1개의 문자 탐색</span>
 
-**source : How do you do?**
-<span style='color : rgb(34, 139, 180)'>case1 :</span>
+**source : How do you do?**</br>
+<span style='color : rgb(34, 139, 180)'>case1 :</span></br>
 &emsp;&emsp;&emsp;&emsp;Regular Expression : `[oyu]`
 &emsp;&emsp;&emsp;&emsp;First Match : H`o`w do you do?
 &emsp;&emsp;&emsp;&emsp;All Match : H`o`w d`o you` d`o`?
