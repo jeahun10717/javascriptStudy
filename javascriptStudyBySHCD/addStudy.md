@@ -323,7 +323,7 @@ All Match : who is `who`
 &emsp;&emsp;&emsp;&emsp;All Match : `A1` `B2` `c3` `d_4` `e`:`5` `ffGG77` \-\-`___`\-\-</br>
 
 ### 5.2 `\W`
-<span style="color: rgb(34, 139, 180); font-size: 13px;"> a~z, A~Z, 0~9, _를 제외한 문자열 탐색 ==> `\w`와 정 반대</span></br>
+<span style="color: rgb(34, 139, 180); font-size: 13px;"> `a~z`, `A~Z`, `0~9`, `_`를 제외한 문자열 탐색 ==> `\w`와 정 반대</span></br>
 
 **source : AS _34:AS11:23@#%12^\***</br>
 <span style='color : rgb(34, 139, 180)'>case1 :</span></br>
