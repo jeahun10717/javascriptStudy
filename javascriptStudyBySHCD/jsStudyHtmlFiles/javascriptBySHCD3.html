@@ -21,494 +21,541 @@
   }
 </style>
 </head>
-<body><div id="readme" class="container"><article class="markdown-body entry-content"><h1 id="-center-javascript-studied-by-br-javascript-part-2-center-"><center>JAVASCRIPT &quot;studied by &#xC0DD;&#xD65C;&#xCF54;&#xB529;&quot;<br>javascript part 2</center></h1>
-<h2 id="1-span-style-font-size-18px-scope-span-">1. &#xC720;&#xD6A8;&#xBC94;&#xC704; <span style="font-size : 18px">scope</span></h2>
-<hr>
-<h3 id="1-">1. &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xC640; &#xC804;&#xC5ED;&#xBCC0;&#xC218;</h3>
+<body><div id="readme" class="container"><article class="markdown-body entry-content"><h1 id="-center-javascript-studied-by-br-javascript-part-3-center-"><center>JAVASCRIPT &quot;studied by &#xC0DD;&#xD65C;&#xCF54;&#xB529;&quot;<br>javascript part 3</center></h1>
+<h2 id="1-span-style-font-size-18px-object-span-">1.&#xAC1D;&#xCCB4;<span style="font-size : 18px"> Object</span></h2>
+<h3 id="1-">1. &#xAC1D;&#xCCB4; &#xAE30;&#xCD08;</h3>
+<p>&#xAC1D;&#xCCB4; &#xC548;&#xC758; &#xBCC0;&#xC218;&#xB97C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;(property), &#xD568;&#xC218;&#xB97C; &#xBA54;&#xC18C;&#xB4DC;(method) &#xB77C;&#xACE0; &#xBD80;&#xB978;&#xB2E4;.
+&#xBC11;&#xC758; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xD655;&#xC778;&#xD574; &#xBCF4;&#xC790;.</p>
 <p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var vscope = &apos;global&apos;
-function fscope() {
-    var vscope = &apos;hello?&apos;
-    console.log(vscope)
+<pre><code class="language-javascript">var person = {}
+person.name=&apos;egoing&apos;
+person.introduce=function () {
+    return &apos;My name is &apos;+this.name;
 }
-fscope();</code></pre>
+console.log(person.introduce());</code></pre>
 <p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>hello?</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xCCAB;&#xBC88;&#xC9F8; &#xC904;&#xC758; <code>vscope</code>&#xB294; &#xC804;&#xC5ED;&#xBCC0;&#xC218;(global variable)
-&#xD568;&#xC218; &#xC548;&#xC758; <code>vscope</code>&#xB294; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;(local variable)&#xC774;&#xB2E4;.
-&#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB294; &#xC911;&#xAD04;&#xD638;&#xC640; &#xAC19;&#xC774; &#xCF54;&#xB4DC;&#xC758; &#xBE14;&#xB7ED; &#xC548;&#xC5D0;&#xC11C;&#xB9CC; &#xC791;&#xB3D9;&#xD55C;&#xB2E4;</p>
+<pre><code>My name is egoing</code></pre><p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; <code>person{}</code> &#xC774;&#xB77C;&#xB294; &#xAC1D;&#xCCB4; &#xC548;&#xC5D0; <code>name</code>&#xC774;&#xB77C;&#xB294; &#xAC1D;&#xCCB4; &#xC548;&#xC758; &#xBCC0;&#xC218;&#xC778; <strong>property</strong>&#xAC00; &#xC788;&#xACE0; &#xB610;&#xD55C; <code>introduce()</code>&#xB77C;&#xACE0; &#xD558;&#xB294; &#xD568;&#xC218;&#xC778; <strong>method</strong>&#xAC00; &#xC120;&#xC5B8;&#xB418;&#xC5B4; &#xC788;&#xB2E4;.</p>
+<ol start="2">
+<li>&#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xACFC;&#xC815;&#xC5D0;&#xC11C; 1. &#xC5D0;&#xC11C; &#xC0B4;&#xD3B4;&#xBCF8; &#xBC29;&#xBC95;&#xC740; &#xC18C;&#xC2A4;&#xAC00; &#xBD84;&#xC0B0;&#xB418;&#xC5B4; &#xC788;&#xB2E4;
+&#xC774;&#xB7EC;&#xD55C; &#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xB824;&#xBA74; &#xBC11;&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xB77C;</li>
+</ol>
 <p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var vscope = &apos;global&apos;
-function fscope() {
-    var vscope = &apos;hello?&apos;
+<pre><code class="language-javascript">var person={
+  &apos;name&apos;: &apos;egoing&apos;,
+  &apos;introduce&apos;: function(){
+    return &apos;My name is &apos;+this.name;
+  }
 }
-fscope();
-
-console.log(vscope);</code></pre>
+console.log(person.introduce());</code></pre>
 <p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>global</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; vscope&#xB97C; &#xCD9C;&#xB825;&#xD558;&#xBA74; &#xD568;&#xC218;&#xAC00; &#xC2E4;&#xD589; &#xB418;&#xC5C8;&#xAE30;&#xC5D0;
-<code>hello?</code> &#xAC00; &#xCD9C;&#xB825;&#xB420; &#xAC83; &#xAC19;&#xC9C0;&#xB9CC; <code>global</code>&#xC774; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;.
-&#xC774;&#xB294; javascript&#xC758; &#xC5D0;&#xC11C; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xC640; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC2DC; &#xC774;&#xB984;&#xC774; &#xAC19;&#xC544;&#xB3C4; &#xB530;&#xB85C;
-&#xC0DD;&#xC131;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC778;&#xB370; &#xBC11;&#xC758; &#xADF8;&#xB9BC;&#xC744; &#xBCF4;&#xBA74;&#xC11C; &#xC774;&#xD574;&#xD558;&#xBA74; &#xB41C;&#xB2E4;</p>
-<img src="/imgFolder/javascriptBySHCD2_global_Local_variableIMG1.png" style="width: 60%; height: auto;">
-
+<pre><code>My name is egoing</code></pre><h3 id="2-new">2. &#xC0DD;&#xC131;&#xC790;&#xC640; new</h3>
+<h4 id="1-">1. &#xC0DD;&#xC131;&#xC790;</h4>
 <p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var vscope = &apos;global&apos;
-function fscope() {
-    var vscope = &apos;hello?&apos;
-    vscope = &apos;hello?&apos;
-}
-fscope();
-
-console.log(vscope);</code></pre>
+<pre><code class="language-javascript">function person(){}
+var p1=person()
+var p2=new person()
+console.log(p1+&apos;\n&apos;+p2);</code></pre>
 <p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>global</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xC5EC;&#xC804;&#xD788; &#xACB0;&#xACFC;&#xAC12;&#xC774; <code>global</code>&#xB85C; &#xB098;&#xC624;&#xBA70; &#xC774;&#xB294; &#xC804;&#xC5ED;&#xBCC0;&#xC218; &#xC774;&#xB2E4;.
-&#xC774;&#xB294; &#xD568;&#xC218; &#xC548;&#xC5D0;&#xC11C; vscope&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xC600;&#xACE0; &#xC774; &#xBCC0;&#xC218;&#xB294; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xCDE8;&#xAE09;&#xC744; &#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;.
-vscope&#xC758; &#xC804;&#xC5ED; &#xAC12;&#xC744; &#xBC14;&#xAFB8;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xBA74; &#xB41C;&#xB2E4;</p>
+<pre><code>undefined
+person {}</code></pre><p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; <code>p1</code> &#xBCC0;&#xC218;&#xC5D0; &#xD568;&#xC218;&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xBA74; &#xD604;&#xC7AC; <code>person()</code> &#xC774;&#xB77C;&#xB294; &#xD568;&#xC218;&#xC5D0; &#xB9AC;&#xD134;&#xAC12;&#xC774; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C; <code>undefined</code> &#xAC00; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; &#xBC11;&#xC758; <code>new</code> &#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>p2</code> &#xBCC0;&#xC218;&#xC5D0; &#xC800;&#xC7A5;&#xD558;&#xBA74; <code>person{}</code> &#xC774;&#xB77C;&#xACE0; &#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0; &#xC774;&#xB97C; <code>p2</code>&#xC5D0; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xAC83;&#xC774;&#xB2E4;.
+&#xC774;&#xB7EC;&#xD55C; <code>javascript</code>&#xC5D0;&#xC11C;&#xC758; &#xAE30;&#xB2A5;&#xC744; &#xC0DD;&#xC131;&#xC790;&#xB77C;&#xACE0; &#xD55C;&#xB2E4;.</p>
 <p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var vscope = &apos;global&apos;
-function fscope() {
-    vscope = &apos;hello?&apos;
+<pre><code class="language-javascript">var person1 = {
+  &apos;name&apos;:&apos;egoing&apos;,
+  introduce:function () {
+    return &apos;My name is &apos;+this.name;
+  }
 }
-fscope();
-
-console.log(vscope);</code></pre>
+var person2 = {
+  &apos;name&apos;:&apos;liali&apos;,
+  introduce:function () {
+    return &apos;My name is &apos;+this.name;
+  }
+}
+console.log(person1);
+console.log(person2);</code></pre>
 <p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>hello?</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; &#xBC11;&#xC758; &#xADF8;&#xB9BC;&#xACFC; &#xAC19;&#xC774; &#xD568;&#xC218; &#xC548;&#xC758; vscope&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xC9C0; &#xC54A;&#xACE0; vscope&#xC5D0;
-&#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC0BD;&#xC785;&#xD588;&#xB2E4;. &#xC774;&#xB294; vscope&#xB77C;&#xB294; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xC5D0; &#xC9C1;&#xC811; &#xB300;&#xC785;&#xC744; &#xD55C; &#xAC83;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;
-&#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB294; &#xC120;&#xC5B8;&#xC870;&#xCC28; &#xB418;&#xC9C0; &#xC54A;&#xC740; &#xAC83;&#xC774;&#xB2E4;. &#xBC11;&#xC758; &#xADF8;&#xB9BC;&#xC744; &#xCC38;&#xACE0;&#xD558;&#xB77C;.</p>
-<img src="/imgFolder/javascriptBySHCD2_global_Local_variableIMG2.png" style="width: 60%; height: auto;">
-
-<p><strong>&#xC815;&#xB9AC;&#xD558;&#xC790;&#xBA74; &#xAC70;&#xC758; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xC0C1;&#xD669;&#xC5D0;&#xC11C;&#xB294; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB97C; &#xC4F0;&#xB294; &#xAC83;&#xC774; &#xD0C0;&#xB2F9;&#xD558;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xB0B4;&#xC5D0;&#xC11C; &#xC804;&#xC5ED;&#xC73C;&#xB85C; &#xC368;&#xC57C;&#xD558;&#xB294; &#xC0C1;&#xD669;&#xC774; &#xBD84;&#xBA85;&#xD788; &#xC874;&#xC7AC;&#xD558;&#xBBC0;&#xB85C; 1.3 &#xC5D0;&#xC11C; &#xB354; &#xC790;&#xC138;&#xD788; &#xC124;&#xBA85;&#xD558;&#xACA0;&#xB2E4;</strong></p>
-<h3 id="2-">2. &#xC720;&#xD6A8;&#xBC94;&#xC704;&#xC758; &#xD544;&#xC694;&#xC131;</h3>
+<pre><code>{ name: &apos;egoing&apos;, introduce: [Function: introduce] }
+{ name: &apos;liali&apos;, introduce: [Function: introduce] }</code></pre><p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC5EC;&#xB7EC;&#xC0AC;&#xB78C;&#xC758; &#xC815;&#xBCF4;&#xB97C; &#xAC01;&#xAC01;&#xC758; &#xAC1D;&#xCCB4;&#xB85C; &#xC0DD;&#xC131;&#xD560; &#xACBD;&#xC6B0; <code>introduce : function(){}</code> &#xBD80;&#xBD84;&#xC740; &#xC815;&#xD655;&#xD788; &#xAC19;&#xC740; &#xC18C;&#xC2A4;&#xC784;&#xC5D0;&#xB3C4; &#xC9C0;&#xC18D;&#xC801;&#xC73C;&#xB85C; &#xBC18;&#xBCF5;&#xD558;&#xC5EC;&#xC57C; &#xD55C;&#xB2E4;.
+&#xC774;&#xB7EC;&#xD55C; &#xBB38;&#xC81C;&#xB294; &#xC0DD;&#xC131;&#xC790;&#xC640; <code>new</code>&#xB85C; &#xD574;&#xACB0;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.
+&#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xB77C;</p>
 <p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function a() {
-  var i=0;
+<pre><code class="language-javascript">function Person(name) {
+  this.name=name;
+  this.introduce=function () {
+    return &apos;My name is &apos;+this.name;
+  }
 }
-for(var i=0; i&lt;5; i++){
-  a();
-  console.log(i);
+
+var p1 = new Person(&apos;egoing&apos;)
+var p2 = new Person(&apos;liali&apos;)
+console.log(p1);
+console.log(p2);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>{ name: &apos;egoing&apos;, introduce: [Function: introduce] }
+{ name: &apos;liali&apos;, introduce: [Function: introduce] }</code></pre><p>&#xC774; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB4EF; &#xBC14;&#xB85C; &#xC704;&#xC758; &#xC704; &#xCF54;&#xB4DC;&#xC640;&#xB294; &#xB2E4;&#xB974;&#xAC8C; <code>introduce : function(){}</code> &#xBD80;&#xBD84;&#xC758; &#xCF54;&#xB4DC;&#xAC00; &#xAC04;&#xC18C;&#xD654; &#xB418;&#xC5C8;&#xB2E4;.
+&#xC774;&#xC640; &#xAC19;&#xC774; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;&#xB294; &#xAC1D;&#xCCB4;&#xC758; &#xCD08;&#xAE30;&#xD654;&#xC758; &#xAE30;&#xB2A5;&#xC744; &#xD558;&#xB294; &#xAC83;&#xC774;&#xB2E4;.
+&#xC774;&#xB97C; &#xD1B5;&#xD574; &#xCF54;&#xB4DC;&#xC758; &#xC7AC;&#xC0AC;&#xC6A9;&#xC131;&#xC774; &#xB300;&#xD3ED; &#xC0C1;&#xC2B9;&#xD55C;&#xB2E4;.</p>
+<h3 id="2-span-style-font-size-16px-global-object-span-">2. &#xC804;&#xC5ED;&#xAC1D;&#xCCB4;<span style="font-size : 16px"> Global Object</span></h3>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC804;&#xC5ED;&#xAC1D;&#xCCB4;&#xB294; javascript &#xAC00; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xAE30;&#xBCF8; &#xAC1D;&#xCCB4;&#xC774;&#xB2E4;.
+&#xC804;&#xC5ED;&#xBC94;&#xC704;&#xC5D0; &#xC811;&#xADFC;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB418;&#xBA70; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC640; node.js &#xC5D0;&#xC11C;&#xC758; &#xD658;&#xACBD;&#xC774; &#xC870;&#xAE08;&#xC529; &#xB2E4;&#xB974;&#xB2E4;.
+&#xC804;&#xC5ED;&#xAC1D;&#xCCB4;&#xC758; &#xC0AC;&#xC6A9;&#xACFC; &#xD658;&#xACBD;&#xB9C8;&#xB2E4; &#xB2E4;&#xB974;&#xAC8C; &#xC801;&#xC6A9;&#xB418;&#xB294; &#xC810;&#xC744; &#xBC11;&#xC5D0;&#xC11C; &#xC815;&#xB9AC;&#xD558;&#xACA0;&#xB2E4;.</p>
+<h4 id="1-">1. &#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xD658;&#xACBD;</h4>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;
+        &lt;script&gt;
+            var o = {&apos;func&apos;:function(){
+            document.write(&apos;hello?&apos;);
+            }}
+            o.func();
+            window.o.func();
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p><span style="font-size:small"><strong>[BROWSER]</strong></span></p>
+<p><img src="/imgFolder/javascriptBySHCD3_GlobalObjectIMG.png"></p>
+<h4 id="2-node-js-">2. Node.js &#xD658;&#xACBD;</h4>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var o = {
+  func:function(){
+    console.log(&apos;hello?&apos;);
+  }
+}
+o.func();
+global.o.func();</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>hello?
+hello?</code></pre><p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; browser &#xD658;&#xACBD;&#xC5D0;&#xC11C; &#xC804;&#xC5ED;&#xAC1D;&#xCCB4;&#xB294; <code>window</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; Node.js&#xD658;&#xACBD;&#xC5D0;&#xC11C;&#xB294; <code>global</code>&#xC774; &#xC804;&#xC5ED;&#xAC1D;&#xCCB4;&#xC774;&#xB2E4;. &#xB610;&#xD55C; Node.js &#xC5D0;&#xC11C;&#xB294; file.js &#xD30C;&#xC77C; &#xC790;&#xCCB4;&#xB97C; node file.js &#xB85C; &#xC2E4;&#xD589; &#xD560; &#xB54C; <code>global</code>&#xC740; &#xC804;&#xC5ED;&#xAC1D;&#xCCB4;&#xB85C; &#xCDE8;&#xAE09;&#xC744; &#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;. Node.js &#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xD30C;&#xC77C; &#xC790;&#xCCB4;&#xB97C; &#xBAA8;&#xB4C8;&#xB85C; &#xCDE8;&#xAE09;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC778;&#xB370; &#xC774;&#xB294; &#xB098;&#xC911;&#xC5D0; Node.js &#xACF5;&#xBD80;&#xD560; &#xB54C; &#xC815;&#xB9AC;&#xD558;&#xACA0;&#xB2E4;</p>
+<h3 id="3-this">3. this</h3>
+<h4 id="1-this">1. &#xD568;&#xC218;&#xC640; this</h4>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">function func() {
+  if(global===this){
+    console.log(&quot;global===this&quot;);
+  }
+}
+
+func();</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>global===this</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xC54C; &#xC218; &#xC788;&#xB4EF;&#xC774; <code>func()</code> &#xB77C;&#xB294; &#xD568;&#xC218; &#xC548;&#xC5D0;&#xC11C; <code>this</code> &#xC640; &#xC804;&#xC5ED;&#xAC1D;&#xCCB4;&#xC778; <code>global</code> &#xACFC; &#xAC19;&#xC74C;&#xC744; &#xC54C; &#xC218; &#xC788;&#xB2E4;.</p>
+<h4 id="2-this">2. &#xBA54;&#xC18C;&#xB4DC;&#xC640; this</h4>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var o = {
+  func : function(){
+    if(o===this){
+      console.log(&quot;o===this&quot;);
+    }
+  }
+}
+o.func();</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>o===this</code></pre><p>&#xC0AC;&#xC2E4; &#xC774; &#xACB0;&#xACFC;&#xB294; &#xC704;&#xC758; <strong>&#xD568;&#xC218;&#xC640; this</strong>&#xC758; &#xC18C;&#xC2A4;&#xC640; &#xAC19;&#xC740; &#xAC83;&#xC744; &#xBCF4;&#xC5EC;&#xC900;&#xB2E4;.
+<strong>&#xD568;&#xC218;&#xC640; this</strong> &#xC5D0;&#xC11C;&#xC758; <code>func()</code> &#xC758; <code>this</code> &#xB294; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C;&#xC758; <code>window</code>, nodejs&#xC5D0;&#xC11C;&#xC758; <code>global</code>&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.
+<strong>2. &#xBA54;&#xC18C;&#xB4DC;&#xC640; this</strong> &#xC5D0;&#xC11C;&#xC758; &#xC18C;&#xC2A4;&#xB294; <code>o</code>&#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xC5D0; <code>func</code>&#xB77C;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xC5D0;&#xC11C;&#xC758; <code>this</code>&#xB294; &#xBC14;&#xB85C; &#xC704;&#xC758; &#xAC1D;&#xCCB4;&#xC778; <code>o</code> &#xB97C; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.</p>
+<h4 id="3-this">3. &#xC0DD;&#xC131;&#xC790;&#xC640; this</h4>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">
+var funcThis = null;
+
+function Func() {
+    funcThis=this;
+}
+var o1=Func();
+if(funcThis===global){
+    console.log(&apos;global&apos;);
+}
+
+var o2=new Func();
+if(funcThis===o2){
+    console.log(&apos;o2&apos;);
 }</code></pre>
 <p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>0
+<pre><code>global
+o2</code></pre><p><code>var o1=Func()</code> &#xC5D0;&#xC11C;&#xB294; <code>Func()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589; &#xD55C; &#xD6C4; &#xB9AC;&#xD134;&#xAC12;&#xC744; <code>o1</code> &#xC5D0; &#xC800;&#xC7A5;&#xD55C;&#xB2E4;.(&#xC774; &#xB54C; &#xB9AC;&#xD134; &#xAC12;&#xC774; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C; <code>o1</code> &#xC740; <code>undefined</code>&#xAC00; &#xB730; &#xAC83;&#xC774;&#xB2E4;.)
+<code>Func()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xAC00; &#xC2E4;&#xD589; &#xB418;&#xBA74; <code>funcThis</code>&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xC5D0; <code>this</code>&#xAC00; &#xB4E4;&#xC5B4;&#xAC00;&#xB294;&#xB370; &#xC774; &#xB54C; <code>this</code>&#xB294; <code>Func()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xAC00; &#xC120;&#xC5B8; &#xB420; &#xB54C; &#xC804;&#xC5ED;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>global</code> &#xC774; &#xB4E4;&#xC5B4;&#xAC04;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xADF8; &#xBC11;&#xC758; if&#xBB38;&#xC740; &#xCC38;&#xC774;&#xBA70; <code>console.log()</code> &#xAC00; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;.
+&#xBC11;&#xC758; <code>var o2=new Func()</code> &#xB294; <code>Func()</code>&#xB77C;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;&#xB85C; &#xB9CC;&#xB4E4;&#xC5C8;&#xB2E4;. &#xC774;&#xB807;&#xAC8C; &#xB418;&#xBA74; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>Func{}</code> &#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xAC00; &#xB9CC;&#xB4E4;&#xC5B4; &#xC9C0;&#xACE0; &#xC774;&#xB97C; <code>o2</code>&#xC5D0; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xAC83;&#xC774;&#xB2E4;. &#xC774;&#xC5D0; &#xB530;&#xB77C; <code>Func()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; <code>this</code> &#xB294; <code>Func{}</code> &#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xC778; <code>o2</code>&#xB97C; &#xAC00;&#xB9AC;&#xD0A8;&#xB2E4;. &#xC774;&#xC5D0; &#xB530;&#xB77C; &#xBC14;&#xB85C; &#xBC11;&#xC758; if&#xBB38;&#xC740; &#xCC38;&#xC774;&#xBA70; <code>console.log()</code> &#xAC00; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;.</p>
+<h4 id="4-apply-this">4. apply&#xC640; this</h4>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var o={}
+var p={}
+
+function func() {
+    switch (this) {
+        case o:
+            console.log(&apos;o&apos;);
+            break;
+
+        case p:
+            console.log(&apos;p&apos;);
+            break;
+        case global:
+            console.log(&apos;global&apos;);
+            break;
+    }
+}
+
+func()
+func.apply(o);
+func.apply(p);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>global
+o
+p</code></pre><p>&#xC5EC;&#xAE30;&#xC11C; <code>func()</code> &#xB97C; &#xD588;&#xC744; &#xB54C;&#xC758; <code>func()</code>&#xB294; &#xC804;&#xC5ED;&#xAC1D;&#xCCB4;&#xC778; <code>global</code>&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xB41C;&#xB2E4;.
+<code>func.apply(o)</code> &#xB97C; &#xD588;&#xC744; &#xB54C;&#xC758; <code>func()</code>&#xB294; <code>o</code>&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xB418;&#xBA70; <code>func.apply(p)</code> &#xB97C; &#xD588;&#xC744; &#xB54C;&#xC758; <code>func()</code>&#xB294; <code>p</code> &#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xB41C;&#xB2E4;. &#xC774;&#xD574;&#xB97C; &#xB3D5;&#xAE30; &#xC704;&#xD574; &#xBC11;&#xC758; &#xADF8;&#xB9BC;&#xC744; &#xCC38;&#xC870;&#xD558;&#xB77C;.</p>
+<p><img src="/imgFolder/javascriptBySHCD3_applyMethodIMG.png"></p>
+<h3 id="4-span-style-font-size-12px-inheritance-span-">4. &#xC0C1;&#xC18D; <span style="font-size : 12px"> inheritance</span></h3>
+<p>javascript &#xC5D0;&#xC11C;&#xC758; &#xC0C1;&#xC18D;&#xC740; &#xC0C1;&#xC704; &#xAC1D;&#xCCB4;&#xC758; &#xB85C;&#xC9C1;&#xC744; &#xC774;&#xC5B4; &#xBC1B;&#xB418; &#xC790;&#xC2E0;&#xC758; &#xAE30;&#xB2A5;&#xC744; &#xC218;&#xC815;&#xD558;&#xACE0; &#xBCC0;&#xACBD;&#xD558;&#xC5EC; &#xC0C8;&#xB85C;&#xC6B4; &#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xB3C4;&#xC640;&#xC900;&#xB2E4;.</p>
+<h4 id="1-">1. &#xC0C1;&#xC18D;&#xC758; &#xAE30;&#xBCF8; &#xC0AC;&#xC6A9;&#xBC95;</h4>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">function Person(name) {
+    this.name=name;
+}
+
+Person.prototype.name=null;
+Person.prototype.introduce=function () {
+    return &apos;My name is &apos;+this.name;
+}
+
+function Programmer(name) {
+    this.name=name;
+}
+Programmer.prototype=new Person();
+
+var p1=new Programmer(&apos;egoing&apos;)
+console.log(p1.introduce());</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>My name is egoing</code></pre><p>&#xC704;&#xC758; <code>Person()</code> &#xC774;&#xB77C;&#xB294; &#xD568;&#xC218; &#xC815;&#xC758; &#xBC11;&#xC5D0; <code>Person()</code> &#xC774;&#xB77C;&#xB294; &#xAC1D;&#xCCB4;(&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; javascript&#xC5D0;&#xC11C;&#xC758; &#xD568;&#xC218;&#xB294; &#xAC1D;&#xCCB4;&#xB85C; &#xCDE8;&#xAE09;&#xD55C;&#xB2E4;.)&#xC5D0; <code>name</code>&#xC774;&#xB77C;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xBA74;&#xC11C; &#xB3D9;&#xC2DC;&#xC5D0; <code>introduce()</code> &#xB77C;&#xACE0; &#xD558;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xC600;&#xB2E4;.</p>
+<pre><code class="language-javascript">Programmer.prototype=new Person();</code></pre>
+<p>&#xC774; &#xBD80;&#xBD84;&#xC5D0;&#xC11C; <code>Programmer</code>&#xC758; <code>prototpye</code>&#xC774;&#xB77C;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; <code>Person</code>&#xC774;&#xB77C;&#xACE0; &#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xD560;&#xB2F9;&#xD558;&#xC600;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xD560;&#xB2F9;&#xC744; &#xC0C1;&#xC18D;&#xC774;&#xB77C;&#xACE0; &#xD558;&#xBA70; <code>Programmer</code>&#xB77C;&#xACE0; &#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xC5D0; <code>Person</code>&#xC774;&#xB77C;&#xACE0; &#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xC0C1;&#xC18D;&#xC2DC;&#xD0A8; &#xAC83;&#xC774;&#xB2E4;. &#xC774;&#xC5D0; &#xB530;&#xB77C; <code>p1.introduce()</code>&#xB97C; &#xD558;&#xBA74; <code>p1</code> &#xC774;&#xB77C;&#xB294; &#xBCC0;&#xC218; &#xC548;&#xC5D0; <code>Programmer</code>&#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xACE0; <code>Programmer</code>&#xB77C;&#xB294; &#xAC1D;&#xCCB4; &#xC548;&#xC5D0; <code>Person</code> &#xC774;&#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xBA70; <code>Person</code> &#xC774;&#xB77C;&#xACE0; &#xD558;&#xB294; &#xAC1D;&#xCCB4; &#xC548;&#xC5D0; <code>introduce()</code> &#xB77C;&#xACE0; &#xD558;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xBBC0;&#xB85C; <code>p1.introduce()</code>&#xB294; <code>My name is egoing</code> &#xC774;&#xB77C;&#xB294; &#xACB0;&#xACFC; &#xAC12;&#xC774; &#xB098;&#xC628;&#xB2E4;.</p>
+<p>&#xC5EC;&#xAE30;&#xC11C; &#xB2F9;&#xC7A5; &#xC774;&#xD574;&#xD558;&#xAE30;&#xB294; &#xD798;&#xB4E4;&#xB2E4;. <code>prototype</code> &#xC774;&#xB77C;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB3C4; &#xBC30;&#xC6B0;&#xC9C0; &#xC54A;&#xC558;&#xAE30;&#xC5D0; &#xCD94;&#xD6C4;&#xC5D0; &#xC774;&#xB7EC;&#xD55C; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB4E4;&#xC744; &#xACF5;&#xBD80;&#xD55C; &#xD6C4; &#xC81C;&#xB300;&#xB85C; &#xC774;&#xD574;&#xD558;&#xC790;. &#xC774; &#xBD80;&#xBD84;&#xC5D0;&#xC11C; &#xC911;&#xC694;&#xD55C; &#xAC83;&#xC740; &#xBD80;&#xBAA8;&#xAC1D;&#xCCB4;&#xC778; <code>A</code> &#xAC1D;&#xCCB4;&#xC5D0; &#xC790;&#xC2DD;&#xAC1D;&#xCCB4;&#xC778; <code>B</code> &#xAC1D;&#xCCB4;&#xB97C; &#xC0C1;&#xC18D;&#xC2DC;&#xD0A4;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; <code>B.prototpye=new A</code> &#xAC19;&#xC740; &#xD615;&#xD0DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD568;&#xB9CC;&#xC744; &#xAE30;&#xC5B5;&#xD558;&#xC790;.</p>
+<h4 id="2-">2. &#xC0C1;&#xC18D;&#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xC758; &#xAE30;&#xB2A5;&#xCD94;&#xAC00;(&#xC790;&#xC2DD;&#xAC1D;&#xCCB4;&#xC758; &#xAE30;&#xB2A5;&#xCD94;&#xAC00;)</h4>
+<p>&#xBC14;&#xB85C; &#xC704;&#xC758; &#xC0C1;&#xC18D;&#xC758; &#xAE30;&#xBCF8; &#xC0AC;&#xC6A9;&#xC5D0;&#xC11C;&#xC758; &#xC608;&#xC81C;&#xB294; &#xC0C1;&#xC18D;&#xC744; &#xAD73;&#xC774; &#xC4F8; &#xC774;&#xC720;&#xAC00; &#xC5C6;&#xB2E4;. &#xC0C1;&#xC18D;&#xC740; &#xC790;&#xC2DD;&#xAC1D;&#xCCB4;&#xAC00; &#xBD80;&#xBAA8;&#xAC1D;&#xCCB4;&#xC758; &#xB85C;&#xC9C1;&#xC740; &#xADF8;&#xB300;&#xB85C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB418; &#xAE30;&#xB2A5;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xAC70;&#xB098; &#xC218;&#xC815;&#xD558;&#xC5EC; &#xC4F0;&#xB294; &#xAC83;&#xC774; &#xC0C1;&#xC18D;&#xC758; &#xC7A5;&#xC810;&#xC774;&#xB2E4;. &#xBC11;&#xC758; &#xC608;&#xC81C;&#xB97C; &#xD1B5;&#xD574; &#xC774;&#xB97C; &#xD655;&#xC778;&#xD574; &#xBCF4;&#xC790;</p>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">function Person(name) {
+    this.name=name;
+}
+
+Person.prototype.name=null;
+Person.prototype.introduce=function () {
+    return &apos;My name is &apos;+this.name;
+}
+
+function Programmer(name) {
+    this.name=name;
+}
+Programmer.prototype=new Person();
+Programmer.prototype.coding=function () {
+    return &quot;hello world&quot;
+}
+
+function Designer(name) {
+    this.name=name;
+}
+Designer.prototype=new Person();
+Designer.prototype.design=function () {
+    return &quot;beautiful!&quot;
+}
+
+var p1=new Programmer(&apos;egoing&apos;);
+console.log(p1.introduce());
+console.log(p1.coding());
+
+var p2=new Designer(&apos;leeche&apos;);
+console.log(p2.introduce());
+console.log(p2.design());</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>My name is egoing
+hello world
+My name is leezche
+beautiful!</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; <code>Person</code> &#xC774;&#xB77C;&#xB294; &#xBD80;&#xBAA8;&#xAC1D;&#xCCB4;&#xC5D0; <code>Programmer</code>, <code>Designer</code> &#xB77C;&#xB294; &#xC790;&#xC2DD;&#xAC1D;&#xCCB4;&#xB97C; &#xC0C1;&#xC18D;&#xC2DC;&#xD0A8;&#xB2E4;.
+<code>Person</code> &#xAC1D;&#xCCB4;&#xC758; &#xAE30;&#xBCF8; &#xAE30;&#xB2A5;&#xC740; <code>My name is + this.name</code> &#xC774;&#xB77C;&#xB294; &#xBB38;&#xC7A5;&#xC744; console &#xC5D0; &#xCD9C;&#xB825;&#xC2DC;&#xD0A4;&#xB294; &#xAE30;&#xB2A5;&#xC774;&#xB2E4;. &#xC790;&#xC2DD;&#xAC1D;&#xCCB4;&#xC778; <code>Programmer</code>&#xC640; <code>Designer</code> &#xC5ED;&#xC2DC; &#xC774;&#xB7EC;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC9C0;&#xB9CC; &#xC774; 2&#xAC1C;&#xC758; &#xC790;&#xC2DD;&#xAC1D;&#xCCB4;&#xB294; &#xADF8; &#xAE30;&#xB2A5;&#xC5D0; &#xB354;&#xD574; <code>hello world</code> &#xB97C; &#xCD9C;&#xB825;&#xD558;&#xB294; <code>coding</code>&#xC774;&#xB77C;&#xB294; &#xBA54;&#xC18C;&#xB4DC;, <code>beautiful</code> &#xC744; &#xCD9C;&#xB825;&#xD558;&#xB294; <code>design</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xCD94;&#xAC00;&#xB85C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;. &#xC774;&#xAC83;&#xC774; &#xC0C1;&#xC18D;&#xC5D0;&#xC11C; &#xC790;&#xC2DD;&#xAC1D;&#xCCB4;&#xAC00; &#xBD80;&#xBAA8;&#xAC1D;&#xCCB4;&#xC758; &#xB85C;&#xC9C1;&#xC774;&#xB098; &#xAE30;&#xB2A5;&#xC740; &#xC720;&#xC9C0;&#xD558;&#xB418; &#xC790;&#xC2E0;&#xC758; &#xAE30;&#xB2A5;&#xC744; &#xCD94;&#xAC00;&#xD55C; &#xBD80;&#xBD84;&#xC774;&#xB2E4;.</p>
+<p><img src="/imgFolder/javascriptBySHCD3_inheritance_diagram.png"></p>
+<p>&#xC5EC;&#xAE30;&#xC11C; &#xB9CC;&#xC57D; &#xBD80;&#xBAA8;&#xAC1D;&#xCCB4;&#xC758; &#xC815;&#xBCF4;&#xB97C; &#xBC14;&#xAFBC;&#xB2E4;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xB420;&#xAE4C;?</p>
+<pre><code class="language-javascript">Person.prototype.name=null;
+Person.prototype.introduce=function () {
+    return &apos;My name is &apos;+this.name;
+}</code></pre>
+<p>&#xC704;&#xC758; &#xC774; &#xC18C;&#xC2A4;&#xB97C; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB85C; &#xBC14;&#xAFB8;&#xBA74;</p>
+<pre><code class="language-javascript">Person.prototype.name=null;
+Person.prototype.introduce=function () {
+    return &apos;My nickname is &apos;+this.name;
+}</code></pre>
+<p>&#xBC11;&#xC758; &#xACB0;&#xACFC;&#xAC12;&#xC774; &#xB098;&#xC628;&#xB2E4;.</p>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>My nickname is egoing
+hello world
+My nickname is leezche
+beautiful!</code></pre><p>&#xC704;&#xC758; &#xACB0;&#xACFC;&#xC640; &#xAC19;&#xC774; &#xBD80;&#xBAA8;&#xAC1D;&#xCCB4;&#xB9CC; &#xBC14;&#xAFB8;&#xBA74; &#xC790;&#xC2DD;&#xAC1D;&#xCCB4; &#xC5ED;&#xC2DC; &#xCD9C;&#xB825;&#xC774; &#xB3D9;&#xC2DC;&#xC5D0; &#xBC14;&#xB010;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xC810;&#xC774; &#xC0C1;&#xC18D;&#xC758; &#xC7A5;&#xC810;&#xC73C;&#xB85C; &#xBCFC; &#xC218; &#xC788;&#xB2E4;.</p>
+<p>&#xC774;&#xC81C;&#xAE4C;&#xC9C0; &#xC0C1;&#xC18D;&#xC5D0; &#xB300;&#xD55C; &#xAC1C;&#xB150;&#xACFC; &#xADF8; &#xC7A5;&#xC810;&#xC5D0; &#xB300;&#xD574; &#xC54C;&#xC544;&#xBCF4;&#xC558;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC6B0;&#xB9AC;&#xB294; &#xC0C1;&#xC18D;&#xC5D0; &#xC4F0;&#xC774;&#xB294; <code>prototpye</code> &#xC774;&#xB77C;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xB300;&#xD574; &#xC798; &#xC54C;&#xC9C0; &#xBABB;&#xD55C;&#xB2E4;. &#xBC11;&#xC5D0;&#xC11C; &#xC774;&#xC81C; &#xADF8; <code>prototpye</code> &#xC774;&#xB77C;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xB300;&#xD574; &#xC54C;&#xC544;&#xBCF4;&#xC790;.</p>
+<h3 id="5-span-style-font-size-medium-prototype-span-">5. &#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785;<span style="font-size : medium"> prototype</span></h3>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">function Ultra() {}
+Ultra.prototype.ultraProp = true;
+
+function Super() {}
+Super.prototype = new Ultra();
+
+function Sub() {}
+Sub.prototype = new Super();
+
+var o = new Sub();
+console.log(o.ultraProp);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>true</code></pre><p><code>new</code> &#xB77C;&#xACE0; &#xD558;&#xB294; &#xC18D;&#xC131;&#xC5D0; &#xB300;&#xD574; &#xBCF5;&#xAE30;&#xD574; &#xBCF4;&#xC790;. <code>var &#xBCC0;&#xC218; = new &#xD568;&#xC218;();</code> &#xC774;&#xB7F0;&#xC2DD;&#xC73C;&#xB85C; <code>new</code> &#xB97C; &#xC4F0;&#xAC8C; &#xB418;&#xB294;&#xB370; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xD568;&#xC218;&#xB97C; &#xAC1D;&#xCCB4;&#xB85C; return &#xD558;&#xC5EC; &#xBCC0;&#xC218;&#xC5D0; &#xC800;&#xC7A5;&#xD55C;&#xB2E4;&#xACE0; &#xC774;&#xD574;&#xD588;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xADF8;&#xB7F0; &#xAE30;&#xB2A5;&#xB9CC;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xBA74; <code>var &#xBCC0;&#xC218; = &#xAC1D;&#xCCB4;;</code> &#xC774;&#xB7F0;&#xC2DD;&#xC73C;&#xB85C; &#xC120;&#xC5B8;&#xD558;&#xBA74; &#xB418;&#xB294;&#xB370; &#xAD73;&#xC774; <code>new</code> &#xB97C; &#xC4F0;&#xB294; &#xC774;&#xC720;&#xAC00; &#xBB58;&#xAE4C;? &#xC774;&#xB294; <code>new &#xD568;&#xC218;</code> &#xBD80;&#xBD84;&#xC758; &#xD568;&#xC218;&#xAC00; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB098; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC4F0;&#xACE0; &#xC2F6;&#xAE30;&#xC5D0; &#xC774;&#xB807;&#xAC8C; &#xC4F0;&#xB294; &#xAC83;&#xC774;&#xB2E4;.
+&#xC774;&#xC81C; &#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xC790;. &#xD504;&#xB85C;&#xD1A0;&#xD0C0;&#xC785;&#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; javascript &#xC5D0;&#xC11C; &#xAC1D;&#xCCB4;&#xB97C; &#xC0C1;&#xC18D;&#xD558;&#xACE0; &#xC2F6;&#xC744; &#xB54C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;. &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>o</code> &#xB77C;&#xB294; &#xBCC0;&#xC218;&#xC5D0; <code>Sub()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;&#xB85C;&#xC11C; &#xAC1D;&#xCCB4;&#xB85C; &#xC800;&#xC7A5;&#xD558;&#xC600;&#xB2E4;. &#xB610;&#xD55C; <code>Sub</code>&#xC758; <code>prototpye</code>&#xC5D0; <code>Super</code>&#xB97C; &#xC0DD;&#xC131;&#xC790;&#xD568;&#xC218;&#xB85C;&#xC11C; &#xAC1D;&#xCCB4;&#xB85C; &#xC800;&#xC7A5;&#xD558;&#xACE0; <code>Super</code>&#xC758; <code>prototpye</code>&#xC5D0; <code>Ultra</code>&#xB97C; &#xC0DD;&#xC131;&#xC790;&#xD568;&#xC218;&#xB85C;&#xC11C; &#xAC1D;&#xCCB4;&#xB85C; &#xC800;&#xC7A5;&#xD558;&#xC600;&#xB2E4;. &#xB610;&#xD55C; <code>Ultra</code> &#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xC758; <code>prototpye</code>&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB85C; <code>ultraProp</code>&#xC5D0; <code>true</code>&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xC600;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xACFC;&#xC815;&#xC744; &#xD1B5;&#xD574; <code>o.ultraProp</code> &#xC744; &#xD638;&#xCD9C;&#xD558;&#xBA74; <code>o</code>&#xB77C;&#xACE0; &#xAC1D;&#xCCB4;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xBCC0;&#xC218;&#xC5D0; <code>ultraProp</code> &#xC774;&#xB77C;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xC9C1;&#xC811;&#xC801;&#xC73C;&#xB85C; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xD638;&#xCD9C;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xB41C;&#xB2E4;. &#xC774;&#xB807;&#xAC8C; &#xC0C1;&#xC18D;&#xC744; &#xC5F0;&#xC18D;&#xC801;&#xC73C;&#xB85C; <code>prototpye</code> &#xC744; &#xD1B5;&#xD574; &#xBC1C;&#xC0DD;&#xC2DC;&#xCF1C; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD558;&#xB294; &#xAC83;&#xC744; <strong>prototpye chain</strong> &#xC774;&#xB77C;&#xACE0; &#xD55C;&#xB2E4;. &#xBC11;&#xC758; &#xADF8;&#xB9BC;&#xC744; &#xCC38;&#xACE0;&#xD558;&#xB77C;.</p>
+<p><img src="/imgFolder/javascriptBySHCD3_PrototypeChain.png"></p>
+<h3 id="6-span-style-font-size-medium-standard-built-in-object-span-">6. &#xD45C;&#xC900; &#xB0B4;&#xC7A5; &#xAC1D;&#xCCB4;<span style="font-size : medium"> Standard Built in Object</span></h3>
+<p>&#xD45C;&#xC900; &#xB0B4;&#xC7A5; &#xAC1D;&#xCCB4;&#xB780; javascript &#xAC00; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xB9D0;&#xD55C;&#xB2E4;. &#xC6B0;&#xB9AC;&#xAC00; &#xC815;&#xC758;&#xD558;&#xACE0; &#xB9CC;&#xB4E4;&#xC5B4;&#xB0B8; &#xAC1D;&#xCCB4;&#xB294; &#xC0AC;&#xC6A9;&#xC790; &#xC815;&#xC758; &#xAC1D;&#xCCB4;&#xB77C; &#xD558;&#xBA70; &#xD45C;&#xC900; &#xB0B4;&#xC7A5; &#xAC1D;&#xCCB4;&#xC640; &#xC0AC;&#xC6A9;&#xC790; &#xC815;&#xC758; &#xAC1D;&#xCCB4;&#xB97C; &#xC801;&#xC808;&#xD788; &#xC11E;&#xC5B4;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xB2E4;.</p>
+<h4 id="1-">1. &#xD45C;&#xC900;&#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4;&#xC758; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xC0AC;&#xC6A9;&#xBC95;</h4>
+<p>javascript &#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; &#xB0B4;&#xC7A5; &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;</p>
+<ul>
+<li>Object</li>
+<li>Function</li>
+<li>Array</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Number</li>
+<li>Math</li>
+<li>Date</li>
+<li>RegExp</li>
+</ul>
+<p>&#xC704;&#xC758; &#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xC0AC;&#xC6A9;&#xBC95;&#xC740; &#xCD94;&#xAC00;&#xACF5;&#xBD80;&#xC5D0;&#xC11C; &#xCC9C;&#xCC9C;&#xD788; &#xACF5;&#xBD80;&#xD55C;&#xB2E4;. &#xBC11;&#xC5D0;&#xC11C;&#xB294; &#xD45C;&#xC900;&#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4;&#xC758; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xC0AC;&#xC6A9;&#xBC95;&#xACFC; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC218;&#xC815;&#xD558;&#xACE0; &#xAE30;&#xB2A5;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xC0AC;&#xC6A9;&#xC790; &#xC815;&#xC758; &#xAC1D;&#xCCB4;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xC790;</p>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var arr = new Array(&apos;Seoul&apos;, &apos;NewYork&apos;, &apos;Ladarkh&apos;, &apos;Busan&apos;, &apos;Tsukuba&apos;)
+
+function getRandomValueFromArray(arr) {
+    var index = Math.floor(arr.length*Math.random());
+    return arr[index];
+}
+console.log(getRandomValueFromArray(arr));</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>Tsukuba
+//&#xAC12;&#xC740; &#xB79C;&#xB364;&#xC73C;&#xB85C; &#xB3C4;&#xCD9C;&#xB428;!</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; Math, Array &#xB4F1;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC600;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xD45C;&#xC900;&#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4; &#xC5ED;&#xC2DC; <strong>&#xAC1D;&#xCCB4;</strong> &#xC774;&#xBBC0;&#xB85C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC6B0;&#xB9AC;&#xAC00; &#xC0AC;&#xC6A9;&#xD558;&#xB358; &#xAC1D;&#xCCB4;&#xC758; &#xD615;&#xC2DD;&#xACFC; &#xBB38;&#xBC95;&#xC5D0; &#xB9DE;&#xAC8C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB41C;&#xB2E4;.</p>
+<h4 id="2-">2. &#xC0AC;&#xC6A9;&#xC790; &#xC815;&#xC758; &#xAC1D;&#xCCB4;&#xC758; &#xC120;&#xC5B8;&#xACFC; &#xC0AC;&#xC6A9;&#xBC95;</h4>
+<p>&#xC0AC;&#xC6A9;&#xC790;&#xC815;&#xC758;&#xAC1D;&#xCCB4;&#xB294; &#xD45C;&#xC900;&#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4;&#xB97C; &#xC218;&#xC815;&#xD558;&#xAC70;&#xB098; &#xAE30;&#xB2A5;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xB2E4;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xC790;.</p>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">Array.prototype.random = function () {
+    var index = Math.floor(this.length*Math.random());
+    return this[index];
+}
+var capitalCityArr = new Array(&apos;Seoul&apos;, &apos;NewYork&apos;, &apos;Ladarkh&apos;, &apos;Busan&apos;, &apos;Tsukuba&apos;)
+console.log(capitalCityArr.random());</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>NewYork
+//&#xAC12;&#xC740; &#xB79C;&#xB364;&#xC73C;&#xB85C; &#xB3C4;&#xCD9C;&#xB428;!</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xD574;&#xC11D;&#xD574; &#xBCF4;&#xC790;.
+<code>Array</code> &#xB77C;&#xACE0; &#xD558;&#xB294; &#xD45C;&#xC900;&#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4;&#xC758; <code>prototpye</code>&#xC5D0; <code>random()</code> &#xC774;&#xB77C;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xACE0; &#xC815;&#xC758; &#xD558;&#xC600;&#xB2E4;. &#xC774; &#xB54C; this&#xB294; &#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xC0AC;&#xC6A9;&#xB420; &#xAC1D;&#xCCB4; &#xC790;&#xCCB4;&#xB97C; &#xAC00;&#xB974;&#xD0A4;&#xAC8C; &#xB41C;&#xB2E4;. &#xADF8;&#xB807;&#xB2E4;&#xBA74; &#xBC11;&#xC758; <code>new Array</code> &#xB97C; &#xD1B5;&#xD574; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4; &#xAC1D;&#xCCB4;&#xC778; <code>capitalCityArr</code> &#xB97C; <code>random()</code> &#xBA54;&#xC18C;&#xB4DC; &#xC548;&#xC758; <code>this</code>&#xAC00; &#xAC00;&#xB974;&#xD0A4;&#xAC8C; &#xB418;&#xB294; &#xAC83;&#xC774;&#xB2E4;. &#xC774;&#xB807;&#xB4EF; <code>Array.random();</code> &#xC774;&#xB77C;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xC544;&#xB2C8;&#xACE0; &#xC6B0;&#xB9AC;&#xAC00; &#xC815;&#xC758;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xB418;&#xC5C8;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xAE30;&#xB2A5;&#xC744; <strong>&#xC0AC;&#xC6A9;&#xC790;&#xC815;&#xC758;&#xAC1D;&#xCCB4;</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD55C;&#xB2E4;&#xBA74; &#xC6B0;&#xB9AC;&#xB294; <code>random()</code> &#xC774;&#xB77C;&#xACE0; &#xD558;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xBC30;&#xC5F4;&#xACFC; &#xAD00;&#xB828;&#xB41C; &#xAC1D;&#xCCB4;&#xC778; <code>Array</code> &#xC758; &#xC0C1;&#xC18D;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xB418;&#xC5C8;&#xAE30;&#xC5D0; <code>random()</code> &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xBC30;&#xC5F4;&#xACFC; &#xAD00;&#xB828;&#xB418;&#xC5B4; &#xC788;&#xC74C;&#xC744; &#xAC04;&#xC811;&#xC801;&#xC73C;&#xB85C; &#xC54C; &#xC218; &#xC788;&#xB2E4;.</p>
+<h4 id="3-object">3. &#xD45C;&#xC900;&#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4;-Object</h4>
+<p>Object &#xAC1D;&#xCCB4;&#xB294; &#xD45C;&#xC900;&#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4; &#xC911; &#xD558;&#xB098;&#xB85C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xC0C1;&#xC18D;&#xBC1B;&#xC9C0; &#xC54A;&#xC740; &#xC0C1;&#xD0DC;&#xC758; &#xAC1D;&#xCCB4;&#xB97C; &#xB9D0;&#xD55C;&#xB2E4;. &#xB610;&#xD55C; javascript &#xC758; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; Object &#xAC1D;&#xCCB4;&#xB97C; &#xC0C1;&#xC18D;&#xBC1B;&#xB294;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xC774;&#xC720;&#xB85C; javascript&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC815;&#xC758;&#xD55C; &#xAC1D;&#xCCB4; &#xC5ED;&#xC2DC; Object &#xD45C;&#xC900;&#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4;&#xB97C; &#xC0C1;&#xC18D;&#xBC1B;&#xC73C;&#xBA70; &#xC774;&#xC5D0; &#xB530;&#xB77C; Object &#xD45C;&#xC900;&#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC640; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<h5 id="object-method-object-prototpye-method">Object.method, Object.prototpye.method</h5>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var o = {&apos;name&apos;:&apos;eoing&apos;, &apos;age&apos;:&apos;20&apos;, &apos;city&apos;:&apos;Seoul&apos;}
+console.log(&apos;Object.keys(o) : &apos;,Object.keys(o));
+
+var o = new Array(1, &quot;apple&quot;, &quot;???&quot;);
+console.log(&apos;o.toString() : &apos;,o.toString());</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>Object.keys(o) :  [ &apos;name&apos;, &apos;age&apos;, &apos;city&apos; ]
+o.toString() :  1,apple,???</code></pre><p>&#xC6B0;&#xB9AC;&#xAC00; &#xC5EC;&#xAE30;&#xC11C; &#xC54C;&#xC544;&#xC57C; &#xD560; &#xAC83;&#xC740; keys()&#xB098; toString()&#xC774;&#xB77C;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xC544;&#xB2C8;&#xB2E4;. &#xC6B0;&#xB9AC;&#xB294; Object.method&#xC640; Object.prototpye.method&#xC758; &#xCC28;&#xC774;&#xC810;&#xC744; &#xC54C;&#xACE0; &#xC2F6;&#xC740; &#xAC83;&#xC774;&#xB2E4;.</p>
+<p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; Object.keys(var)&#xB294; &#xC544;&#xB798;&#xC758; &#xC18C;&#xC2A4;&#xC640; &#xB3D9;&#xC77C;&#xD558;&#xB2E4;.</p>
+<pre><code class="language-javascript">Object.keys=function(){}</code></pre>
+<p>&#xB610;&#xD55C; object.prototpye.toString()&#xC740; &#xC544;&#xB798;&#xC758; &#xC18C;&#xC2A4;&#xC640; &#xB3D9;&#xC77C;&#xD558;&#xB2E4;.</p>
+<pre><code class="language-javascript">object.prototype.toString=function(){}</code></pre>
+<p><code>Object.method</code> &#xB294; <code>Object</code>&#xB77C;&#xB294; &#xD45C;&#xC900;&#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4; &#xC790;&#xCCB4;&#xC758; &#xBA54;&#xC18C;&#xB4DC; &#xC774;&#xBBC0;&#xB85C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>Object.keys(&#xBCC0;&#xC218;)</code> &#xAC19;&#xC740; &#xD615;&#xD0DC;&#xB85C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; <code>object.prototpye.method</code>&#xC640; &#xAC19;&#xC740; &#xD615;&#xD0DC;&#xB294; <code>object</code>&#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; &#xBAA8;&#xB450; &#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;. &#xC989; <code>object</code>&#xAC00; &#xC544;&#xB2CC; &#xB2E4;&#xB978; &#xBCC0;&#xC218; <code>o</code>, <code>listjeahun</code> &#xAC19;&#xC740; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC815;&#xC758;&#xD55C; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C;&#xB3C4; &#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.
+<code>Object</code> &#xB77C;&#xACE0; &#xD558;&#xB294; &#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4;&#xB294; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xC758; &#xBD80;&#xBAA8;&#xAC1D;&#xCCB4;&#xC774;&#xB2E4;. &#xADF8;&#xB807;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>Object.prototpye.method</code> &#xC758; <code>method</code> &#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC815;&#xC758;&#xD55C; &#xAC1D;&#xCCB4;&#xAC74; &#xD45C;&#xC900;&#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4;&#xAC74; <strong>javascript &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;</strong>. &#xC774;&#xB97C; &#xBC14;&#xAFD4; &#xB9D0;&#xD558;&#xBA74; <code>Object.prototpye.&#xBCC0;&#xC218;</code> &#xC5D0; &#xC6B0;&#xB9AC;&#xAC00; &#xC6D0;&#xD558;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC0BD;&#xC785;&#xD558;&#xBA74; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; javascript&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; &#xC811;&#xADFC;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</p>
+<h4 id="4-method-">4. &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; method &#xC815;&#xC758;</h4>
+<p>&#xC704;&#xC5D0;&#xC11C; Object.prototpye.method &#xB294; javascript&#xC758; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC74C;&#xC744; &#xC54C;&#xAC8C;&#xB418;&#xC5C8;&#xB2E4;. &#xC774;&#xC81C; &#xADF8; method &#xC758; &#xC815;&#xC758;&#xC640; &#xC0AC;&#xC6A9;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xC790;.</p>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">Object.prototype.contain=function (needle) {
+    for(var name in this){
+        if(this[name]===needle){
+            return true;
+        }
+        return false;
+    }
+}
+
+var obj = {&apos;name&apos; : &apos;jeahun&apos;, &apos;nickName&apos; : &apos;LiaLi&apos;, &apos;age&apos; : &apos;24&apos;}
+console.log(obj.contain(&apos;name&apos;));
+var arr = [&apos;jeahun&apos;, &apos;LiaLi&apos;, &apos;24&apos;]
+console.log(arr.contain(&apos;jeahun&apos;));</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>false
+true</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; javascript &#xC758; &#xBAA8;&#xB4E0; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xC5B4;&#xB5A0;&#xD55C; &#xAC1D;&#xCCB4; &#xC548;&#xC758; element &#xB4E4; &#xC911;&#xC5D0; &#xC778;&#xC790;&#xB85C; &#xBC1B;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC774; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xC9C0;&#xB97C; &#xD310;&#xBCC4;&#xD558;&#xB294; method&#xB97C; &#xB9CC;&#xB4E4;&#xC5C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xB7EC;&#xD55C; &#xBC29;&#xC2DD;&#xC740; &#xD070; &#xB2E8;&#xC810;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294;&#xB370; &#xC774;&#xB294; &#xBC11;&#xC5D0;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xACA0;&#xB2E4;.</p>
+<h4 id="5-object-">5. Object &#xD655;&#xC7A5;&#xC758; &#xC704;&#xD5D8;&#xC131;</h4>
+<p>&#xC774;&#xC81C; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; obj &#xB77C;&#xACE0; &#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xC640; arr &#xB77C;&#xACE0; &#xD558;&#xB294; &#xBC30;&#xC5F4;&#xC758; &#xC694;&#xC18C;&#xB97C; &#xCD9C;&#xB825;&#xD558;&#xAE30; &#xC704;&#xD574; for in &#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBCF4;&#xC790;.</p>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">Object.prototype.contain=function (needle) {
+    for(var name in this){
+        if(this[name]===needle){
+            return true;
+        }
+        return false;
+    }
+}
+
+var obj =
+{&apos;name&apos; : &apos;jeahun&apos;, &apos;nickName&apos; : &apos;LiaLi&apos;, &apos;age&apos; : &apos;24&apos;}
+obj.contain(&apos;name&apos;);
+var arr =
+[&apos;jeahun&apos;, &apos;LiaLi&apos;, &apos;24&apos;]
+arr.contain(&apos;jeahun&apos;);
+
+for(var name in obj){
+    console.log(name);
+}
+for(var name in arr){
+    console.log(name);
+}</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>name
+nickName
+age
+contain
+0
 1
 2
-3
-4</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; &#xC544;&#xBB34; &#xBB38;&#xC81C; &#xC5C6;&#xC774; &#xC798; &#xB3CC;&#xC544;&#xAC04;&#xB2E4;
-&#xD558;&#xC9C0;&#xB9CC; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB294; &#xBB38;&#xC81C;&#xAC00; &#xC0DD;&#xAE34;&#xB2E4;</p>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function a() {
-  i=0;
-}
-for(var i=0; i&lt;5; i++){
-  a();
-  console.log(i);
+contain</code></pre><p>&#xACB0;&#xACFC; &#xAC12;&#xC740; &#xC6B0;&#xB9AC;&#xAC00; &#xC6D0;&#xD558;&#xB294; &#xAC12;&#xC774; &#xC544;&#xB2C8;&#xB77C; contain &#xC744; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xBB38;&#xC81C;&#xB294; Object.prototpye.contain&#xC744; for in &#xBB38;&#xC5D0;&#xC11C; &#xCD9C;&#xB825;&#xD558;&#xACE0; &#xC788;&#xAE30;&#xC5D0; &#xC0DD;&#xC131;&#xB418;&#xC5C8;&#xB2E4;. &#xBB3C;&#xB860; &#xC774;&#xB7EC;&#xD55C; &#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC774; &#xC788;&#xAE30;&#xB294; &#xD558;&#xC9C0;&#xB9CC; &#xAD73;&#xC774; &#xC774;&#xB7EC;&#xD55C; &#xBC88;&#xAC70;&#xB85C;&#xC6C0;&#xC744; &#xAC10;&#xC218;&#xD560; &#xD544;&#xC694;&#xB294; &#xC5C6;&#xB2E4;. &#xD574;&#xACB0;&#xBC29;&#xBC95;&#xC740; &#xBC11;&#xC5D0;&#xC11C; &#xC81C;&#xC2DC;&#xD558;&#xACA0;&#xB2E4;.</p>
+<pre><code class="language-javascript">for(var name in obj){
+    console.log(name);
 }</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>0
-0
-0
-....
-//0&#xC774; &#xACC4;&#xC18D; &#xCD9C;&#xB825;&#xB428;</code></pre><p>for&#xBB38;&#xC758; <code>var i = 0;</code>&#xC740; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xCDE8;&#xAE09;&#xD558;&#xB294;&#xB370; &#xD568;&#xC218; &#xC548;&#xC5D0;&#xC11C; i &#xC5ED;&#xC2DC; &#xC120;&#xC5B8;&#xC774; &#xC544;&#xB2CC; &#xB300;&#xC785; &#xC5F0;&#xC0B0;&#xC774;&#xBBC0;&#xB85C; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xCDE8;&#xAE09;&#xD55C;&#xB2E4;.
-&#xC774;&#xB85C; &#xC778;&#xD574; <code>i</code> &#xB294; &#xC9C0;&#xC18D;&#xC801;&#xC73C;&#xB85C; <code>0</code>&#xC774; &#xCD9C;&#xB825;&#xB420; &#xAC83;&#xC774;&#xACE0; <code>i&lt;5</code> &#xB77C;&#xB294; &#xC870;&#xAC74;&#xC774; &#xC788;&#xC5B4;&#xC57C; break &#xAC00; &#xB418;&#xB294;&#xB370; &#xC870;&#xAC74;&#xC744; &#xB9CC;&#xC871; &#xBABB;&#xD558;&#xBBC0;&#xB85C; &#xBB34;&#xD55C; for &#xBB38;&#xC774; &#xB41C; &#xAC83;&#xC774;&#xB2E4;.</p>
-<h3 id="3-">3. &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xC758; &#xC0AC;&#xC6A9;&#xBC95;</h3>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var MYAPP={};
-MYAPP.calculator={
-    &apos;left&apos; : null,
-    &apos;right&apos; : null,
-}
-MYAPP.coordinate={
-    &apos;left&apos; : null,
-    &apos;right&apos; : null,
-}
-
-MYAPP.calculator.left=10;
-MYAPP.calculator.right=20;
-
-function sum() {
-    return MYAPP.calculator.left + MYAPP.calculator.right;
-}
-console.log(sum());</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>30</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; MYAPP &#xC774;&#xB77C;&#xB294; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB97C; 1&#xBC88; &#xC4F4; &#xAC83;&#xC774;&#xB2E4;.
-&#xC774;&#xC870;&#xCC28;&#xB3C4; &#xC2EB;&#xACE0; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB97C; &#xB2E8; &#xD55C;&#xBC88;&#xB3C4; &#xC4F0;&#xACE0; &#xC2F6;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xB77C;.
-<span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">(function(){
-var MYAPP={};
-MYAPP.calculator={
-    &apos;left&apos; : null,
-    &apos;right&apos; : null,
-}
-MYAPP.coordinate={
-    &apos;left&apos; : null,
-    &apos;right&apos; : null,
-}
-
-MYAPP.calculator.left=10;
-MYAPP.calculator.right=20;
-
-function sum() {
-    return MYAPP.calculator.left + MYAPP.calculator.right;
-}
-console.log(sum());
-}());</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>30</code></pre><p>&#xC774;&#xB807;&#xAC8C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; &#xC775;&#xBA85;&#xD568;&#xC218;&#xB85C; &#xC0AC;&#xC6A9; &#xB41C; &#xAC83;&#xC73C;&#xB85C; &#xC774; &#xC5ED;&#xC2DC; &#xD568;&#xC218;&#xC774;&#xBBC0;&#xB85C; &#xBAA8;&#xB4E0; &#xBCC0;&#xC218;&#xAC00; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xC0AC;&#xC6A9; &#xB41C; &#xAC83;&#xC774;&#xB2E4;</p>
-<h3 id="4-">4. &#xC720;&#xD6A8;&#xBC94;&#xC704;&#xC758; &#xB300;&#xC0C1;</h3>
-<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; &#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xC640;&#xB294; &#xB2E4;&#xB974;&#xAC8C; &#xD568;&#xC218;&#xC5D0;&#xC11C;&#xB9CC; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB97C; &#xC81C;&#xACF5;&#xD55C;&#xB2E4;.
-&#xB9CE;&#xC740; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;&#xB4E4;&#xC774; &#xBE14;&#xB85D;, &#xC989; <code>{}</code> &#xC548;&#xC5D0; &#xC788;&#xB2E4;&#xBA74; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xB2E4;&#xB978; &#xC810;&#xC774;&#xB2E4;</p>
-<p><span style="font-size:small"><strong>[SOURCE-JAVASCRIPT]</strong></span></p>
-<pre><code class="language-javascript">for(var i=0; i&lt;1; i++){
-  var name = &apos;coding everybody&apos;
-}
-console.log(name);</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>coding everybody</code></pre><p><span style="font-size:small"><strong>[SOURCE-JAVA]</strong></span></p>
-<pre><code class="language-java">for(int i=0; i&lt;1; i++){
-  String name = &apos;coding everybody&apos;
-}
-system.out.println(name);</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>undefined variable of name</code></pre><h3 id="5-javascript-">5. javascript &#xC5D0;&#xC11C;&#xC758; &#xC720;&#xD6A8;&#xBC94;&#xC704;</h3>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var i=5;
-
-function a() {
-    var i = 10;
-    b();
-}
-
-function b() {
-    console.log(i);
-}
-
-a();</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>5</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>b()</code> &#xB77C;&#xB294; &#xD568;&#xC218; &#xC548;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; <code>i</code> &#xC758; <strong>scope&#xB294; &#xC120;&#xC5B8; &#xB420; &#xB54C;&#xB97C; &#xAE30;&#xC900;&#xC73C;&#xB85C;&#xD55C;&#xB2E4;.</strong>
-&#xC989; <code>a()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xC5D0;&#xC11C; <code>b()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xACE0; &#xC0AC;&#xC6A9;&#xD558;&#xB354;&#xB77C;&#xB3C4; &#xC120;&#xC5B8;&#xB420; &#xB54C;&#xB294; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>b()</code> &#xD568;&#xC218; &#xC548;&#xC758; <code>i</code> &#xB294; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xCDE8;&#xAE09;&#xD55C;&#xB2E4;
-&#xC774;&#xB7EC;&#xD55C; &#xBCC0;&#xC218;&#xC758; scope&#xB97C; &#xC815;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC744; <strong>&#xC815;&#xC801; &#xC720;&#xD6A8;&#xBC94;&#xC704;</strong>, <strong>lexical scoping</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;</p>
-<h2 id="2-span-style-font-size-18px-function-span-">2. &#xD568;&#xC218;<span style="font-size : 18px">  function</span></h2>
-<hr>
-<h3 id="1-">1. &#xAC12;&#xC73C;&#xB85C;&#xC11C;&#xC758; &#xD568;&#xC218;</h3>
-<ol>
-<li>javascript &#xC758; &#xD568;&#xC218;&#xB294; &#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xC640;&#xB294; &#xADF8; &#xC131;&#xACA9;&#xC774; &#xC870;&#xAE08; &#xB2E4;&#xB974;&#xB2E4;.
-javascript &#xC5D0;&#xC11C;&#xC758; <strong>&#xD568;&#xC218;&#xB294;</strong> &#xAC1D;&#xCCB4;&#xC774;&#xBA70; <strong>&#xADF8; &#xC790;&#xCCB4;&#xAC00; &#xAC12;&#xC774; &#xB420; &#xC218; &#xC788;&#xB2E4;.</strong>
-&#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xBA74;&#xC11C; &#xC774;&#xD574;&#xD574; &#xBCF4;&#xC790;.</li>
-</ol>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var a = function(){}</code></pre>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">a = {
-  b: function(){}
+<pre><code class="language-javascript">for(var name in obj){
+    if(o.hasOwnProperty(name)){
+      console.log(name);
+    }
 }</code></pre>
-<p>&#xC704;&#xC758; 2&#xAC1C;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB4EF;&#xC774; javascript&#xB294; &#xBCC0;&#xC218;&#xB098; &#xAC1D;&#xCCB4;&#xC5D0; &#xD568;&#xC218;&#xB97C; &#xC800;&#xC7A5;&#xD560; &#xC218; &#xC788;&#xB2E4;.
-&#xB610;&#xD55C; &#xAC1D;&#xCCB4; &#xC548;&#xC5D0; &#xC800;&#xC7A5;&#xB418;&#xC5B4; &#xC788;&#xB294; &#xD568;&#xC218;&#xB294; method &#xB77C;&#xACE0; &#xD55C;&#xB2E4;.</p>
-<ol start="2">
-<li>javascript&#xC5D0;&#xC11C;&#xC758; &#xD568;&#xC218;&#xB294; &#xAC12;&#xC73C;&#xB85C; &#xBCFC; &#xC218; &#xC788;&#xAE30;&#xC5D0; <strong>&#xD568;&#xC218;&#xC758; &#xC778;&#xC790;&#xB85C; &#xD568;&#xC218;&#xB97C; &#xC804;&#xB2EC;</strong>&#xD560; &#xC218; &#xB3C4; &#xC788;&#xB2E4;.
-&#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xC790;</li>
-</ol>
+<p><code>hasOwnProperty(&#xC778;&#xC790;)</code> &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xC778;&#xC790;&#xB85C; &#xBC1B;&#xC740; &#xBCC0;&#xC218;&#xAC00; &#xC790;&#xC2E0; &#xC989; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C;&#xB294; <code>obj</code> &#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB85C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294;&#xC9C0;&#xB97C; &#xD655;&#xC778;&#xD558;&#xACE0; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xBA74; <code>True</code> &#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74; <code>False</code> &#xB97C; &#xCD9C;&#xB825;&#xD558;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xC774;&#xB2E4;. &#xB9CC;&#xC57D;&#xC5D0; &#xAC1D;&#xCCB4;&#xC758; &#xD655;&#xC7A5;&#xC744; &#xBC18;&#xB4DC;&#xC2DC; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD55C;&#xB2E4;&#xBA74; &#xC4F8; &#xC218;&#xB294; &#xC788;&#xC9C0;&#xB9CC; &#xB2E4;&#xC2DC; &#xD55C; &#xBC88; &#xB9D0;&#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xB7EC;&#xD55C; &#xBC88;&#xAC70;&#xB85C;&#xC6C0;&#xC744; &#xAC10;&#xC218;&#xD560; &#xD544;&#xC694;&#xB294; &#xC5C6;&#xB2E4;.</p>
+<h2 id="2-span-style-font-size-18px-primitive-type-span-">2. &#xC6D0;&#xC2DC; &#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;<span style="font-size : 18px"> primitive type</span></h2>
+<p>javascript&#xC5D0;&#xC11C;&#xC758; &#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;&#xC740; &#xD06C;&#xAC8C; 2&#xAC00;&#xC9C0;&#xB85C; &#xAD6C;&#xBD84;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xAC1D;&#xCCB4;&#xC640; &#xAC1D;&#xCCB4;&#xAC00; &#xC544;&#xB2CC;&#xAC83;&#xC73C;&#xB85C; &#xAD6C;&#xBD84;&#xC744; &#xD55C;&#xB2E4;. &#xAC1D;&#xCCB4;&#xAC00; &#xC544;&#xB2CC; &#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;&#xC740; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;.</p>
+<ul>
+<li>&#xC22B;&#xC790;</li>
+<li>&#xBB38;&#xC790;&#xC5F4;</li>
+<li>&#xBD88;&#xB9AC;&#xC5B8;(true/false)</li>
+<li>null</li>
+<li>undefined</li>
+</ul>
+<p>&#xAC1D;&#xCCB4;&#xAC00; &#xC544;&#xB2CC; &#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;&#xC744; &#xC6D0;&#xC2DC; &#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;(primitive type) &#xC774;&#xB77C;&#xACE0; &#xD55C;&#xB2E4;.</p>
 <p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function cal(func, num) {
-    return func(num)
-}
-function increase(num) {
-    return num+1
-}
-function decrease(num) {
-    return num-1
-}
-console.log(cal(increase, 1));
-console.log(cal(decrease, 1));</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>2
-0</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>cal(func, num)</code> &#xC774;&#xB77C;&#xB294; &#xD568;&#xC218;&#xB294; <code>func()</code>&#xC774;&#xB77C;&#xB294; &#xD568;&#xC218;&#xB97C; &#xBC1B;&#xB294;&#xB2E4;.
-&#xC989; <code>cal(increase, 1)</code>&#xC758; &#xB9AC;&#xD134;&#xAC12;&#xC740; <code>increase(1)</code> &#xACFC; &#xAC19;&#xC73C;&#xBBC0;&#xB85C; <code>2</code>&#xAC00; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;
-&#xC774;&#xC640; &#xAC19;&#xC774; &#xD568;&#xC218;&#xB97C; &#xBCC0;&#xC218;&#xCC98;&#xB7FC; &#xBC1B;&#xC544;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xB2E4;</p>
-<ol start="3">
-<li>javascript&#xC5D0;&#xC11C; <strong>&#xD568;&#xC218;&#xB294; &#xD568;&#xC218; &#xB9AC;&#xD134;&#xAC12;&#xC73C;&#xB85C;&#xB3C4; &#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;</strong>&#xD558;&#xB2E4;
-&#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xC790;.</li>
-</ol>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function cal(mode) {
-    var funcs = {
-        &apos;plus&apos; : function(left, right) {return left + right},
-        &apos;minus&apos; : function(left, right) {return left - right}
-    }
-    return funcs[mode];
-}
-console.log(cal(&apos;plus&apos;)(2,1));
-console.log(cal(&apos;minus&apos;)(2,1));</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>3
-1</code></pre><p><code>cal(&apos;plus&apos;)(2,1)</code> &#xC744; &#xC2E4;&#xD589;&#xD558;&#xBA74; return &#xBD80;&#xBD84;&#xC5D0;&#xC11C; <code>func[&apos;plus&apos;]</code> &#xC2E4;&#xD589;&#xD6C4; &#xB9AC;&#xD134;&#xB41C;&#xB2E4;.
-<code>func[&apos;plus&apos;]</code>&#xB294; func&#xB77C;&#xB294; &#xAC1D;&#xCCB4; &#xC548;&#xC758; plus &#xAC1D;&#xCCB4;&#xC758; &#xD638;&#xCD9C;&#xC774;&#xACE0; &#xC774; plus &#xAC1D;&#xCCB4; &#xC548;&#xC5D0; &#xD568;&#xC218;&#xAC00; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xAC8C; &#xB41C;&#xB2E4;.
-&#xADF8;&#xB807;&#xAC8C; &#xB418;&#xBA74; <code>cal(&apos;plus&apos;)(2,1)</code> &#xC5D0;&#xC11C; <code>func[&apos;plus&apos;](2,1)</code> &#xC5D0;&#xC11C; <code>function(2,1)</code>&#xB85C; &#xBC14;&#xB010; &#xAC83;&#xC774;&#xB2E4;.
-&#xB530;&#xB77C;&#xC11C; <code>cal(&apos;plus&apos;)(2,1)</code>&#xC758; &#xAC12;&#xC740; <code>3</code>&#xC774;&#xB2E4;. <code>cal(&apos;minus&apos;)(2,1)</code> &#xC5ED;&#xC2DC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xC774;&#xD574;&#xD558;&#xBA74; &#xB41C;&#xB2E4;.</p>
-<ol start="4">
-<li>javascript&#xC5D0;&#xC11C; <strong>&#xD568;&#xC218;&#xB294; &#xBC30;&#xC5F4;&#xC758; &#xAC12;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;</strong>&#xD558;&#xB2E4;</li>
-</ol>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var process = [
-    function (input) {return input + 10;},
-    function (input) {return input * input;},
-    function (input) {return input / 2;}
-]
-
-var input = 1;
-for(var i=0; i&lt;process.length; i++){
-    input = process[i](input)
-}
-
-console.log(input);</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>60.5</code></pre><p>&#xC6B0;&#xC120; <code>process[]</code> &#xB77C;&#xB294; &#xBC30;&#xC5F4;&#xC758; &#xAD6C;&#xC870;&#xBD80;&#xD130; &#xC2DC;&#xAC01;&#xD654;&#xD558;&#xBA74; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;
-|index|0|1|2|
-|----|----|----|----|
-|elements|function (input) {return input + 10;}|function (input) {return input * input;}|function (input) {return input / 2;}|</p>
-<p>for &#xBB38; &#xC548;&#xC5D0;&#xC11C; <code>i=0</code> &#xC77C; &#xB54C; <code>process[0](1)</code> &#xACFC; &#xAC19;&#xACE0; <code>process[0]</code>&#xC758; &#xD568;&#xC218;&#xB294;
-<code>function (input) {return input + 10;}</code> &#xC774;&#xBBC0;&#xB85C; &#xC5EC;&#xAE30;&#xC5D0; 1&#xC744; &#xB300;&#xC785;&#xD558;&#xBA74; 11&#xC774;&#xB2E4;.
-&#xC774; &#xACFC;&#xC815;&#xC744; &#xBC18;&#xBCF5;&#xD558;&#xBA74; <code>input</code>&#xC758; &#xAC12;&#xC740; <code>60.5</code> &#xC774;&#xB2E4;</p>
-<p>&#xC704;&#xC758; 1. ~ 4. &#xCC98;&#xB7FC; &#xD568;&#xC218;&#xB294; &#xBCC0;&#xC218;, &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;, &#xB9AC;&#xD134;&#xAC12;&#xC73C;&#xB85C;&#xB3C4; &#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;&#xD55C; &#xC131;&#xC9C8;&#xC744;
-<strong>first-class citizen(object)</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;!</p>
-<h3 id="2-">2. &#xD568;&#xC218;&#xC640; &#xCF5C;&#xBC31;</h3>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var numbers=[20, 10, 9,8,7,6,5,4,3,2,1];
-console.log(numbers.sort());</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>[ 1, 10, 2, 20, 3, 4, 5, 6, 7, 8, 9 ]</code></pre><p><code>numbers[]</code> &#xB77C;&#xB294; &#xBC30;&#xC5F4;&#xC744; &#xC815;&#xB82C;&#xC744; &#xD558;&#xAE30; &#xC704;&#xD574; <code>sort()</code> &#xB97C; &#xC37C;&#xB294;&#xB370; &#xC22B;&#xC790; &#xD06C;&#xAE30; &#xC21C;&#xC11C;&#xAC00; &#xC544;&#xB2CC; &#xBB38;&#xC790;&#xC5F4;&#xC758; &#xC21C; &#xC11C;&#xB300;&#xB85C; &#xCD9C;&#xB825;&#xC774; &#xB418;&#xC5C8;&#xB2E4;.
-&#xC6B0;&#xB9AC;&#xAC00; &#xC6D0;&#xD558;&#xB294; &#xC22B;&#xC790; &#xC21C;&#xC11C;&#xB85C; &#xCD9C;&#xB825;&#xC744; &#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xD655;&#xC778;&#xD558;&#xB77C;.</p>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var numbers=[20, 10, 9,8,7,6,5,4,3,2,1];
-var sortFunc = function(a, b) {
-    if(a&gt;b){
-        return 1;
-    }else if(a&lt;b){
-        return -1;
-    }else{
-        return 0;
-    }
-}
-console.log(numbers.sort(sortFunc));</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20 ]</code></pre><p><code>sort()</code>&#xB77C;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xC758; &#xAE30;&#xBCF8;&#xB3D9;&#xC791; &#xBC29;&#xC2DD;&#xC744; &#xBCC0;&#xC218;&#xC5D0; &#xB2F4;&#xAE34; &#xD568;&#xC218;&#xB97C; &#xD1B5;&#xD574; &#xCEE8;&#xD2B8;&#xB864; &#xD560; &#xC218; &#xC788;&#xB2E4;.
-&#xC774;&#xB7EC;&#xD55C; &#xBC29;&#xC2DD;&#xC744; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB77C;&#xACE0; &#xD558;&#xBA70; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>sortFunc</code>&#xAC00; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xC774;&#xB2E4;</p>
-<h3 id="3-span-style-font-size-18px-closure-span-">3. &#xD074;&#xB85C;&#xC800;<span style="font-size : 18px">  closure</span></h3>
-<h4 id="1-">1. &#xB0B4;&#xBD80;&#xD568;&#xC218;</h4>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function outter() {
-  function inner() {
-    var title=&apos;coding everybody&apos;
-    console.log(title);
-  }
-}</code></pre>
-<p>&#xC774; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>inner()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xB97C; <strong>&#xB0B4;&#xBD80;&#xD568;&#xC218;</strong>, <code>outter()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xB294; <strong>&#xC678;&#xBD80;&#xD568;&#xC218;</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;.
-&#xB0B4;&#xBD80;&#xD568;&#xC218;&#xB294; &#xD568;&#xC218;&#xB97C; &#xD568;&#xC218;&#xC548;&#xC5D0; &#xC791;&#xC131;&#xD558;&#xC5EC; &#xD574;&#xB2F9;&#xD568;&#xC218;&#xC5D0;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC744; &#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC815;&#xD55C;&#xB2E4;.
-&#xC774;&#xB294; &#xC18C;&#xC2A4; &#xAC00;&#xB3C5;&#xC131;&#xC744; &#xC62C;&#xB824;&#xC8FC;&#xBA70; &#xD568;&#xC218;&#xC758; &#xAD00;&#xB9AC;&#xB97C; &#xD3B8;&#xD558;&#xAC8C; &#xD574; &#xC900;&#xB2E4;</p>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function outter() {
-  var title=&apos;coding everybody&apos;
-  function inner() {
-    console.log(title);
-  }
-  inner();
-}
-outter();</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>coding everybody</code></pre><p><code>outter()</code> &#xD568;&#xC218; &#xC548;&#xC5D0; <code>title</code> &#xC774;&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xAC00; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xC120;&#xC5B8; &#xB418;&#xC5B4; &#xC788;&#xB2E4;.
-<code>inner()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xC5D0;&#xC11C; <code>title</code>&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC2DC; <code>inner()</code> &#xC548;&#xC5D0; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xAC00; &#xC5C6;&#xB2E4;&#xBA74; <code>inner()</code> &#xD568;&#xC218; &#xBC16;&#xC5D0;&#xC11C; <code>title</code>&#xC744; &#xCC3E;&#xC544;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</p>
-<h4 id="2-">2. &#xB0B4;&#xBD80;&#xD568;&#xC218;&#xC640; &#xC678;&#xBD80;&#xD568;&#xC218;</h4>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function outter() {
-    var title = &apos;coding everybody&apos;
-    return function () {
-        console.log(title);
-    }
-}
-
-inner=outter();
-inner();</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>coding everybody</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>inner</code> &#xB77C;&#xB294; &#xBCC0;&#xC218;&#xC5D0; <code>outter()</code>&#xB77C;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xC5EC; &#xB300;&#xC785;&#xD588;&#xB2E4;.
-&#xC774;&#xB807;&#xAC8C; &#xB418;&#xBA74; <code>inner = function(){console.log(title);}</code> &#xACFC; &#xAC19;&#xC544;&#xC9C4;&#xB2E4;.
-&#xC774; &#xB54C; <code>inner()</code>&#xB77C;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589;&#xC2DC;&#xD0A4;&#xBA74; &#xD568;&#xC218;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xBA70; <code>title</code>&#xC774;&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xB97C; &#xCC3E;&#xAC8C; &#xB41C;&#xB2E4;.
-&#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C; &#xC774;&#xB7EC;&#xD55C; &#xC18C;&#xC2A4;&#xB97C; &#xC2E4;&#xD589;&#xC2DC;&#xD0A8;&#xB2E4;&#xBA74; <code>title</code> &#xC774;&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xB97C; &#xCC3E;&#xC744; &#xC218; &#xC5C6;&#xB2E4;.
-<code>outter()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xB294; &#xC0AC;&#xC6A9; &#xB41C; &#xB4A4; &#xD3D0;&#xAE30;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;.
-&#xD558;&#xC9C0;&#xB9CC; javascript &#xC5D0;&#xC11C;&#xB294; <code>outter()</code> &#xD568;&#xC218;&#xAC00; &#xC0AC;&#xC6A9;&#xB41C; &#xB4A4;&#xC5D0;&#xB3C4; <strong><code>outter()</code>&#xC758; &#xC694;&#xC18C;&#xC5D0; &#xC811;&#xADFC;&#xC774; &#xAC00;&#xB2A5;</strong>&#xD558;&#xB2E4;.
-&#xC774;&#xB7EC;&#xD55C; &#xC131;&#xC9C8;&#xC774; closure&#xC758; &#xD2B9;&#xC131;&#xC774;&#xB2E4;.</p>
-<h4 id="3-private-variable">3. private variable</h4>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function factory_movie(title) {
-    return {
-        get_title:function () {
-            return title;
-        },
-        set_title:function (_title) {
-            title=_title
-        }
-    }
-}
-ghost = factory_movie(&apos;Ghost in the shell&apos;)
-matrix = factory_movie(&apos;Matrix&apos;)
-
-console.log(ghost.get_title());
-console.log(matrix.get_title());
-
-ghost.set_title(&apos;&#xACF5;&#xAC01;&#xAE30;&#xB3D9;&#xB300;&apos;);
-
-console.log(ghost.get_title());
-console.log(matrix.get_title());</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>Ghost in the shell
-Matrix
-&#xACF5;&#xAC01;&#xAE30;&#xB3D9;&#xB300;
-Matrix</code></pre><p><code>ghost</code>&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xC5D0;&#xC11C; <code>factory_movie()</code>&#xC758; &#xC2E4;&#xD589;&#xC758; <code>return</code> &#xC778; &#xAC1D;&#xCCB4;&#xC758; &#xAD6C;&#xC870;&#xB294; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;
-|index|get_title|set_title|
-|----|----|----|
-|elements|<code>function(){return title;}</code>|<code>function(){title=_title;}</code>|
-|title &#xC758; &#xAC12;|<code>&apos;Ghost in the shell&apos;</code>|<code>&apos;Ghost in the shell&apos;</code>|</p>
-<p><code>matrix</code>&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xC5D0;&#xC11C; <code>factory_movie</code>&#xC758; &#xC2E4;&#xD589;&#xC758; <code>return</code> &#xC778; &#xAC1D;&#xCCB4;&#xC758; &#xAD6C;&#xC870;&#xB294; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;
-|index|get_title|set_title|
-|----|----|----|
-|elements|<code>function(){return title;}</code>|<code>function(){title=_title;}</code>|
-|title &#xC758; &#xAC12;|<code>&apos;Matrix&apos;</code>|<code>&apos;Matrix&apos;</code>|</p>
-<p>&#xC5EC;&#xAE30;&#xC11C; <code>title</code> &#xC774;&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xB294; <code>factory_movie()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xC758; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xB2E4;.
-<code>title</code> &#xC774;&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xC5D0; &#xC811;&#xADFC;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; <code>factory_movie()</code> &#xC758; return &#xC758; &#xAC1D;&#xCCB4;&#xC778; <code>set_title</code>&#xC5D0;&#xC11C;&#xB9CC; &#xC218;&#xC815;&#xD558;&#xACE0; <code>title</code>&#xC744; &#xCD9C;&#xB825;&#xD560; &#xB54C;&#xB3C4; <code>get_title</code>&#xC5D0;&#xC11C;&#xB9CC; &#xC811;&#xADFC;&#xD558;&#xC5EC; &#xCD9C;&#xB825;&#xD560; &#xC218; &#xC788;&#xB514;.
-&#xC774;&#xB7EC;&#xD55C; title &#xAC19;&#xC740; &#xBCC0;&#xC218;&#xB97C; <strong><code>private variable</code></strong> &#xC774;&#xB77C;&#xACE0; &#xD55C;&#xB2E4;.
-&#xC774; &#xAC19;&#xC740; <code>private variable</code> &#xC740; &#xC678;&#xBD80;&#xC5D0;&#xC11C; &#xC811;&#xADFC;&#xC774; &#xBD88;&#xAC00;&#xD558;&#xAE30;&#xC5D0; &#xD611;&#xC5C5;&#xD558;&#xB294; &#xACFC;&#xC815;&#xC5D0;&#xC11C; &#xCF54;&#xB354;&#xC758; &#xC2E4;&#xC218;&#xB85C; &#xC798;&#xBABB;&#xB41C; &#xC811;&#xADFC;&#xC774;&#xB098; &#xC0AC;&#xC6A9;&#xC744; &#xB9C9;&#xC744; &#xC218; &#xC788;&#xB2E4;.</p>
-<h3 id="4-span-style-font-size-18px-arguments-span-">4. &#xD568;&#xC218;&#xAC00; &#xBC1B;&#xB294; &#xC778;&#xC790;&#xC758; &#xAC1C;&#xC218;<span style="font-size : 18px">  arguments &#xAC1D;&#xCCB4;</span></h3>
-<p>arguments&#xB294; javascript&#xAC00; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC1D;&#xCCB4; &#xC911; &#xD558;&#xB098;&#xB85C; &#xBC30;&#xC5F4;&#xACFC; &#xC720;&#xC0AC;&#xD558;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xBA70; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC791;&#xC131;&#xD55C; &#xC778;&#xC790;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB2E4;.
-&#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xBA70; &#xC774;&#xD574;&#xD574; &#xBCF4;&#xC790;</p>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function sum() {
-    var i=0; _sum = 0;
-    for(i=0; i&lt;arguments.length; i++){
-        console.log(i+&apos; : &apos;+arguments[i]);
-        _sum+=arguments[i];
-    }
-    return _sum;
-}
-console.log(&apos;result : &apos; + sum(1,2,3,4));</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>0 : 1
-1 : 2
-2 : 3
-3 : 4
-result : 10</code></pre><p>javascript&#xC5D0;&#xC11C;&#xB294; &#xD568;&#xC218;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC791;&#xC131;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC;&#xB3C4; &#xC778;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.
-&#xC608;&#xB97C; &#xB4E4;&#xBA74; <code>funcA(){}</code> &#xB97C; &#xC120;&#xC5B8;&#xD558;&#xACE0; <code>funcA(&apos;a&apos;, 1, 2, &apos;link&apos;)</code> &#xC774;&#xB7F0; &#xC2DD;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC;&#xB3C4; &#xC624;&#xB958;&#xAC00; &#xB728;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.
-&#xADF8;&#xB807;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD568;&#xC218;&#xC758; &#xC778;&#xC790;&#xB85C; &#xBA87;&#xAC1C;&#xC758; &#xC778;&#xC790;&#xAC00; &#xB4E4;&#xC5B4;&#xC62C; &#xC9C0; &#xBAA8;&#xB97C; &#xB54C; &#xC774;&#xB7EC;&#xD55C; &#xBC29;&#xC2DD;&#xC758; &#xC120;&#xC5B8;&#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.
-&#xADF8;&#xB7F0; &#xC0C1;&#xD669;&#xC5D0;&#xC11C; &#xD568;&#xC218;&#xC758; &#xC778;&#xC790;&#xAC00; &#xBA87;&#xAC1C;&#xAC00; &#xB4E4;&#xC5B4;&#xC624;&#xB294;&#xC9C0; &#xADF8;&#xB9AC;&#xACE0; &#xC5B4;&#xB5A0;&#xD55C; &#xC778;&#xC790;&#xAC00; &#xB4E4;&#xC5B4;&#xC624;&#xB294;&#xC9C0;&#xB97C; &#xCEE8;&#xD2B8;&#xB864; &#xD558;&#xAE30; &#xC704;&#xD574; arguments&#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.
-&#xC774;&#xC5D0; &#xB530;&#xB77C; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>sum(1, 2, 3, 4)</code> &#xB97C; &#xC2E4;&#xD589;&#xD55C; &#xD6C4;&#xC758; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>arguments[0]==1</code>(<code>arguments[1]==2</code>) &#xC774;&#xB2E4;.
-&#xBC1B;&#xC740; &#xC778;&#xC790;&#xAC00; &#xBA87;&#xAC1C;&#xC778;&#xC9C0; &#xBAA8;&#xB97C; &#xB54C; <code>arguments.length</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBC1B;&#xC740; &#xC778;&#xC790;&#xC758; &#xAC2F;&#xC218;&#xB97C; &#xC54C;&#xC544;&#xB0B4;&#xC5B4; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xCC98;&#xB7FC; &#xB3D9;&#xC791;&#xD558;&#xAC8C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xB2E4;.</p>
-<h3 id="5-functionname-length-agunemts">5. <code>functionName.length</code> &#xC640; <code>agunemts</code></h3>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function zero() {
-    console.log(
-        &apos;zero.length&apos;, zero.length,
-        &apos;arguments&apos;, arguments.length
-    );
-}
-function one(arg1) {
-    console.log(
-        &apos;one.length&apos;, one.length,
-        &apos;arguments&apos;, arguments.length
-    );
-}
-function two(arg1, arg2) {
-    console.log(
-        &apos;two.length&apos;, two.length,
-        &apos;arguments&apos;, arguments.length
-    );
-}
-
-zero(&apos;elmt1&apos;,&apos;elmt1&apos;,&apos;elmt1&apos;,&apos;elmt1&apos;)
-one(&apos;elmt1&apos;,&apos;elmt1&apos;,&apos;elmt1&apos;,&apos;elmt1&apos;)
-two(&apos;elmt1&apos;,&apos;elmt1&apos;,&apos;elmt1&apos;,&apos;elmt1&apos;)</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>zero.length 0 arguments 4
-one.length 1 arguments 4
-two.length 2 arguments 4</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xC778;&#xC790;&#xC758; &#xCC28;&#xC774;&#xB97C; &#xC54C;&#xC544;&#xC57C; &#xC774; &#xC18C;&#xC2A4;&#xC758; &#xB3D9;&#xC791;&#xAD6C;&#xC870;&#xAC00; &#xC774;&#xD574;&#xAC00; &#xB41C;&#xB2E4;. &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xD568;&#xC218;&#xC758; &#xC120;&#xC5B8;&#xB2F9;&#xC2DC; &#xC785;&#xB825;&#xBC1B;&#xB294; &#xBCC0;&#xC218;&#xB97C; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;. &#xC778;&#xC790;&#xB294; &#xD568;&#xC218;&#xC758; &#xC0AC;&#xC6A9;&#xC2DC; &#xC785;&#xB825;&#xBC1B;&#xB294; &#xBCC0;&#xC218; &#xB4F1;&#xB4F1;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;. &#xC774;&#xC5D0; &#xB530;&#xB77C; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>zero()</code> &#xD568;&#xC218;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; 0&#xAC1C;, <code>one()</code> &#xC740; 1&#xAC1C;, <code>two()</code>&#xB294; 2&#xAC1C;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;. &#xB610;&#xD55C; <code>arguments</code>&#xB294; 3&#xAC1C;&#xC758; &#xD568;&#xC218; &#xBAA8;&#xB450; 4&#xAC1C;&#xB85C; &#xD568;&#xC218;&#xC758; &#xC2E4;&#xD589;&#xC2DC; &#xBAA8;&#xB450; 4&#xAC1C;&#xC758; &#xBCC0;&#xC218;&#xB97C; &#xC785;&#xB825;&#xD588;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;.</p>
-<p><span style="font-size : 12px">&#xCC38;&#xACE0; : javascript &#xC5D0;&#xC11C;&#xB294; &#xBCC0;&#xC218;&#xC5D0; &#xAC1D;&#xCCB4;, &#xBCC0;&#xC218;, &#xD568;&#xC218; &#xB4F1;&#xC744; &#xBAA8;&#xB450; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC73C;&#xB098; &#xC704;&#xC5D0;&#xC11C;&#xB294; &#xC124;&#xBA85;&#xC758; &#xC6A9;&#xC758;&#xC131;&#xC744; &#xC704;&#xD574; &#xBCC0;&#xC218;&#xB77C;&#xACE0;&#xB9CC; &#xCE6D;&#xD568;</span></p>
-<h3 id="6-span-style-font-size-18px-apply-span-">6. &#xD568;&#xC218;&#xC758; &#xD638;&#xCD9C;<span style="font-size : 18px">  apply &#xBA54;&#xC18C;&#xB4DC;</span></h3>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function sum(arg1, arg2) {
-    return arg1+arg2;
-}
-
-ordinaryCall=sum(1,2)
-applyCall=sum.apply(null, [1,2])
-
-console.log(ordinaryCall+&apos;\n&apos;+applyCall);</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>3
-3</code></pre><p>&#xD568;&#xC218; &#xD638;&#xCD9C; &#xC2DC; <code>funcName()</code> &#xC73C;&#xB85C;&#xB3C4; &#xAC00;&#xB2A5;&#xD558;&#xACE0; <code>funcName.apply()</code> &#xB85C;&#xB3C4; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.
-&#xB530;&#xB77C;&#xC11C; &#xC704;&#xC758; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; <code>sum(1,2)</code> &#xC640; <code>sum.apply(null, [1,2])</code>&#xB294; &#xAC19;&#xC740; &#xAC12;&#xC744; &#xB3C4;&#xCD9C;&#xD55C;&#xB2E4;.</p>
-<p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C;&#xB3C4; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xB4EF;&#xC774; &#xAC19;&#xC740; &#xB3D9;&#xC791;&#xC778;&#xB370; &#xAD73;&#xC774; &#xBCF5;&#xC7A1;&#xD55C; apply&#xB97C; &#xC4F0;&#xB294; &#xC774;&#xC720;&#xB294; &#xBB58;&#xAE4C;?
-&#xBCF5;&#xC7A1;&#xD55C; &#xCF54;&#xB4DC;&#xC778; <code>apply</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC774;&#xC720;&#xB294; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xD655;&#xC778;&#xD55C;&#xB2E4;.</p>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">//source1
-function sum() {
-    var _sum=0;
-    for(name in this){
-        if(typeof this[name] !== &apos;function&apos;)
-            _sum += this[name]
-    }
-    return _sum;
-}
-o1={val1:1, val2:2, val3:3, sum:sum}
-o2={v1:10,v2:50,v3:100,v4:25, sum:sum}
-
-console.log(o1.sum());
-console.log(o2.sum());
---------------------------------------------------------------------------------
-//source2
-o1={val1:1, val2:2, val3:3}
-o2={v1:10,v2:50,v3:100,v4:25}
-function sum() {
-    var _sum=0;
-    for(name in this){
-        _sum += this[name]
-    }
-    return _sum;
-}
-
-console.log(sum.apply(o1));
-console.log(sum.apply(o2));</code></pre>
+<pre><code class="language-javascript">var str = &apos;coding&apos;
+console.log(str.length);
+console.log(str.charAt(0));</code></pre>
 <p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
 <pre><code>6
-185
---------------------------------------------------------------------------------
-6
-185</code></pre><p>&#xC704;&#xC758; &#xB450;&#xAC1C;&#xC758; &#xC18C;&#xC2A4;&#xC758; &#xACB0;&#xACFC;&#xAC12;&#xC740; &#xCF58;&#xC194;&#xCC3D;&#xC5D0;&#xC11C; &#xBCF4;&#xB2E4;&#xC2F6;&#xC774; &#xAC19;&#xB2E4;.
-&#xD558;&#xC9C0;&#xB9CC; source 1&#xC5D0;&#xC11C; &#xBCF4;&#xB2E4;&#xC2F6;&#xC774; <code>apply</code>&#xB97C; &#xC4F0;&#xC9C0; &#xC54A;&#xACE0; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD568;&#xC218;&#xC758; &#xC120;&#xC5B8;&#xC744; &#xC4F0;&#xACE0; &#xC6B0;&#xB9AC;&#xAC00; &#xC6D0;&#xD558;&#xB294; &#xB3D9;&#xC791;&#xC744; &#xD558;&#xAC8C; &#xD558;&#xB824;&#xBA74; &#xAC1D;&#xCCB4;&#xC548;&#xC5D0; &#xD615;&#xC2DD;&#xC758; &#xC77C;&#xAD00;&#xC131;&#xC744; &#xD5E4;&#xCE58;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD574; &#xC8FC;&#xC5B4;&#xC57C; &#xD558;&#xBA70; <code>for&#xBB38;</code> &#xC548;&#xC5D0; &#xD568;&#xC218;&#xC778;&#xC9C0; &#xC544;&#xB2CC;&#xC9C0;&#xB97C; &#xD310;&#xBCC4;&#xD558;&#xB294; &#xC870;&#xAC74;&#xBB38;&#xB3C4; &#xC791;&#xC131;(<strong>&#xC870;&#xAC74;&#xBB38;&#xC744; &#xC791;&#xC131;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xCF54;&#xB4DC;&#xC640; &#xACB0;&#xACFC; &#xAC12;&#xC740; &#xBC11;&#xC5D0; &#xC801;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xB2E4;</strong>)&#xD558;&#xC5EC;&#xC57C; &#xD55C;&#xB2E4;.
-&#xC774;&#xB7EC;&#xD55C; &#xBB38;&#xC81C;&#xC810;&#xC740; apply&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xBC14;&#xB85C; &#xD574;&#xACB0;&#xC774; &#xB41C;&#xB2E4;!!</p>
+c</code></pre><p>&#xC704;&#xC5D0;&#xC11C; &#xBB38;&#xC790;&#xC5F4;&#xC740; &#xAC1D;&#xCCB4;&#xAC00; &#xC544;&#xB2CC; &#xC6D0;&#xC2DC;&#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;&#xC774;&#xB77C;&#xACE0; &#xD588;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xBC14;&#xB85C; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xB9C8;&#xCE58; &#xAC1D;&#xCCB4;&#xCC98;&#xB7FC; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBA54;&#xC18C;&#xB4DC;&#xC640; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC600;&#xB2E4;. &#xC774;&#xB807;&#xAC8C; &#xB418;&#xBA74; str &#xC774;&#xB77C;&#xACE0; &#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC740; &#xAC1D;&#xCCB4;&#xB85C; &#xCDE8;&#xAE09;&#xB418;&#xB294; &#xAC83;&#xCC98;&#xB7FC; &#xBCF4;&#xC778;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xB294; &#xC77C;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xBBC0;&#xB85C; &#xBA54;&#xC18C;&#xB4DC;&#xB098; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xC0AC;&#xC6A9;&#xB420; &#xB54C; &#xC784;&#xC2DC;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xACE0; &#xADF8; &#xAC1D;&#xCCB4;&#xB294; &#xBC84;&#xB824;&#xC9C4;&#xB2E4;.</p>
+<pre><code class="language-javascript">var str = &apos;coding&apos;
+//str = new String(&apos;coding&apos;);
+console.log(str.length);
+console.log(str.charAt(0));</code></pre>
+<p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xC8FC;&#xC11D;&#xC5D0;&#xC11C; &#xCC98;&#xB7FC; &#xC784;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC8FC;&#xACE0; &#xD574;&#xB2F9; &#xBA54;&#xC18C;&#xB4DC;&#xB098; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC758; &#xC0AC;&#xC6A9;&#xC774; &#xC885;&#xB8CC;&#xB418;&#xBA74; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xADF8; &#xAC1D;&#xCCB4;&#xB294; &#xC0AC;&#xB77C;&#xC9C4;&#xB2E4;. &#xC774;&#xB294; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xBA74; &#xC790;&#xBA85;&#xD574;&#xC9C4;&#xB2E4;.</p>
 <p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function sum() {
-    var _sum=0;
-    for(name in this){
-        _sum += this[name]
-    }
-    return _sum;
-}
-o1={val1:1, val2:2, val3:3, sum:sum}
-o2={v1:10,v2:50,v3:100,v4:25, sum:sum}
-
-console.log(o1.sum());
-console.log(o2.sum());</code></pre>
+<pre><code class="language-javascript">var str = &apos;coding&apos;
+str.prop=&apos;everybody&apos;
+console.log(str.prop);</code></pre>
 <p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>6function sum() {
-    var _sum=0;
-    for(name in this){
-        _sum += this[name]
-    }
-    return _sum;
+<pre><code>undefined</code></pre><p><code>str</code> &#xC774;&#xB77C;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC774; &#xB9CC;&#xC57D; &#xC9C0;&#xC18D;&#xC801;&#xC73C;&#xB85C; &#xAC1D;&#xCCB4;&#xB85C; &#xCDE8;&#xAE09;&#xB41C;&#xB2E4;&#xBA74; <code>str.prop</code> &#xC740; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xC774; &#xB418;&#xC5B4;&#xC57C; &#xD558;&#xB098; &#xACB0;&#xACFC;&#xAC12;&#xC744; &#xBCF4;&#xBA74; <code>undefined</code> &#xAC00; &#xB728;&#xAC8C; &#xB41C;&#xB2E4;. &#xC774;&#xB294; &#xC704;&#xC758; &#xC774;&#xC720;&#xC640; &#xAC19;&#xB2E4;.
+&#xC774;&#xB807;&#xAC8C; &#xC6D0;&#xC2DC; &#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;&#xB4E4;&#xC744; &#xC77C;&#xC2DC;&#xC801;&#xC73C;&#xB85C; javascript &#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xC640; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC784;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xADF8; &#xC6D0;&#xC2DC; &#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;&#xC744; &#xAC1D;&#xCCB4;&#xD654; &#xC2DC;&#xCF1C; &#xC8FC;&#xB294; &#xAC83;&#xC744; <strong>Wrapper Object</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;. &#xC8FC;&#xC758; &#xD560; &#xAC83;&#xC740; javascript &#xB294; &#xC774;&#xB7EC;&#xD55C; Wrapper Object &#xB97C; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0;&#xB9CC; &#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xB4E4;&#xC758; &#xB3D9;&#xC791;&#xC740; &#xB2E4;&#xB97C; &#xC218; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xC870;&#xC2EC;&#xD558;&#xC790;. &#xBC11;&#xC740; &#xAC01; &#xC6D0;&#xC2DC;&#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C0;&#xB294; Wrapper Object &#xC774;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>&#xC6D0;&#xC2DC; &#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;</th>
+<th>Wrapper Object</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#xC22B;&#xC790;</td>
+<td>Number</td>
+</tr>
+<tr>
+<td>&#xBB38;&#xC790;&#xC5F4;</td>
+<td>String</td>
+</tr>
+<tr>
+<td>&#xBD88;&#xB9AC;&#xC548;(true/false)</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>null</td>
+<td>&#xC5C6;&#xC74C;</td>
+</tr>
+<tr>
+<td>undefined</td>
+<td>&#xC5C6;&#xC74C;</td>
+</tr>
+</tbody></table>
+<h2 id="3-">3. &#xBCF5;&#xC81C;</h2>
+<h3 id="1-">1. &#xBCF5;&#xC81C;</h3>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var a=1;
+var b=a;
+b=2;
+console.log(a);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>1</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xADF8;&#xB9BC;&#xC73C;&#xB85C; &#xB098;&#xD0C0;&#xB0B4;&#xBA74; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;</p>
+<img src="imgFolder/javascriptBySHCD3_copyDiagram.png">
+
+<p>&#xC704;&#xB294; &#xB2F9;&#xC5F0;&#xD55C; &#xAC83;&#xCC98;&#xB7FC; &#xBCF4;&#xC778;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xBA74; &#xC774;&#xB294; &#xAF64; &#xBCF5;&#xC7A1;&#xD55C; &#xBB38;&#xC81C;&#xC784;&#xC744; &#xC54C; &#xC218; &#xC788;&#xB2E4;.</p>
+<h3 id="2-">2. &#xCC38;&#xC870;</h3>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var a={&apos;id&apos;:1};
+var b=a;
+b.id=2;
+console.log(a.id);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>2</code></pre><p>&#xBCF5;&#xC81C; &#xBD80;&#xBD84;&#xC5D0;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xC558;&#xB358; &#xC18C;&#xC2A4;&#xC640; &#xB2EC;&#xB9AC; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; <code>b.id</code> &#xC758; &#xAC12; &#xB9CC;&#xC744; &#xAC74;&#xB4DC;&#xB838;&#xC74C;&#xC5D0;&#xB3C4; <code>a.id</code> &#xC758; &#xAC12;&#xC774; &#xBCC0;&#xD654;&#xD558;&#xC600;&#xB2E4;. &#xC774;&#xB294; &#xC6D0;&#xC2DC;&#xB370;&#xC774;&#xD130;&#xD0C0;&#xC785;&#xACFC;&#xB294; &#xB2EC;&#xB9AC; &#xAC1D;&#xCCB4;&#xB294; &#xB2E4;&#xB974;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;. &#xC544;&#xB798;&#xC758; &#xADF8;&#xB9BC;&#xC744; &#xCC38;&#xC870;&#xD558;&#xB77C;.</p>
+<img src="imgFolder/javascriptBySHCD3_copyDiagram2.png">
+
+<p>&#xC65C; &#xC774;&#xB7F0;&#xC77C;&#xC774; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xAC83;&#xC77C;&#xAE4C;? &#xC774;&#xB294; &#xC6D0;&#xC2DC;&#xB370;&#xC774;&#xD130;&#xD0C0;&#xC785;&#xACFC; &#xAC1D;&#xCCB4;&#xAC00; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xC815;&#xBCF4;&#xAC00; &#xB2E4;&#xB974;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;. &#xC6D0;&#xC2DC;&#xB370;&#xC774;&#xD130;&#xD0C0;&#xC785;&#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC2E4;&#xC81C; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xAC1D;&#xCCB4;&#xAC00; &#xBCC0;&#xC218;&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xC815;&#xBCF4;&#xB294; &#xC2E4;&#xC81C; &#xAC12;&#xC774; &#xC544;&#xB2CC; &#xCC38;&#xC870;&#xC758; &#xBC29;&#xBC95;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;.</p>
+<p>&#xC815;&#xB9AC;&#xD558;&#xC790;&#xBA74; javascript &#xC5D0;&#xC11C;&#xC758; <strong>&#xBCC0;&#xC218;&#xB294; &#xC6D0;&#xC2DC;&#xB370;&#xC774;&#xD130;&#xD0C0;&#xC785;&#xC744; &#xC800;&#xC7A5;&#xD560; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xADF8; &#xC6D0;&#xC2DC;&#xB370;&#xC774;&#xD130;&#xC758; &#xAC12; &#xC790;&#xCCB4;&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xC9C0;&#xB9CC;, &#xBCC0;&#xC218;&#xC5D0; &#xAC1D;&#xCCB4;&#xB97C; &#xC800;&#xC7A5;&#xD55C;&#xB2E4;&#xBA74; &#xBCC0;&#xC218;&#xB294; &#xAC1D;&#xCCB4;&#xC758; &#xC8FC;&#xC18C;&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xACE0; &#xC788;&#xB294; &#xAC83;&#xC774;&#xB2E4;.</strong></p>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var a={&apos;id&apos;:1};
+var b=a;
+b.id=2;
+console.log(a.id);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>1</code></pre><h3 id="3-">3. &#xD568;&#xC218;&#xC5D0;&#xC11C;&#xC758; &#xCC38;&#xC870;&#xC640; &#xBCF5;&#xC81C;</h3>
+<p>&#xC704;&#xC5D0;&#xC11C; &#xC0B4;&#xD3B4;&#xBCF8; &#xB0B4;&#xC6A9;&#xC740; &#xD568;&#xC218;&#xC5D0;&#xC11C;&#xC758; &#xB3D9;&#xC791;&#xC5D0;&#xC11C;&#xB3C4; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xC791;&#xB3D9;&#xD55C;&#xB2E4;. &#xC774; &#xD568;&#xC218;&#xC5D0;&#xC11C;&#xC758; &#xCC38;&#xC870;&#xC640; &#xBCF5;&#xC81C;&#xC5D0; &#xB300;&#xD574; &#xC54C;&#xC544;&#xBCF4;&#xC790;</p>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var a = 1;
+function func(b) {
+    b=2;
 }
-185function sum() {
-    var _sum=0;
-    for(name in this){
-        _sum += this[name]
-    }
-    return _sum;
-}</code></pre></article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
+func(a);
+console.log(a);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>1</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; <code>a</code>&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xACE0; &#xD568;&#xC218; <code>b</code> &#xC758; &#xC778;&#xC790;&#xB85C; <code>a</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; <code>a</code> &#xAC12;&#xC744; &#xBC14;&#xAFB8;&#xC5C8;&#xB2E4;. &#xC774; &#xB54C; &#xACB0;&#xACFC;&#xAC12;&#xC740; &#xC790;&#xBA85;&#xD558;&#xAC8C; <code>1</code>&#xC774; &#xB098;&#xC628;&#xB2E4;.</p>
+<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
+<pre><code class="language-javascript">var a = {&apos;id&apos;:1};
+function func(b) {
+    b = {&apos;id&apos;:2};
+}
+func(a);
+console.log(a);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>{ id: 1 }</code></pre><p>&#xC704; &#xC18C;&#xC2A4;&#xB294; &#xC704;&#xC758; &#xC704; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; &#xB3D9;&#xC791;&#xD55C;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD558;&#xC5EC; &#xACB0;&#xACFC;&#xAC12;&#xC744; &#xC608;&#xCE21;&#xD558;&#xBA74; <code>{id: 2}</code> &#xAC00; &#xB098;&#xC640;&#xC57C; &#xD558;&#xB098; &#xACB0;&#xACFC;&#xAC12;&#xC740; <code>a</code>&#xAC00; &#xC120;&#xC5B8;&#xB420; &#xB54C; &#xD560;&#xB2F9;&#xB418;&#xC5C8;&#xB358; <code>{id: 1}</code> &#xC774; &#xB098;&#xC628;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xACB0;&#xACFC;&#xB294; &#xC704;&#xC5D0;&#xC11C; &#xC0B4;&#xD3B4;&#xBCF4;&#xC558;&#xB358; &#xBCC0;&#xC218;&#xC5D0; &#xAC1D;&#xCCB4;&#xAC00; &#xD560;&#xB2F9;&#xB420; &#xB54C;&#xC758; &#xBB38;&#xC81C;&#xC640; &#xAC19;&#xB2E4;.
+<code>func(a)</code>&#xAC00; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;&#xBA74; &#xC544;&#xB798;&#xC758; &#xC18C;&#xC2A4;&#xC640; &#xAC19;&#xC740; &#xACFC;&#xC815;&#xC744; &#xAC70;&#xCE58;&#xAC8C; &#xB41C;&#xB2E4;.</p>
+<pre><code class="language-javascript">b = a;
+b = {&apos;id&apos;:2};</code></pre>
+<p>&#xC774; &#xBD80;&#xBD84;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xB3C4;&#xC2DD;&#xD654; &#xD558;&#xBA74; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;.</p>
+<img src="imgFolder/javascriptBySHCD3_copyDiagram3.png">
+
+<p><code>b = a</code> &#xAC00; &#xC2E4;&#xD589;&#xB418;&#xBA74; <code>a</code> &#xB294; <code>{ &apos;id&apos; : 1 }</code> &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xB9AC;&#xD0A4;&#xACE0; &#xC788;&#xACE0; <code>b</code> &#xC5D0; <code>a</code> &#xB97C; &#xB300;&#xC785;&#xD588;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>a</code> &#xAC00; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xCC38;&#xC870;&#xC778; <code>{ &apos;id&apos; : 1 }</code> &#xAC1D;&#xCCB4;&#xB97C; &#xB611;&#xAC19;&#xC774; &#xAC00;&#xB9AC;&#xD0A4;&#xAC8C; &#xB41C;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; <code>b = { &apos;id&apos; : 2 }</code> &#xAC00; &#xC2E4;&#xD589;&#xB418;&#xBA74; <code>a</code> &#xB294; &#xC5EC;&#xC804;&#xD788; <code>{ &apos;id&apos; : 1 }</code> &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xB9AC;&#xD0A4;&#xC9C0;&#xB9CC; <code>b</code> &#xB294; <code>{ &apos;id&apos; : 2 }</code> &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xB9AC;&#xD0A4;&#xAC8C; &#xB41C;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xCD5C;&#xC885; <code>a</code> &#xC758; &#xAC12;&#xC740; <code>{ &apos;id&apos; : 1 }</code> &#xC778; &#xAC83;&#xC774;&#xB2E4;. &#xADF8;&#xB807;&#xB2E4;&#xBA74; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; a &#xC758; &#xAC12;&#xC744; &#xBC14;&#xAFB8;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD574;&#xC57C; &#xD560;&#xAE4C;? &#xC544;&#xB798;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xB77C;.</p>
+<pre><code class="language-javascript">var a={&apos;id&apos;:1};
+function func(b) {
+    b.id=2;
+}
+
+func(a);
+console.log(a.id);</code></pre>
+<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
+<pre><code>2</code></pre><p>&#xC774; &#xC18C;&#xC2A4;&#xB97C; &#xB3C4;&#xC2DD;&#xD654; &#xD558;&#xBA74; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;.</p>
+<img src="imgFolder/javascriptBySHCD3_copyDiagram4.png">
+
+<p><code>b = a</code> &#xAC00; &#xC2E4;&#xD589;&#xB418;&#xBA74; <code>a</code> &#xC640; <code>b</code> &#xBAA8;&#xB450; <code>{ &apos;id&apos; : 1 }</code> &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xB9AC;&#xD0A8;&#xB2E4;. <code>b.id = 2</code> &#xAC00; &#xC2E4;&#xD589;&#xB420; &#xB54C; <code>a</code> &#xC640; <code>b</code> &#xBAA8;&#xB450; <code>{ &apos;id&apos; : 1 }</code> &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xB9AC;&#xD0A4;&#xACE0; &#xC788;&#xC73C;&#xBBC0;&#xB85C; <code>{ &apos;id&apos; : 1 }</code> &#xC5D0;&#xC11C; <code>{ &apos;id&apos; : 2 }</code> &#xB85C; &#xC218;&#xC815;&#xC774; &#xB41C;&#xB2E4;.</p>
+</article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
   <svg t="1533629773982" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1035" xlink="http://www.w3.org/1999/xlink" width="40" height="40"><defs><style type="text/css">@font-face { font-family: uc-nexus-iconfont; src: url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff") format("woff"), url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf") format("truetype"); }
   </style></defs><path d="M536.255427 195.182354c-7.804756-7.804756-17.966187-11.615549-28.311813-11.615549-9.43693 0-18.874883 3.449565-26.496467 10.163477-2.360767 1.452071-4.356214 3.267417-6.352685 5.262864L218.47792 455.611735c-15.607466 15.60542-15.607466 40.834011 0 56.43943 15.607466 15.607466 41.558511 15.607466 57.167001 0l193.46013-192.733583 0 600.526219c0 22.1423 17.787108 39.927361 39.927361 39.927361 22.140253 0 39.927361-17.785062 39.927361-39.927361L548.959773 319.317583 737.15704 508.422522c15.607466 15.607466 40.469714 15.607466 56.078203 0 15.607466-15.607466 15.425318-40.834011-0.182149-56.441477L536.255427 195.182354 536.255427 195.182354z" p-id="1036" fill="#333"/><path d="M101.784174 143.097092l816.674071 0c22.140253 0 39.925315-17.785062 39.925315-39.927361 0-22.140253-17.784038-39.925315-39.925315-39.925315L101.784174 63.244416c-22.140253 0-39.927361 17.785062-39.927361 39.925315C61.856813 125.31203 79.643921 143.097092 101.784174 143.097092L101.784174 143.097092z" p-id="1037" fill="#333"/></svg>
 </div>

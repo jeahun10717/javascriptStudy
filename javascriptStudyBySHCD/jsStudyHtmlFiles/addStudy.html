@@ -21,494 +21,317 @@
   }
 </style>
 </head>
-<body><div id="readme" class="container"><article class="markdown-body entry-content"><h1 id="-center-javascript-studied-by-br-javascript-part-2-center-"><center>JAVASCRIPT &quot;studied by &#xC0DD;&#xD65C;&#xCF54;&#xB529;&quot;<br>javascript part 2</center></h1>
-<h2 id="1-span-style-font-size-18px-scope-span-">1. &#xC720;&#xD6A8;&#xBC94;&#xC704; <span style="font-size : 18px">scope</span></h2>
+<body><div id="readme" class="container"><article class="markdown-body entry-content"><h1 id="-span-style-font-size-60px-span-"><span style="font-size : 60px">*&#xCD94;&#xAC00;&#xACF5;&#xBD80;</span></h1>
+<h2 id="1-templete-string-">1. &#xD0EC;&#xD50C;&#xB9BF; &#xC2A4;&#xD2B8;&#xB9C1;(templete string)</h2>
 <hr>
-<h3 id="1-">1. &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xC640; &#xC804;&#xC5ED;&#xBCC0;&#xC218;</h3>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var vscope = &apos;global&apos;
-function fscope() {
-    var vscope = &apos;hello?&apos;
-    console.log(vscope)
-}
-fscope();</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>hello?</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xCCAB;&#xBC88;&#xC9F8; &#xC904;&#xC758; <code>vscope</code>&#xB294; &#xC804;&#xC5ED;&#xBCC0;&#xC218;(global variable)
-&#xD568;&#xC218; &#xC548;&#xC758; <code>vscope</code>&#xB294; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;(local variable)&#xC774;&#xB2E4;.
-&#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB294; &#xC911;&#xAD04;&#xD638;&#xC640; &#xAC19;&#xC774; &#xCF54;&#xB4DC;&#xC758; &#xBE14;&#xB7ED; &#xC548;&#xC5D0;&#xC11C;&#xB9CC; &#xC791;&#xB3D9;&#xD55C;&#xB2E4;</p>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var vscope = &apos;global&apos;
-function fscope() {
-    var vscope = &apos;hello?&apos;
-}
-fscope();
-
-console.log(vscope);</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>global</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; vscope&#xB97C; &#xCD9C;&#xB825;&#xD558;&#xBA74; &#xD568;&#xC218;&#xAC00; &#xC2E4;&#xD589; &#xB418;&#xC5C8;&#xAE30;&#xC5D0;
-<code>hello?</code> &#xAC00; &#xCD9C;&#xB825;&#xB420; &#xAC83; &#xAC19;&#xC9C0;&#xB9CC; <code>global</code>&#xC774; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;.
-&#xC774;&#xB294; javascript&#xC758; &#xC5D0;&#xC11C; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xC640; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC2DC; &#xC774;&#xB984;&#xC774; &#xAC19;&#xC544;&#xB3C4; &#xB530;&#xB85C;
-&#xC0DD;&#xC131;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC778;&#xB370; &#xBC11;&#xC758; &#xADF8;&#xB9BC;&#xC744; &#xBCF4;&#xBA74;&#xC11C; &#xC774;&#xD574;&#xD558;&#xBA74; &#xB41C;&#xB2E4;</p>
-<img src="/imgFolder/javascriptBySHCD2_global_Local_variableIMG1.png" style="width: 60%; height: auto;">
-
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var vscope = &apos;global&apos;
-function fscope() {
-    var vscope = &apos;hello?&apos;
-    vscope = &apos;hello?&apos;
-}
-fscope();
-
-console.log(vscope);</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>global</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xC5EC;&#xC804;&#xD788; &#xACB0;&#xACFC;&#xAC12;&#xC774; <code>global</code>&#xB85C; &#xB098;&#xC624;&#xBA70; &#xC774;&#xB294; &#xC804;&#xC5ED;&#xBCC0;&#xC218; &#xC774;&#xB2E4;.
-&#xC774;&#xB294; &#xD568;&#xC218; &#xC548;&#xC5D0;&#xC11C; vscope&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xC600;&#xACE0; &#xC774; &#xBCC0;&#xC218;&#xB294; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xCDE8;&#xAE09;&#xC744; &#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;.
-vscope&#xC758; &#xC804;&#xC5ED; &#xAC12;&#xC744; &#xBC14;&#xAFB8;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xBA74; &#xB41C;&#xB2E4;</p>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var vscope = &apos;global&apos;
-function fscope() {
-    vscope = &apos;hello?&apos;
-}
-fscope();
-
-console.log(vscope);</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>hello?</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; &#xBC11;&#xC758; &#xADF8;&#xB9BC;&#xACFC; &#xAC19;&#xC774; &#xD568;&#xC218; &#xC548;&#xC758; vscope&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xC9C0; &#xC54A;&#xACE0; vscope&#xC5D0;
-&#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC0BD;&#xC785;&#xD588;&#xB2E4;. &#xC774;&#xB294; vscope&#xB77C;&#xB294; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xC5D0; &#xC9C1;&#xC811; &#xB300;&#xC785;&#xC744; &#xD55C; &#xAC83;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;
-&#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB294; &#xC120;&#xC5B8;&#xC870;&#xCC28; &#xB418;&#xC9C0; &#xC54A;&#xC740; &#xAC83;&#xC774;&#xB2E4;. &#xBC11;&#xC758; &#xADF8;&#xB9BC;&#xC744; &#xCC38;&#xACE0;&#xD558;&#xB77C;.</p>
-<img src="/imgFolder/javascriptBySHCD2_global_Local_variableIMG2.png" style="width: 60%; height: auto;">
-
-<p><strong>&#xC815;&#xB9AC;&#xD558;&#xC790;&#xBA74; &#xAC70;&#xC758; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xC0C1;&#xD669;&#xC5D0;&#xC11C;&#xB294; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB97C; &#xC4F0;&#xB294; &#xAC83;&#xC774; &#xD0C0;&#xB2F9;&#xD558;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xD504;&#xB85C;&#xADF8;&#xB7A8; &#xB0B4;&#xC5D0;&#xC11C; &#xC804;&#xC5ED;&#xC73C;&#xB85C; &#xC368;&#xC57C;&#xD558;&#xB294; &#xC0C1;&#xD669;&#xC774; &#xBD84;&#xBA85;&#xD788; &#xC874;&#xC7AC;&#xD558;&#xBBC0;&#xB85C; 1.3 &#xC5D0;&#xC11C; &#xB354; &#xC790;&#xC138;&#xD788; &#xC124;&#xBA85;&#xD558;&#xACA0;&#xB2E4;</strong></p>
-<h3 id="2-">2. &#xC720;&#xD6A8;&#xBC94;&#xC704;&#xC758; &#xD544;&#xC694;&#xC131;</h3>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function a() {
-  var i=0;
-}
-for(var i=0; i&lt;5; i++){
-  a();
-  console.log(i);
-}</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>0
-1
-2
-3
-4</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; &#xC544;&#xBB34; &#xBB38;&#xC81C; &#xC5C6;&#xC774; &#xC798; &#xB3CC;&#xC544;&#xAC04;&#xB2E4;
-&#xD558;&#xC9C0;&#xB9CC; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB294; &#xBB38;&#xC81C;&#xAC00; &#xC0DD;&#xAE34;&#xB2E4;</p>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function a() {
-  i=0;
-}
-for(var i=0; i&lt;5; i++){
-  a();
-  console.log(i);
-}</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>0
-0
-0
-....
-//0&#xC774; &#xACC4;&#xC18D; &#xCD9C;&#xB825;&#xB428;</code></pre><p>for&#xBB38;&#xC758; <code>var i = 0;</code>&#xC740; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xCDE8;&#xAE09;&#xD558;&#xB294;&#xB370; &#xD568;&#xC218; &#xC548;&#xC5D0;&#xC11C; i &#xC5ED;&#xC2DC; &#xC120;&#xC5B8;&#xC774; &#xC544;&#xB2CC; &#xB300;&#xC785; &#xC5F0;&#xC0B0;&#xC774;&#xBBC0;&#xB85C; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xCDE8;&#xAE09;&#xD55C;&#xB2E4;.
-&#xC774;&#xB85C; &#xC778;&#xD574; <code>i</code> &#xB294; &#xC9C0;&#xC18D;&#xC801;&#xC73C;&#xB85C; <code>0</code>&#xC774; &#xCD9C;&#xB825;&#xB420; &#xAC83;&#xC774;&#xACE0; <code>i&lt;5</code> &#xB77C;&#xB294; &#xC870;&#xAC74;&#xC774; &#xC788;&#xC5B4;&#xC57C; break &#xAC00; &#xB418;&#xB294;&#xB370; &#xC870;&#xAC74;&#xC744; &#xB9CC;&#xC871; &#xBABB;&#xD558;&#xBBC0;&#xB85C; &#xBB34;&#xD55C; for &#xBB38;&#xC774; &#xB41C; &#xAC83;&#xC774;&#xB2E4;.</p>
-<h3 id="3-">3. &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xC758; &#xC0AC;&#xC6A9;&#xBC95;</h3>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var MYAPP={};
-MYAPP.calculator={
-    &apos;left&apos; : null,
-    &apos;right&apos; : null,
-}
-MYAPP.coordinate={
-    &apos;left&apos; : null,
-    &apos;right&apos; : null,
-}
-
-MYAPP.calculator.left=10;
-MYAPP.calculator.right=20;
-
-function sum() {
-    return MYAPP.calculator.left + MYAPP.calculator.right;
-}
-console.log(sum());</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>30</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; MYAPP &#xC774;&#xB77C;&#xB294; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB97C; 1&#xBC88; &#xC4F4; &#xAC83;&#xC774;&#xB2E4;.
-&#xC774;&#xC870;&#xCC28;&#xB3C4; &#xC2EB;&#xACE0; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB97C; &#xB2E8; &#xD55C;&#xBC88;&#xB3C4; &#xC4F0;&#xACE0; &#xC2F6;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xB77C;.
-<span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">(function(){
-var MYAPP={};
-MYAPP.calculator={
-    &apos;left&apos; : null,
-    &apos;right&apos; : null,
-}
-MYAPP.coordinate={
-    &apos;left&apos; : null,
-    &apos;right&apos; : null,
-}
-
-MYAPP.calculator.left=10;
-MYAPP.calculator.right=20;
-
-function sum() {
-    return MYAPP.calculator.left + MYAPP.calculator.right;
-}
-console.log(sum());
-}());</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>30</code></pre><p>&#xC774;&#xB807;&#xAC8C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; &#xC775;&#xBA85;&#xD568;&#xC218;&#xB85C; &#xC0AC;&#xC6A9; &#xB41C; &#xAC83;&#xC73C;&#xB85C; &#xC774; &#xC5ED;&#xC2DC; &#xD568;&#xC218;&#xC774;&#xBBC0;&#xB85C; &#xBAA8;&#xB4E0; &#xBCC0;&#xC218;&#xAC00; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xC0AC;&#xC6A9; &#xB41C; &#xAC83;&#xC774;&#xB2E4;</p>
-<h3 id="4-">4. &#xC720;&#xD6A8;&#xBC94;&#xC704;&#xC758; &#xB300;&#xC0C1;</h3>
-<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; &#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xC640;&#xB294; &#xB2E4;&#xB974;&#xAC8C; &#xD568;&#xC218;&#xC5D0;&#xC11C;&#xB9CC; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB97C; &#xC81C;&#xACF5;&#xD55C;&#xB2E4;.
-&#xB9CE;&#xC740; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;&#xB4E4;&#xC774; &#xBE14;&#xB85D;, &#xC989; <code>{}</code> &#xC548;&#xC5D0; &#xC788;&#xB2E4;&#xBA74; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xB2E4;&#xB978; &#xC810;&#xC774;&#xB2E4;</p>
-<p><span style="font-size:small"><strong>[SOURCE-JAVASCRIPT]</strong></span></p>
-<pre><code class="language-javascript">for(var i=0; i&lt;1; i++){
-  var name = &apos;coding everybody&apos;
-}
-console.log(name);</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>coding everybody</code></pre><p><span style="font-size:small"><strong>[SOURCE-JAVA]</strong></span></p>
-<pre><code class="language-java">for(int i=0; i&lt;1; i++){
-  String name = &apos;coding everybody&apos;
-}
-system.out.println(name);</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>undefined variable of name</code></pre><h3 id="5-javascript-">5. javascript &#xC5D0;&#xC11C;&#xC758; &#xC720;&#xD6A8;&#xBC94;&#xC704;</h3>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var i=5;
-
-function a() {
-    var i = 10;
-    b();
-}
-
-function b() {
-    console.log(i);
-}
-
-a();</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>5</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>b()</code> &#xB77C;&#xB294; &#xD568;&#xC218; &#xC548;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; <code>i</code> &#xC758; <strong>scope&#xB294; &#xC120;&#xC5B8; &#xB420; &#xB54C;&#xB97C; &#xAE30;&#xC900;&#xC73C;&#xB85C;&#xD55C;&#xB2E4;.</strong>
-&#xC989; <code>a()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xC5D0;&#xC11C; <code>b()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xACE0; &#xC0AC;&#xC6A9;&#xD558;&#xB354;&#xB77C;&#xB3C4; &#xC120;&#xC5B8;&#xB420; &#xB54C;&#xB294; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>b()</code> &#xD568;&#xC218; &#xC548;&#xC758; <code>i</code> &#xB294; &#xC804;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xCDE8;&#xAE09;&#xD55C;&#xB2E4;
-&#xC774;&#xB7EC;&#xD55C; &#xBCC0;&#xC218;&#xC758; scope&#xB97C; &#xC815;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC744; <strong>&#xC815;&#xC801; &#xC720;&#xD6A8;&#xBC94;&#xC704;</strong>, <strong>lexical scoping</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;</p>
-<h2 id="2-span-style-font-size-18px-function-span-">2. &#xD568;&#xC218;<span style="font-size : 18px">  function</span></h2>
-<hr>
-<h3 id="1-">1. &#xAC12;&#xC73C;&#xB85C;&#xC11C;&#xC758; &#xD568;&#xC218;</h3>
 <ol>
-<li>javascript &#xC758; &#xD568;&#xC218;&#xB294; &#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xC640;&#xB294; &#xADF8; &#xC131;&#xACA9;&#xC774; &#xC870;&#xAE08; &#xB2E4;&#xB974;&#xB2E4;.
-javascript &#xC5D0;&#xC11C;&#xC758; <strong>&#xD568;&#xC218;&#xB294;</strong> &#xAC1D;&#xCCB4;&#xC774;&#xBA70; <strong>&#xADF8; &#xC790;&#xCCB4;&#xAC00; &#xAC12;&#xC774; &#xB420; &#xC218; &#xC788;&#xB2E4;.</strong>
-&#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xBA74;&#xC11C; &#xC774;&#xD574;&#xD574; &#xBCF4;&#xC790;.</li>
+<li>&apos;&apos;&#xAE30;&#xD638; &#xC0AC;&#xC6A9;&#xC2DC;</li>
 </ol>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var a = function(){}</code></pre>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">a = {
-  b: function(){}
-}</code></pre>
-<p>&#xC704;&#xC758; 2&#xAC1C;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB4EF;&#xC774; javascript&#xB294; &#xBCC0;&#xC218;&#xB098; &#xAC1D;&#xCCB4;&#xC5D0; &#xD568;&#xC218;&#xB97C; &#xC800;&#xC7A5;&#xD560; &#xC218; &#xC788;&#xB2E4;.
-&#xB610;&#xD55C; &#xAC1D;&#xCCB4; &#xC548;&#xC5D0; &#xC800;&#xC7A5;&#xB418;&#xC5B4; &#xC788;&#xB294; &#xD568;&#xC218;&#xB294; method &#xB77C;&#xACE0; &#xD55C;&#xB2E4;.</p>
-<ol start="2">
-<li>javascript&#xC5D0;&#xC11C;&#xC758; &#xD568;&#xC218;&#xB294; &#xAC12;&#xC73C;&#xB85C; &#xBCFC; &#xC218; &#xC788;&#xAE30;&#xC5D0; <strong>&#xD568;&#xC218;&#xC758; &#xC778;&#xC790;&#xB85C; &#xD568;&#xC218;&#xB97C; &#xC804;&#xB2EC;</strong>&#xD560; &#xC218; &#xB3C4; &#xC788;&#xB2E4;.
-&#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xC790;</li>
+<p>let test1 = &apos;&#xC0AC;&#xACFC;&apos;</p>
+<pre><code class="language-javascript">let test2 = &apos;&#xBC14;&#xB098;&#xB098;&apos;
+
+console.log(test1+&apos; &apos;+test2)</code></pre>
+<pre><code>PS D:\2. &#xACF5;&#xBD80;&amp;&amp;&#xACFC;&#xC81C;\nodejs_study&gt; node test123.js
+&#xC0AC;&#xACFC; &#xBC14;&#xB098;&#xB098;</code></pre><ol start="2">
+<li>``(&#xD0EC;&#xD50C;&#xB9BF; &#xC2A4;&#xD2B8;&#xB9C1;) &#xC0AC;&#xC6A9;&#xC2DC;</li>
 </ol>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function cal(func, num) {
-    return func(num)
-}
-function increase(num) {
-    return num+1
-}
-function decrease(num) {
-    return num-1
-}
-console.log(cal(increase, 1));
-console.log(cal(decrease, 1));</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>2
-0</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>cal(func, num)</code> &#xC774;&#xB77C;&#xB294; &#xD568;&#xC218;&#xB294; <code>func()</code>&#xC774;&#xB77C;&#xB294; &#xD568;&#xC218;&#xB97C; &#xBC1B;&#xB294;&#xB2E4;.
-&#xC989; <code>cal(increase, 1)</code>&#xC758; &#xB9AC;&#xD134;&#xAC12;&#xC740; <code>increase(1)</code> &#xACFC; &#xAC19;&#xC73C;&#xBBC0;&#xB85C; <code>2</code>&#xAC00; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;
-&#xC774;&#xC640; &#xAC19;&#xC774; &#xD568;&#xC218;&#xB97C; &#xBCC0;&#xC218;&#xCC98;&#xB7FC; &#xBC1B;&#xC544;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xB2E4;</p>
-<ol start="3">
-<li>javascript&#xC5D0;&#xC11C; <strong>&#xD568;&#xC218;&#xB294; &#xD568;&#xC218; &#xB9AC;&#xD134;&#xAC12;&#xC73C;&#xB85C;&#xB3C4; &#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;</strong>&#xD558;&#xB2E4;
-&#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xC790;.</li>
+<pre><code class="language-javascript">let test1 = &apos;&#xC0AC;&#xACFC;&apos;
+let test2 = &apos;&#xBC14;&#xB098;&#xB098;&apos;
+
+console.log(`${test1} ${test2}`)</code></pre>
+<pre><code>PS D:\2. &#xACF5;&#xBD80;&amp;&amp;&#xACFC;&#xC81C;\nodejs_study&gt; node test123.js
+&#xC0AC;&#xACFC; &#xBC14;&#xB098;&#xB098;</code></pre><p>&#xC704;&#xC758; 2&#xAC1C;&#xC758; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB4EF; &#xAE30;&#xC874;&#xC758; &apos;&apos; &#xAE30;&#xD638;&#xB098; &quot;&quot; &#xAE30;&#xD638;&#xB294; &#xACF5;&#xBC31;&#xC744; +&#xAE30;&#xD638;&#xB85C; &#xB530;&#xB85C; &#xD45C;&#xD604;&#xD574;&#xC57C; &#xD558;&#xB098;
+` `&#xAE30;&#xD638;&#xB294; ` `&#xAC00; &#xAC10;&#xC2F8;&#xACE0; &#xC788;&#xB294; &#xACF5;&#xBC31;&#xC740; &#xBC14;&#xB85C; &#xCD9C;&#xB825; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;</p>
+<h2 id="2-">2. &#xC815;&#xADDC;&#xD45C;&#xD604;&#xC2DD;</h2>
+<hr>
+<h3 id="1-1-string">1.1 <code>string</code></h3>
+<p><span style="color: rgb(34, 139, 180); font-size: 13px;">   string &#xBB38;&#xC790;&#xC5F4; &#xADF8;&#xB300;&#xB85C; &#xD0D0;</span></p>
+<p><strong>source : who is who</strong></p>
+<p>Regular Expression : <code>who</code></p>
+<p>First Match : <code>who</code> is who</p>
+<p>All Match : <code>who</code> is <code>who</code></p>
+<h3 id="1-2-string">1.2 <code>^string</code></h3>
+<p><span style="color: rgb(34, 139, 180); font-size: 13px;">   &#xBB38;&#xC790;&#xC5F4; &#xC911;&#xC5D0; &#xCC98;&#xC74C;&#xC73C;&#xB85C; &#xB098;&#xC628; string</span></p>
+<p><strong>source : who is who</strong></p>
+<p>Regular Expression : <code>^who</code></p>
+<p>First Match : <code>who</code> is who</p>
+<p>All Match : <code>who</code> is who</p>
+<h3 id="1-3-string-">1.3 <code>string$</code></h3>
+<p><span style="color: rgb(34, 139, 180); font-size: 13px;">   &#xBB38;&#xC790;&#xC5F4; &#xC911;&#xC5D0; &#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xB098;&#xC628; string</span></p>
+<p><strong>source : who is who</strong></p>
+<p>Regular Expression : <code>who$</code></p>
+<p>First Match : who is <code>who</code></p>
+<p>All Match : who is <code>who</code></p>
+<h4 id="example-1-1-1-3">example : 1.1~1.3</h4>
+<p>&#x2003;<strong>source : $12$\-\$25$</strong>
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>^$</code>(&#xAE30;&#xB2A5;&#xBB38;&#xC790;+&#xAE30;&#xB2A5;&#xBB38;&#xC790; &#xC774;&#xBBC0;&#xB85C; &#xC791;&#xB3D9; &#xC548;&#xB428;)
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : $12$\-\$25$
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : $12$\-\$25$</p>
+<p><span style="color : rgb(34, 139, 180)">case2 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>\$</code>(&#xAE30;&#xB2A5;&#xBB38;&#xC790;+&#xAE30;&#xB2A5;&#xBB38;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; \(&#xBC31;&#xD2F1;)&#xC0AC;&#xC6A9;)
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>$</code>12$\-\$25$
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>$</code>12<code>$</code>\-\<code>$</code>25<code>$</code></p>
+<p><span style="color : rgb(34, 139, 180)">case3 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>^\$</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>$</code>12$\-\$25$
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>$</code>12$\-\$25$</p>
+<p><span style="color : rgb(34, 139, 180)">case4 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>\$$</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : $12$\-\$25<code>$</code>
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : $12$\-\$25<code>$</code></p>
+<h3 id="2-1-">2.1 <code>.</code></h3>
+<p><span style="color: rgb(34, 139, 180); font-size: 13px;">&#xBAA8;&#xB4E0; &#xC885;&#xB958;&#xC758; &#xBB38;&#xC790;&#xC5F4; &#xD0D0;&#xC0C9;</span></p>
+<p><strong>source : I love apple!!!!!</strong>
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>.</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>I</code> love apple!!!!!
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>I love apple!!!!!</code>
+<span style="color : rgb(34, 139, 180)">case2 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>...</code><span style="color : rgb(34, 139, 180); font-size : small">  (3&#xAC1C; &#xB2E8;&#xC704;&#xB85C; &#xB04A;&#xC5B4;&#xC11C; &#xD0D0;&#xC0C9;)</span>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>I l</code>ove apple!!!!!
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>I love apple!!!</code>!!</p>
+<h3 id="2-1-string-">2.1 <code>[string]</code></h3>
+<p><span style="color: rgb(34, 139, 180); font-size: 13px;">&#xB300;&#xAD04;&#xD638; &#xC548;&#xC758; &#xBB38;&#xC790;&#xC911;  &#xD558;&#xB098;&#xB77C;&#xB3C4; &#xC874;&#xC7AC;&#xD558;&#xBA74; &#xD0D0;&#xC0C9;-&gt;[stirng]&#xC740; 1&#xAC1C;&#xC758; &#xBB38;&#xC790; &#xD0D0;&#xC0C9;</span></p>
+<p><strong>source : How do you do?</strong>
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>[oyu]</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : H<code>o</code>w do you do?
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : H<code>o</code>w d<code>o you</code> d<code>o</code>?
+<span style="color : rgb(34, 139, 180)">case2 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>[dH].</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>Ho</code>w do you do?
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>Ho</code>w <code>do</code> you <code>do</code>?
+<span style="color : rgb(34, 139, 180)">case3 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>[owy][yow]</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : H<code>ow</code> do you do?
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : H<code>ow</code> do <code>yo</code>u do?</p>
+<h3 id="2-2-char1-char2-">2.2 <code>[char1-char2]</code></h3>
+<p><span style="color: rgb(34, 139, 180); font-size: 13px;">char1~char2 &#xC0AC;&#xC774;&#xC758; &#xBB38;&#xC790;&#xC5F4;&#xC911; 1&#xAC1C; &#xD0D0;&#xC0C9;</span></p>
+<p><strong>source : ABCDEFGHabcdefgh1234567</strong>
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>[C-G]</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : AB<code>C</code>DEFGHabcdefgh1234567
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : AB<code>CDEFG</code>Habcdefgh1234567
+<span style="color : rgb(34, 139, 180)">case2 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>[C-Ha-d4-6].</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : AB<code>C</code>DEFGHabcdefgh1234567
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : AB<code>CDEFGHabcd</code>efgh123<code>456</code>7</p>
+<h3 id="2-3-string-">2.3 <code>[^string]</code></h3>
+<p><span style="color: rgb(34, 139, 180); font-size: 13px;">string&#xC548;&#xC758; &#xBAA8;&#xB4E0; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC81C;&#xC678;&#xD55C; &#xBB38;&#xC790;&#xC5F4; &#xD0D0;&#xC0C9;</span></p>
+<p><strong>source : ABCDEFGHabcdefgh1234567</strong>
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>[^CDEFefgh1237]</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>A</code>BCDEFGHabcdefgh1234567
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>AB</code>CDEF<code>GHabcd</code>efgh123<code>456</code>7
+<span style="color : rgb(34, 139, 180)">case2 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>[^C-1]</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>A</code>BCDEFGHabcdefgh1234567
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>AB</code>CDEFGHabcdefgh1<code>234567</code></p>
+<h3 id="2-4-stirng-1-string-2-stirng-n-">2.4 <code>[stirng 1|string 2|......|stirng N]</code></h3>
+<p><br><span style="color: rgb(34, 139, 180); font-size: 13px;">string 1, string 2,...,stirng N &#xC548;&#xC758; &#xBB38;&#xC790;&#xC5F4;&#xB4E4; &#xC911; &#xD558;&#xB098;&#xB77C;&#xB3C4; &#xC77C;&#xCE58;&#xD558;&#xBA74; &#xD0D0;&#xC0C9;</span></p>
+<p><strong>source : Monday Tuesday Friday</strong>
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>[on|ues|rida]</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : M<code>on</code>day Tuesday Friday
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : M<code>on</code>day T<code>ues</code>day F<code>rida</code>y
+<span style="color : rgb(34, 139, 180)">case2 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>[Mon|Tues|Fri]day</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>Monday</code> Tuesday Friday
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>Monday</code> <code>Tuesday</code> <code>Friday</code>
+<span style="color : rgb(34, 139, 180)">case3 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>..[id|esd|nd]ay</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>Monday</code> Tuesday Friday
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>Monday</code> <code>Tuesday</code> <code>Friday</code></p>
+<h3 id="3-1-">3.1 <code>*</code>, <code>+</code>, <code>?</code></h3>
+<p><span style="color: rgb(34, 139, 180); font-size: 13px;"></span></p>
+<p><strong>source : aabc abc bc</strong>
+<span style="color : rgb(34, 139, 180);">case1 : <code>*</code> : <span style="color: rgb(34, 139, 180); font-size: small;">b &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xC55E;&#xC5D0; a&#xAC00; <strong>0&#xAC1C;~N&#xAC1C;</strong> &#xC874;&#xC7AC;&#xD558;&#xBA74; &#xBE14;&#xB7ED;&#xC120;&#xD0DD;(b&#xB294; &#xBC18;&#xB4DC;&#xC2DC; &#xC120;&#xD0DD;&#xB428;)</span></span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>a*b</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>aab</code>c abc bc
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>aab</code>c <code>ab</code>c <code>b</code>c
+<span style="color : rgb(34, 139, 180);">case2 : <code>*</code> : <span style="color: rgb(34, 139, 180); font-size: small;">b &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xC55E;&#xC5D0; a&#xAC00; <strong>1&#xAC1C;~N&#xAC1C;</strong> &#xC874;&#xC7AC;&#xD558;&#xBA74; &#xBE14;&#xB7ED;&#xC120;&#xD0DD;(b&#xB294; &#xBC18;&#xB4DC;&#xC2DC; &#xC120;&#xD0DD;&#xB428;)</span></span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>a+b</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>aab</code>c abc bc
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>aab</code>c <code>ab</code>c bc
+<span style="color : rgb(34, 139, 180);">case3 : <code>*</code> : <span style="color: rgb(34, 139, 180); font-size: small;">b &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xC55E;&#xC5D0; a&#xAC00; <strong>0&#xAC1C;~1&#xAC1C;</strong> &#xC874;&#xC7AC;&#xD558;&#xBA74; &#xBE14;&#xB7ED;&#xC120;&#xD0DD;(b&#xB294; &#xBC18;&#xB4DC;&#xC2DC; &#xC120;&#xD0DD;&#xB428;)</span></span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>a?b</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : a<code>ab</code>c abc bc
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : a<code>ab</code>c <code>ab</code>c bc</p>
+<h4 id="example-3-1">example : 3.1</h4>
+<p><strong>source : -@- *** -- &quot;*&quot; -- *** -@-</strong></p>
+<ol>
+<li><code>*</code>
+<span style="color : rgb(34, 139, 180)">case1 : </span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>.*</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>-@- *** -- &quot;*&quot; -- *** -@-</code>
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>-@- *** -- &quot;*&quot; -- *** -@-</code>
+<span style="color : rgb(34, 139, 180)">case2 : </span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>-A*-</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : -@- *** <code>--</code> &quot;*&quot; -- *** -@-
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : -@- *** <code>--</code> &quot;*&quot; <code>--</code> *** -@-
+<span style="color : rgb(34, 139, 180)">case3 : </span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>[-@]*</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>-@-</code> *** -- &quot;*&quot; -- *** -@-
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>-@-</code> *** <code>--</code> &quot;*&quot; <code>--</code> *** <code>-@-</code></li>
+<li><code>+</code>
+<span style="color : rgb(34, 139, 180)">case1 : </span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>\*+</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : -@- <code>*</code>** -- &quot;*&quot; -- *** -@-
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : -@- <code>***</code> -- &quot;<code>*</code>&quot; -- <code>***</code> -@-
+<span style="color : rgb(34, 139, 180)">case2 : </span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>-@+-</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>-@-</code> *** -- &quot;*&quot; -- *** -@-
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>-@-</code> *** -- &quot;*&quot; -- *** <code>-@-</code>
+<span style="color : rgb(34, 139, 180)">case3 : </span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>[^ ]</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>-@-</code> *** -- &quot;*&quot; -- *** -@-
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>-@-</code> <code>***</code> <code>--</code> <code>&quot;*&quot;</code> <code>--</code> <code>***</code> <code>-@-</code></li>
+<li><code>?</code>
+<strong>source : --XX-@-XX-@@-XX-@@@-XX-@@@@-XX-@@-@@-</strong>
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>-X?XX?X</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : -<code>-XX</code>-@-XX-@@-XX-@@@-XX-@@@@-XX-@@-@@-
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : -<code>-XX</code>-@<code>-XX</code>-@@<code>-XX</code>-@@@<code>-XX</code>-@@@@<code>-XX</code>-@@-@@-
+<span style="color : rgb(34, 139, 180)">case2 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>-@?@?@-</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>--</code>XX-@-XX-@@-XX-@@@-XX-@@@@-XX-@@-@@-
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>--</code>XX<code>-@-</code>XX<code>-@@-</code>XX<code>-@@@-</code>XX-@@@@-XX<code>-@@-</code>@@-<h3 id="4-1-number-1-number-2-">4.1 <code>{number 1, number 2}</code></h3>
+<span style="color: rgb(34, 139, 180); font-size: 13px;"> number1&#xAC1C; &#xC774;&#xC0C1; number2&#xAC1C; &#xC774;&#xD558;&#xC758; &#xAC2F;&#xC218;&#xB85C; &#xD0D0;&#xC0C9; </span></li>
 </ol>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function cal(mode) {
-    var funcs = {
-        &apos;plus&apos; : function(left, right) {return left + right},
-        &apos;minus&apos; : function(left, right) {return left - right}
-    }
-    return funcs[mode];
-}
-console.log(cal(&apos;plus&apos;)(2,1));
-console.log(cal(&apos;minus&apos;)(2,1));</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>3
-1</code></pre><p><code>cal(&apos;plus&apos;)(2,1)</code> &#xC744; &#xC2E4;&#xD589;&#xD558;&#xBA74; return &#xBD80;&#xBD84;&#xC5D0;&#xC11C; <code>func[&apos;plus&apos;]</code> &#xC2E4;&#xD589;&#xD6C4; &#xB9AC;&#xD134;&#xB41C;&#xB2E4;.
-<code>func[&apos;plus&apos;]</code>&#xB294; func&#xB77C;&#xB294; &#xAC1D;&#xCCB4; &#xC548;&#xC758; plus &#xAC1D;&#xCCB4;&#xC758; &#xD638;&#xCD9C;&#xC774;&#xACE0; &#xC774; plus &#xAC1D;&#xCCB4; &#xC548;&#xC5D0; &#xD568;&#xC218;&#xAC00; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xAC8C; &#xB41C;&#xB2E4;.
-&#xADF8;&#xB807;&#xAC8C; &#xB418;&#xBA74; <code>cal(&apos;plus&apos;)(2,1)</code> &#xC5D0;&#xC11C; <code>func[&apos;plus&apos;](2,1)</code> &#xC5D0;&#xC11C; <code>function(2,1)</code>&#xB85C; &#xBC14;&#xB010; &#xAC83;&#xC774;&#xB2E4;.
-&#xB530;&#xB77C;&#xC11C; <code>cal(&apos;plus&apos;)(2,1)</code>&#xC758; &#xAC12;&#xC740; <code>3</code>&#xC774;&#xB2E4;. <code>cal(&apos;minus&apos;)(2,1)</code> &#xC5ED;&#xC2DC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xC774;&#xD574;&#xD558;&#xBA74; &#xB41C;&#xB2E4;.</p>
-<ol start="4">
-<li>javascript&#xC5D0;&#xC11C; <strong>&#xD568;&#xC218;&#xB294; &#xBC30;&#xC5F4;&#xC758; &#xAC12;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;</strong>&#xD558;&#xB2E4;</li>
-</ol>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var process = [
-    function (input) {return input + 10;},
-    function (input) {return input * input;},
-    function (input) {return input / 2;}
-]
-
-var input = 1;
-for(var i=0; i&lt;process.length; i++){
-    input = process[i](input)
-}
-
-console.log(input);</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>60.5</code></pre><p>&#xC6B0;&#xC120; <code>process[]</code> &#xB77C;&#xB294; &#xBC30;&#xC5F4;&#xC758; &#xAD6C;&#xC870;&#xBD80;&#xD130; &#xC2DC;&#xAC01;&#xD654;&#xD558;&#xBA74; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;
-|index|0|1|2|
-|----|----|----|----|
-|elements|function (input) {return input + 10;}|function (input) {return input * input;}|function (input) {return input / 2;}|</p>
-<p>for &#xBB38; &#xC548;&#xC5D0;&#xC11C; <code>i=0</code> &#xC77C; &#xB54C; <code>process[0](1)</code> &#xACFC; &#xAC19;&#xACE0; <code>process[0]</code>&#xC758; &#xD568;&#xC218;&#xB294;
-<code>function (input) {return input + 10;}</code> &#xC774;&#xBBC0;&#xB85C; &#xC5EC;&#xAE30;&#xC5D0; 1&#xC744; &#xB300;&#xC785;&#xD558;&#xBA74; 11&#xC774;&#xB2E4;.
-&#xC774; &#xACFC;&#xC815;&#xC744; &#xBC18;&#xBCF5;&#xD558;&#xBA74; <code>input</code>&#xC758; &#xAC12;&#xC740; <code>60.5</code> &#xC774;&#xB2E4;</p>
-<p>&#xC704;&#xC758; 1. ~ 4. &#xCC98;&#xB7FC; &#xD568;&#xC218;&#xB294; &#xBCC0;&#xC218;, &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;, &#xB9AC;&#xD134;&#xAC12;&#xC73C;&#xB85C;&#xB3C4; &#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;&#xD55C; &#xC131;&#xC9C8;&#xC744;
-<strong>first-class citizen(object)</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;!</p>
-<h3 id="2-">2. &#xD568;&#xC218;&#xC640; &#xCF5C;&#xBC31;</h3>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var numbers=[20, 10, 9,8,7,6,5,4,3,2,1];
-console.log(numbers.sort());</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>[ 1, 10, 2, 20, 3, 4, 5, 6, 7, 8, 9 ]</code></pre><p><code>numbers[]</code> &#xB77C;&#xB294; &#xBC30;&#xC5F4;&#xC744; &#xC815;&#xB82C;&#xC744; &#xD558;&#xAE30; &#xC704;&#xD574; <code>sort()</code> &#xB97C; &#xC37C;&#xB294;&#xB370; &#xC22B;&#xC790; &#xD06C;&#xAE30; &#xC21C;&#xC11C;&#xAC00; &#xC544;&#xB2CC; &#xBB38;&#xC790;&#xC5F4;&#xC758; &#xC21C; &#xC11C;&#xB300;&#xB85C; &#xCD9C;&#xB825;&#xC774; &#xB418;&#xC5C8;&#xB2E4;.
-&#xC6B0;&#xB9AC;&#xAC00; &#xC6D0;&#xD558;&#xB294; &#xC22B;&#xC790; &#xC21C;&#xC11C;&#xB85C; &#xCD9C;&#xB825;&#xC744; &#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xD655;&#xC778;&#xD558;&#xB77C;.</p>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">var numbers=[20, 10, 9,8,7,6,5,4,3,2,1];
-var sortFunc = function(a, b) {
-    if(a&gt;b){
-        return 1;
-    }else if(a&lt;b){
-        return -1;
-    }else{
-        return 0;
-    }
-}
-console.log(numbers.sort(sortFunc));</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20 ]</code></pre><p><code>sort()</code>&#xB77C;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xC758; &#xAE30;&#xBCF8;&#xB3D9;&#xC791; &#xBC29;&#xC2DD;&#xC744; &#xBCC0;&#xC218;&#xC5D0; &#xB2F4;&#xAE34; &#xD568;&#xC218;&#xB97C; &#xD1B5;&#xD574; &#xCEE8;&#xD2B8;&#xB864; &#xD560; &#xC218; &#xC788;&#xB2E4;.
-&#xC774;&#xB7EC;&#xD55C; &#xBC29;&#xC2DD;&#xC744; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB77C;&#xACE0; &#xD558;&#xBA70; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>sortFunc</code>&#xAC00; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xC774;&#xB2E4;</p>
-<h3 id="3-span-style-font-size-18px-closure-span-">3. &#xD074;&#xB85C;&#xC800;<span style="font-size : 18px">  closure</span></h3>
-<h4 id="1-">1. &#xB0B4;&#xBD80;&#xD568;&#xC218;</h4>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function outter() {
-  function inner() {
-    var title=&apos;coding everybody&apos;
-    console.log(title);
-  }
-}</code></pre>
-<p>&#xC774; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>inner()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xB97C; <strong>&#xB0B4;&#xBD80;&#xD568;&#xC218;</strong>, <code>outter()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xB294; <strong>&#xC678;&#xBD80;&#xD568;&#xC218;</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;.
-&#xB0B4;&#xBD80;&#xD568;&#xC218;&#xB294; &#xD568;&#xC218;&#xB97C; &#xD568;&#xC218;&#xC548;&#xC5D0; &#xC791;&#xC131;&#xD558;&#xC5EC; &#xD574;&#xB2F9;&#xD568;&#xC218;&#xC5D0;&#xC11C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC744; &#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC815;&#xD55C;&#xB2E4;.
-&#xC774;&#xB294; &#xC18C;&#xC2A4; &#xAC00;&#xB3C5;&#xC131;&#xC744; &#xC62C;&#xB824;&#xC8FC;&#xBA70; &#xD568;&#xC218;&#xC758; &#xAD00;&#xB9AC;&#xB97C; &#xD3B8;&#xD558;&#xAC8C; &#xD574; &#xC900;&#xB2E4;</p>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function outter() {
-  var title=&apos;coding everybody&apos;
-  function inner() {
-    console.log(title);
-  }
-  inner();
-}
-outter();</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>coding everybody</code></pre><p><code>outter()</code> &#xD568;&#xC218; &#xC548;&#xC5D0; <code>title</code> &#xC774;&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xAC00; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xC120;&#xC5B8; &#xB418;&#xC5B4; &#xC788;&#xB2E4;.
-<code>inner()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xC5D0;&#xC11C; <code>title</code>&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC2DC; <code>inner()</code> &#xC548;&#xC5D0; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xAC00; &#xC5C6;&#xB2E4;&#xBA74; <code>inner()</code> &#xD568;&#xC218; &#xBC16;&#xC5D0;&#xC11C; <code>title</code>&#xC744; &#xCC3E;&#xC544;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</p>
-<h4 id="2-">2. &#xB0B4;&#xBD80;&#xD568;&#xC218;&#xC640; &#xC678;&#xBD80;&#xD568;&#xC218;</h4>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function outter() {
-    var title = &apos;coding everybody&apos;
-    return function () {
-        console.log(title);
-    }
-}
-
-inner=outter();
-inner();</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>coding everybody</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>inner</code> &#xB77C;&#xB294; &#xBCC0;&#xC218;&#xC5D0; <code>outter()</code>&#xB77C;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xC5EC; &#xB300;&#xC785;&#xD588;&#xB2E4;.
-&#xC774;&#xB807;&#xAC8C; &#xB418;&#xBA74; <code>inner = function(){console.log(title);}</code> &#xACFC; &#xAC19;&#xC544;&#xC9C4;&#xB2E4;.
-&#xC774; &#xB54C; <code>inner()</code>&#xB77C;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC2E4;&#xD589;&#xC2DC;&#xD0A4;&#xBA74; &#xD568;&#xC218;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xBA70; <code>title</code>&#xC774;&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xB97C; &#xCC3E;&#xAC8C; &#xB41C;&#xB2E4;.
-&#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C; &#xC774;&#xB7EC;&#xD55C; &#xC18C;&#xC2A4;&#xB97C; &#xC2E4;&#xD589;&#xC2DC;&#xD0A8;&#xB2E4;&#xBA74; <code>title</code> &#xC774;&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xB97C; &#xCC3E;&#xC744; &#xC218; &#xC5C6;&#xB2E4;.
-<code>outter()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xB294; &#xC0AC;&#xC6A9; &#xB41C; &#xB4A4; &#xD3D0;&#xAE30;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;.
-&#xD558;&#xC9C0;&#xB9CC; javascript &#xC5D0;&#xC11C;&#xB294; <code>outter()</code> &#xD568;&#xC218;&#xAC00; &#xC0AC;&#xC6A9;&#xB41C; &#xB4A4;&#xC5D0;&#xB3C4; <strong><code>outter()</code>&#xC758; &#xC694;&#xC18C;&#xC5D0; &#xC811;&#xADFC;&#xC774; &#xAC00;&#xB2A5;</strong>&#xD558;&#xB2E4;.
-&#xC774;&#xB7EC;&#xD55C; &#xC131;&#xC9C8;&#xC774; closure&#xC758; &#xD2B9;&#xC131;&#xC774;&#xB2E4;.</p>
-<h4 id="3-private-variable">3. private variable</h4>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function factory_movie(title) {
-    return {
-        get_title:function () {
-            return title;
-        },
-        set_title:function (_title) {
-            title=_title
-        }
-    }
-}
-ghost = factory_movie(&apos;Ghost in the shell&apos;)
-matrix = factory_movie(&apos;Matrix&apos;)
-
-console.log(ghost.get_title());
-console.log(matrix.get_title());
-
-ghost.set_title(&apos;&#xACF5;&#xAC01;&#xAE30;&#xB3D9;&#xB300;&apos;);
-
-console.log(ghost.get_title());
-console.log(matrix.get_title());</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>Ghost in the shell
-Matrix
-&#xACF5;&#xAC01;&#xAE30;&#xB3D9;&#xB300;
-Matrix</code></pre><p><code>ghost</code>&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xC5D0;&#xC11C; <code>factory_movie()</code>&#xC758; &#xC2E4;&#xD589;&#xC758; <code>return</code> &#xC778; &#xAC1D;&#xCCB4;&#xC758; &#xAD6C;&#xC870;&#xB294; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;
-|index|get_title|set_title|
-|----|----|----|
-|elements|<code>function(){return title;}</code>|<code>function(){title=_title;}</code>|
-|title &#xC758; &#xAC12;|<code>&apos;Ghost in the shell&apos;</code>|<code>&apos;Ghost in the shell&apos;</code>|</p>
-<p><code>matrix</code>&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xC5D0;&#xC11C; <code>factory_movie</code>&#xC758; &#xC2E4;&#xD589;&#xC758; <code>return</code> &#xC778; &#xAC1D;&#xCCB4;&#xC758; &#xAD6C;&#xC870;&#xB294; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;
-|index|get_title|set_title|
-|----|----|----|
-|elements|<code>function(){return title;}</code>|<code>function(){title=_title;}</code>|
-|title &#xC758; &#xAC12;|<code>&apos;Matrix&apos;</code>|<code>&apos;Matrix&apos;</code>|</p>
-<p>&#xC5EC;&#xAE30;&#xC11C; <code>title</code> &#xC774;&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xB294; <code>factory_movie()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xC758; &#xC9C0;&#xC5ED;&#xBCC0;&#xC218;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xB2E4;.
-<code>title</code> &#xC774;&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xC5D0; &#xC811;&#xADFC;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; <code>factory_movie()</code> &#xC758; return &#xC758; &#xAC1D;&#xCCB4;&#xC778; <code>set_title</code>&#xC5D0;&#xC11C;&#xB9CC; &#xC218;&#xC815;&#xD558;&#xACE0; <code>title</code>&#xC744; &#xCD9C;&#xB825;&#xD560; &#xB54C;&#xB3C4; <code>get_title</code>&#xC5D0;&#xC11C;&#xB9CC; &#xC811;&#xADFC;&#xD558;&#xC5EC; &#xCD9C;&#xB825;&#xD560; &#xC218; &#xC788;&#xB514;.
-&#xC774;&#xB7EC;&#xD55C; title &#xAC19;&#xC740; &#xBCC0;&#xC218;&#xB97C; <strong><code>private variable</code></strong> &#xC774;&#xB77C;&#xACE0; &#xD55C;&#xB2E4;.
-&#xC774; &#xAC19;&#xC740; <code>private variable</code> &#xC740; &#xC678;&#xBD80;&#xC5D0;&#xC11C; &#xC811;&#xADFC;&#xC774; &#xBD88;&#xAC00;&#xD558;&#xAE30;&#xC5D0; &#xD611;&#xC5C5;&#xD558;&#xB294; &#xACFC;&#xC815;&#xC5D0;&#xC11C; &#xCF54;&#xB354;&#xC758; &#xC2E4;&#xC218;&#xB85C; &#xC798;&#xBABB;&#xB41C; &#xC811;&#xADFC;&#xC774;&#xB098; &#xC0AC;&#xC6A9;&#xC744; &#xB9C9;&#xC744; &#xC218; &#xC788;&#xB2E4;.</p>
-<h3 id="4-span-style-font-size-18px-arguments-span-">4. &#xD568;&#xC218;&#xAC00; &#xBC1B;&#xB294; &#xC778;&#xC790;&#xC758; &#xAC1C;&#xC218;<span style="font-size : 18px">  arguments &#xAC1D;&#xCCB4;</span></h3>
-<p>arguments&#xB294; javascript&#xAC00; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC1D;&#xCCB4; &#xC911; &#xD558;&#xB098;&#xB85C; &#xBC30;&#xC5F4;&#xACFC; &#xC720;&#xC0AC;&#xD558;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xBA70; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC791;&#xC131;&#xD55C; &#xC778;&#xC790;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB2E4;.
-&#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xBA70; &#xC774;&#xD574;&#xD574; &#xBCF4;&#xC790;</p>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function sum() {
-    var i=0; _sum = 0;
-    for(i=0; i&lt;arguments.length; i++){
-        console.log(i+&apos; : &apos;+arguments[i]);
-        _sum+=arguments[i];
-    }
-    return _sum;
-}
-console.log(&apos;result : &apos; + sum(1,2,3,4));</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>0 : 1
-1 : 2
-2 : 3
-3 : 4
-result : 10</code></pre><p>javascript&#xC5D0;&#xC11C;&#xB294; &#xD568;&#xC218;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC791;&#xC131;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC;&#xB3C4; &#xC778;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.
-&#xC608;&#xB97C; &#xB4E4;&#xBA74; <code>funcA(){}</code> &#xB97C; &#xC120;&#xC5B8;&#xD558;&#xACE0; <code>funcA(&apos;a&apos;, 1, 2, &apos;link&apos;)</code> &#xC774;&#xB7F0; &#xC2DD;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC;&#xB3C4; &#xC624;&#xB958;&#xAC00; &#xB728;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.
-&#xADF8;&#xB807;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD568;&#xC218;&#xC758; &#xC778;&#xC790;&#xB85C; &#xBA87;&#xAC1C;&#xC758; &#xC778;&#xC790;&#xAC00; &#xB4E4;&#xC5B4;&#xC62C; &#xC9C0; &#xBAA8;&#xB97C; &#xB54C; &#xC774;&#xB7EC;&#xD55C; &#xBC29;&#xC2DD;&#xC758; &#xC120;&#xC5B8;&#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.
-&#xADF8;&#xB7F0; &#xC0C1;&#xD669;&#xC5D0;&#xC11C; &#xD568;&#xC218;&#xC758; &#xC778;&#xC790;&#xAC00; &#xBA87;&#xAC1C;&#xAC00; &#xB4E4;&#xC5B4;&#xC624;&#xB294;&#xC9C0; &#xADF8;&#xB9AC;&#xACE0; &#xC5B4;&#xB5A0;&#xD55C; &#xC778;&#xC790;&#xAC00; &#xB4E4;&#xC5B4;&#xC624;&#xB294;&#xC9C0;&#xB97C; &#xCEE8;&#xD2B8;&#xB864; &#xD558;&#xAE30; &#xC704;&#xD574; arguments&#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.
-&#xC774;&#xC5D0; &#xB530;&#xB77C; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>sum(1, 2, 3, 4)</code> &#xB97C; &#xC2E4;&#xD589;&#xD55C; &#xD6C4;&#xC758; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>arguments[0]==1</code>(<code>arguments[1]==2</code>) &#xC774;&#xB2E4;.
-&#xBC1B;&#xC740; &#xC778;&#xC790;&#xAC00; &#xBA87;&#xAC1C;&#xC778;&#xC9C0; &#xBAA8;&#xB97C; &#xB54C; <code>arguments.length</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBC1B;&#xC740; &#xC778;&#xC790;&#xC758; &#xAC2F;&#xC218;&#xB97C; &#xC54C;&#xC544;&#xB0B4;&#xC5B4; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xCC98;&#xB7FC; &#xB3D9;&#xC791;&#xD558;&#xAC8C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xB2E4;.</p>
-<h3 id="5-functionname-length-agunemts">5. <code>functionName.length</code> &#xC640; <code>agunemts</code></h3>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function zero() {
-    console.log(
-        &apos;zero.length&apos;, zero.length,
-        &apos;arguments&apos;, arguments.length
-    );
-}
-function one(arg1) {
-    console.log(
-        &apos;one.length&apos;, one.length,
-        &apos;arguments&apos;, arguments.length
-    );
-}
-function two(arg1, arg2) {
-    console.log(
-        &apos;two.length&apos;, two.length,
-        &apos;arguments&apos;, arguments.length
-    );
-}
-
-zero(&apos;elmt1&apos;,&apos;elmt1&apos;,&apos;elmt1&apos;,&apos;elmt1&apos;)
-one(&apos;elmt1&apos;,&apos;elmt1&apos;,&apos;elmt1&apos;,&apos;elmt1&apos;)
-two(&apos;elmt1&apos;,&apos;elmt1&apos;,&apos;elmt1&apos;,&apos;elmt1&apos;)</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>zero.length 0 arguments 4
-one.length 1 arguments 4
-two.length 2 arguments 4</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xC778;&#xC790;&#xC758; &#xCC28;&#xC774;&#xB97C; &#xC54C;&#xC544;&#xC57C; &#xC774; &#xC18C;&#xC2A4;&#xC758; &#xB3D9;&#xC791;&#xAD6C;&#xC870;&#xAC00; &#xC774;&#xD574;&#xAC00; &#xB41C;&#xB2E4;. &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xD568;&#xC218;&#xC758; &#xC120;&#xC5B8;&#xB2F9;&#xC2DC; &#xC785;&#xB825;&#xBC1B;&#xB294; &#xBCC0;&#xC218;&#xB97C; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;. &#xC778;&#xC790;&#xB294; &#xD568;&#xC218;&#xC758; &#xC0AC;&#xC6A9;&#xC2DC; &#xC785;&#xB825;&#xBC1B;&#xB294; &#xBCC0;&#xC218; &#xB4F1;&#xB4F1;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;. &#xC774;&#xC5D0; &#xB530;&#xB77C; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>zero()</code> &#xD568;&#xC218;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB294; 0&#xAC1C;, <code>one()</code> &#xC740; 1&#xAC1C;, <code>two()</code>&#xB294; 2&#xAC1C;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;. &#xB610;&#xD55C; <code>arguments</code>&#xB294; 3&#xAC1C;&#xC758; &#xD568;&#xC218; &#xBAA8;&#xB450; 4&#xAC1C;&#xB85C; &#xD568;&#xC218;&#xC758; &#xC2E4;&#xD589;&#xC2DC; &#xBAA8;&#xB450; 4&#xAC1C;&#xC758; &#xBCC0;&#xC218;&#xB97C; &#xC785;&#xB825;&#xD588;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;.</p>
-<p><span style="font-size : 12px">&#xCC38;&#xACE0; : javascript &#xC5D0;&#xC11C;&#xB294; &#xBCC0;&#xC218;&#xC5D0; &#xAC1D;&#xCCB4;, &#xBCC0;&#xC218;, &#xD568;&#xC218; &#xB4F1;&#xC744; &#xBAA8;&#xB450; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC73C;&#xB098; &#xC704;&#xC5D0;&#xC11C;&#xB294; &#xC124;&#xBA85;&#xC758; &#xC6A9;&#xC758;&#xC131;&#xC744; &#xC704;&#xD574; &#xBCC0;&#xC218;&#xB77C;&#xACE0;&#xB9CC; &#xCE6D;&#xD568;</span></p>
-<h3 id="6-span-style-font-size-18px-apply-span-">6. &#xD568;&#xC218;&#xC758; &#xD638;&#xCD9C;<span style="font-size : 18px">  apply &#xBA54;&#xC18C;&#xB4DC;</span></h3>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function sum(arg1, arg2) {
-    return arg1+arg2;
-}
-
-ordinaryCall=sum(1,2)
-applyCall=sum.apply(null, [1,2])
-
-console.log(ordinaryCall+&apos;\n&apos;+applyCall);</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>3
-3</code></pre><p>&#xD568;&#xC218; &#xD638;&#xCD9C; &#xC2DC; <code>funcName()</code> &#xC73C;&#xB85C;&#xB3C4; &#xAC00;&#xB2A5;&#xD558;&#xACE0; <code>funcName.apply()</code> &#xB85C;&#xB3C4; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.
-&#xB530;&#xB77C;&#xC11C; &#xC704;&#xC758; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; <code>sum(1,2)</code> &#xC640; <code>sum.apply(null, [1,2])</code>&#xB294; &#xAC19;&#xC740; &#xAC12;&#xC744; &#xB3C4;&#xCD9C;&#xD55C;&#xB2E4;.</p>
-<p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C;&#xB3C4; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xB4EF;&#xC774; &#xAC19;&#xC740; &#xB3D9;&#xC791;&#xC778;&#xB370; &#xAD73;&#xC774; &#xBCF5;&#xC7A1;&#xD55C; apply&#xB97C; &#xC4F0;&#xB294; &#xC774;&#xC720;&#xB294; &#xBB58;&#xAE4C;?
-&#xBCF5;&#xC7A1;&#xD55C; &#xCF54;&#xB4DC;&#xC778; <code>apply</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC774;&#xC720;&#xB294; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xD655;&#xC778;&#xD55C;&#xB2E4;.</p>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">//source1
-function sum() {
-    var _sum=0;
-    for(name in this){
-        if(typeof this[name] !== &apos;function&apos;)
-            _sum += this[name]
-    }
-    return _sum;
-}
-o1={val1:1, val2:2, val3:3, sum:sum}
-o2={v1:10,v2:50,v3:100,v4:25, sum:sum}
-
-console.log(o1.sum());
-console.log(o2.sum());
---------------------------------------------------------------------------------
-//source2
-o1={val1:1, val2:2, val3:3}
-o2={v1:10,v2:50,v3:100,v4:25}
-function sum() {
-    var _sum=0;
-    for(name in this){
-        _sum += this[name]
-    }
-    return _sum;
-}
-
-console.log(sum.apply(o1));
-console.log(sum.apply(o2));</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>6
-185
---------------------------------------------------------------------------------
-6
-185</code></pre><p>&#xC704;&#xC758; &#xB450;&#xAC1C;&#xC758; &#xC18C;&#xC2A4;&#xC758; &#xACB0;&#xACFC;&#xAC12;&#xC740; &#xCF58;&#xC194;&#xCC3D;&#xC5D0;&#xC11C; &#xBCF4;&#xB2E4;&#xC2F6;&#xC774; &#xAC19;&#xB2E4;.
-&#xD558;&#xC9C0;&#xB9CC; source 1&#xC5D0;&#xC11C; &#xBCF4;&#xB2E4;&#xC2F6;&#xC774; <code>apply</code>&#xB97C; &#xC4F0;&#xC9C0; &#xC54A;&#xACE0; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD568;&#xC218;&#xC758; &#xC120;&#xC5B8;&#xC744; &#xC4F0;&#xACE0; &#xC6B0;&#xB9AC;&#xAC00; &#xC6D0;&#xD558;&#xB294; &#xB3D9;&#xC791;&#xC744; &#xD558;&#xAC8C; &#xD558;&#xB824;&#xBA74; &#xAC1D;&#xCCB4;&#xC548;&#xC5D0; &#xD615;&#xC2DD;&#xC758; &#xC77C;&#xAD00;&#xC131;&#xC744; &#xD5E4;&#xCE58;&#xB294; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD574; &#xC8FC;&#xC5B4;&#xC57C; &#xD558;&#xBA70; <code>for&#xBB38;</code> &#xC548;&#xC5D0; &#xD568;&#xC218;&#xC778;&#xC9C0; &#xC544;&#xB2CC;&#xC9C0;&#xB97C; &#xD310;&#xBCC4;&#xD558;&#xB294; &#xC870;&#xAC74;&#xBB38;&#xB3C4; &#xC791;&#xC131;(<strong>&#xC870;&#xAC74;&#xBB38;&#xC744; &#xC791;&#xC131;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xCF54;&#xB4DC;&#xC640; &#xACB0;&#xACFC; &#xAC12;&#xC740; &#xBC11;&#xC5D0; &#xC801;&#xB3C4;&#xB85D; &#xD558;&#xACA0;&#xB2E4;</strong>)&#xD558;&#xC5EC;&#xC57C; &#xD55C;&#xB2E4;.
-&#xC774;&#xB7EC;&#xD55C; &#xBB38;&#xC81C;&#xC810;&#xC740; apply&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xBC14;&#xB85C; &#xD574;&#xACB0;&#xC774; &#xB41C;&#xB2E4;!!</p>
-<p><span style="font-size:small"><strong>[SOURCE]</strong></span></p>
-<pre><code class="language-javascript">function sum() {
-    var _sum=0;
-    for(name in this){
-        _sum += this[name]
-    }
-    return _sum;
-}
-o1={val1:1, val2:2, val3:3, sum:sum}
-o2={v1:10,v2:50,v3:100,v4:25, sum:sum}
-
-console.log(o1.sum());
-console.log(o2.sum());</code></pre>
-<p><span style="font-size:small"><strong>[CONSOLE]</strong></span></p>
-<pre><code>6function sum() {
-    var _sum=0;
-    for(name in this){
-        _sum += this[name]
-    }
-    return _sum;
-}
-185function sum() {
-    var _sum=0;
-    for(name in this){
-        _sum += this[name]
-    }
-    return _sum;
-}</code></pre></article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
+<p><strong>source : One ring to bring them all and in the darkness bind them</strong>
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>.{5}</code> : <span style="color : rgb(34, 139, 180); font-size:small;">5&#xAC1C; &#xB2E8;&#xC704;&#xB85C; &#xD0D0;&#xC0C9;</span>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>One r</code>ing to bring them all and in the darkness bind them
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>One ring to bring them all and in the darkness bind th</code>em
+<span style="color : rgb(34, 139, 180)">case2 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>[els]{1,3}</code> : <span style="color : rgb(34, 139, 180); font-size:small;">e,l,s&#xAC00; 1&#xAC1C;&#xC774;&#xC0C1; 3&#xAC1C;&#xC774;&#xD558;&#xC77C; &#xB54C; &#xD0D0;&#xC0C9;</span>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : On<code>e</code> ring to bring them all and in the darkness bind them
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : On<code>e</code> ring to bring th<code>e</code>m a<code>ll</code> and in th<code>e</code> darkn<code>ess</code> bind th<code>e</code>m
+<span style="color : rgb(34, 139, 180)">case3 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>[a-z]{3,}</code> : <span style="color : rgb(34, 139, 180); font-size:small;">a~z &#xBB38;&#xC790;&#xB4E4;&#xC911; 3&#xAC1C;&#xC774;&#xC0C1;&#xC77C; &#xB54C; &#xD0D0;&#xC0C9;</span>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : One <code>ring</code> to bring them all and in the darkness bind them
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : One <code>ring</code> to <code>bring</code> <code>them</code> <code>all</code> <code>and</code> in <code>the</code> <code>darkness</code> <code>bind</code> <code>them</code></p>
+<h3 id="4-2-">4.2 <code>*</code>, <code>+</code>, <code>?</code> &amp; <code>{}</code></h3>
+<p>  <strong>source : AA ABA ABBA ABBBA</strong>
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>AB*A</code>==<code>AB{0,}A</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>AA</code> ABA ABBA ABBBA
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>AA</code> <code>ABA</code> <code>ABBA</code> <code>ABBBA</code>
+  <span style="color : rgb(34, 139, 180)">case2 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>AB+A</code>==<code>AB{1,}A</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : AA <code>ABA</code> ABBA ABBBA
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : AA <code>ABA</code> <code>ABBA</code> <code>ABBBA</code>
+<span style="color : rgb(34, 139, 180)">case3 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>AB?A</code>==<code>AB{0,1}A</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>AA</code> ABA ABBA ABBBA
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>AA</code> <code>ABA</code> ABBA ABBBA</p>
+<h3 id="4-3-">4.3 <code>*?</code>, <code>+?</code>, <code>.?</code></h3>
+<p><span style="color : rgb(34, 139, 180)">case1 : <code>*?</code></span>
+<span style="color : rgb(34, 139, 180); font-size : 12px"><code>*</code> &#xB4A4;&#xC5D0; <code>?</code> &#xAC00; &#xC624;&#xAC8C;&#xB418;&#xBA74; &#xAE30;&#xC874;&#xC758; &#xC758;&#xBBF8;&#xAC00; &#xC544;&#xB2D8;<br>&#xC5EC;&#xAE30;&#xC11C; <code>*</code>&#xC740; 0~N&#xAC1C;&#xAC00; &#xC544;&#xB2CC; 0&#xAC1C;&#xB85C; &#xCDE8;&#xAE09;&#xD55C;&#xB2E4;</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression : <code>r.*/</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : One <code>r</code>ing to bring them all and in the darkness bind them
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : One <code>r</code>ing to b<code>r</code>ing them all and in the da<code>r</code>kness bind them
+<span style="color : rgb(34, 139, 180)">case2 : <code>+?</code></span>
+<span style="color : rgb(34, 139, 180); font-size : 12px"><code>+</code> &#xB4A4;&#xC5D0; <code>?</code> &#xAC00; &#xC624;&#xAC8C;&#xB418;&#xBA74; &#xAE30;&#xC874;&#xC758; &#xC758;&#xBBF8;&#xAC00; &#xC544;&#xB2D8;<br>&#xC5EC;&#xAE30;&#xC11C; <code>*</code>&#xC740; 1~N&#xAC1C;&#xAC00; &#xC544;&#xB2CC; 1&#xAC1C;&#xB85C; &#xCDE8;&#xAE09;&#xD55C;&#xB2E4;</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>r.+?</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : One <code>ri</code>ng to bring them all and in the darkness bind them
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : One <code>ri</code>ng to b<code>ri</code>ng them all and in the da<code>rk</code>ness bind them
+<span style="color : rgb(34, 139, 180)">case3 : <code>.?</code></span>
+<span style="color : rgb(34, 139, 180); font-size : 12px"><code>?</code> &#xB4A4;&#xC5D0; <code>?</code> &#xAC00; &#xC624;&#xAC8C;&#xB418;&#xBA74; &#xAE30;&#xC874;&#xC758; &#xC758;&#xBBF8;&#xAC00; &#xC544;&#xB2D8;<br>&#xC5EC;&#xAE30;&#xC11C; <code>*</code>&#xC740; 0~1&#xAC1C;&#xAC00; &#xC544;&#xB2CC; 0&#xAC1C;&#xB85C; &#xCDE8;&#xAE09;&#xD55C;&#xB2E4;</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>r.??</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : One ring to bring them all and in the darkness bind them
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : One ring to bring them all and in the darkness bind them</p>
+<p><strong><code>&#xC218;&#xB7C9;&#xC790; + ?</code> &#xC758; &#xC0AC;&#xC6A9;&#xC774;&#xC720;</strong>
+<strong>source <div&gt;test1< div&gt;<div&gt;test2< div&gt;< strong>
+&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xCF54;&#xB4DC;&#xC5D0;&#xC11C; <code>&lt;div&gt;txt&lt;/div&gt;</code> &#xBD80;&#xBD84;&#xC744; &#xCD94;&#xCD9C; &#xD558;&#xACE0; &#xC2F6;&#xC744; &#xB54C;
+<span style="color : rgb(34, 139, 180)">problem source :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>&lt;div&gt;.+&lt;div&gt;</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>&lt;div&gt;test1&lt;/div&gt;&lt;div&gt;test2&lt;/div&gt;</code>
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>&lt;div&gt;test1&lt;/div&gt;&lt;div&gt;test2&lt;/div&gt;</code>
+<span style="color : rgb(34, 139, 180)">solution source :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>&lt;div&gt;.+?&lt;/div&gt;</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>&lt;div&gt;test1&lt;/div&gt;</code><div&gt;test2< div&gt; &emsp;&emsp;&emsp;&emsp;all match : <code>&lt;div&gt;test1&lt;/div&gt; <code>&lt;div&gt;test2&lt;/div&gt;</code></div&gt;test2<></div&gt;test1<></strong></p><strong>
+<p><span style="color:darkviolet">&#xC704;&#xC758; case1 &#xAC19;&#xC740; &#xACBD;&#xC6B0; &#xB098;&#xB294; &#xC55E;&#xC758; <code>&lt;div&gt;test1&lt;/div&gt;</code>&#xACFC; <code>&lt;div&gt;test2&lt;/div&gt;</code>&#xB97C; &#xB530;&#xB85C; &#xD0D0;&#xC0C9;&#xD558;&#xACE0; &#xC2F6;&#xC740;&#xB370; &#xAC19;&#xC774; &#xD0D0;&#xC0C9;&#xC774; &#xB418;&#xC5B4;&#xBC84;&#xB838;&#xB2E4;. &#xC774; &#xAC19;&#xC740; &#xACBD;&#xC6B0;&#xB97C; <strong>Greedy Quantifier(&#xD0D0;&#xC695;&#xC2A4;&#xB7EC;&#xC6B4; &#xC218;&#xB7C9;&#xC790;)</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;</span>
+<span style="color:darkviolet">&#xC774;&#xB7EC;&#xD55C; <strong>Greedy Quantifier</strong>&#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xAE30; &#xC704;&#xD574;<code>&#xC218;&#xB7C9;&#xC790; + ?</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;. &#xC774;&#xB807;&#xAC8C; &#xB418;&#xBA74; &#xC6D0;&#xD558;&#xB294; &#xB300;&#xB85C; &#xD0D0;&#xC0C9;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;. &#xC774;&#xB97C; <strong>Lazy Quantifier(&#xAC8C;&#xC73C;&#xB978; &#xC218;&#xB7C9;&#xC790;)</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;</span></p>
+<p>###5.1 <code>\w</code>
+<span style="color: rgb(34, 139, 180); font-size: 13px;"> a~z, A~Z, 0~9, _&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4; &#xD0D0;&#xC0C9;</span></p>
+<p><strong>source : A1 B2 c3 d_4 e:5 ffGG77 --<em>_\</em>--</strong>
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>\w</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>A1</code> B2 c3 d_4 e:5 ffGG77 --___--
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>A1</code> <code>B2</code> <code>c3</code> <code>d_4</code> <code>e</code>:<code>5</code> <code>ffGG77</code> --<code>___</code>--
+<span style="color : rgb(34, 139, 180)">case2 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>\w*</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>A1</code> B2 c3 d_4 e:5 ffGG77 --___--
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>A1</code> <code>B2</code> <code>c3</code> <code>d_4</code> e:5 ffGG77 --___--
+<span style="color : rgb(34, 139, 180)">case3 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>[a-z]\w*</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : A1 B2 <code>c3</code> d_4 e:5 ffGG77 --___--
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : A1 B2 <code>c3</code> <code>d_4</code> e:5 <code>ffGG77</code> --___--
+<span style="color : rgb(34, 139, 180)">case4 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>\w{5}</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : A1 B2 c3 d_4 e:5 <code>ffGG7</code>7 --___--
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : A1 B2 c3 d_4 e:5 <code>ffGG7</code>7 --___--
+<span style="color : rgb(34, 139, 180)">case5 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>[A-z0-9_]</code>  (<code>\w</code>&#xC640; &#xC644;&#xC804;&#xD788; &#xC77C;&#xCE58;)
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>A1</code> B2 c3 d_4 e:5 ffGG77 --___--
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>A1</code> <code>B2</code> <code>c3</code> <code>d_4</code> <code>e</code>:<code>5</code> <code>ffGG77</code> --<code>___</code>--</p>
+<p>###5.2 <code>\W</code>
+<span style="color: rgb(34, 139, 180); font-size: 13px;"> a~z, A~Z, 0~9, _&#xB97C; &#xC81C;&#xC678;&#xD55C; &#xBB38;&#xC790;&#xC5F4; &#xD0D0;&#xC0C9; ==&gt; <code>\w</code>&#xC640; &#xC815; &#xBC18;&#xB300;</span></p>
+<p><strong>source : AS _34:AS11:23@#%12^*</strong>
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>\W</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : AS<code></code><em>34:AS11:23@#%12^*
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : AS<code></code></em>34<code>:</code>AS11<code>:</code>23<code>@#%</code>12<code>^*</code>
+<span style="color : rgb(34, 139, 180)">case2 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>\w</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>AS</code> <em>34:AS11:23@#%12^*
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>AS</code> _<code>34</code>:<code>AS11</code>:<code>23</code>@#%<code>12</code>^*
+<span style="color : rgb(34, 139, 180)">case3 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : `[^A-z0-9</em>]<code>(</code>\W<code>&#xC640; &#xC644;&#xC804;&#xD788; &#xB3D9;&#xC77C;)
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;First Match : AS</code> <code>_34:AS11:23@#%12^\*
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;All Match : AS</code> <code>_34</code>:<code>AS11</code>:<code>23</code>@#%<code>12</code>^*`</p>
+<p>###5.3 <code>\d</code>, <code>\D</code>
+<span style="color: rgb(34, 139, 180); font-size: 13px;"> 0-9&#xC758; &#xC22B;&#xC790;&#xB9CC; &#xD0D0;&#xC0C9;</span></p>
+<p><strong>source : page : 123; clientID : ann14, mark3, jame!@#</strong>
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+<span style="color : rgb(34, 139, 180); font-size : 12px"><code>\d</code> &#xB294; &#xC22B;&#xC790;&#xB9CC;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4;</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>\d</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : page : <code>123</code>; clientID : ann14, mark3, jame!@#
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : page : <code>123</code>; clientID : ann<code>14</code>, mark<code>3</code>, jame!@#
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+<span style="color : rgb(34, 139, 180); font-size : 12px"><code>\D</code> &#xB294; &#xC22B;&#xC790;&#xB97C; &#xC81C;&#xC678;&#xD55C; &#xBB38;&#xC790;&#xC5F4;</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>\D</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>page :</code>123; clientID : ann14, mark3, jame!@#
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>page :</code>123<code>; clientID : ann</code>14<code>, mark</code>3<code>, jame!@#</code>
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>[0-9]</code> (<code>\d</code>&#xC640; &#xC644;&#xC804;&#xD788; &#xB3D9;&#xC77C;)
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : page : <code>123</code>; clientID : ann14, mark3, jame!@#
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : page : <code>123</code>; clientID : ann<code>14</code>, mark<code>3</code>, jame!@#</p>
+<p>###6.1 <code>\b</code>
+<span style="color: rgb(34, 139, 180); font-size: 13px;"> &#xB2E8;&#xC5B4;&#xC758; &#xC2DC;&#xC791;&#xC810;&#xC774;&#xB098; &#xB05D; &#xD0D0;&#xC0C9;</span></p>
+<p><strong>source : It will be fine tommorow</strong>
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>\b\w</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>I</code>t will be fine tommorow
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>I</code>t <code>w</code>ill <code>b</code>e <code>f</code>ine <code>t</code>ommorow
+<span style="color : rgb(34, 139, 180)">case1 :</span>
+&#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>\w\b</code>
+&#x2003;&#x2003;&#x2003;&#x2003;First Match : I<code>t</code> will be fine tommorow
+&#x2003;&#x2003;&#x2003;&#x2003;All Match : I<code>t</code> wil<code>l</code> b<code>e</code> fin<code>e</code> tommoro<code>w</code></p>
+<h2 id="for-of-for-in-">for of / for in &#xAD6C;&#xBB38;</h2>
+<h2 id="arrow-">arrow &#xD568;&#xC218;</h2>
+<h2 id="new-">new&#xC640; &#xC0DD;&#xC131;&#xC790;</h2>
+<h2 id="this-">this &#xC18D;&#xC131;</h2>
+<h2 id="-var-new-function-">&#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218; : var &#xBCC0;&#xC218; = new Function(&apos;&apos;,&apos;&apos;,&apos;&apos;, &apos;&#xBCF8;&#xBB38;&apos;)</h2>
+<h2 id="-">&#xD568;&#xC218;&#xC758; &#xC120;&#xC5B8;&#xC885;&#xB958;</h2>
+<h2 id="for-each-map-filter">for each, map, filter</h2>
+<h2 id="sort-">sort() &#xBA54;&#xC18C;&#xB4DC;</h2>
+<h2 id="-">&#xCF5C;&#xBC31; &#xD568;&#xC218;</h2>
+<h2 id="closure-">closure &#xC790;&#xC138;&#xD788;</h2>
+<h2 id="apply-call-">apply&#xC640; call &#xBA54;&#xC18C;&#xB4DC;</h2>
+</strong></article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
   <svg t="1533629773982" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1035" xlink="http://www.w3.org/1999/xlink" width="40" height="40"><defs><style type="text/css">@font-face { font-family: uc-nexus-iconfont; src: url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff") format("woff"), url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf") format("truetype"); }
   </style></defs><path d="M536.255427 195.182354c-7.804756-7.804756-17.966187-11.615549-28.311813-11.615549-9.43693 0-18.874883 3.449565-26.496467 10.163477-2.360767 1.452071-4.356214 3.267417-6.352685 5.262864L218.47792 455.611735c-15.607466 15.60542-15.607466 40.834011 0 56.43943 15.607466 15.607466 41.558511 15.607466 57.167001 0l193.46013-192.733583 0 600.526219c0 22.1423 17.787108 39.927361 39.927361 39.927361 22.140253 0 39.927361-17.785062 39.927361-39.927361L548.959773 319.317583 737.15704 508.422522c15.607466 15.607466 40.469714 15.607466 56.078203 0 15.607466-15.607466 15.425318-40.834011-0.182149-56.441477L536.255427 195.182354 536.255427 195.182354z" p-id="1036" fill="#333"/><path d="M101.784174 143.097092l816.674071 0c22.140253 0 39.925315-17.785062 39.925315-39.927361 0-22.140253-17.784038-39.925315-39.925315-39.925315L101.784174 63.244416c-22.140253 0-39.927361 17.785062-39.927361 39.925315C61.856813 125.31203 79.643921 143.097092 101.784174 143.097092L101.784174 143.097092z" p-id="1037" fill="#333"/></svg>
 </div>
