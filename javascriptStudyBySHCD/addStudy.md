@@ -37,7 +37,7 @@ PS D:\2. 공부&&과제\nodejs_study> node test123.js
 ### 1.1 `string`
 
 
-<span style="color:rgb(34, 139, 180); font-size: 13px;">   string 문자열 그대로 탐색</span>
+<span style="color: rgb(34, 139, 180); font-size: 13px;">   string 문자열 그대로 탐색</span>
 
 **source : who is who**
 
@@ -297,8 +297,8 @@ All Match : who is `who`
 <span style="color:darkviolet">위의 case1 같은 경우 나는 앞의 `<div>test1</div>`과 `<div>test2</div>`를 따로 탐색하고 싶은데 같이 탐색이 되어버렸다. 이 같은 경우를 **Greedy Quantifier(탐욕스러운 수량자)** 라고 한다</span></br>
 <span style="color:darkviolet">이러한 **Greedy Quantifier**문제를 해결하기 위해`수량자 + ?`를 사용한다. 이렇게 되면 원하는 대로 탐색이 가능하다. 이를 **Lazy Quantifier(게으른 수량자)** 라고 한다</span></br>
 
-###5.1 `\w`
-<span style="color: rgb(34, 139, 180); font-size: 13px;"> a~z, A~Z, 0~9, _를 포함하는 문자열 탐색</span>
+### 5.1 `\w`
+<span style="color: rgb(34, 139, 180); font-size: 13px;"> `a~z`, `A~Z`, `0~9`, `_`를 포함하는 문자열 탐색</span>
 
 **source : A1 B2 c3 d_4 e:5 ffGG77 --__\_--**</br>
 <span style='color : rgb(34, 139, 180)'>case1 :</span></br>
@@ -322,7 +322,7 @@ All Match : who is `who`
 &emsp;&emsp;&emsp;&emsp;First Match : `A1` B2 c3 d_4 e:5 ffGG77 \-\-\_\_\_\-\-</br>
 &emsp;&emsp;&emsp;&emsp;All Match : `A1` `B2` `c3` `d_4` `e`:`5` `ffGG77` \-\-`___`\-\-</br>
 
-###5.2 `\W`
+### 5.2 `\W`
 <span style="color: rgb(34, 139, 180); font-size: 13px;"> a~z, A~Z, 0~9, _를 제외한 문자열 탐색 ==> `\w`와 정 반대</span></br>
 
 **source : AS _34:AS11:23@#%12^\***</br>
@@ -339,7 +339,7 @@ All Match : who is `who`
 &emsp;&emsp;&emsp;&emsp;First Match : AS` `_34:AS11:23@#%12^\*</br>
 &emsp;&emsp;&emsp;&emsp;All Match : AS` `_34`:`AS11`:`23`@#%`12`^*`</br>
 
-###5.3 `\d`, `\D`
+### 5.3 `\d`, `\D`
 <span style="color: rgb(34, 139, 180); font-size: 13px;"> 0-9의 숫자만 탐색</span></br>
 
 **source : page : 123; clientID : ann14, mark3, jame!@#**</br>
@@ -358,7 +358,7 @@ All Match : who is `who`
 &emsp;&emsp;&emsp;&emsp;First Match : page : `123`; clientID : ann14, mark3, jame!@#</br>
 &emsp;&emsp;&emsp;&emsp;All Match : page : `123`; clientID : ann`14`, mark`3`, jame!@#</br>
 
-###6.1 `\b`
+### 6.1 `\b`
 <span style="color: rgb(34, 139, 180); font-size: 13px;"> 단어의 시작점이나 끝 탐색</span></br>
 
 **source : It will be fine tommorow**</br>

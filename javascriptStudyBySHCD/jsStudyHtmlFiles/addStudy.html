@@ -45,7 +45,7 @@ console.log(`${test1} ${test2}`)</code></pre>
 <h2 id="2-">2. &#xC815;&#xADDC;&#xD45C;&#xD604;&#xC2DD;</h2>
 <hr>
 <h3 id="1-1-string">1.1 <code>string</code></h3>
-<p><span style="color:rgb(34, 139, 180); font-size: 13px;">   string &#xBB38;&#xC790;&#xC5F4; &#xADF8;&#xB300;&#xB85C; &#xD0D0;&#xC0C9;</span></p>
+<p><span style="color: rgb(34, 139, 180); font-size: 13px;">   string &#xBB38;&#xC790;&#xC5F4; &#xADF8;&#xB300;&#xB85C; &#xD0D0;&#xC0C9;</span></p>
 <p><strong>source : who is who</strong></p>
 <p>Regular Expression : <code>who</code></p>
 <p>First Match : <code>who</code> is who</p>
@@ -259,8 +259,8 @@ console.log(`${test1} ${test2}`)</code></pre>
 &#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>&lt;div&gt;test1&lt;/div&gt;</code> <code>&lt;div&gt;test2&lt;/div&gt;</code><br></div&gt;test2<></div&gt;test1<></strong></p><strong>
 <p><span style="color:darkviolet">&#xC704;&#xC758; case1 &#xAC19;&#xC740; &#xACBD;&#xC6B0; &#xB098;&#xB294; &#xC55E;&#xC758; <code>&lt;div&gt;test1&lt;/div&gt;</code>&#xACFC; <code>&lt;div&gt;test2&lt;/div&gt;</code>&#xB97C; &#xB530;&#xB85C; &#xD0D0;&#xC0C9;&#xD558;&#xACE0; &#xC2F6;&#xC740;&#xB370; &#xAC19;&#xC774; &#xD0D0;&#xC0C9;&#xC774; &#xB418;&#xC5B4;&#xBC84;&#xB838;&#xB2E4;. &#xC774; &#xAC19;&#xC740; &#xACBD;&#xC6B0;&#xB97C; <strong>Greedy Quantifier(&#xD0D0;&#xC695;&#xC2A4;&#xB7EC;&#xC6B4; &#xC218;&#xB7C9;&#xC790;)</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;</span><br>
 <span style="color:darkviolet">&#xC774;&#xB7EC;&#xD55C; <strong>Greedy Quantifier</strong>&#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xAE30; &#xC704;&#xD574;<code>&#xC218;&#xB7C9;&#xC790; + ?</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;. &#xC774;&#xB807;&#xAC8C; &#xB418;&#xBA74; &#xC6D0;&#xD558;&#xB294; &#xB300;&#xB85C; &#xD0D0;&#xC0C9;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;. &#xC774;&#xB97C; <strong>Lazy Quantifier(&#xAC8C;&#xC73C;&#xB978; &#xC218;&#xB7C9;&#xC790;)</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;</span><br></p>
-<p>###5.1 <code>\w</code>
-<span style="color: rgb(34, 139, 180); font-size: 13px;"> a~z, A~Z, 0~9, _&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4; &#xD0D0;&#xC0C9;</span></p>
+<h3 id="5-1-w">5.1 <code>\w</code></h3>
+<p><span style="color: rgb(34, 139, 180); font-size: 13px;"> <code>a~z</code>, <code>A~Z</code>, <code>0~9</code>, <code>_</code>&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4; &#xD0D0;&#xC0C9;</span></p>
 <p><strong>source : A1 B2 c3 d_4 e:5 ffGG77 --<em>_\</em>--</strong><br>
 <span style="color : rgb(34, 139, 180)">case1 :</span><br>
 &#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>\w</code><br>
@@ -282,8 +282,8 @@ console.log(`${test1} ${test2}`)</code></pre>
 &#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>[A-z0-9_]</code>  (<code>\w</code>&#xC640; &#xC644;&#xC804;&#xD788; &#xC77C;&#xCE58;)<br>
 &#x2003;&#x2003;&#x2003;&#x2003;First Match : <code>A1</code> B2 c3 d_4 e:5 ffGG77 --___--<br>
 &#x2003;&#x2003;&#x2003;&#x2003;All Match : <code>A1</code> <code>B2</code> <code>c3</code> <code>d_4</code> <code>e</code>:<code>5</code> <code>ffGG77</code> --<code>___</code>--<br></p>
-<p>###5.2 <code>\W</code>
-<span style="color: rgb(34, 139, 180); font-size: 13px;"> a~z, A~Z, 0~9, _&#xB97C; &#xC81C;&#xC678;&#xD55C; &#xBB38;&#xC790;&#xC5F4; &#xD0D0;&#xC0C9; ==&gt; <code>\w</code>&#xC640; &#xC815; &#xBC18;&#xB300;</span><br></p>
+<h3 id="5-2-w">5.2 <code>\W</code></h3>
+<p><span style="color: rgb(34, 139, 180); font-size: 13px;"> a~z, A~Z, 0~9, _&#xB97C; &#xC81C;&#xC678;&#xD55C; &#xBB38;&#xC790;&#xC5F4; &#xD0D0;&#xC0C9; ==&gt; <code>\w</code>&#xC640; &#xC815; &#xBC18;&#xB300;</span><br></p>
 <p><strong>source : AS _34:AS11:23@#%12^*</strong><br>
 <span style="color : rgb(34, 139, 180)">case1 :</span><br>
 &#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>\W</code><br>
@@ -297,8 +297,8 @@ console.log(`${test1} ${test2}`)</code></pre>
 &#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : `[^A-z0-9</em>]<code>(</code>\W<code>&#xC640; &#xC644;&#xC804;&#xD788; &#xB3D9;&#xC77C;)&lt;/br&gt;
 &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;First Match : AS</code> <code>_34:AS11:23@#%12^\*&lt;/br&gt;
 &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;All Match : AS</code> <code>_34</code>:<code>AS11</code>:<code>23</code>@#%<code>12</code>^*`<br></p>
-<p>###5.3 <code>\d</code>, <code>\D</code>
-<span style="color: rgb(34, 139, 180); font-size: 13px;"> 0-9&#xC758; &#xC22B;&#xC790;&#xB9CC; &#xD0D0;&#xC0C9;</span><br></p>
+<h3 id="5-3-d-d">5.3 <code>\d</code>, <code>\D</code></h3>
+<p><span style="color: rgb(34, 139, 180); font-size: 13px;"> 0-9&#xC758; &#xC22B;&#xC790;&#xB9CC; &#xD0D0;&#xC0C9;</span><br></p>
 <p><strong>source : page : 123; clientID : ann14, mark3, jame!@#</strong><br>
 <span style="color : rgb(34, 139, 180)">case1 :</span><br>
 <span style="color : rgb(34, 139, 180); font-size : 12px"><code>\d</code> &#xB294; &#xC22B;&#xC790;&#xB9CC;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4;</span><br>
@@ -314,8 +314,8 @@ console.log(`${test1} ${test2}`)</code></pre>
 &#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>[0-9]</code> (<code>\d</code>&#xC640; &#xC644;&#xC804;&#xD788; &#xB3D9;&#xC77C;)<br>
 &#x2003;&#x2003;&#x2003;&#x2003;First Match : page : <code>123</code>; clientID : ann14, mark3, jame!@#<br>
 &#x2003;&#x2003;&#x2003;&#x2003;All Match : page : <code>123</code>; clientID : ann<code>14</code>, mark<code>3</code>, jame!@#<br></p>
-<p>###6.1 <code>\b</code>
-<span style="color: rgb(34, 139, 180); font-size: 13px;"> &#xB2E8;&#xC5B4;&#xC758; &#xC2DC;&#xC791;&#xC810;&#xC774;&#xB098; &#xB05D; &#xD0D0;&#xC0C9;</span><br></p>
+<h3 id="6-1-b">6.1 <code>\b</code></h3>
+<p><span style="color: rgb(34, 139, 180); font-size: 13px;"> &#xB2E8;&#xC5B4;&#xC758; &#xC2DC;&#xC791;&#xC810;&#xC774;&#xB098; &#xB05D; &#xD0D0;&#xC0C9;</span><br></p>
 <p><strong>source : It will be fine tommorow</strong><br>
 <span style="color : rgb(34, 139, 180)">case1 :</span><br>
 &#x2003;&#x2003;&#x2003;&#x2003;Regular Expression1 : <code>\b\w</code><br>
