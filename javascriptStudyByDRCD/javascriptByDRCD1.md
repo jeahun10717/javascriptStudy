@@ -18,7 +18,7 @@ javascript 와 html 파일을 연결하여 프론트엔드 작업을 할 때 소
 </html>
 ```
 
-<img src="/imgFolder/DRCD_js_IMG1.png">
+<img src="./imgFolder/DRCD_js_IMG1.png">
 
 * **기능**</br>
 위의 방식은 제일 기본적인 js 파일을 로드하는 방식이다. html 파일을 리딩하는 도중 js 파일을 만나면 js 파일을 먼저 리딩하고 실행하는데 이 js 파일을 다루는 시간에 html 파일리딩은 멈추게 된다.
@@ -42,7 +42,7 @@ javascript 와 html 파일을 연결하여 프론트엔드 작업을 할 때 소
 </html>
 ```
 
-<img src="/imgFolder/DRCD_js_IMG2.png">
+<img src="./imgFolder/DRCD_js_IMG2.png">
 
 * **기능**</br>
 위의 방식은 html 의 모든 소스를 리딩한 후 페이지가 준비된 상태에서 js 파일을 리딩하고 실행한다.
@@ -65,7 +65,7 @@ javascript 와 html 파일을 연결하여 프론트엔드 작업을 할 때 소
 </html>
 ```
 
-<img src="/imgFolder/DRCD_js_IMG3.png">
+<img src="./imgFolder/DRCD_js_IMG3.png">
 
 
 * **기능**</br>
@@ -89,7 +89,7 @@ js 파일을 읽고 실행할 때 이후의 html 을 읽지 않았기 때문에 
 </html>
 ```
 
-<img src="/imgFolder/DRCD_js_IMG4.png">
+<img src="./imgFolder/DRCD_js_IMG4.png">
 
 
 * **기능**</br>
@@ -118,7 +118,7 @@ asnyc와 defer 의 기능상의 차이를 알아보자
 </html>
 ```
 
-<img src="/imgFolder/DRCD_js_IMG5.png">
+<img src="./imgFolder/DRCD_js_IMG5.png">
 
 
 * **asnyc의 문제점 1**<br>
@@ -140,7 +140,7 @@ asnyc와 defer 의 기능상의 차이를 알아보자
 </html>
 ```
 
-<img src="/imgFolder/DRCD_js_IMG6.png">
+<img src="./imgFolder/DRCD_js_IMG6.png">
 
 
 위의 도표에서 알 수 있듯이 defer는 js 파일을 fetching할 때 순서대로 끝나지는 않지만 실행은 html 의 모든 소스를 리딩한 후 선언순서대로 하기 때문에 asnyc에서 나타난 문제가 나타나지 않는다.
