@@ -144,7 +144,7 @@ console.log(p2);
 
 <span style = "font-size:small">**[BROWSER]**</span>
 
-<img src="/imgFolder/javascriptBySHCD3_GlobalObjectIMG.png" ></img>
+<img src="./imgFolder/javascriptBySHCD3_GlobalObjectIMG.png" ></img>
 
 #### 2. Node.js 환경
 
@@ -281,7 +281,7 @@ p
 여기서 `func()` 를 했을 때의 `func()`는 전역객체인 `global`의 메소드가 된다.
 `func.apply(o)` 를 했을 때의 `func()`는 `o`의 메소드가 되며 `func.apply(p)` 를 했을 때의 `func()`는 `p` 의 메소드가 된다. 이해를 돕기 위해 밑의 그림을 참조하라.
 
-<img src="/imgFolder/javascriptBySHCD3_applyMethodIMG.png"></img>
+<img src="./imgFolder/javascriptBySHCD3_applyMethodIMG.png"></img>
 
 ### 4. 상속 <span style="font-size : 12px"> inheritance</span>
 
@@ -379,7 +379,7 @@ beautiful!
 위의 소스는 `Person` 이라는 부모객체에 `Programmer`, `Designer` 라는 자식객체를 상속시킨다.
 `Person` 객체의 기본 기능은 `My name is + this.name` 이라는 문장을 console 에 출력시키는 기능이다. 자식객체인 `Programmer`와 `Designer` 역시 이러한 기능을 가지고 있지만 이 2개의 자식객체는 그 기능에 더해 `hello world` 를 출력하는 `coding`이라는 메소드, `beautiful` 을 출력하는 `design` 메소드를 추가로 가지고 있다. 이것이 상속에서 자식객체가 부모객체의 로직이나 기능은 유지하되 자신의 기능을 추가한 부분이다.
 
-<img src="/imgFolder/javascriptBySHCD3_inheritance_diagram.png"></img>
+<img src="./imgFolder/javascriptBySHCD3_inheritance_diagram.png"></img>
 
 여기서 만약 부모객체의 정보를 바꾼다면 어떻게 될까?
 
@@ -441,7 +441,7 @@ true
 `new` 라고 하는 속성에 대해 복기해 보자. `var 변수 = new 함수();` 이런식으로 `new` 를 쓰게 되는데 기본적으로 함수를 객체로 return 하여 변수에 저장한다고 이해했다. 하지만 그런 기능만을 가지고 있다면 `var 변수 = 객체;` 이런식으로 선언하면 되는데 굳이 `new` 를 쓰는 이유가 뭘까? 이는 `new 함수` 부분의 함수가 가지고 있는 프로퍼티나 메소드를 쓰고 싶기에 이렇게 쓰는 것이다.
 이제 프로토타입에 대해서 알아보자. 프로토타입은 기본적으로 javascript 에서 객체를 상속하고 싶을 때 사용한다. 위의 소스에서 `o` 라는 변수에 `Sub()` 라는 함수를 생성자 함수로서 객체로 저장하였다. 또한 `Sub`의 `prototpye`에 `Super`를 생성자함수로서 객체로 저장하고 `Super`의 `prototpye`에 `Ultra`를 생성자함수로서 객체로 저장하였다. 또한 `Ultra` 라는 객체의 `prototpye`의 프로퍼티로 `ultraProp`에 `true`를 저장하였다. 이러한 과정을 통해 `o.ultraProp` 을 호출하면 `o`라고 객체를 포함하는 변수에 `ultraProp` 이라는 프로퍼티가 직접적으로 존재하지 않아도 호출할 수 있게 된다. 이렇게 상속을 연속적으로 `prototpye` 을 통해 발생시켜 접근할 수 있도록 하는 것을 **prototpye chain** 이라고 한다. 밑의 그림을 참고하라.
 
-<img src="/imgFolder/javascriptBySHCD3_PrototypeChain.png" ></img>
+<img src="./imgFolder/javascriptBySHCD3_PrototypeChain.png" ></img>
 
 
 ### 6. 표준 내장 객체<span style = "font-size : medium"> Standard Built in Object</span>
@@ -724,7 +724,7 @@ console.log(a);
 
 위의 소스를 그림으로 나타내면 아래와 같다
 
-<img src="imgFolder/javascriptBySHCD3_copyDiagram.png">
+<img src="./imgFolder/javascriptBySHCD3_copyDiagram.png">
 
 위는 당연한 것처럼 보인다. 하지만 밑의 소스를 보면 이는 꽤 복잡한 문제임을 알 수 있다.
 
@@ -747,7 +747,7 @@ console.log(a.id);
 
 복제 부분에서 알아보았던 소스와 달리 위의 소스는 `b.id` 의 값 만을 건드렸음에도 `a.id` 의 값이 변화하였다. 이는 원시데이터타입과는 달리 객체는 다르게 동작하기 때문이다. 아래의 그림을 참조하라.
 
-<img src="imgFolder/javascriptBySHCD3_copyDiagram2.png">
+<img src="./imgFolder/javascriptBySHCD3_copyDiagram2.png">
 
 왜 이런일이 발생하는 것일까? 이는 원시데이터타입과 객체가 저장하는 정보가 다르기 때문이다. 원시데이터타입은 기본적으로 실제 값을 가지고 있다. 하지만 객체가 변수에게 전달하는 정보는 실제 값이 아닌 참조의 방법이기 때문이다.
 
@@ -818,7 +818,7 @@ b = {'id':2};
 
 이 부분의 소스를 도식화 하면 아래와 같다.
 
-<img src="imgFolder/javascriptBySHCD3_copyDiagram3.png">
+<img src="./imgFolder/javascriptBySHCD3_copyDiagram3.png">
 
 `b = a` 가 실행되면 `a` 는 `{ 'id' : 1 }` 객체를 가리키고 있고 `b` 에 `a` 를 대입했기 때문에 `a` 가 가지고 있는 참조인 `{ 'id' : 1 }` 객체를 똑같이 가리키게 된다. 하지만 `b = { 'id' : 2 }` 가 실행되면 `a` 는 여전히 `{ 'id' : 1 }` 객체를 가리키지만 `b` 는 `{ 'id' : 2 }` 객체를 가리키게 된다. 따라서 최종 `a` 의 값은 `{ 'id' : 1 }` 인 것이다. 그렇다면 정상적으로 a 의 값을 바꾸려면 어떻게 해야 할까? 아래의 소스를 참조하라.
 
@@ -840,6 +840,6 @@ console.log(a.id);
 
 이 소스를 도식화 하면 아래와 같다.
 
-<img src="imgFolder/javascriptBySHCD3_copyDiagram4.png">
+<img src="./imgFolder/javascriptBySHCD3_copyDiagram4.png">
 
 `b = a` 가 실행되면 `a` 와 `b` 모두 `{ 'id' : 1 }` 객체를 가리킨다. `b.id = 2` 가 실행될 때 `a` 와 `b` 모두 `{ 'id' : 1 }` 객체를 가리키고 있으므로 `{ 'id' : 1 }` 에서 `{ 'id' : 2 }` 로 수정이 된다.
