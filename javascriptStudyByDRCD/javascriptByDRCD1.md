@@ -143,4 +143,148 @@ asnyc와 defer 의 기능상의 차이를 알아보자
 <img src="./imgFolder/DRCD_js_IMG6.png">
 
 
-위의 도표에서 알 수 있듯이 defer는 js 파일을 fetching할 때 순서대로 끝나지는 않지만 실행은 html 의 모든 소스를 리딩한 후 선언순서대로 하기 때문에 asnyc에서 나타난 문제가 나타나지 않는다.
+위의 도표에서 알 수 있듯이 defer는 js 파일을 fetching할 때 순서대로 끝나지는 않지만 html 의 모든 소스를 리딩한 후 선언순서대로 하기 때문에 asnyc에서 나타난 문제가 나타나지 않는다.
+
+## 2. 변수 variable
+
+javascript 에서 변수는 다른 언어에 비해 큰 위상을 가진다. 기본적으로 자료형 없이 정의하여 사용하며 다른 언어와 달리 javascript의 변수는 수, 배열, 함수, 객체 등 javascript 가 가지고 있는 거의 모든 것을 담을 수 있다.
+
+### 1. var 과 let
+
+ECMA6 이전 javascript 에서는 변수로서 `var` 를 썼다. 하지만 `var` 는 호이스팅 문제로 인해 이상한 결과값을 도출하는 경우가 많다. 물론 호이스팅에 대해 완벽히 이해하고 있다면 이를 장점으로 사용할 수 있으나 프로그램의 덩치가 커지고 사용하는 변수가 많다면 일일히 이 모든것을 생각하며 코딩하는 것은 낭비이다. 밑의 소스를 참고하라
+
+**[SOURCE]**
+```javascript
+name = 'jeahun'
+console.log(name);
+
+var name;
+```
+
+**[CONSOLE]**
+```
+jeahun
+```
+
+위의 소스에서 `name` 이라는 변수를 사용하기도 전에 대입과 출력을 했는데 정상적으로 작동한다. 이를 호이스팅 이라고 하며 호이스팅은 끌어올린다는 뜻인데 이는 javascript가 `var` 변수를 코드를 parsing 하는 과정에서 미리 읽기 때문에 가능한 일이다. 위에도 말했다 싶이 이러한 기능은 오류를 도출하기 쉬운 구조이다. 그렇다면 `let` 을 쓰면 어떻게 될까?
+
+**[SOURCE]**
+```javascript
+name = 'jeahun'
+console.log(name);
+
+let name;
+```
+
+**[CONSOLE]**
+```
+ReferenceError: name is not defined
+```
+
+이러한 오류가 도출이 된다. `let` 은 다른 언어와 마찬가지로 동작하며 반드시 선언후에 사용을 해야 한다.
+
+정리하면 ECMA6 이전 `var` 로 변수를 선언하면 호이스팅이라는 위험성이 존재한다. ECMA6 이후는 `let` 을 지원하므로 왠만하면 `let` 을 쓰는 것을 추천한다.
+
+### 2. const
+
+const 는 immutable type 즉 변경이 불가능한 변수타입이다. 이는 밑의 3가지 이유때문에 사용한다.
+* **for security**</br>
+해커들이 이 코드에 접근해도 변경이 불가능 하므로 보안상 이유로 사용
+* **for thread safety**</br>
+javascript 는 멀티스레드를 지원하므로 동시에 변경할 때 변경되지 말아야 할 정보들이 변경되는 위험을 방지할 수 있다.
+* **for reduce human mistake**</br>
+기본적으로 변경이 필요없는 경우에는 const 를 사용하는 것이 좋다.
+
+### 3. 변수의 자료형 variable type
+* **pritmitive** : number, string, boolean, null, undefined, symbol
+* **object** : box-container
+* **function** : first-class function
+
+primitive varibale과 object variable 의 차이점은 아래 링크에 자세히 설명해 두었다.
+[javascript생활코딩3](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/javascriptBySHCD3.md#4-%EB%AA%A8%EB%93%A0-%EA%B0%9D%EC%B2%B4%EC%97%90%EC%84%9C-%EC%82%AC%EC%9A%A9%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-method-%EC%A0%95%EC%9D%98)
+
+이제 javascript 의 변수와 다른 언어의 변수를 비교해보자.
+
+**[SOURCE-C]**
+```c
+int main(){
+  short a = 12;
+  int b = 12;
+  long b = 1234;
+  float d = 1.2f;
+  double e = 1.2f;
+}
+```
+
+**[SOURCE-JAVA]**
+```java
+class Main{
+    public static void main(String[ ] args){
+      short a = 12;
+      int b = 12;
+      long b = 1234;
+      float d = 1.2f;
+      double e = 1.2f;
+    }
+}
+```
+
+**[SOURCE-JAVASCRIPT]**
+```javascript
+let a = 12;
+let b = 1234;
+let c = 1.225
+```
+
+위의 소스는 C , Java , JavaScript 의 자료형 들이다. C 나 Java 는 자료형이 세세하게 나누어져 있어서 코드 작성자가 이를 구분하고 사용해야 한다. 하지만 javascript 는 변수를 받을 때 알아서 해결을 해 주므로 let 하나만 기억하면 된다.
+
+* javascript 의 자료형은 let 하나만 있지만 특별한 형태가 있다. 이는 기억해 두는 것이 좋다.
+
+  * Infinity : 수를 0으로 나눌 때
+  * -Infinity : -수를 0으로 나눌 때
+  * NaN : 문자열과 다른 자료형을 나누거나 곱할 때
+
+**[SOURCE]**
+
+```javascript
+const infinity = 1/0;
+const negativeInfinity = -1/0;
+const nAn = 'not a number' / 2;
+
+console.log(infinity);
+console.log(negativeInfinity);
+console.log(nAn);
+```
+
+**[CONSOLE]**
+
+```
+Infinity
+-Infinity
+NaN
+```
+
+### 4. Dynamic Typing
+
+javascript 는 dynamically tpyed language 라고 한다. 즉 변수가 특정하게 언어가 지정해 주는 것이 아니라 기본적으로 javascript가 1줄 1줄 해석할 때 마다 적용하는 것이다. 밑의 소스를 보자.
+
+**[SOURCE]**
+
+```javascript
+let text = 'hello';
+console.log(`value : ${text}, type : ${typeof text}`);
+text = 1;
+console.log(`value : ${text}, type : ${typeof text}`);
+```
+
+**[CONSOLE]**
+
+```
+value : hello, type : string
+value : 1, type : number
+```
+
+
+위의 소스를 보면 분명 text는 hello 를 대입함으로써 string 으로 취급을 받았지만 후에 수를 입력하게 되면서 number로 타입이 바뀌게 되었다.
+
+23 분 13 초부터 다시 공부!

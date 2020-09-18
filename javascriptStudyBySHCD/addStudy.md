@@ -382,3 +382,4 @@ All Match : who is `who`
 ## 콜백 함수
 ## closure 자세히
 ## apply와 call 메소드
+## 'use strict'
