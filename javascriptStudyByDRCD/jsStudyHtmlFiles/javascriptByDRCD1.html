@@ -235,7 +235,180 @@ console.log(`value : ${text}, type : ${typeof text}`);</code></pre>
 <p><strong>[CONSOLE]</strong></p>
 <pre><code>value : hello, type : string
 value : 1, type : number</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xBA74; &#xBD84;&#xBA85; text&#xB294; hello &#xB97C; &#xB300;&#xC785;&#xD568;&#xC73C;&#xB85C;&#xC368; string &#xC73C;&#xB85C; &#xCDE8;&#xAE09;&#xC744; &#xBC1B;&#xC558;&#xC9C0;&#xB9CC; &#xD6C4;&#xC5D0; &#xC218;&#xB97C; &#xC785;&#xB825;&#xD558;&#xAC8C; &#xB418;&#xBA74;&#xC11C; number&#xB85C; &#xD0C0;&#xC785;&#xC774; &#xBC14;&#xB00C;&#xAC8C; &#xB418;&#xC5C8;&#xB2E4;.</p>
-<p>23 &#xBD84; 13 &#xCD08;&#xBD80;&#xD130; &#xB2E4;&#xC2DC; &#xACF5;&#xBD80;!</p>
+<h2 id="3-operators">3. Operators</h2>
+<h3 id="1-string-concatnation">1. String Concatnation</h3>
+<p>&#xC704;&#xC5D0;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xC558;&#xB4EF; javascript &#xB294; dynamic tpye&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; string &#xC73C;&#xB85C; &#xC0AC;&#xCE59;&#xC5F0;&#xC0B0;&#xC744; &#xD560; &#xB54C; &#xC8FC;&#xC758;&#xD558;&#xC5EC;&#xC57C; &#xD55C;&#xB2E4;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">let a = &apos;my&apos;+&apos; car&apos;; //&#xBB38;&#xC790;&#xC5F4; + &#xBB38;&#xC790;&#xC5F4; = &#xBB38;&#xC790;&#xC5F4;
+let b = &apos;try &apos;+123;//&#xBB38;&#xC790;&#xC5F4; + &#xC22B;&#xC790; = &#xBB38;&#xC790;&#xC5F4;
+let c = &apos;123&apos;/&apos;3&apos;;//&#xBB38;&#xC790;&#xC5F4;(&#xC218;)/&#xBB38;&#xC790;&#xC5F4;(&#xC218;) = &#xC22B;&#xC790;
+
+console.log(a, typeof a);
+console.log(b, typeof b);
+console.log(c, typeof c);</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>my car string
+try 123 string
+41 &apos;number&apos;</code></pre><h3 id="2-numberic-operators">2. Numberic Operators</h3>
+<p>javascript&#xC758; &#xC218;&#xC758; &#xC0AC;&#xCE59;&#xC5F0;&#xC0B0;&#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xC640; &#xBE44;&#xC2B7;&#xD558;&#xB2E4;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">console.log(1+1);
+console.log(1-1);
+console.log(1*1);
+console.log(1/1);
+console.log(12%5);
+console.log(5**2);</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>2
+0
+1
+1
+2
+25</code></pre><h3 id="3-increment-and-decrement-operators">3. Increment and Decrement Operators</h3>
+<ol>
+<li><strong>Increment Operators</strong></li>
+</ol>
+<p>&#xC120;&#xD589;&#xCC98;&#xB9AC;(Increment Operators)&#xB294; &#xC5F0;&#xC0B0;&#xD6C4; &#xB300;&#xC785;&#xC744; &#xC9C4;&#xD589;&#xD55C;&#xB2E4;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">let count = 2;
+const preIncrement = ++count;
+console.log(`preIncrement : ${preIncrement}`);
+console.log(`count : ${count}`);</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>3</code></pre><ol start="2">
+<li><strong>Decrement Operators</strong></li>
+</ol>
+<p>&#xD6C4;&#xD589;&#xCC98;&#xB9AC;(Decrement Operators)&#xB294; &#xB300;&#xC785;&#xD6C4; &#xC5F0;&#xC0B0;&#xC744; &#xC9C4;&#xD589;&#xD55C;&#xB2E4;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">let count = 2;
+const postIncrement = count++;
+console.log(`postIncrement : ${postIncrement}`);
+console.log(`count : ${count}`);</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>postIncrement : 2
+count : 3</code></pre><h3 id="4-logical-operators">4. Logical Operators</h3>
+<p>javascript &#xC5D0;&#xC11C;&#xC758; &#xB17C;&#xB9AC;&#xC5F0;&#xC0B0;&#xC790;(Logical Operators)&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xC5B8;&#xC5B4;&#xC640; &#xB3D9;&#xC791;&#xAD6C;&#xC870;&#xAC00; &#xBE44;&#xC2B7;&#xD558;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; <code>||</code>(or) &#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xC81C;&#xC77C; &#xC55E;&#xC758; &#xB17C;&#xB9AC;&#xC5F0;&#xC0B0;&#xC790;&#xAC00; <code>true</code> &#xBA74; &#xB4A4;&#xC758; &#xB0B4;&#xC6A9;&#xC744; &#xC0DD;&#xB7B5;&#xD574; &#xBC84;&#xB9B0;&#xB2E4;. &#xB610;&#xD55C; <code>&amp;&amp;</code>(and) &#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xC81C;&#xC77C; &#xC55E;&#xC758; &#xB17C;&#xB9AC;&#xC5F0;&#xC0B0;&#xC790;&#xAC00; <code>false</code> &#xC774;&#xBA74; &#xB4A4;&#xC758; &#xB0B4;&#xC6A9;&#xC744; &#xC0DD;&#xB7B5;&#xD55C;&#xB2E4;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xC790;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">const bool1 = true;
+const bool2 = 4 &lt; 2;
+
+console.log(`or : ${bool1||bool2||check()}`);
+console.log(`and : ${bool2&amp;&amp;bool1&amp;&amp;check()}`);
+
+function check() {
+    for (let i = 0; i &lt; 10; i++) {
+        console.log(&apos;OMG&apos;);
+    }
+}</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>or : true
+and : false</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>check()</code> &#xB77C;&#xB294; &#xD568;&#xC218;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xB2E4;. &#xC774;&#xB294; <code>bool1</code> &#xC774; &#xC774;&#xBBF8; <code>true</code> &#xC5EC;&#xC11C; &#xB4A4;&#xC758; &#xC18C;&#xC2A4;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xAC83;&#xC774;&#xB2E4;. &#xADF8;&#xB807;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC9E4; &#xB54C; &#xB17C;&#xB9AC;&#xC5F0;&#xC0B0;&#xC790;&#xB97C; &#xC5EC;&#xB7EC;&#xBC88; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC81C;&#xC5B4;&#xD560; &#xACBD;&#xC6B0; &#xB369;&#xCE58;&#xAC00; &#xD070; &#xCF54;&#xB4DC;&#xB97C; &#xB4A4;&#xC5D0; &#xBC30;&#xCE58;&#xD558;&#xBA74; &#xC790;&#xC6D0;&#xC744; &#xC544;&#xB084; &#xC218; &#xC788;&#xB2E4;.</p>
+<h3 id="5-equality">5. Equality</h3>
+<p>javascript &#xC5D0;&#xC11C; equality &#xB97C; &#xBE44;&#xAD50;&#xD558;&#xB294; &#xC5F0;&#xC0B0;&#xC790;&#xB294; 2&#xAC1C; &#xC774;&#xB2E4;. <code>==</code>&#xACFC; <code>===</code>&#xC774; &#xC788;&#xB294;&#xB370; &#xC774;&#xC5D0; &#xB300;&#xD574; &#xBC11;&#xC758; &#xCF54;&#xB4DC;&#xB97C; &#xBCF4;&#xBA74;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xC790;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">const stringVar = &apos;5&apos;;
+const numberVar = 5;
+
+// loose equality
+console.log(stringVar == numberVar);
+console.log(stringVar != numberVar);
+
+// strict equality
+console.log(stringVar === numberVar);
+console.log(stringVar !== numberVar);</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>true
+false
+false
+true</code></pre><h2 id="3-function">3. &#xD568;&#xC218; function</h2>
+<p>javascript &#xC5D0;&#xC11C;&#xC758; &#xD568;&#xC218;&#xB294; &#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xC5D0; &#xBE44;&#xD574; &#xADF8; &#xC704;&#xC0C1;&#xC774; &#xB192;&#xC73C;&#xBA70; &#xC0C1;&#xB2F9;&#xD788; &#xC911;&#xC694;&#xD558;&#xB2E4;. &#xC8FC;&#xC694;&#xD55C; &#xD568;&#xC218;&#xC758; &#xAE30;&#xB2A5;&#xACFC; &#xD568;&#xC218; &#xC0AC;&#xC6A9;&#xC2DC; &#xC8FC;&#xC758;&#xD574;&#xC57C; &#xD560; &#xC0AC;&#xD56D;&#xB4E4;&#xC744; &#xBC11;&#xC758; &#xB9C1;&#xD06C;&#xC5D0; &#xC800;&#xC7A5;&#xD574; &#xB450;&#xC5C8;&#xB2E4;.</p>
+<p><a href="https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/javascriptBySHCD2.md#2-%ED%95%A8%EC%88%98--function">javascriptBySHCD2 - 2. &#xD568;&#xC218;</a></p>
+<h3 id="1-parameters">1. Parameters</h3>
+<h4 id="1-premitive-parameters-object-parameters">1. premitive parameters, object parameters</h4>
+<p>javascript &#xB294; &#xD568;&#xC218;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;(parameters) &#xB85C; &#xAC1D;&#xCCB4;, &#xBC30;&#xC5F4;, &#xD568;&#xC218;&#xC790;&#xCCB4; &#xB4F1;&#xB3C4; &#xB2F4;&#xC744; &#xC218; &#xC788;&#xB2E4;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB294; &#xD568;&#xC218;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; &#xAC1D;&#xCCB4;&#xB97C; &#xBC1B;&#xC558;&#xC744; &#xACBD;&#xC6B0;&#xC774;&#xB2E4;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">function changeName(obj) {
+    obj.name=&apos;coder&apos;
+}
+const jeahun = {name : &apos;jeahun&apos;}
+changeName(jeahun);
+console.log(jeahun);</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>{ name: &apos;coder&apos; }</code></pre><p>&#xD558;&#xC9C0;&#xB9CC; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; premitive parameters &#xC640; object parameters &#xC758; &#xC801;&#xC6A9;&#xBC29;&#xC2DD;&#xC774; &#xB2E4;&#xB974;&#xB2E4;. &#xC774;&#xB294; &#xC774; 2&#xAC1C;&#xC758; &#xC778;&#xC790;&#xB4E4;&#xC744; &#xC811;&#xADFC;&#xD560; &#xB54C; &#xBC29;&#xC2DD;&#xC758; &#xCC28;&#xC774;&#xC5D0;&#xC11C; &#xBC1C;&#xC0DD;&#xD558;&#xB294;&#xB370; &#xBC11;&#xC758; &#xB9C1;&#xD06C;&#xC5D0; &#xC790;&#xC138;&#xD788; &#xC124;&#xBA85;&#xD574; &#xB450;&#xC5C8;&#xB2E4;. &#xAC04;&#xB2E8;&#xD788; &#xC694;&#xC57D;&#xD558;&#xC790;&#xBA74; premitive value &#xB294; &#xAC12; &#xC790;&#xCCB4;&#xB97C; &#xC8FC;&#xACE0; &#xBC1B;&#xC9C0;&#xB9CC; object &#xB294; &#xC8FC;&#xC18C;(refernece) &#xB97C; &#xC8FC;&#xACE0;&#xBC1B;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;.</p>
+<p><a href="https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/javascriptBySHCD3.md#3-%EB%B3%B5%EC%A0%9C">javascriptBySHCD3 - 3. &#xBCF5;&#xC81C;</a></p>
+<h4 id="2-default-parameters">2. Default Parameters</h4>
+<p>&#xC774; Default Parameter&#xAC00; &#xD544;&#xC694;&#xD55C; &#xC0C1;&#xD669;&#xC744; &#xC54C;&#xC544;&#xBCF4;&#xC790;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xB77C;</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">function showmessage(message, from) {
+    if(from === undefined){
+        from = &apos;unknown&apos;
+    }
+    console.log(`${message} by ${from}`);
+}
+
+showmessage(&apos;Hi!&apos;)</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>Hi! by unknown</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; showmessage &#xB77C;&#xB294; &#xD568;&#xC218;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; message&#xB9CC; &#xC804;&#xB2EC;&#xC774; &#xB418;&#xACE0; from &#xC774; &#xC804;&#xB2EC;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xB2E4;. &#xC774; &#xB54C; ECMA6 &#xC774;&#xC804;&#xC5D0;&#xC11C;&#xB294; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xCC98;&#xB7FC; if &#xB85C; &#xCC98;&#xB9AC;&#xB97C; &#xD574;&#xC11C; &#xB530;&#xB85C; &#xC815;&#xC758;&#xB97C; &#xD588;&#xC5B4;&#xC57C; &#xD588;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; ECMA6 &#xC774;&#xD6C4;&#xC5D0;&#xB294; &#xBCC0;&#xC218;&#xB85C; &#xBC1B;&#xC744; &#xB54C; if &#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; &#xBB38;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">function showmessage(message, from=&apos;unknown&apos;) {
+    console.log(`${message} by ${from}`);
+}
+
+showmessage(&apos;Hi!&apos;)</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>Hi! by unknown</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC640; &#xAC19;&#xC774; parameter&#xB97C; &#xC804;&#xB2EC;&#xD574; &#xC8FC;&#xC9C0; &#xC54A;&#xC744; &#xB54C; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xCC98;&#xB7FC; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xBBF8;&#xB9AC; &#xCD08;&#xAE30;&#xD654;&#xB97C; &#xD574; &#xB193;&#xC73C;&#xBA74; &#xADF8; &#xCD08;&#xAE30;&#xD654; &#xD574; &#xB193;&#xC740; &#xAC12;&#xC744; &#xB3C4;&#xCD9C;&#xD55C;&#xB2E4;. &#xB610;&#xD55C; javascript &#xC5D0;&#xC11C; &#xD568;&#xC218;&#xAC00; &#xBC1B;&#xB294; &#xC778;&#xC790;&#xB294; &#xC0C1;&#xB2F9;&#xD788; &#xC720;&#xC5F0;&#xD558;&#xAC8C; &#xC791;&#xB3D9;&#xD55C;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xD2B9;&#xC9D5;&#xC740; javascript &#xB9CC;&#xC758; &#xD2B9;&#xC9D5;&#xC774;&#xBA70; &#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xC5D0;&#xC11C;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC758; &#xC218;&#xB97C; &#xC0C1;&#xB2F9;&#xD788; &#xC5C4;&#xBC00;&#xD558;&#xAC8C; &#xB530;&#xC9C0;&#xB2C8; &#xC815;&#xD655;&#xD788; &#xC54C;&#xACE0; &#xC4F0;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; javscript &#xC758; &#xD2B9;&#xC9D5;&#xC744; &#xBC11;&#xC758; &#xB9C1;&#xD06C;&#xC5D0; &#xC815;&#xB9AC;&#xD574; &#xB450;&#xC5C8;&#xB2E4;.</p>
+<p><a href="https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/javascriptBySHCD2.md#4-%ED%95%A8%EC%88%98%EA%B0%80-%EB%B0%9B%EB%8A%94-%EC%9D%B8%EC%9E%90%EC%9D%98-%EA%B0%9C%EC%88%98--arguments-%EA%B0%9D%EC%B2%B4">javascriptBySHCD2 - 2-4. &#xD568;&#xC218;&#xAC00; &#xBC1B;&#xB294; &#xC778;&#xC790;&#xC758; &#xAC1C;&#xC218;</a></p>
+<h4 id="3-rest-parameters">3. Rest Parameters</h4>
+<p>rest parameters &#xB780; &#xD568;&#xC218;&#xC758; &#xC778;&#xC790;&#xB85C; &#xBC30;&#xC5F4;&#xC744; &#xBC1B;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC774;&#xB2E4;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xC790;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">function printAll(...args) {
+    for (let i = 0; i &lt; args.length; i++) {
+        console.log(args[i]);        
+    }
+}
+
+printAll(&apos;dreams&apos;, &apos;coding&apos;, &apos;ellie&apos;);</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>dreams
+coding
+ellie</code></pre><p><code>printAll(&apos;dreams&apos;, &apos;coding&apos;, &apos;ellie&apos;);</code> &#xBD80;&#xBD84;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; &#xD568;&#xC218;&#xC5D0; &#xC5EC;&#xB7EC; &#xC778;&#xC790;&#xB4E4;&#xC744; &#xC804;&#xB2EC;&#xD574;&#xC57C; &#xD558;&#xACE0; &#xADF8; &#xAC1C;&#xC218;&#xB97C; &#xC815;&#xD655;&#xD788; &#xD30C;&#xC545;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xAC8C; &#xBCC0;&#xD558;&#xB294; &#xAC12;&#xC774;&#xBA74; <code>...</code>(spread) &#xD615;&#xD0DC;&#xB85C; &#xC778;&#xC790;&#xB97C; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xB2E4;.</p>
+<h3 id="2-function-expression">2. Function Expression</h3>
+<h4 id="1-function-declaration-">1. &#xD568;&#xC218;&#xC120;&#xC5B8;&#xC2DD;(Function Declaration)</h4>
+<p>&#xD568;&#xC218;&#xC120;&#xC5B8;&#xC2DD;&#xC740; &#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xC640; &#xAD6C;&#xC870;&#xAC00; &#xBE44;&#xC2B7;&#xD558;&#xB2E4;.</p>
+<pre><code class="language-javascript">function functionName(parameter) {
+  &#xD568;&#xC218;&#xCF54;&#xB4DC;
+  return &#xB9AC;&#xD134;&#xAC12;;
+}</code></pre>
+<p>&#xC774;&#xB7EC;&#xD55C; &#xD568;&#xC218;&#xC120;&#xC5B8;&#xC2DD;&#xC740; &#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xC640; &#xC720;&#xC0AC;&#xD558;&#xC9C0;&#xB9CC; javascript&#xC5D0;&#xC11C; &#xC774;&#xB7F0;&#xC2DD;&#xC73C;&#xB85C; &#xD568;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xBA74; &#xD568;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xAE30; &#xC804;&#xC5D0; &#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;&#xD55C; &#xD638;&#xC774;&#xC2A4;&#xD305;&#xC774; &#xC9C0;&#xC6D0;&#xC774; &#xB41C;&#xB2E4;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xCC38;&#xC870;&#xD558;&#xB77C;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">print();
+function print () {  //anonymous function, &#xC775;&#xBA85;&#xD568;&#xC218;
+    console.log(&apos;print&apos;);
+}</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>print</code></pre><h4 id="2-function-expression-">2. &#xD568;&#xC218;&#xD45C;&#xD604;&#xC2DD;(Function Expression)</h4>
+<p>&#xD568;&#xC218;&#xD45C;&#xD604;&#xC2DD;&#xC740; javascript &#xAC00; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xD2B9;&#xC9D5;&#xC73C;&#xB85C; &#xBCC0;&#xC218;&#xC5D0; &#xD568;&#xC218;&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xC5EC; &#xADF8; &#xBCC0;&#xC218;&#xB97C; &#xB9C8;&#xCE58; &#xD568;&#xC218;&#xCC98;&#xB7FC; &#xC4F8; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC774;&#xB2E4;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xB77C;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">const print = function () {//anonymous function
+    console.log(&apos;print&apos;);
+}
+
+print();
+const printAgain = print;
+printAgain();</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>print
+print</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xD568;&#xC218;&#xB97C; &#xBCC0;&#xC218;&#xC5D0; &#xC800;&#xC7A5;&#xD558;&#xACE0; &#xB610; &#xB300;&#xC785;&#xD55C; &#xADF8; &#xBCC0;&#xC218;&#xB97C; &#xB2E4;&#xB978; &#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xC785;&#xD558;&#xC5EC; &#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC600;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xB7EC;&#xD55C; &#xBC29;&#xC2DD;&#xC758; &#xC120;&#xC5B8;&#xC740; &#xD638;&#xC774;&#xC2A4;&#xD305;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xC790;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">print();
+const print = function () {//anonymous function
+    console.log(&apos;print&apos;);
+}
+const printAgain = print;
+printAgain();</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>ReferenceError: print is not defined</code></pre><p>print &#xAC00; &#xC815;&#xC758; &#xB418;&#xC9C0; &#xC54A;&#xC558;&#xB2E4;&#xACE0; &#xB72C;&#xB2E4;. &#xC774;&#xAC83;&#xC740; print &#xAC00; &#xC815;&#xC758;&#xB418;&#xAE30; &#xC804;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC774;&#xB7EC;&#xD55C; &#xC624;&#xB958;&#xBB38;&#xAD6C;&#xAC00; &#xB72C; &#xAC83;&#xC774;&#xB2E4;.</p>
+<p>21:14 &#xBD80;&#xD130; &#xB2E4;&#xC2DC; &#xB4E3;&#xAE30;!</p>
 </article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
   <svg t="1533629773982" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1035" xlink="http://www.w3.org/1999/xlink" width="40" height="40"><defs><style type="text/css">@font-face { font-family: uc-nexus-iconfont; src: url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff") format("woff"), url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf") format("truetype"); }
   </style></defs><path d="M536.255427 195.182354c-7.804756-7.804756-17.966187-11.615549-28.311813-11.615549-9.43693 0-18.874883 3.449565-26.496467 10.163477-2.360767 1.452071-4.356214 3.267417-6.352685 5.262864L218.47792 455.611735c-15.607466 15.60542-15.607466 40.834011 0 56.43943 15.607466 15.607466 41.558511 15.607466 57.167001 0l193.46013-192.733583 0 600.526219c0 22.1423 17.787108 39.927361 39.927361 39.927361 22.140253 0 39.927361-17.785062 39.927361-39.927361L548.959773 319.317583 737.15704 508.422522c15.607466 15.607466 40.469714 15.607466 56.078203 0 15.607466-15.607466 15.425318-40.834011-0.182149-56.441477L536.255427 195.182354 536.255427 195.182354z" p-id="1036" fill="#333"/><path d="M101.784174 143.097092l816.674071 0c22.140253 0 39.925315-17.785062 39.925315-39.927361 0-22.140253-17.784038-39.925315-39.925315-39.925315L101.784174 63.244416c-22.140253 0-39.927361 17.785062-39.927361 39.925315C61.856813 125.31203 79.643921 143.097092 101.784174 143.097092L101.784174 143.097092z" p-id="1037" fill="#333"/></svg>

@@ -41,7 +41,7 @@ global
 이는 javascript의 에서 지역변수와 전역변수를 사용할 시 이름이 같아도 따로
 생성하기 때문인데 밑의 그림을 보면서 이해하면 된다
 
-<img src="/imgFolder/javascriptBySHCD2_global_Local_variableIMG1.png" style="width: 60%; height: auto;" >
+<img src="./imgFolder/javascriptBySHCD2_global_Local_variableIMG1.png" style="width: 60%; height: auto;" >
 
 <span style = "font-size:small">**[SOURCE]**</span>
 ```javascript
@@ -80,7 +80,7 @@ hello?
 문자열을 삽입했다. 이는 vscope라는 전역변수에 직접 대입을 한 것이기 때문에
 지역변수는 선언조차 되지 않은 것이다. 밑의 그림을 참고하라.
 
-<img src="/imgFolder/javascriptBySHCD2_global_Local_variableIMG2.png" style="width: 60%; height: auto;" >
+<img src="./imgFolder/javascriptBySHCD2_global_Local_variableIMG2.png" style="width: 60%; height: auto;" >
 
 **정리하자면 거의 대부분의 상황에서는 지역변수를 쓰는 것이 타당하다. 하지만 프로그램 내에서 전역으로 써야하는 상황이 분명히 존재하므로 1.3 에서 더 자세히 설명하겠다**
 
@@ -539,7 +539,7 @@ javascript에서는 함수의 매개변수를 작성하지 않고 사용하여�
 이에 따라 위의 소스에서 `sum(1, 2, 3, 4)` 를 실행한 후의 위의 소스에서 `arguments[0]==1`(`arguments[1]==2`) 이다.
 받은 인자가 몇개인지 모를 때 `arguments.length`를 사용하여 받은 인자의 갯수를 알아내어 위의 소스처럼 동작하게 만들 수 있다.
 
-### 5. `functionName.length` 와 `agunemts`
+### 5. `functionName.length` 와 `argunemts`
 
 <span style = "font-size:small">**[SOURCE]**</span>
 
@@ -563,9 +563,9 @@ function two(arg1, arg2) {
     );
 }
 
-zero('elmt1','elmt1','elmt1','elmt1')
-one('elmt1','elmt1','elmt1','elmt1')
-two('elmt1','elmt1','elmt1','elmt1')
+zero('elmt1','elmt2','elmt3','elmt4')
+one('elmt1','elmt2','elmt3','elmt4')
+two('elmt1','elmt2','elmt3','elmt4')
 ```
 
 <span style = "font-size:small">**[CONSOLE]**</span>

@@ -287,4 +287,332 @@ value : 1, type : number
 
 위의 소스를 보면 분명 text는 hello 를 대입함으로써 string 으로 취급을 받았지만 후에 수를 입력하게 되면서 number로 타입이 바뀌게 되었다.
 
-23 분 13 초부터 다시 공부!
+## 3. Operators
+
+### 1. String Concatnation
+
+위에서 알아보았듯 javascript 는 dynamic tpye을 지원하기 때문에 string 으로 사칙연산을 할 때 주의하여야 한다.
+
+**[SOURCE]**
+
+```javascript
+let a = 'my'+' car'; //문자열 + 문자열 = 문자열
+let b = 'try '+123;//문자열 + 숫자 = 문자열
+let c = '123'/'3';//문자열(수)/문자열(수) = 숫자
+
+console.log(a, typeof a);
+console.log(b, typeof b);
+console.log(c, typeof c);
+```
+
+**[CONSOLE]**
+
+```
+my car string
+try 123 string
+41 'number'
+```
+
+### 2. Numberic Operators
+
+javascript의 수의 사칙연산은 기본적으로 다른 언어와 비슷하다.
+
+**[SOURCE]**
+
+```javascript
+console.log(1+1);
+console.log(1-1);
+console.log(1*1);
+console.log(1/1);
+console.log(12%5);
+console.log(5**2);
+```
+
+**[CONSOLE]**
+
+```
+2
+0
+1
+1
+2
+25
+```
+
+### 3. Increment and Decrement Operators
+
+1. **Increment Operators**
+
+선행처리(Increment Operators)는 연산후 대입을 진행한다.
+
+**[SOURCE]**
+
+```javascript
+let count = 2;
+const preIncrement = ++count;
+console.log(`preIncrement : ${preIncrement}`);
+console.log(`count : ${count}`);
+```
+
+**[CONSOLE]**
+
+```
+3
+```
+
+2. **Decrement Operators**
+
+후행처리(Decrement Operators)는 대입후 연산을 진행한다.
+
+**[SOURCE]**
+
+```javascript
+let count = 2;
+const postIncrement = count++;
+console.log(`postIncrement : ${postIncrement}`);
+console.log(`count : ${count}`);
+```
+
+**[CONSOLE]**
+
+```
+postIncrement : 2
+count : 3
+```
+
+### 4. Logical Operators
+
+javascript 에서의 논리연산자(Logical Operators)는 기본적인 언어와 동작구조가 비슷하다. 하지만 `||`(or) 를 사용할 때 제일 앞의 논리연산자가 `true` 면 뒤의 내용을 생략해 버린다. 또한 `&&`(and) 를 사용할 때 제일 앞의 논리연산자가 `false` 이면 뒤의 내용을 생략한다. 밑의 소스를 보자.
+
+**[SOURCE]**
+
+```javascript
+const bool1 = true;
+const bool2 = 4 < 2;
+
+console.log(`or : ${bool1||bool2||check()}`);
+console.log(`and : ${bool2&&bool1&&check()}`);
+
+function check() {
+    for (let i = 0; i < 10; i++) {
+        console.log('OMG');
+    }
+}
+```
+
+**[CONSOLE]**
+
+```
+or : true
+and : false
+```
+
+위의 소스에서 `check()` 라는 함수가 실행되지 않았다. 이는 `bool1` 이 이미 `true` 여서 뒤의 소스가 실행되지 않은 것이다. 그렇기 때문에 프로그램을 짤 때 논리연산자를 여러번 사용하여 제어할 경우 덩치가 큰 코드를 뒤에 배치하면 자원을 아낄 수 있다.
+
+### 5. Equality
+
+javascript 에서 equality 를 비교하는 연산자는 2개 이다. `==`과 `===`이 있는데 이에 대해 밑의 코드를 보면서 알아보자.
+
+**[SOURCE]**
+
+```javascript
+const stringVar = '5';
+const numberVar = 5;
+
+// loose equality
+console.log(stringVar == numberVar);
+console.log(stringVar != numberVar);
+
+// strict equality
+console.log(stringVar === numberVar);
+console.log(stringVar !== numberVar);
+```
+
+**[CONSOLE]**
+
+```
+true
+false
+false
+true
+```
+
+## 3. 함수 function
+
+javascript 에서의 함수는 다른 언어에 비해 그 위상이 높으며 상당히 중요하다. 주요한 함수의 기능과 함수 사용시 주의해야 할 사항들을 밑의 링크에 저장해 두었다.
+
+[javascriptBySHCD2 - 2. 함수](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/javascriptBySHCD2.md#2-%ED%95%A8%EC%88%98--function)
+
+### 1. Parameters
+
+#### 1. premitive parameters, object parameters
+
+javascript 는 함수의 매개변수(parameters) 로 객체, 배열, 함수자체 등도 담을 수 있다. 밑의 소스는 함수의 매개변수로 객체를 받았을 경우이다.
+
+
+**[SOURCE]**
+
+```javascript
+function changeName(obj) {
+    obj.name='coder'
+}
+const jeahun = {name : 'jeahun'}
+changeName(jeahun);
+console.log(jeahun);
+```
+
+**[CONSOLE]**
+
+```
+{ name: 'coder' }
+```
+
+하지만 기본적으로 premitive parameters 와 object parameters 의 적용방식이 다르다. 이는 이 2개의 인자들을 접근할 때 방식의 차이에서 발생하는데 밑의 링크에 자세히 설명해 두었다. 간단히 요약하자면 premitive value 는 값 자체를 주고 받지만 object 는 주소(refernece) 를 주고받기 때문이다.
+
+[javascriptBySHCD3 - 3. 복제](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/javascriptBySHCD3.md#3-%EB%B3%B5%EC%A0%9C)
+
+#### 2. Default Parameters
+
+이 Default Parameter가 필요한 상황을 알아보자. 밑의 소스를 보라
+
+**[SOURCE]**
+
+```javascript
+function showmessage(message, from) {
+    if(from === undefined){
+        from = 'unknown'
+    }
+    console.log(`${message} by ${from}`);
+}
+
+showmessage('Hi!')
+```
+
+**[CONSOLE]**
+
+```
+Hi! by unknown
+```
+
+위의 소스에서 showmessage 라는 함수의 매개변수로 message만 전달이 되고 from 이 전달되지 않았다. 이 때 ECMA6 이전에서는 위의 소스처럼 if 로 처리를 해서 따로 정의를 했어야 했다. 하지만 ECMA6 이후에는 변수로 받을 때 if 로 처리하지 않고 아래와 같은 문법을 사용할 수 있다.
+
+**[SOURCE]**
+
+```javascript
+function showmessage(message, from='unknown') {
+    console.log(`${message} by ${from}`);
+}
+
+showmessage('Hi!')
+```
+
+**[CONSOLE]**
+
+```
+Hi! by unknown
+```
+위의 소스와 같이 parameter를 전달해 주지 않을 때 위의 소스처럼 함수에서 미리 초기화를 해 놓으면 그 초기화 해 놓은 값을 도출한다. 또한 javascript 에서 함수가 받는 인자는 상당히 유연하게 작동한다. 이러한 특징은 javascript 만의 특징이며 다른 언어에서는 매개변수의 수를 상당히 엄밀하게 따지니 정확히 알고 쓰는 것이 좋다. 이러한 javscript 의 특징을 밑의 링크에 정리해 두었다.
+
+[javascriptBySHCD2 - 2-4. 함수가 받는 인자의 개수](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/javascriptBySHCD2.md#4-%ED%95%A8%EC%88%98%EA%B0%80-%EB%B0%9B%EB%8A%94-%EC%9D%B8%EC%9E%90%EC%9D%98-%EA%B0%9C%EC%88%98--arguments-%EA%B0%9D%EC%B2%B4)
+
+#### 3. Rest Parameters
+
+rest parameters 란 함수의 인자로 배열을 받는 매개변수이다. 밑의 소스를 보자.
+
+**[SOURCE]**
+
+```javascript
+function printAll(...args) {
+    for (let i = 0; i < args.length; i++) {
+        console.log(args[i]);        
+    }
+}
+
+printAll('dreams', 'coding', 'ellie');
+```
+
+**[CONSOLE]**
+
+```
+dreams
+coding
+ellie
+```
+
+`printAll('dreams', 'coding', 'ellie');` 부분에서처럼 함수에 여러 인자들을 전달해야 하고 그 개수를 정확히 파악하지 못하게 변하는 값이면 `...`(spread) 형태로 인자를 받을 수 있다.
+
+### 2. Function Expression
+
+#### 1. 함수선언식(Function Declaration)
+
+함수선언식은 다른 언어와 구조가 비슷하다.
+
+```javascript
+function functionName(parameter) {
+  함수코드
+  return 리턴값;
+}
+```
+
+이러한 함수선언식은 다른 언어와 유사하지만 javascript에서 이런식으로 함수를 선언하면 함수를 선언하기 전에 사용이 가능한 호이스팅이 지원이 된다. 밑의 소스를 참조하라.
+
+**[SOURCE]**
+
+```javascript
+print();
+function print () {  //anonymous function, 익명함수
+    console.log('print');
+}
+```
+
+**[CONSOLE]**
+
+```
+print
+```
+
+#### 2. 함수표현식(Function Expression)
+
+함수표현식은 javascript 가 가지고 있는 특징으로 변수에 함수를 저장하여 그 변수를 마치 함수처럼 쓸 수 있도록 하는 기능이다. 밑의 소스를 보라.
+
+**[SOURCE]**
+
+```javascript
+const print = function () {//anonymous function
+    console.log('print');
+}
+
+print();
+const printAgain = print;
+printAgain();
+```
+
+**[CONSOLE]**
+
+```
+print
+print
+```
+
+위의 소스에서 함수를 변수에 저장하고 또 대입한 그 변수를 다른 변수에 대입하여 함수를 사용하였다. 하지만 이러한 방식의 선언은 호이스팅을 지원하지 않는다. 밑의 소스를 보자.
+
+**[SOURCE]**
+
+```javascript
+print();
+const print = function () {//anonymous function
+    console.log('print');
+}
+const printAgain = print;
+printAgain();
+```
+
+**[CONSOLE]**
+
+```
+ReferenceError: print is not defined
+```
+
+print 가 정의 되지 않았다고 뜬다. 이것은 print 가 정의되기 전에 사용되었기 때문에 이러한 오류문구가 뜬 것이다.
+
+21:14 부터 다시 듣기!
