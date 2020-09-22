@@ -615,4 +615,47 @@ ReferenceError: print is not defined
 
 print 가 정의 되지 않았다고 뜬다. 이것은 print 가 정의되기 전에 사용되었기 때문에 이러한 오류문구가 뜬 것이다.
 
-21:14 부터 다시 듣기!
+#### 3. Arrow Function
+
+Arrow Function 은 함수를 간결히 사용할 수 있는 js 만의 문법이다. 기본적인 사용법은 아래와 같다.
+
+```javascript
+const 변수 = (parameter) => 함수코드//리턴값
+```
+
+```javascript
+const 변수 = (parameter) => {
+  함수코드;
+  return 리턴값;
+}
+```
+
+일반적인 함수선언과 비교해 보자
+
+**[SOURCE-function expression]**
+```javascript
+const sum = function(a, b){
+    return a+b;
+}
+console.log(sum(65, 55));
+```
+
+**[SOURCE-function expression]**
+```javascript
+const sum = (a, b)=>a+b
+console.log(sum(65, 55));
+```
+
+위의 2개의 소스는 완전히 같은 기능을 한다. 일반적인 함수에 비해 function 이라는 키워드를 적지 않아도 된다는 점, 1줄 안에 간단한 함수는 선언이 가능하다는 점에서 일반적인 함수 선언에 비해 javascript 에서는 arrow function 이 많이 쓰인다.
+
+#### 4. IIFE(Immediatly Ivoked Function Expression)
+
+IIFE(즉시실행 함수) 는 함수를 선언함과 동시에 사용하는 것을 의미한다.
+
+```javascript
+(function 함수이름(){
+  함수코드;
+})();
+```
+
+일회성으로 사용하는 함수에 한해 이러한 기능도 제공이 된다.
