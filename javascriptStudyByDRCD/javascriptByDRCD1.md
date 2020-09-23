@@ -658,4 +658,176 @@ IIFE(즉시실행 함수) 는 함수를 선언함과 동시에 사용하는 것�
 })();
 ```
 
-일회성으로 사용하는 함수에 한해 이러한 기능도 제공이 된다.
+일회성으로 사용하는 함수에 한해 이러한 기능도 제공이 된다
+
+
+## 3. Class & Object
+
+Class 란 Object를 담는 그릇이라고 생각하면 편하다. 객체 지향 프로그래밍에서 Object를 묶어 주는 역할을 하는 것이 Class 이다. javascript 에서는 기본적으로 Class 라는 것이 존재하지 않는다. 하지만 ESMA 6 이후 prototype 이라는 javascript 가 제공하는 기능으로 Class 인 것처럼 사용할 수 있게 만들었다. Class 라는 기능이 따로 존재하는 다른 언어와는 차이가 있다.
+
+### 1. Class Declaration
+
+**[SOURCE]**
+
+```javascript
+class Person{
+    constructor(name, age){
+        this.name=name;
+        this.age=age;
+    }
+    speak(){
+        console.log(`${this.name} : hello!`);
+    }
+}
+
+const jeahun = new Person('jeahun', 24);
+console.log(jeahun.name);
+console.log(jeahun.age);
+jeahun.speak();
+```
+
+**[CONSOLE]**
+
+```
+jeahun
+24
+jeahun : hello!
+```
+
+### 2. Getter & Setter
+
+Get 과 Set 은 Class 를 사용할 떄 특정한 정보를 private 하게 지켜야 하거나 정보를 처리할 때 특정한 조건을 줘야할 때 사용한다.
+
+**[SOURCE]**
+
+```javascript
+class User{
+    constructor(firstName, lastName, age){
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.age=age;
+    }
+    get age(){
+        return this.age;
+    }
+    set age(value){
+        if(value < 0){
+          throw Error('age value is not allow negative number')
+        }
+        this.age=value;
+    }
+}
+
+
+const user1 = new User('Jeahun', 'Sung', -1)
+console.log(user1.age);
+```
+
+**[CONSOLE]**
+
+```
+RangeError: Maximum call stack size exceeded
+    at User.set age [as age] (D:\javascript\javascriptStudy\javascriptStudyByDRCD\additionalCodeFiles\class.js:14:17)
+    at User.set age [as age] (D:\javascript\javascriptStudy\javascriptStudyByDRCD\additionalCodeFiles\class.js:14:17)
+    at User.set age [as age] (D:\javascript\javascriptStudy\javascriptStudyByDRCD\additionalCodeFiles\class.js:14:17)
+    at User.set age [as age] (D:\javascript\javascriptStudy\javascriptStudyByDRCD\additionalCodeFiles\class.js:14:17)
+    at User.set age [as age] (D:\javascript\javascriptStudy\javascriptStudyByDRCD\additionalCodeFiles\class.js:14:17)
+    at User.set age [as age] (D:\javascript\javascriptStudy\javascriptStudyByDRCD\additionalCodeFiles\class.js:14:17)
+    at User.set age [as age] (D:\javascript\javascriptStudy\javascriptStudyByDRCD\additionalCodeFiles\class.js:14:17)
+    at User.set age [as age] (D:\javascript\javascriptStudy\javascriptStudyByDRCD\additionalCodeFiles\class.js:14:17)
+    at User.set age [as age] (D:\javascript\javascriptStudy\javascriptStudyByDRCD\additionalCodeFiles\class.js:14:17)
+    at User.set age [as age] (D:\javascript\javascriptStudy\javascriptStudyByDRCD\additionalCodeFiles\class.js:14:17)
+```
+
+우리가 원하는 동작은 `age` 라는 변수가 음수면 에러메시지를 띄우는 것이다. 하지만 위의 console 의 결과값을 보면 call stack 이 최대보다 넘어 섰다는 뜻의 오류문구가 나왔다. 이러한 오류는 get 과 set 의 동작구조에 의해 발생한다.
+
+```javascript
+constructor(firstName, lastName, age){
+    this.firstName=firstName;
+    this.lastName=lastName;
+    this.age=age;
+}
+get age(){
+    return this.age;
+}
+set age(value){
+    if(value < 0){
+        throw Error('age value is not allow negative number')
+    }
+    this.age=value;
+}
+```
+
+이 부분에서 `get age`와 `set age`가 선언되는 순간 `this.age=age` 라는 라인의 동작구조가 달라진다. 원래의 동작구조는 메모리에 올라가 있는 `this.age` 를 가져와야 한다. 하지만 `get`과 `set`이 선언되는 순간 밑의 순서를 따라 동작한다.
+
+1. `get` 이 선언 될 때 `this.age`는 메모리가 아닌 `get`을 먼저 호출한다.
+2. `=age`, 즉 값을 할당할 때 역시 메모리에서 값을 가져오는 것이 아닌 set을 먼저 호출한다.
+3. `set age()`가 호출 당했을 때 `this.age=value` 라는 코드가 실행된다.
+4. `value`를 `this.age`에 할당할 때 위의 2. 의 과정과 마찬가지로 값을 할당하는 과정이므로 `set` 을 호출(set age() 를 호출)한다.
+5. `set` 을 호출하면 다시 `this.age=value;` 코드를 실행한다.
+6. **3.~5. 까지의 과정**을 **무한으로 반복**하게 되어서 callstack 초과가 뜬 것이다.
+
+![get, set 무한루프](./imgFolder/DRCD_js_IMG7.png)
+
+이러한 문제는 this.age 라는 코드가 constructor 라는 클래스와 get age(), set age() 라고 하는 함수에서 구분 없이 쓰여서 그렇다. 이 문제는 get과 set 함수에서 쓰이는 변수를 다르게 해 줌으로써 해결이 가능하다.
+
+**[SOURCE]**
+
+```javascript
+class User{
+    constructor(firstName, lastName, age){
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.age=age;
+    }
+    get age(){
+        return this.age_private;
+    }
+    set age(value){
+        if(value < 0){
+            throw Error('age value is not allow negative number')
+        }
+        this.age_private=value;
+    }
+}
+
+
+const user1 = new User('Jeahun', 'Sung', -1)
+console.log(user1.age);
+```
+
+**[CONSOLE]**
+
+```
+Error: age value is not allow negative number
+```
+
+위의 소스에서 constructor가 쓰는 age라는 변수를 get과 set 에서 age_private 을 쓰므로서 명확히 구분을 줌으로써 해결을 했다.
+
+### 3. Public & Private
+
+java 나 cpp 같은 프로그래밍 언어에서 지원하는 Public, Private 개념을 javascript에서도 지원을 한다. 하지만 이러한 기능을 js 에서 지원한 것은 최근의 일이므로 많은 브라우저에서 지원을 하지 않으므로 호환성을 생각하면서 사용하여야 한다.
+
+**[SOURCE]**
+
+```javascript
+class Experiment {
+    publicField = 2;
+    #privateField = 0;
+}
+
+const experiment = new Experiment();
+console.log(experiment.publicField);
+console.log(experiment.privateField);
+```
+
+**[CONSOLE]**
+
+```
+2
+undefined
+```
+
+### 4. static
+
+15 : 00 부터 다시 듣기!!

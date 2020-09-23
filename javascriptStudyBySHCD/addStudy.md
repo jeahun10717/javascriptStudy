@@ -378,8 +378,9 @@ All Match : who is `who`
 ## 생성자 함수 : var 변수 = new Function('','','', '본문')
 ## 함수의 선언종류
 ## for each, map, filter
-## sort() 메소드
 ## 콜백 함수
 ## closure 자세히
 ## apply와 call 메소드
 ## 'use strict'
+## javascript 에서의 Class, constructor
+## javascript 에서의 public, private
