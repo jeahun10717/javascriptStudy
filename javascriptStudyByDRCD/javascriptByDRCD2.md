@@ -465,3 +465,183 @@ true
 ```
 
 다른 부분은 위의 소스를 보면서 차근차근 보면 이해할 수 있다. `triangle instanceof Object` 에서 `Object`는 모든 javascript 위에 존재하는 객체이다. 앞에서도 알아보았지만 javascript는 class라는 형태가 존재하는 것이 아니라 객체를 통해 class 의 개념을 만든 것이기 때문에 클래스도 객체로 본다.
+
+## 4. Object
+
+### 1. Literals and Properties
+
+Object는 key 와 value 로 이루어진 데이터의 집합체이다. 기본적인 사용법은 아래와 같다.
+* **1. object literal syntax**
+```javascript
+const objName = {key : value};
+```
+* **2. object constructor syntax**
+```javascript
+const objName = new Object();
+```
+
+const 라는 데이터 타입을 객체에서 사용할 때 문제점이 생길 수 있다. 기존의 premitive variable 에서는 const 로 선언한 데이터는 수정이나 삭제가 불가능 했는데 객체는 그렇지 않다.
+
+**[SOURCE]**
+
+```javascript
+const person = {
+    'name' : 'jeahun',
+    'age' : 24,
+}
+console.log(person);
+person.gender = 'male'
+console.log(person);
+delete person.age
+console.log(person);
+```
+
+**[CONSOLE]**
+
+```
+{ name: 'jeahun', age: 24 }
+{ name: 'jeahun', age: 24, gender: 'male' }
+{ name: 'jeahun', gender: 'male' }
+```
+
+위의 소스에서도 볼 수 있듯이 `person` 이라는 객체를 `const` 로 선언했음에도 `gender` 라는 프로퍼티를 추가 했고 `age` 라는 프로퍼티를 제거 했다. 이는 객체가 premitive variable과는 달리 참조 주소를 가지고 있어서 그렇다. 또한 javascript에서 배열, 함수, 클래스 모두 객체로 취급하므로 const 로 선언하더라도 수정이나 추가 삭제가 가능하다.
+
+### 2. Computed Properties
+
+생성된 객체를 호출하는 방법에는 크게 2가지가 있다.
+* **1. use `.`**
+```javascript
+objName.keyName;
+```
+* **2. use `[]`** (computed property)
+```javascript
+objName['keyName']
+```
+
+**[SOURCE]**
+
+```javascript
+const person = {
+    'name' : 'jeahun',
+    'age' : 24,
+}
+person.gender = 'male';
+test='gender'
+
+console.log(person.gender);
+console.log(person['gender']);
+```
+
+**[CONSOLE]**
+
+```
+male
+male
+```
+
+위의 2가지의 호출은 동작은 같다. 하지만 쓰는 방식에서 차이가 있다. `.`의 호출은 대부분의 상황에서 쓰는데 만약에 key값이 정해져 있지 않다면 쓸 수가 없다. 받아올 key 값에 따라 달라지게 만들려면 `[]`를 쓰는 것이 좋다. 밑의 소스를 보자
+
+**[SOURCE]**
+
+```javascript
+const person = {
+    'name' : 'jeahun',
+    'age' : 24,
+}
+person.gender = 'male';
+
+function printValue(obj, key) {//(객체, key 이름)
+    console.log(obj.key);
+}
+function printValueOfCP(obj, key) {
+    console.log(obj[key]);
+}
+printValue(person, 'name')
+printValueOfCP(person, 'name')
+```
+
+**[CONSOLE]**
+
+```
+undefined
+jeahun
+```
+
+위의 코드에서 `obj`와 `key` 라는 매개변수를 이용해 객체의 프로퍼티값을 가져오는 함수를 2개 만들었다. 이 때 `printValue` 함수는 `.`를 사용하여 출력값을 요청했지만 `undefined`가 떴고, `printValueOfCP` 함수는 `[]` 를 사용하여 출력값을 요청했고 정상적으로 `jeahun`을 출력했다. 이러한 특징 때문에 만약 key 값이 동적이고 수정이나 추가 같은 작업을 해야 할 때 즉 변하는 값일 때는 `[]`(computed property) 를 사용하는 것이 좋다.
+
+### 4. Property value Shorthand
+
+**[SOURCE]**
+```javascript
+const person1 = {name : 'bob', age : 12};
+const person2 = {name : 'anne', age : 33};
+const person3 = {name : 'jeahun', age : 24};
+```
+
+위의 소스에서 매번 같은 포맷의 객체를 선언하는데 매번 같은 소스를 반복해서 써야 한다. 이를 함수를 통해 해결해 보자. 밑의 소스를 보라.
+
+**[SOURCE]**
+```javascript
+function makePerson(name, age) {
+    return {
+        name : name,
+        age : age
+    }
+}
+const person1 = makePerson('bob', 12)
+const person2 = makePerson('anne', 33)
+const person3 = makePerson('jeahun', 24)
+const person4 = makePerson('steve', 3);
+```
+
+이런 식으로 함수를 작성하면 코드를 좀 더 적게 쓸 수 있다. 또한 위의 소스처럼 `name : name`, `age : age` 처럼 객체의 키값과 프로퍼티 값이 같을 때 축약해서 `name`, `age`만 사용할 수 있다. 이를 **Property value shorthand** 라고 한다. 밑의 소스를 참고하라.
+
+**[SOURCE]**
+```javascript
+function makePerson(name, age) {
+    return {
+        name,
+        age
+    }
+}
+const person1 = makePerson('bob', 12)
+const person2 = makePerson('anne', 33)
+const person3 = makePerson('jeahun', 24)
+const person4 = makePerson('steve', 3);
+```
+
+### 5. Constructor Function
+
+**[SOURCE]**
+```javascript
+function makePerson(name, age) {
+    return {
+        name,
+        age
+    }
+}
+const person1 = makePerson('bob', 12)
+const person2 = makePerson('anne', 33)
+const person3 = makePerson('jeahun', 24)
+const person4 = makePerson('steve', 3);
+```
+
+이 소스에서 `makePerson` 이라고 하는 함수는 `personN` 이라고 하는 객체를 생성하는 함수의 플랫폼처럼 쓰였다. 이러한 기능을 우리는 [3. Class](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyByDRCD/javascriptByDRCD2.md#3-class) 에서 살펴보았다. 이러한 기능은 javascript가 공식적으로 class 를 지원하기 전 class 처럼 쓰기 위해 사용하였다. 이렇게 다른 기능이 없고 순수하게 객체를 생성하는 함수는 기본적으로 함수이름 제일앞을 대문자로 작성하며 `return` 이라는 값을 적지 않고 사용한다. 밑의 소스를 보자.
+
+**[SOURCE]**
+```javascript
+function Person(name, age) {
+    //this = {}
+    this.name=name;
+    this.age=age;
+    //return this
+}
+const person1 = new Person('bob', 12)
+const person2 = new Person('anne', 33)
+const person3 = new Person('jeahun', 24)
+const person4 = new Person('steve', 3);
+```
+
+위의 소스에서처럼 **객체를 생성하는 목적으로 사용하는 함수**를 **constructor function(생성자함수)** 라고 하며 위에서 볼 수 있듯이 객체를 생성(`this={}`)하고 그 객체를 return하는 부분(`return this`)을 생략해서 사용한다.
+
+12 분 부터 다시!!

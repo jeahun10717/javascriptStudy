@@ -360,6 +360,124 @@ false
 true
 true
 true</code></pre><p>&#xB2E4;&#xB978; &#xBD80;&#xBD84;&#xC740; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xBA74;&#xC11C; &#xCC28;&#xADFC;&#xCC28;&#xADFC; &#xBCF4;&#xBA74; &#xC774;&#xD574;&#xD560; &#xC218; &#xC788;&#xB2E4;. <code>triangle instanceof Object</code> &#xC5D0;&#xC11C; <code>Object</code>&#xB294; &#xBAA8;&#xB4E0; javascript &#xC704;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xC774;&#xB2E4;. &#xC55E;&#xC5D0;&#xC11C;&#xB3C4; &#xC54C;&#xC544;&#xBCF4;&#xC558;&#xC9C0;&#xB9CC; javascript&#xB294; class&#xB77C;&#xB294; &#xD615;&#xD0DC;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xB77C; &#xAC1D;&#xCCB4;&#xB97C; &#xD1B5;&#xD574; class &#xC758; &#xAC1C;&#xB150;&#xC744; &#xB9CC;&#xB4E0; &#xAC83;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD074;&#xB798;&#xC2A4;&#xB3C4; &#xAC1D;&#xCCB4;&#xB85C; &#xBCF8;&#xB2E4;.</p>
+<h2 id="4-object">4. Object</h2>
+<h3 id="1-literals-and-properties">1. Literals and Properties</h3>
+<p>Object&#xB294; key &#xC640; value &#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xC758; &#xC9D1;&#xD569;&#xCCB4;&#xC774;&#xB2E4;. &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xC0AC;&#xC6A9;&#xBC95;&#xC740; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;.</p>
+<ul>
+<li><strong>1. object literal syntax</strong><pre><code class="language-javascript">const objName = {key : value};</code></pre>
+</li>
+<li><strong>2. object constructor syntax</strong><pre><code class="language-javascript">const objName = new Object();</code></pre>
+</li>
+</ul>
+<p>const &#xB77C;&#xB294; &#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;&#xC744; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xBB38;&#xC81C;&#xC810;&#xC774; &#xC0DD;&#xAE38; &#xC218; &#xC788;&#xB2E4;. &#xAE30;&#xC874;&#xC758; premitive variable &#xC5D0;&#xC11C;&#xB294; const &#xB85C; &#xC120;&#xC5B8;&#xD55C; &#xB370;&#xC774;&#xD130;&#xB294; &#xC218;&#xC815;&#xC774;&#xB098; &#xC0AD;&#xC81C;&#xAC00; &#xBD88;&#xAC00;&#xB2A5; &#xD588;&#xB294;&#xB370; &#xAC1D;&#xCCB4;&#xB294; &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xB2E4;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">const person = {
+    &apos;name&apos; : &apos;jeahun&apos;,
+    &apos;age&apos; : 24,
+}
+console.log(person);
+person.gender = &apos;male&apos;
+console.log(person);
+delete person.age
+console.log(person);</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>{ name: &apos;jeahun&apos;, age: 24 }
+{ name: &apos;jeahun&apos;, age: 24, gender: &apos;male&apos; }
+{ name: &apos;jeahun&apos;, gender: &apos;male&apos; }</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C;&#xB3C4; &#xBCFC; &#xC218; &#xC788;&#xB4EF;&#xC774; <code>person</code> &#xC774;&#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; <code>const</code> &#xB85C; &#xC120;&#xC5B8;&#xD588;&#xC74C;&#xC5D0;&#xB3C4; <code>gender</code> &#xB77C;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xCD94;&#xAC00; &#xD588;&#xACE0; <code>age</code> &#xB77C;&#xB294; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC81C;&#xAC70; &#xD588;&#xB2E4;. &#xC774;&#xB294; &#xAC1D;&#xCCB4;&#xAC00; premitive variable&#xACFC;&#xB294; &#xB2EC;&#xB9AC; &#xCC38;&#xC870; &#xC8FC;&#xC18C;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC5B4;&#xC11C; &#xADF8;&#xB807;&#xB2E4;. &#xB610;&#xD55C; javascript&#xC5D0;&#xC11C; &#xBC30;&#xC5F4;, &#xD568;&#xC218;, &#xD074;&#xB798;&#xC2A4; &#xBAA8;&#xB450; &#xAC1D;&#xCCB4;&#xB85C; &#xCDE8;&#xAE09;&#xD558;&#xBBC0;&#xB85C; const &#xB85C; &#xC120;&#xC5B8;&#xD558;&#xB354;&#xB77C;&#xB3C4; &#xC218;&#xC815;&#xC774;&#xB098; &#xCD94;&#xAC00; &#xC0AD;&#xC81C;&#xAC00; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</p>
+<h3 id="2-computed-properties">2. Computed Properties</h3>
+<p>&#xC0DD;&#xC131;&#xB41C; &#xAC1D;&#xCCB4;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0;&#xB294; &#xD06C;&#xAC8C; 2&#xAC00;&#xC9C0;&#xAC00; &#xC788;&#xB2E4;.</p>
+<ul>
+<li><strong>1. use <code>.</code></strong><pre><code class="language-javascript">objName.keyName;</code></pre>
+</li>
+<li><strong>2. use <code>[]</code></strong> (computed property)<pre><code class="language-javascript">objName[&apos;keyName&apos;]</code></pre>
+</li>
+</ul>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">const person = {
+    &apos;name&apos; : &apos;jeahun&apos;,
+    &apos;age&apos; : 24,
+}
+person.gender = &apos;male&apos;;
+test=&apos;gender&apos;
+
+console.log(person.gender);
+console.log(person[&apos;gender&apos;]);</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>male
+male</code></pre><p>&#xC704;&#xC758; 2&#xAC00;&#xC9C0;&#xC758; &#xD638;&#xCD9C;&#xC740; &#xB3D9;&#xC791;&#xC740; &#xAC19;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC4F0;&#xB294; &#xBC29;&#xC2DD;&#xC5D0;&#xC11C; &#xCC28;&#xC774;&#xAC00; &#xC788;&#xB2E4;. <code>.</code>&#xC758; &#xD638;&#xCD9C;&#xC740; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xC0C1;&#xD669;&#xC5D0;&#xC11C; &#xC4F0;&#xB294;&#xB370; &#xB9CC;&#xC57D;&#xC5D0; key&#xAC12;&#xC774; &#xC815;&#xD574;&#xC838; &#xC788;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74; &#xC4F8; &#xC218;&#xAC00; &#xC5C6;&#xB2E4;. &#xBC1B;&#xC544;&#xC62C; key &#xAC12;&#xC5D0; &#xB530;&#xB77C; &#xB2EC;&#xB77C;&#xC9C0;&#xAC8C; &#xB9CC;&#xB4E4;&#xB824;&#xBA74; <code>[]</code>&#xB97C; &#xC4F0;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xB2E4;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xC790;</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">const person = {
+    &apos;name&apos; : &apos;jeahun&apos;,
+    &apos;age&apos; : 24,
+}
+person.gender = &apos;male&apos;;
+
+function printValue(obj, key) {//(&#xAC1D;&#xCCB4;, key &#xC774;&#xB984;)
+    console.log(obj.key);
+}
+function printValueOfCP(obj, key) {
+    console.log(obj[key]);
+}
+printValue(person, &apos;name&apos;)
+printValueOfCP(person, &apos;name&apos;)</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>undefined
+jeahun</code></pre><p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; <code>obj</code>&#xC640; <code>key</code> &#xB77C;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xAC1D;&#xCCB4;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC12;&#xC744; &#xAC00;&#xC838;&#xC624;&#xB294; &#xD568;&#xC218;&#xB97C; 2&#xAC1C; &#xB9CC;&#xB4E4;&#xC5C8;&#xB2E4;. &#xC774; &#xB54C; <code>printValue</code> &#xD568;&#xC218;&#xB294; <code>.</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCD9C;&#xB825;&#xAC12;&#xC744; &#xC694;&#xCCAD;&#xD588;&#xC9C0;&#xB9CC; <code>undefined</code>&#xAC00; &#xB5B4;&#xACE0;, <code>printValueOfCP</code> &#xD568;&#xC218;&#xB294; <code>[]</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCD9C;&#xB825;&#xAC12;&#xC744; &#xC694;&#xCCAD;&#xD588;&#xACE0; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; <code>jeahun</code>&#xC744; &#xCD9C;&#xB825;&#xD588;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xD2B9;&#xC9D5; &#xB54C;&#xBB38;&#xC5D0; &#xB9CC;&#xC57D; key &#xAC12;&#xC774; &#xB3D9;&#xC801;&#xC774;&#xACE0; &#xC218;&#xC815;&#xC774;&#xB098; &#xCD94;&#xAC00; &#xAC19;&#xC740; &#xC791;&#xC5C5;&#xC744; &#xD574;&#xC57C; &#xD560; &#xB54C; &#xC989; &#xBCC0;&#xD558;&#xB294; &#xAC12;&#xC77C; &#xB54C;&#xB294; <code>[]</code>(computed property) &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xB2E4;.</p>
+<h3 id="4-property-value-shorthand">4. Property value Shorthand</h3>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">const person1 = {name : &apos;bob&apos;, age : 12};
+const person2 = {name : &apos;anne&apos;, age : 33};
+const person3 = {name : &apos;jeahun&apos;, age : 24};</code></pre>
+<p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xB9E4;&#xBC88; &#xAC19;&#xC740; &#xD3EC;&#xB9F7;&#xC758; &#xAC1D;&#xCCB4;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xB294;&#xB370; &#xB9E4;&#xBC88; &#xAC19;&#xC740; &#xC18C;&#xC2A4;&#xB97C; &#xBC18;&#xBCF5;&#xD574;&#xC11C; &#xC368;&#xC57C; &#xD55C;&#xB2E4;. &#xC774;&#xB97C; &#xD568;&#xC218;&#xB97C; &#xD1B5;&#xD574; &#xD574;&#xACB0;&#xD574; &#xBCF4;&#xC790;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xB77C;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">function makePerson(name, age) {
+    return {
+        name : name,
+        age : age
+    }
+}
+const person1 = makePerson(&apos;bob&apos;, 12)
+const person2 = makePerson(&apos;anne&apos;, 33)
+const person3 = makePerson(&apos;jeahun&apos;, 24)
+const person4 = makePerson(&apos;steve&apos;, 3);</code></pre>
+<p>&#xC774;&#xB7F0; &#xC2DD;&#xC73C;&#xB85C; &#xD568;&#xC218;&#xB97C; &#xC791;&#xC131;&#xD558;&#xBA74; &#xCF54;&#xB4DC;&#xB97C; &#xC880; &#xB354; &#xC801;&#xAC8C; &#xC4F8; &#xC218; &#xC788;&#xB2E4;. &#xB610;&#xD55C; &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xCC98;&#xB7FC; <code>name : name</code>, <code>age : age</code> &#xCC98;&#xB7FC; &#xAC1D;&#xCCB4;&#xC758; &#xD0A4;&#xAC12;&#xACFC; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xAC12;&#xC774; &#xAC19;&#xC744; &#xB54C; &#xCD95;&#xC57D;&#xD574;&#xC11C; <code>name</code>, <code>age</code>&#xB9CC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xC774;&#xB97C; <strong>Property value shorthand</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xB77C;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">function makePerson(name, age) {
+    return {
+        name,
+        age
+    }
+}
+const person1 = makePerson(&apos;bob&apos;, 12)
+const person2 = makePerson(&apos;anne&apos;, 33)
+const person3 = makePerson(&apos;jeahun&apos;, 24)
+const person4 = makePerson(&apos;steve&apos;, 3);</code></pre>
+<h3 id="5-constructor-function">5. Constructor Function</h3>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">function makePerson(name, age) {
+    return {
+        name,
+        age
+    }
+}
+const person1 = makePerson(&apos;bob&apos;, 12)
+const person2 = makePerson(&apos;anne&apos;, 33)
+const person3 = makePerson(&apos;jeahun&apos;, 24)
+const person4 = makePerson(&apos;steve&apos;, 3);</code></pre>
+<p>&#xC774; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>makePerson</code> &#xC774;&#xB77C;&#xACE0; &#xD558;&#xB294; &#xD568;&#xC218;&#xB294; <code>personN</code> &#xC774;&#xB77C;&#xACE0; &#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xD568;&#xC218;&#xC758; &#xD50C;&#xB7AB;&#xD3FC;&#xCC98;&#xB7FC; &#xC4F0;&#xC600;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xC6B0;&#xB9AC;&#xB294; <a href="https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyByDRCD/javascriptByDRCD2.md#3-class">3. Class</a> &#xC5D0;&#xC11C; &#xC0B4;&#xD3B4;&#xBCF4;&#xC558;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xAE30;&#xB2A5;&#xC740; javascript&#xAC00; &#xACF5;&#xC2DD;&#xC801;&#xC73C;&#xB85C; class &#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xAE30; &#xC804; class &#xCC98;&#xB7FC; &#xC4F0;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xD558;&#xC600;&#xB2E4;. &#xC774;&#xB807;&#xAC8C; &#xB2E4;&#xB978; &#xAE30;&#xB2A5;&#xC774; &#xC5C6;&#xACE0; &#xC21C;&#xC218;&#xD558;&#xAC8C; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xD568;&#xC218;&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xD568;&#xC218;&#xC774;&#xB984; &#xC81C;&#xC77C;&#xC55E;&#xC744; &#xB300;&#xBB38;&#xC790;&#xB85C; &#xC791;&#xC131;&#xD558;&#xBA70; <code>return</code> &#xC774;&#xB77C;&#xB294; &#xAC12;&#xC744; &#xC801;&#xC9C0; &#xC54A;&#xACE0; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xC790;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">function Person(name, age) {
+    //this = {}
+    this.name=name;
+    this.age=age;
+    //return this
+}
+const person1 = new Person(&apos;bob&apos;, 12)
+const person2 = new Person(&apos;anne&apos;, 33)
+const person3 = new Person(&apos;jeahun&apos;, 24)
+const person4 = new Person(&apos;steve&apos;, 3);</code></pre>
+<p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; <strong>&#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xBAA9;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD568;&#xC218;</strong>&#xB97C; <strong>constructor function(&#xC0DD;&#xC131;&#xC790;&#xD568;&#xC218;)</strong> &#xB77C;&#xACE0; &#xD558;&#xBA70; &#xC704;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB4EF;&#xC774; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;(<code>this={}</code>)&#xD558;&#xACE0; &#xADF8; &#xAC1D;&#xCCB4;&#xB97C; return&#xD558;&#xB294; &#xBD80;&#xBD84;(<code>return this</code>)&#xC744; &#xC0DD;&#xB7B5;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</p>
+<p>12 &#xBD84; &#xBD80;&#xD130; &#xB2E4;&#xC2DC;!!</p>
 </article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
   <svg t="1533629773982" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1035" xlink="http://www.w3.org/1999/xlink" width="40" height="40"><defs><style type="text/css">@font-face { font-family: uc-nexus-iconfont; src: url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff") format("woff"), url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf") format("truetype"); }
   </style></defs><path d="M536.255427 195.182354c-7.804756-7.804756-17.966187-11.615549-28.311813-11.615549-9.43693 0-18.874883 3.449565-26.496467 10.163477-2.360767 1.452071-4.356214 3.267417-6.352685 5.262864L218.47792 455.611735c-15.607466 15.60542-15.607466 40.834011 0 56.43943 15.607466 15.607466 41.558511 15.607466 57.167001 0l193.46013-192.733583 0 600.526219c0 22.1423 17.787108 39.927361 39.927361 39.927361 22.140253 0 39.927361-17.785062 39.927361-39.927361L548.959773 319.317583 737.15704 508.422522c15.607466 15.607466 40.469714 15.607466 56.078203 0 15.607466-15.607466 15.425318-40.834011-0.182149-56.441477L536.255427 195.182354 536.255427 195.182354z" p-id="1036" fill="#333"/><path d="M101.784174 143.097092l816.674071 0c22.140253 0 39.925315-17.785062 39.925315-39.927361 0-22.140253-17.784038-39.925315-39.925315-39.925315L101.784174 63.244416c-22.140253 0-39.927361 17.785062-39.927361 39.925315C61.856813 125.31203 79.643921 143.097092 101.784174 143.097092L101.784174 143.097092z" p-id="1037" fill="#333"/></svg>

@@ -201,7 +201,7 @@ javascript 는 멀티스레드를 지원하므로 동시에 변경할 때 변경
 * **function** : first-class function
 
 primitive varibale과 object variable 의 차이점은 아래 링크에 자세히 설명해 두었다.
-[javascript생활코딩3](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/javascriptBySHCD3.md#4-%EB%AA%A8%EB%93%A0-%EA%B0%9D%EC%B2%B4%EC%97%90%EC%84%9C-%EC%82%AC%EC%9A%A9%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-method-%EC%A0%95%EC%9D%98)
+[javascript생활코딩3](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/javascriptBySHCD3.md#2-%EC%9B%90%EC%8B%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%83%80%EC%9E%85-primitive-type)
 
 이제 javascript 의 변수와 다른 언어의 변수를 비교해보자.
 
@@ -467,7 +467,7 @@ console.log(jeahun);
 { name: 'coder' }
 ```
 
-하지만 기본적으로 premitive parameters 와 object parameters 의 적용방식이 다르다. 이는 이 2개의 인자들을 접근할 때 방식의 차이에서 발생하는데 밑의 링크에 자세히 설명해 두었다. 간단히 요약하자면 premitive value 는 값 자체를 주고 받지만 object 는 주소(refernece) 를 주고받기 때문이다.
+하지만 기본적으로 premitive parameters 와 object parameters 의 적용방식이 다르다. 이는 이 2개의 인자들을 접근할 때 방식의 차이에서 발생하는데 이 때 생기는 문제점들을 밑의 링크에 자세히 설명해 두었다. 간단히 요약하자면 premitive value 는 값 자체를 주고 받지만 object 는 주소(refernece) 를 주고받기 때문이다.
 
 [javascriptBySHCD3 - 3. 복제](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/javascriptBySHCD3.md#3-%EB%B3%B5%EC%A0%9C)
 

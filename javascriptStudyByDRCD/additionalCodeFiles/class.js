@@ -1,39 +1,12 @@
-class Shape {
-    constructor(width, height, color){
-        this.width = width;
-        this.height = height;
-        this.color = color;
-    }
-
-    draw(){
-        console.log(`drawing ${this.color} color of`);
-    }
-    getArea(){
-        return this.width * this.height
+function makePerson(name, age) {
+    return {
+        name,
+        age
     }
 }
+const person1 = makePerson('bob', 12)
+const person2 = makePerson('anne', 33)
+const person3 = makePerson('jeahun', 24)
+const person4 = makePerson('steve', 3);
 
-class Rectangle extends Shape {}
-class Triangle extends Shape {
-    draw(){
-        console.log('△');
-    }
-    getArea(){
-        return(this.width * this.height) / 2;
-    }
-}
-
-const rectangle = new Rectangle(20, 20, 'blue');
-rectangle.draw();
-console.log(rectangle.getArea());
-
-const triangle = new Triangle(20, 20, 'red');
-triangle.draw();
-console.log(triangle.getArea());
-
-console.log('-----------check of instance----------');
-console.log(rectangle instanceof Rectangle);
-console.log(triangle instanceof Rectangle);
-console.log(triangle instanceof Triangle);
-console.log(triangle instanceof Shape);
-console.log(triangle instanceof Object);
+console.log(person4);
