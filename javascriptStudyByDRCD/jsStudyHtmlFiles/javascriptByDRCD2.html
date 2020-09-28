@@ -476,8 +476,114 @@ const person1 = new Person(&apos;bob&apos;, 12)
 const person2 = new Person(&apos;anne&apos;, 33)
 const person3 = new Person(&apos;jeahun&apos;, 24)
 const person4 = new Person(&apos;steve&apos;, 3);</code></pre>
-<p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; <strong>&#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xBAA9;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD568;&#xC218;</strong>&#xB97C; <strong>constructor function(&#xC0DD;&#xC131;&#xC790;&#xD568;&#xC218;)</strong> &#xB77C;&#xACE0; &#xD558;&#xBA70; &#xC704;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB4EF;&#xC774; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;(<code>this={}</code>)&#xD558;&#xACE0; &#xADF8; &#xAC1D;&#xCCB4;&#xB97C; return&#xD558;&#xB294; &#xBD80;&#xBD84;(<code>return this</code>)&#xC744; &#xC0DD;&#xB7B5;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</p>
-<p>12 &#xBD84; &#xBD80;&#xD130; &#xB2E4;&#xC2DC;!!</p>
+<p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; <strong>&#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xBAA9;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD568;&#xC218;</strong>&#xB97C; <strong>constructor function(&#xC0DD;&#xC131;&#xC790;&#xD568;&#xC218;)</strong> &#xB77C;&#xACE0; &#xD558;&#xBA70; &#xC704;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB4EF;&#xC774; &#xBE48; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;(<code>this={}</code>)&#xD558;&#xACE0; &#xADF8; &#xAC1D;&#xCCB4;&#xB97C; return&#xD558;&#xB294; &#xBD80;&#xBD84;(<code>return this</code>)&#xC744; &#xC0DD;&#xB7B5;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</p>
+<h3 id="6-in-operator">6. in Operator</h3>
+<p><code>in</code> &#xC2DD;&#xBCC4;&#xC790;&#xB294; &#xD0C0;&#xAC9F; &#xAC1D;&#xCCB4;&#xC5D0; &#xD574;&#xB2F9; &#xD0A4;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xB294;&#xC9C0;&#xB97C; &#xD655;&#xC778;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC774;&#xB2E4;. &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xC0AC;&#xC6A9;&#xBC95;&#xC740; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;.</p>
+<pre><code class="language-javscript">&apos;key&apos; in obj</code></pre>
+<p><code>key</code> &#xAC12;&#xC774; <code>obj</code> &#xC548;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xBA74; <code>true</code>, &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; <code>false</code> &#xB97C; &#xB9AC;&#xD134;&#xD55C;&#xB2E4;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">function makePerson(name, age, gender, local) {
+    return {
+        name,
+        age,
+        gender,
+        local
+    }
+}
+
+const jeahun = new makePerson(&apos;jeahun&apos;, 24, &apos;man&apos;, &apos;Busan&apos;);
+
+console.log(&apos;name&apos; in jeahun);
+console.log(&apos;local&apos; in jeahun);
+console.log(&apos;email&apos; in jeahun);</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>true
+true
+false</code></pre><h3 id="for-in-for-of">for in &amp; for of</h3>
+<p><code>for in</code> &#xACFC; <code>for of</code> &#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xBC18;&#xBCF5;&#xBB38;&#xC758; &#xAD6C;&#xC870;&#xB97C; &#xB530;&#xB978;&#xB2E4;.</p>
+<ul>
+<li><code>for of</code> : &#xAC1D;&#xCCB4;&#xB97C; &#xC704;&#xD55C; &#xBC18;&#xBCF5;&#xBB38;</li>
+<li><code>for in</code> : &#xBC30;&#xC5F4;&#xC744; &#xC704;&#xD55C; &#xBC18;&#xBCF5;&#xBB38;</li>
+</ul>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">const personObj = {
+    name : &apos;jeahun&apos;,
+    age : 24,
+    gender : &apos;male&apos;,
+    local : &apos;Busan&apos;
+}
+const personArr=[1, 2, 3, 4, 335]
+
+for(key in personObj){
+    console.log(key);
+}
+
+for(value of personArr){
+    console.log(value);
+}</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>name
+age
+gender
+local
+1
+2
+3
+4
+335</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>for in</code> &#xC548;&#xC758; <code>key</code>, <code>for of</code> &#xC548;&#xC758; <code>value</code> &#xB294; &#xC544;&#xBB34; &#xAC01;&#xAC01; &#xAC1D;&#xCCB4;&#xC5D0;&#xC11C; &#xBC1B;&#xC544;&#xC62C; &#xD0A4;&#xAC12;, &#xBC30;&#xC5F4;&#xC5D0;&#xC11C; &#xBC1B;&#xC544;&#xC62C; &#xAC12;&#xC774;&#xB2E4;.</p>
+<h3 id="7-clone">7. clone</h3>
+<p>javascript&#xC5D0;&#xC11C; &#xAC1D;&#xCCB4;&#xB97C; &#xADF8;&#xB300;&#xB85C; &#xBCF5;&#xC0AC;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC2F6;&#xC744; &#xB54C; &#xC5B4;&#xB5BB;&#xAC8C; &#xD558;&#xBA74; &#xB420;&#xAE4C;? &#xAE30;&#xC874;&#xC758; &#xB2E4;&#xB978; &#xBB38;&#xBC95;&#xACFC; &#xAC19;&#xC774; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; &#xBB38;&#xC81C;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">const user = {name : &apos;ellie&apos;, age : 20}
+const user2 = user;
+user2.name = &apos;coder&apos;;
+console.log(user);</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>{ name: &apos;coder&apos;, age: 20 }</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>user2</code>&#xC758; <code>name</code>&#xC744; &#xC218;&#xC815;&#xD588;&#xC73C;&#xB2C8; &#xC6B0;&#xB9AC;&#xAC00; &#xC608;&#xC0C1;&#xD558;&#xAE30;&#xB85C; <code>user</code>&#xC758; <code>name</code> &#xC740; &#xADF8;&#xB300;&#xB85C; <code>ellie</code> &#xC77C; &#xAC83; &#xAC19;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC2E4;&#xD589;&#xC744; &#xC2DC;&#xCF1C;&#xBCF4;&#xBA74; <code>user</code>&#xC758; <code>name</code> &#xC774; <code>coder</code> &#xB85C; &#xBC14;&#xB00C;&#xC5B4; &#xC788;&#xB2E4;. &#xC774;&#xB294; mutable datatype &#xC740; &#xADF8; &#xB370;&#xC774;&#xD130; &#xC790;&#xCCB4;&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xB77C; &#xCC38;&#xC870;&#xC8FC;&#xC18C;&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xACE0; &#xC788;&#xAE30; &#xB584;&#xBB38;&#xC774;&#xB2E4;. &#xBC11;&#xC758; &#xADF8;&#xB9BC;&#xC744; &#xBCF4;&#xC790;<br>
+<strong>&lt;<code>user2.name = &apos;coder&apos;</code> &#xBD80;&#xBD84; &#xC2E4;&#xD589; &#xC804;&gt;</strong>
+<img src="./imgFolder/DRCD_js_IMG8.png" alt="user2.name=&apos;coder&apos; &#xBD80;&#xBD84; &#xC2E4;&#xD589; &#xC804;"></p>
+<p>&#xC704;&#xC758; &#xADF8;&#xB9BC;&#xC5D0;&#xC11C; user &#xB294; <code>@1001</code> &#xC774;&#xB77C;&#xB294; &#xC8FC;&#xC18C;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD574;&#xBCF4;&#xC790;. &#xC774; &#xB54C; <code>user2 = user</code> &#xBD80;&#xBD84;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xAC8C; &#xB418;&#xBA74; <code>user2</code> &#xC5D0; <code>user</code>&#xAC00; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4; &#xC790;&#xCCB4;&#xAC00; &#xC544;&#xB2CC; &#xCC38;&#xC870;&#xC8FC;&#xC18C;&#xB97C; &#xB118;&#xACA8;&#xC8FC;&#xAC8C; &#xB41C;&#xB2E4;. &#xC989; <code>user2</code> &#xC5ED;&#xC2DC; <code>@1001</code> &#xC774;&#xB77C;&#xB294; &#xC8FC;&#xC18C;&#xB97C; &#xAC00;&#xC9C0;&#xAC8C; &#xB41C;&#xB2E4;. &#xC774; &#xB54C; <code>user2.name = &apos;coder&apos;</code> &#xBD80;&#xBD84;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; &#xB3C4;&#xC2DD;&#xC744; &#xB098;&#xD0C0;&#xB0B8;&#xB2E4;.</p>
+<p><strong>&lt;<code>user2.name = &apos;coder&apos;</code> &#xBD80;&#xBD84; &#xC2E4;&#xD589; &#xD6C4;&gt;</strong>
+<img src="./imgFolder/DRCD_js_IMG9.png" alt="user2.name=&apos;coder&apos; &#xBD80;&#xBD84; &#xC2E4;&#xD589; &#xD6C4;"></p>
+<p>&#xC704;&#xC758; &#xADF8;&#xB9BC;&#xACFC; &#xAC19;&#xC774; <code>user2.name = &apos;coder&apos;</code> &#xBD80;&#xBD84;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xBA74; <code>@1001</code> &#xC774;&#xB77C;&#xB294; &#xCC38;&#xC870;&#xC8FC;&#xC18C;&#xB97C; &#xB530;&#xB77C; &#xBA54;&#xBAA8;&#xB9AC;&#xC5D0; &#xC811;&#xADFC;&#xD558;&#xC5EC; <code>name</code> &#xC5D0; <code>coder</code>&#xB97C; &#xC0BD;&#xC785;&#xD558;&#xAC8C; &#xB41C;&#xB2E4;. &#xC774; &#xB54C; <code>user.name</code> &#xC744; &#xD638;&#xCD9C;&#xD558;&#xBA74; <code>user</code>&#xAC00; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; <code>@1001</code> &#xC758; &#xC8FC;&#xC18C;&#xB85C; &#xAC00;&#xC11C; &#xADF8; &#xC815;&#xBCF4;&#xB97C; &#xAC00;&#xC838;&#xC624;&#xB294;&#xB370; &#xC774; &#xB54C; <code>@1001</code> &#xC8FC;&#xC18C;&#xC758; <code>name</code> &#xC740; <code>coder</code> &#xC774;&#xB2E4;. &#xC6B0;&#xB9AC;&#xB294; <code>user2</code>&#xC758; <code>name</code>&#xC744; &#xC218;&#xC815;&#xD588;&#xC9C0;&#xB9CC; &#xC0AC;&#xC2E4; <code>user</code>&#xC758; <code>name</code>&#xB3C4; &#xC218;&#xC815;&#xB41C; &#xAC83; &#xAC19;&#xC544; &#xBCF4;&#xC778;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xB7EC;&#xD55C; &#xBCC0;&#xD654;&#xB294; mutable datatype&#xC758; &#xB3D9;&#xC791;&#xAD6C;&#xC870;&#xB97C; &#xBCF4;&#xBA74; &#xC774;&#xD574;&#xB97C; &#xD560; &#xC218; &#xC788;&#xB2E4;.<br></p>
+<p>&#xADF8;&#xB807;&#xB2E4;&#xBA74; javascript&#xC5D0;&#xC11C; &#xBCF5;&#xC81C;&#xB294; &#xC5B4;&#xB5BB;&#xAC8C; &#xD574;&#xC57C; &#xD560;&#xAE4C;? &#xC544;&#xB798;&#xC758; 2&#xAC00;&#xC9C0; &#xBC29;&#xBC95;&#xC774; &#xC874;&#xC7AC;&#xD55C;&#xB2E4;.</p>
+<ol>
+<li><strong>old way</strong>
+&#xAE30;&#xBCF8;&#xC801;&#xC778; &#xB300;&#xC785;&#xC5F0;&#xC0B0;&#xC790;&#xB85C;&#xB294; &#xBCF5;&#xC81C;&#xC2DC; &#xC704;&#xC758; &#xBB38;&#xC81C;&#xAC00; &#xBC1C;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xBE48; &#xAC1D;&#xCCB4;&#xB97C; &#xC120;&#xC5B8;&#xD55C; &#xD6C4; key&#xC640; property&#xB97C; &#xAC01;&#xAC01; &#xC77C;&#xC77C;&#xD788; &#xB300;&#xC785;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC774; &#xC788;&#xB2E4;. &#xC544;&#xB798;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xC790;.</li>
+</ol>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">const user = {name : &apos;ellie&apos;, age : 20}
+const user2 = user;
+console.log(user);
+
+const user3 = {};
+for(key in user){
+    user3[key] = user[key];
+}
+user3.name=&apos;jeahun&apos;;
+
+console.log(user3);</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>{ name: &apos;ellie&apos;, age: 20 }
+{ name: &apos;ellie&apos;, age: 20 }</code></pre><p>&#xC704;&#xC758; &#xBCF5;&#xC81C;&#xC5D0;&#xC11C;&#xC758; &#xBB38;&#xC81C;&#xAC00; &#xC788;&#xB294; &#xC18C;&#xC2A4;&#xC640;&#xB294; &#xB2EC;&#xB9AC; user3.name = &apos;jeahun&apos; &#xC744; &#xC2E4;&#xD589;&#xD574;&#xB3C4; user3&#xC758; &#xAC1D;&#xCCB4;&#xC758; name &#xB9CC; &#xBCC0;&#xACBD;&#xC774; &#xB41C;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xB7F0; &#xBC29;&#xBC95;&#xBCF4;&#xB2E4; &#xC26C;&#xC6B4; &#xBC29;&#xBC95;&#xC774; &#xC788;&#xB2E4;.</p>
+<ol start="2">
+<li><strong><code>Object.assign</code></strong></li>
+</ol>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">const user = {name : &apos;ellie&apos;, age : 20}
+const user2 = user;
+console.log(user);
+
+const user3 = {};
+Object.assign(user3, user)
+
+user3.name=&apos;jeahun&apos;
+
+console.log(user3);</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>{ name: &apos;ellie&apos;, age: 20 }
+{ name: &apos;ellie&apos;, age: 20 }</code></pre><p><code>assign</code> &#xBA54;&#xC18C;&#xB4DC;&#xB294; <code>Object</code> &#xD45C;&#xC900;&#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4; &#xC5D0; &#xC18D;&#xD55C; &#xBA54;&#xC18C;&#xB4DC;&#xB85C; &#xD0C0;&#xAC9F; &#xAC1D;&#xCCB4;&#xB97C; &#xBCF5;&#xC0AC;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;. &#xC0AC;&#xC6A9;&#xBC95;&#xC740; &#xC544;&#xB798;&#xC758; &#xB9C1;&#xD06C;&#xC5D0; &#xB4E4;&#xC5B4;&#xAC00;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xBA74; &#xB41C;&#xB2E4;.<br></p>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/assign"><code>Object.assign()</code> javascript MDN</a></p>
 </article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
   <svg t="1533629773982" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1035" xlink="http://www.w3.org/1999/xlink" width="40" height="40"><defs><style type="text/css">@font-face { font-family: uc-nexus-iconfont; src: url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff") format("woff"), url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf") format("truetype"); }
   </style></defs><path d="M536.255427 195.182354c-7.804756-7.804756-17.966187-11.615549-28.311813-11.615549-9.43693 0-18.874883 3.449565-26.496467 10.163477-2.360767 1.452071-4.356214 3.267417-6.352685 5.262864L218.47792 455.611735c-15.607466 15.60542-15.607466 40.834011 0 56.43943 15.607466 15.607466 41.558511 15.607466 57.167001 0l193.46013-192.733583 0 600.526219c0 22.1423 17.787108 39.927361 39.927361 39.927361 22.140253 0 39.927361-17.785062 39.927361-39.927361L548.959773 319.317583 737.15704 508.422522c15.607466 15.607466 40.469714 15.607466 56.078203 0 15.607466-15.607466 15.425318-40.834011-0.182149-56.441477L536.255427 195.182354 536.255427 195.182354z" p-id="1036" fill="#333"/><path d="M101.784174 143.097092l816.674071 0c22.140253 0 39.925315-17.785062 39.925315-39.927361 0-22.140253-17.784038-39.925315-39.925315-39.925315L101.784174 63.244416c-22.140253 0-39.927361 17.785062-39.927361 39.925315C61.856813 125.31203 79.643921 143.097092 101.784174 143.097092L101.784174 143.097092z" p-id="1037" fill="#333"/></svg>

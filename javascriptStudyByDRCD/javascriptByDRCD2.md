@@ -642,6 +642,161 @@ const person3 = new Person('jeahun', 24)
 const person4 = new Person('steve', 3);
 ```
 
-위의 소스에서처럼 **객체를 생성하는 목적으로 사용하는 함수**를 **constructor function(생성자함수)** 라고 하며 위에서 볼 수 있듯이 객체를 생성(`this={}`)하고 그 객체를 return하는 부분(`return this`)을 생략해서 사용한다.
+위의 소스에서처럼 **객체를 생성하는 목적으로 사용하는 함수**를 **constructor function(생성자함수)** 라고 하며 위에서 볼 수 있듯이 빈 객체를 생성(`this={}`)하고 그 객체를 return하는 부분(`return this`)을 생략해서 사용한다.
 
-12 분 부터 다시!!
+### 6. in Operator
+
+`in` 식별자는 타겟 객체에 해당 키가 존재하는지를 확인하는 기능이다. 기본적인 사용법은 아래와 같다.
+
+```javscript
+'key' in obj
+```
+`key` 값이 `obj` 안에 존재하면 `true`, 존재하지 않으면 `false` 를 리턴한다.
+
+**[SOURCE]**
+```javascript
+function makePerson(name, age, gender, local) {
+    return {
+        name,
+        age,
+        gender,
+        local
+    }
+}
+
+const jeahun = new makePerson('jeahun', 24, 'man', 'Busan');
+
+console.log('name' in jeahun);
+console.log('local' in jeahun);
+console.log('email' in jeahun);
+```
+
+**[CONSOLE]**
+```
+true
+true
+false
+```
+
+### for in & for of
+
+`for in` 과 `for of` 는 기본적으로 반복문의 구조를 따른다.
+* `for of` : 객체를 위한 반복문
+* `for in` : 배열을 위한 반복문
+
+**[SOURCE]**
+```javascript
+const personObj = {
+    name : 'jeahun',
+    age : 24,
+    gender : 'male',
+    local : 'Busan'
+}
+const personArr=[1, 2, 3, 4, 335]
+
+for(key in personObj){
+    console.log(key);
+}
+
+for(value of personArr){
+    console.log(value);
+}
+```
+
+**[CONSOLE]**
+```
+name
+age
+gender
+local
+1
+2
+3
+4
+335
+```
+
+위의 소스에서 `for in` 안의 `key`, `for of` 안의 `value` 는 아무 각각 객체에서 받아올 키값, 배열에서 받아올 값이다.
+
+### 7. clone
+
+javascript에서 객체를 그대로 복사해서 사용하고 싶을 때 어떻게 하면 될까? 기존의 다른 문법과 같이 사용한다면 아래와 같은 문제가 발생한다.
+
+**[SOURCE]**
+```javascript
+const user = {name : 'ellie', age : 20}
+const user2 = user;
+user2.name = 'coder';
+console.log(user);
+```
+
+**[CONSOLE]**
+```
+{ name: 'coder', age: 20 }
+```
+
+위의 소스에서 `user2`의 `name`을 수정했으니 우리가 예상하기로 `user`의 `name` 은 그대로 `ellie` 일 것 같다. 하지만 실행을 시켜보면 `user`의 `name` 이 `coder` 로 바뀌어 있다. 이는 mutable datatype 은 그 데이터 자체를 저장하는 것이 아니라 참조주소를 저장하고 있기 떄문이다. 밑의 그림을 보자</br>
+**<`user2.name = 'coder'` 부분 실행 전>**
+![user2.name='coder' 부분 실행 전](./imgFolder/DRCD_js_IMG8.png)
+
+
+위의 그림에서 user 는 `@1001` 이라는 주소를 가지고 있다고 가정해보자. 이 때 `user2 = user` 부분을 실행하게 되면 `user2` 에 `user`가 가지고 있는 객체 자체가 아닌 참조주소를 넘겨주게 된다. 즉 `user2` 역시 `@1001` 이라는 주소를 가지게 된다. 이 때 `user2.name = 'coder'` 부분을 실행하면 아래와 같은 도식을 나타낸다.
+
+**<`user2.name = 'coder'` 부분 실행 후>**
+![user2.name='coder' 부분 실행 후](./imgFolder/DRCD_js_IMG9.png)
+
+위의 그림과 같이 `user2.name = 'coder'` 부분이 실행되면 `@1001` 이라는 참조주소를 따라 메모리에 접근하여 `name` 에 `coder`를 삽입하게 된다. 이 때 `user.name` 을 호출하면 `user`가 가지고 있는 `@1001` 의 주소로 가서 그 정보를 가져오는데 이 때 `@1001` 주소의 `name` 은 `coder` 이다. 우리는 `user2`의 `name`을 수정했지만 사실 `user`의 `name`도 수정된 것 같아 보인다. 하지만 이러한 변화는 mutable datatype의 동작구조를 보면 이해를 할 수 있다.</br>
+
+그렇다면 javascript에서 복제는 어떻게 해야 할까? 아래의 2가지 방법이 존재한다.
+
+1. **old way**
+기본적인 대입연산자로는 복제시 위의 문제가 발생할 수 있으므로 빈 객체를 선언한 후 key와 property를 각각 일일히 대입하는 방법이 있다. 아래의 소스를 보자.
+
+**[SOURCE]**
+```javascript
+const user = {name : 'ellie', age : 20}
+const user2 = user;
+console.log(user);
+
+const user3 = {};
+for(key in user){
+    user3[key] = user[key];
+}
+user3.name='jeahun';
+
+console.log(user3);
+```
+
+**[CONSOLE]**
+```
+{ name: 'ellie', age: 20 }
+{ name: 'ellie', age: 20 }
+```
+
+위의 복제에서의 문제가 있는 소스와는 달리 user3.name = 'jeahun' 을 실행해도 user3의 객체의 name 만 변경이 된다. 하지만 이런 방법보다 쉬운 방법이 있다.
+
+2. **`Object.assign`**
+
+**[SOURCE]**
+```javascript
+const user = {name : 'ellie', age : 20}
+const user2 = user;
+console.log(user);
+
+const user3 = {};
+Object.assign(user3, user)
+
+user3.name='jeahun'
+
+console.log(user3);
+```
+
+**[CONSOLE]**
+```
+{ name: 'ellie', age: 20 }
+{ name: 'ellie', age: 20 }
+```
+
+`assign` 메소드는 `Object` 표준내장객체 에 속한 메소드로 타겟 객체를 복사할 때 사용한다. 사용법은 아래의 링크에 들어가서 알아보면 된다.</br>
+
+[`Object.assign()` javascript MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)

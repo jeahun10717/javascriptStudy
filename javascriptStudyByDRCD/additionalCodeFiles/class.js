@@ -1,12 +1,10 @@
-function makePerson(name, age) {
-    return {
-        name,
-        age
-    }
-}
-const person1 = makePerson('bob', 12)
-const person2 = makePerson('anne', 33)
-const person3 = makePerson('jeahun', 24)
-const person4 = makePerson('steve', 3);
+const user = {name : 'ellie', age : 20}
+const user2 = user;
+console.log(user);
 
-console.log(person4);
+const user3 = {};
+Object.assign(user3, user)
+
+user3.name='jeahun'
+
+console.log(user3);
