@@ -1,5 +1,13 @@
-function test() {
-    console.log(this);
-}
+const fruit = ['apple', 'banana', 'melon']
 
-console.log(globalThis);
+fruit.pop();
+console.log(fruit);
+
+fruit.push('tomato')
+console.log(fruit);
+
+fruit.unshift('mango', 'grape')
+console.log(fruit);
+
+fruit.shift();
+console.log(fruit);
