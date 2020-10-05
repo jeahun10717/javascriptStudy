@@ -131,3 +131,55 @@ console.log(fruit);
 ![shift/unshift 도식화](./imgFolder/DRCD_js_IMG11.png)
 
 위의 그림을 보면 `shift` 는 일단 모든 배열의 요소를 1칸씩 댕겨서 대입시킨다. 그 후 제일 마지막 인덱스와 값이 비어있는데 그 부분을 삭제하는 것이다. `unshift` 역시 처음에 빈 인덱스를 2개 추가한다. 그 후 앞에서부터 2칸씩 밀어서 뒤로 대입한다. 그렇게 되면 처음 2칸이 비는데 그곳에 우리가 대입하고자 하는 값 2개를 넣는 것이다. 이러한 특징 때문에 배열이 크면 클수록 이러한 낭비가 심해진다. 따라서 shift와 unshift는 반드시 사용해야 할 때만 사용하자.
+
+### 5. splice
+
+splice 는 배열에서 일정부분을 지우고 그 부분에 삽입할 수 있는 메소드 이다.
+
+**[how to use]**
+
+```javascript
+array.splice(startIndex, endIndex, insertElmt1, insertElmt2 .....)
+```
+
+**[SOURCE]**
+
+```javascript
+const fruits = ['apple', 'banana', 'melon', 'mango', 'pear'];
+console.log(fruits);
+
+fruits.splice(1, 3, '**', '**2');
+console.log(fruits);
+```
+
+**[CONSOLE]**
+
+```
+[ 'apple', 'banana', 'melon', 'mango', 'pear' ]
+[ 'apple', '**', '**2', 'pear' ]
+```
+
+### 6. searching
+
+* **includes** : 해당 element 가 배열에 존재하는지를 true, false 로 return
+* **indexOf** : 해당 element 가 존재하는 배열의 index를 return(존재하지 않으면 -1)
+
+**[SOURCE]**
+
+```javascript
+const fruits = ['apple', 'banana', 'melon', 'mango', 'pear'];
+
+console.log(fruits.includes('apple'));
+console.log(fruits.includes('carrot'));
+console.log(fruits.includes('pear'));
+console.log(fruits.indexOf('carrot'));
+```
+
+**[CONSOLE]**
+
+```
+true
+false
+true
+-1
+```

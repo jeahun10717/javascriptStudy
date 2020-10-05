@@ -1,13 +1,6 @@
-const fruit = ['apple', 'banana', 'melon']
+const fruits = ['apple', 'banana', 'melon', 'mango', 'pear'];
 
-fruit.pop();
-console.log(fruit);
-
-fruit.push('tomato')
-console.log(fruit);
-
-fruit.unshift('mango', 'grape')
-console.log(fruit);
-
-fruit.shift();
-console.log(fruit);
+console.log(fruits.includes('apple'));
+console.log(fruits.includes('carrot'));
+console.log(fruits.includes('pear'));
+console.log(fruits.indexOf('carrot'));
