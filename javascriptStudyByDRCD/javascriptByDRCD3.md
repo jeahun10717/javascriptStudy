@@ -183,3 +183,211 @@ false
 true
 -1
 ```
+
+## 5. JSON _ javascript 서버통신
+JSON(Javascript Object Notation) 은 기존의 XML 을 이용한 통신의 불편함을 해소하고자 나온 포맷이다. 기존의 XML 은 지나치게 많은 태그로 인해 가독성이 떨어지고 서버에 전송하고자 하는 텍스트의 양이 과도하게 많아지는 문제점이 발생했다. 이러한 문제점을 JSON 은 서버에 전달하는 방식을 javascript의 Object 포맷을 따르는 것으로 해결했다. 이러한 JSON 은 기본적으로 서버에 데이터를 전달할 때 **js Object** 의 **key-value pair** 를 사용한다.
+* client to server
+클라이언트가 object 형태로 만들어서 `JSON.stringify` 라는 메소드를 사용하여 JSON 을 만든다. 이렇게 만들어진 JSON 을 서버에 전달한다. 이렇게 **js의 object**를 **JSON 으로 만드는 것**을 **serialize** 라고 한다.
+* server to client
+서버에서 JSON 을 받아오고 그 JSON 을 `JSON.parse` 라는 메소드를 사용하여 js 의 object로 변환한다. 이렇게 변환된 정보를 js 에서 사용한다. 이렇게 **JSON** 을 **js의 object로 만드는 것**을 **deserialize** 라고 한다.
+
+![JSON 통신 img](./imgFolder/DRCD_js_IMG12.png)
+
+### 1. Object to JSON
+
+js 에서 boolean과 문자열을 JSON으로 넘겨보자
+
+**[SOURCE]**
+```javascript
+let json = JSON.stringify(true);
+console.log(json);
+
+json = JSON.stringify(['apple', 'banana']);
+console.log(json);
+```
+
+**[CONSOLE]**
+```
+true
+["apple","banana"]
+```
+
+JSON 에서 문자열은 무조건 double quotation(`"`) 으로 처리한다. </br>
+대부분의 js 의 object 는 전달이 가능하다. 하지만 일부 js 의 자료형이 전달이 불가하다.
+
+**[SOURCE]**
+```javascript
+const dog = {
+    name : 'mandu',
+    color : 'white',
+    size : null,
+    birthDate : new Date(),
+    jump : ()=> {
+        console.log(`${name} can jump`);
+    },
+    Symbol: Symbol('id')
+}
+
+json = JSON.stringify(dog);
+console.log(json);
+```
+
+**[CONSOLE]**
+```
+{"name":"mandu","color":"white","size":null,"birthDate":"2020-10-06T05:34:49.417Z"}
+```
+
+위의 소스에서 볼 수 있듯 `Symbol : Symbol('id')` 부분은 전달이 되지 않았다. 또한 jump 라는 함수역시 포함이 되지 않았다. JSON은 js의 문법과 유사하나 다소 차이가 있을 수 있으므로 자료형을 신경을 써야 한다.</br>
+
+또한 JSON 에서 Object를 전달할 때 일부 프로퍼티만 전달이 가능하다. 위의 소스에서 아래 소스를 추가해서 실행해 보자.
+
+**[SOURCE]**
+```javascript
+json = JSON.stringify(dog, ['name', 'color'])
+console.log(json);
+```
+**[CONSOLE]**
+```
+{"name":"mandu","color":"white"}
+```
+
+위의 소스와 같이 일부 프로퍼티만 전달을 했다.
+
+정리하면
+
+* 배열이나 boolean 도 전달이 가능하다.
+* javascript 에서 JSON 형태로 변환할 때 함수, Symbol 등은 전달이 되지 않는다.
+* JSON 으로 변환할 때 일부만 전달이 가능하다.
+
+### 2. JSON to Object
+
+JSON 을 js 의 object로 변환할 때는 stringify.parse 를 사용한다. 여기서 주의해야 할 점이 몇가지 있다. 밑의 소스를 살펴보자
+
+**[SOURCE]**
+```javascript
+const dog = {
+    name : 'mandu',
+    color : 'white',
+    size : null,
+    birthDate : new Date(),
+    jump : ()=> {
+        console.log(`${name} can jump`);
+    },
+    Symbol: Symbol('id')
+}
+
+json = JSON.stringify(dog);
+const obj = JSON.parse(json);
+console.log(obj);
+```
+
+**[CONSOLE]**
+```
+{
+  name: 'mandu',
+  color: 'white',
+  size: null,
+  birthDate: '2020-10-07T04:57:26.745Z'
+}
+```
+
+  위의 소스는 `dog` 라는 object 를 생성하고 `json` 이라는 변수에 `dog` 라는 객체를 JSON 형태로 저장했다. 그 후 `obj` 라는 변수에 `json` 이라는 JSON 형태의 객체를 다시 원래의 객체로 돌려놓았다. 이 때 조심해야 할 것이 있다. 밑의 소스를 보자
+
+**[SOURCE]**
+```javascript
+const dog = {
+    name : 'mandu',
+    color : 'white',
+    size : null,
+    birthDate : new Date(),
+    jump : ()=> {
+        console.log(`${name} can jump`);
+    },
+    Symbol: Symbol('id')
+}
+
+json = JSON.stringify(dog);
+const obj = JSON.parse(json);
+console.log(dog.birthDate.getDate());
+```
+
+**[CONSOLE]**
+```
+[Function: getDate]
+undefined
+```
+
+위의 소스에서 `dog` 객체안의 `birthDate` 이라는 객체가 존재하는데 이는 `Date` 라는 표준내장객체를 저장하는 객체이다. 그렇기 때문에 `dog.birthDate.getDate()` 라는 메소드를 실행하면 해당 `day` 를 return 한다. 하지만 `console.log(obj.birthDate.getDate());` 를 실행하면 어떻게 될까?
+
+**[SOURCE]**
+```javascript
+//위와 같은 소스
+console.log(obj.birthDate.getDate());
+```
+
+**[CONSOLE]**
+```
+TypeError: obj.birthDate.getDate is not a function
+```
+
+위의 결과값과 같이 오류가 뜬다. 이러한 점은 JSON 의 특징 때문에 발생하는데 JSON 은 기본적으로 key-value 를 쌍으로 가지는 정보들을 저장하는데 이 때 이 **value 에 해당하는 값들은 문자열로 저장이 된다.** 이는 밑의 소스를 보면 자명하다.
+
+**[SOURCE]**
+```javascript
+const dog = {
+    name : 'mandu',
+    color : 'white',
+    size : null,
+    birthDate : new Date(),
+    jump : ()=> {
+        console.log(`${name} can jump`);
+    },
+    Symbol: Symbol('id')
+}
+
+json = JSON.stringify(dog);
+const obj = JSON.parse(json);
+
+console.log(typeof dog.birthDate);
+console.log(typeof obj.birthDate);
+```
+
+
+**[CONSOLE]**
+```
+object
+string
+```
+
+`dog` 의 `birthDate` 의 타입은 object 인 것에 반해 `obj` 의 `birthDate` 의 타입은 string 이다. 그렇다면 Date() 객체를 다시 쓰려면 어떻게 해야 할까? 아래 소스를 참고하라
+
+**[SOURCE]**
+```javascript
+const dog = {
+    name : 'mandu',
+    color : 'white',
+    size : null,
+    birthDate : new Date(),
+    jump : ()=> {
+        console.log(`${name} can jump`);
+    },
+    Symbol: Symbol('id')
+}
+
+
+json = JSON.stringify(dog);
+const obj = JSON.parse(json, (key, value)=>{
+    return key === 'birthDate' ? new Date(value) : value;
+});
+
+console.log(dog.birthDate.getDate());
+console.log(obj.birthDate.getDate());
+```
+
+**[CONSOLE]**
+```
+7
+7
+```
+
+위의 소스는 `JSON.parse` 메소드에서 콜백함수를 사용하여 만약 받아오는 `key` 값이 `birthDate` 이면 `new Date(value)` 를 실행하는 arrow function 을 추가한 것이다. 이렇게 되면 `birthDate` 이라는 key 값은 `Date()` 라는 객체를 가지게 되기 때문에 `7`이라는 값을 뱉어낸다.
