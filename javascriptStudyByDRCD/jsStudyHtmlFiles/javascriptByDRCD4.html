@@ -21,294 +21,137 @@
   }
 </style>
 </head>
-<body><div id="readme" class="container"><article class="markdown-body entry-content"><h1 id="javascript-studied-by-br-javascript-part-3">JAVASCRIPT &quot;studied by &#xB4DC;&#xB9BC;&#xCF54;&#xB529;&quot;<br>javascript part 3</h1>
-<h2 id="4-_-array">4. &#xBC30;&#xC5F4; _ Array</h2>
-<p>&#xBC30;&#xC5F4;&#xC740; &#xB370;&#xC774;&#xD130;&#xB4E4;&#xC744; &#xC21C;&#xCC28;&#xC801;&#xC73C;&#xB85C; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xAC83;&#xC744; &#xB9D7;&#xD55C;&#xB2E4;. &#xBC30;&#xC5F4;&#xC744; &#xC120;&#xC5B8;&#xD558;&#xACE0; &#xD560;&#xB2F9;&#xD560; &#xB54C; &#xB2E4;&#xB978; &#xC5B8;&#xC5B4;(cpp, java&#xB4F1;)&#xB294; &#xD0C0;&#xC785;&#xC774; &#xACE0;&#xC815; &#xB418;&#xC5B4; &#xC788;&#xC5B4;&#xC11C; &#xBC30;&#xC5F4; &#xC548;&#xC758; &#xBAA8;&#xB4E0; &#xAC12;&#xB4E4;&#xC740; &#xAC19;&#xC740; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xC9C0;&#xB9CC; javascript&#xB294; &#xBC30;&#xC5F4; &#xC548;&#xC5D0;&#xC11C; &#xB2E4;&#xB978; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xB2E4;.</p>
-<h3 id="1-_-declaration">1. &#xBC30;&#xC5F4;&#xC758; &#xC120;&#xC5B8; _ Declaration</h3>
-<p>javascript&#xC5D0;&#xC11C; &#xBC30;&#xC5F4;&#xC758; &#xC120;&#xC5B8;&#xC740; &#xD06C;&#xAC8C; 2&#xAC00;&#xC9C0;&#xB85C; &#xB098;&#xB25C;&#xB2E4;.</p>
-<ul>
-<li><ol>
-<li>&#xD45C;&#xC900;&#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4; Array &#xC0AC;&#xC6A9;</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>&#xAE30;&#xBCF8;&#xC801;&#xC740; &#xBC30;&#xC5F4;&#xC120;&#xC5B8;</li>
-</ol>
-</li>
-</ul>
+<body><div id="readme" class="container"><article class="markdown-body entry-content"><h1 id="javascript-studied-by-br-javascript-part-4">JAVASCRIPT &quot;studied by &#xB4DC;&#xB9BC;&#xCF54;&#xB529;&quot;<br>javascript part 4</h1>
+<h2 id="1-callback">1. CallBack</h2>
+<h3 id="1-syncronous">1. Syncronous</h3>
+<p>javascript&#xB294; &#xB3D9;&#xAE30;(Syncronous)&#xC801;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xAC00; &#xB418;&#xB294; &#xC5B8;&#xC5B4;&#xC774;&#xB2E4;. &#xB3D9;&#xAE30;&#xCC98;&#xB9AC;&#xB780; &#xCF54;&#xB4DC;&#xC758; &#xC694;&#xCCAD;&#xACFC; &#xC2E4;&#xD589;&#xC774; &#xC5F0;&#xC18D;&#xC801;&#xC73C;&#xB85C; &#xC77C;&#xC5B4;&#xB098;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.</p>
+<p><img src="./imgFolder/DRCD_js_IMG13.png" alt="Syncronous &#xB3C4;&#xC2DD;&#xD654;"></p>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; javascript &#xB294; &#xC704;&#xC758; &#xB3C4;&#xC2DD;&#xACFC; &#xAC19;&#xC774; &#xB3D9;&#xAE30;&#xC801;&#xC73C;&#xB85C; &#xD558;&#xB098;&#xC758; &#xC18C;&#xC2A4;&#xAC00; &#xC694;&#xCCAD;&#xD55C; &#xAC83;&#xC758; &#xACB0;&#xACFC;&#xAC00; &#xB098;&#xC624;&#xACE0; &#xB2E4;&#xC74C; &#xC18C;&#xC2A4;&#xB97C; &#xC694;&#xCCAD;&#xD55C;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; javascript &#xB97C; &#xBE44;&#xB3D9;&#xAE30;&#xC801;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xB4E4;&#xC774; &#xC788;&#xB2E4;.</p>
 <p><strong>[SOURCE]</strong></p>
-<pre><code class="language-javascript">const arr1 = new Array(1,5);
-const arr2 = [1,2];
+<pre><code class="language-javascript">console.log(&apos;1&apos;);
+setTimeout(function(){
+    console.log(&apos;2&apos;);
+}, 1000);
 
-console.log(`type : ${typeof arr1}, arr1 : ${arr1}`);
-console.log(`type : ${typeof arr2}, arr1 : ${arr2}`);</code></pre>
+console.log(&apos;3&apos;);</code></pre>
 <p><strong>[CONSOLE]</strong></p>
-<pre><code>type : object, arr1 : 1,5
-type : object, arr1 : 1,2</code></pre><h3 id="2-_-index-position">2. &#xBC30;&#xC5F4;&#xC758; &#xC811;&#xADFC; _ Index position</h3>
-<p>&#xBC30;&#xC5F4;&#xC758; <strong>index</strong> &#xB294; <strong>0&#xBD80;&#xD130; &#xC2DC;&#xC791;</strong>&#xD558;&#xBA70; &#xC21C;&#xCC28;&#xC801;&#xC73C;&#xB85C; &#xC99D;&#xAC00;&#xD55C;&#xB2E4;.</p>
-<p><strong>[SOURCE]</strong></p>
-<pre><code class="language-javascript">const arr = [&apos;apple&apos;, &apos;banana&apos;, &apos;melon&apos;, &apos;pear&apos;]
-
-console.log(arr);
-console.log(arr[0]);//&#xBC30;&#xC5F4;&#xC758; &#xCCAB;&#xBC88;&#xC9F8; &#xAC12;
-console.log(arr[arr.length-1]);//&#xBC30;&#xC5F4;&#xC758; &#xB9C8;&#xC9C0;&#xB9C9;</code></pre>
-<p><strong>[CONSOLE]</strong></p>
-<pre><code></code></pre><h3 id="3-_-looping-over-an-array">3. &#xBC30;&#xC5F4;&#xC758; &#xC21C;&#xD68C; _ Looping over an array</h3>
-<p>&#xBC30;&#xC5F4;&#xC744; &#xC21C;&#xD68C;&#xD558;&#xBA70; &#xBAA8;&#xB4E0; &#xBC30;&#xC5F4;&#xC758; &#xC694;&#xC18C;&#xB97C; &#xCD9C;&#xB825;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC740; &#xD06C;&#xAC8C; 3&#xAC00;&#xC9C0;&#xAC00; &#xC788;&#xB2E4;.</p>
+<pre><code>1
+3
+2</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>setTimeout</code> &#xC774;&#xB77C;&#xB294; &#xAE30;&#xB2A5;&#xC744; &#xD1B5;&#xD574; <code>1000</code>(ms) &#xC758; &#xD140;&#xC744; &#xB450;&#xACE0; &#xC2E4;&#xD589;&#xC744; &#xD558;&#xB3C4;&#xB85D; &#xD588;&#xB2E4;. &#xADF8;&#xB807;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>1</code>, <code>2</code>, <code>3</code> &#xC21C;&#xC11C;&#xAC00; &#xC544;&#xB2CC; <code>1</code>, <code>3</code>, <code>2</code> &#xC21C;&#xC11C;&#xB85C; &#xCD9C;&#xB825;&#xB41C; &#xAC83;&#xC774;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xAC83;&#xC744; &#xBE44;&#xB3D9;&#xAE30;(Asnycronous) &#xCC98;&#xB9AC; &#xB77C;&#xACE0; &#xD55C;&#xB2E4;. &#xB610;&#xD55C; &#xC704;&#xC758; <code>setTimeout</code> &#xC548;&#xC5D0;&#xC11C; &#xC4F0;&#xC778; &#xD568;&#xC218;&#xB294; &#xC9C0;&#xC815;&#xB41C; &#xC2DC;&#xAC04;&#xB3D9;&#xC548; &#xC2E4;&#xD589;&#xB418;&#xC9C0; &#xC54A;&#xACE0; &#xAE30;&#xB2E4;&#xB838;&#xB2E4;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xB294;&#xB370; &#xC774;&#xB7EC;&#xD55C; &#xD568;&#xC218;&#xB97C; &#xCF5C;&#xBC31;&#xD568;&#xC218;(CallBack Function)&#xB77C;&#xACE0; &#xD55C;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xB7EC;&#xD55C; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB294; &#xBE44;&#xB3D9;&#xAE30;&#xC5D0;&#xC11C;&#xB9CC; &#xC4F0;&#xC774;&#xB294; &#xAC83;&#xC740; &#xC544;&#xB2C8;&#xB2E4;. &#xB3D9;&#xAE30;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB3C4; &#xC0AC;&#xC6A9;&#xC744; &#xD558;&#xB294;&#xB370; &#xC544;&#xB798; &#xB0B4;&#xC6A9;&#xC744; &#xBCF4;&#xC790;.</p>
 <ul>
-<li><ol>
-<li>for &#xBB38;</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>for of &#xBB38;</li>
-</ol>
-</li>
-<li><ol start="3">
-<li>forEach &#xBB38;</li>
-</ol>
-</li>
+<li><strong>Syncronous callback</strong>
+<strong>[SOURCE]</strong>
+<code>`</code>javascript
+console.log(&apos;1&apos;);
+setTimeout(()=&gt;console.log(&apos;hello?&apos;), 1000);
+console.log(&apos;3&apos;);</li>
 </ul>
-<p><strong>[SOURCE]</strong></p>
-<pre><code class="language-javascript">const arr = [&apos;apple&apos;, &apos;banana&apos;, &apos;melon&apos;, &apos;pear&apos;]
-
-for (let i = 0; i &lt; arr.length; i++) {
-    console.log(arr[i]);
+<p>function printImmediately(print){
+    print();
 }
-console.log(&apos;--------------------&apos;);
+printImmediately(()=&gt;console.log(&apos;hello?&apos;));</p>
+<pre><code>
+**[CONSOLE]**</code></pre><p>1
+3
+hello?
+2</p>
+<pre><code>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB294; print &#xC774;&#xB2E4;. print &#xB77C;&#xB294; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB294; &#xC778;&#xC790;&#xB97C; &#xBC1B;&#xAE30;&#xB97C; &#xAE30;&#xB2E4;&#xB9AC;&#xACE0; &#xC788;&#xB2E4;&#xAC00; printImmediately &#xD568;&#xC218;&#xC758; &#xC2E4;&#xD589;&#xBD80;&#xC5D0;&#xC11C; &#xC560;&#xB85C;&#xC6B0; &#xD568;&#xC218;&#xB97C; &#xC778;&#xC790;&#xB85C; &#xC804;&#xB2EC;&#xBC1B;&#xACE0; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xB3D9;&#xAE30;&#xC801;&#xC73C;&#xB85C; console.log(&apos;1&apos;), console.log(&apos;1&apos;), printImmediately() &#xAC00; &#xCC28;&#xB840;&#xB85C; &#xC2E4;&#xD589;&#xB418;&#xACE0; &#xB300;&#xAE30;&#xD558;&#xACE0; &#xC788;&#xB358; &#xBE44;&#xB3D9;&#xAE30;&#xD568;&#xC218; setTimeout &#xC774; &#xC2E4;&#xD589;&#xB41C; &#xAC83;&#xC774;&#xB2E4;.
 
-for (let arridx of arr) {
-    console.log(arridx);
+* **Asyncronous callback**
+**[SOURCE]**
+```javascript
+console.log(&apos;1&apos;);
+setTimeout(function(){
+    console.log(&apos;2&apos;);
+}, 1000);
+
+console.log(&apos;3&apos;);
+
+function printWithDelay(print, timeout) {
+    setTimeout(print, timeout);
 }
-console.log(&apos;--------------------&apos;);
 
-arr.forEach((arr) =&gt; console.log(arr));
-console.log(&apos;--------------------&apos;);</code></pre>
-<p><strong>[CONSOLE]</strong></p>
-<pre><code>apple
-banana
-melon
-pear
---------------------
-apple
-banana
-melon
-pear
---------------------
-apple
-banana
-melon
-pear
---------------------</code></pre><h3 id="4-_-addition-deletion">4. &#xBC30;&#xC5F4;&#xC758; &#xCD94;&#xAC00;, &#xC0AD;&#xC81C; _ Addition, Deletion</h3>
-<ul>
-<li><ol>
-<li><strong>pop</strong> : &#xBC30;&#xC5F4;&#xC758; &#xB9C8;&#xC9C0;&#xB9C9; &#xC0AD;&#xC81C;</li>
+printWithDelay(()=&gt;console.log(&apos;async callback&apos;), 2000);</code></pre><p><strong>[CONSOLE]</strong></p>
+<pre><code>1
+3
+2
+async callback</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; printWithDelay &#xB77C;&#xACE0; &#xD558;&#xB294; &#xD568;&#xC218;&#xB97C; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB97C; &#xBC1B;&#xC544;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xB9CC;&#xB4E4;&#xC5C8;&#xB2E4;. &#xB610;&#xD55C; &#xD568;&#xC218; &#xC548;&#xC5D0; setTimeout &#xD568;&#xC218;&#xB97C; &#xD1B5;&#xD574; &#xBE44;&#xB3D9;&#xAE30;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560;&#xC218; &#xC788;&#xB3C4;&#xB85D; &#xB9CC;&#xB4E4;&#xC5C8;&#xB2E4;. &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xB3C4;&#xC2DD;&#xD654; &#xD558;&#xBA74; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;.</p>
+<p><img src="./imgFolder/DRCD_js_IMG14.png" alt="Asyncronous callback function"></p>
+<p>&#xC5EC;&#xAE30;&#xC11C; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xC758; &#xD2B9;&#xC9D5;&#xC744; &#xC54C; &#xC218; &#xC788;&#xB2E4;.</p>
+<ol>
+<li>&#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB294; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xD0C0;&#xC774;&#xBC0D;&#xC744; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB294; &#xD568;&#xC218;&#xB97C; &#xBCC0;&#xC218;&#xCC98;&#xB7FC; &#xD568;&#xC218;&#xC758; &#xC778;&#xC790;&#xB85C; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB294; &#xB3D9;&#xAE30;&#xC640; &#xBE44;&#xB3D9;&#xAE30;&#xC5D0;&#xC11C; &#xBAA8;&#xB450; &#xC0AC;&#xC6A9;&#xB41C;&#xB2E4;.</li>
 </ol>
-</li>
-<li><ol start="2">
-<li><strong>push</strong> : &#xBC30;&#xC5F4;&#xC758; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xCD94;&#xAC00;</li>
-</ol>
-</li>
-<li><ol start="3">
-<li><strong>unshift</strong> : &#xBC30;&#xC5F4;&#xC758; &#xC2DC;&#xC791;&#xBD80;&#xBD84;&#xC5D0; &#xCD94;0(&#xB2E4;&#xC218; &#xAC00;&#xB2A5;)</li>
-</ol>
-</li>
-<li><ol start="4">
-<li><strong>shift</strong> : &#xBC30;&#xC5F4;&#xC758; &#xCCAB;&#xBC88;&#xC9F8; &#xC0AD;&#xC81C;</li>
-</ol>
-</li>
-</ul>
-<p><strong>[SOURCE]</strong></p>
-<pre><code class="language-javascript">const fruit = [&apos;apple&apos;, &apos;banana&apos;, &apos;melon&apos;]
+<p>&#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB294; &#xC704;&#xC640; &#xAC19;&#xC774; &#xC720;&#xC6A9;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB97C; &#xC5F0;&#xC18D;&#xC801;&#xC73C;&#xB85C; &#xB0A8;&#xBC1C;&#xD558;&#xBA74; &#xBB38;&#xC81C;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;. &#xC544;&#xB798;&#xB294; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB97C; &#xC5F0;&#xC18D;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC18C;&#xC2A4;&#xC774;&#xB2E4;.</p>
+<p><strong>[SOURCE-js]</strong></p>
+<pre><code class="language-javascript">class UserStorage{
+    loginUser(id, password, onSuccess, onError){
+        setTimeout(()=&gt;{
+            if(
+                (id===&apos;ellie&apos; &amp;&amp; password===&apos;dream&apos;) ||
+                (id===&apos;coder&apos; &amp;&amp; password===&apos;academy&apos;)
+            ){
+                onSuccess(id);
+            }else{
+                onError(new Error(&apos;not found&apos;));
+            }
+        }, 2000);
+    }
+    getRoles(user, onSuccess, onError){
+        setTimeout(()=&gt;{
+            if(user===&apos;ellie&apos;){
+                onSuccess({name : &apos;ellie&apos;, role : &apos;admin&apos;});
+            } else {
+                onError(new Error(&apos;no access&apos;))
+            }
+        }, 1000);
+    }
+}
 
-fruit.pop();
-console.log(fruit);
-
-fruit.push(&apos;tomato&apos;)
-console.log(fruit);
-
-fruit.unshift(&apos;mango&apos;, &apos;grape&apos;)
-console.log(fruit);
-
-fruit.shift();
-console.log(fruit);</code></pre>
-<p><strong>[CONSOLE]</strong></p>
-<pre><code>[ &apos;apple&apos;, &apos;banana&apos; ]
-[ &apos;apple&apos;, &apos;banana&apos;, &apos;tomato&apos; ]
-[ &apos;mango&apos;, &apos;grape&apos;, &apos;apple&apos;, &apos;banana&apos;, &apos;tomato&apos; ]
-[ &apos;grape&apos;, &apos;apple&apos;, &apos;banana&apos;, &apos;tomato&apos; ]</code></pre><p><strong>&#xC8FC;&#xC758;</strong>
-<code>shift</code> &#xC640; <code>unshift</code> &#xB294; <code>pop</code> &#xACFC; <code>push</code> &#xC5D0; &#xBE44;&#xD574; &#xC5F0;&#xC0B0;&#xC18D;&#xB3C4;&#xAC00; &#xC0C1;&#xB2F9;&#xD788; &#xB290;&#xB9AC;&#xB2E4;. &#xC774;&#xB294; &#xBC30;&#xC5F4;&#xC5D0; &#xB300;&#xD574; &#xC870;&#xAE08;&#xB9CC; &#xC0DD;&#xAC01;&#xD574; &#xBCF4;&#xBA74; &#xADF8; &#xB2F5;&#xC774; &#xB098;&#xC628;&#xB2E4;. &#xC6B0;&#xC120; <code>pop</code> &#xACFC; <code>push</code> &#xB97C; &#xB3C4;&#xC2DD;&#xD654; &#xD558;&#xBA74; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;.</p>
-<p><img src="./imgFolder/DRCD_js_IMG10.png" alt="pop/push &#xB3C4;&#xC2DD;&#xD654;"></p>
-<p><code>pop</code> &#xACFC; <code>push</code> &#xB294; &#xAC01;&#xAC01; &#xBC30;&#xC5F4;&#xC5D0;&#xC11C; &#xC81C;&#xC77C; &#xB05D; &#xBD80;&#xBD84;&#xB9CC; &#xC778;&#xB371;&#xC2A4;&#xC640; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC0AD;&#xC81C;, &#xBC30;&#xC5F4;&#xC758; &#xC81C;&#xC77C; &#xB05D; &#xBD80;&#xBD84;&#xC5D0;&#xC11C; &#xCD94;&#xAC00;&#xB9CC; &#xD558;&#xBA74; &#xB41C;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; <code>shift</code>&#xC640; <code>unshift</code> &#xB294; &#xB3D9;&#xC791;&#xAD6C;&#xC870;&#xAC00; &#xC870;&#xAE08; &#xB2E4;&#xB974;&#xB2E4;.</p>
-<p><img src="./imgFolder/DRCD_js_IMG11.png" alt="shift/unshift &#xB3C4;&#xC2DD;&#xD654;"></p>
-<p>&#xC704;&#xC758; &#xADF8;&#xB9BC;&#xC744; &#xBCF4;&#xBA74; <code>shift</code> &#xB294; &#xC77C;&#xB2E8; &#xBAA8;&#xB4E0; &#xBC30;&#xC5F4;&#xC758; &#xC694;&#xC18C;&#xB97C; 1&#xCE78;&#xC529; &#xB315;&#xACA8;&#xC11C; &#xB300;&#xC785;&#xC2DC;&#xD0A8;&#xB2E4;. &#xADF8; &#xD6C4; &#xC81C;&#xC77C; &#xB9C8;&#xC9C0;&#xB9C9; &#xC778;&#xB371;&#xC2A4;&#xC640; &#xAC12;&#xC774; &#xBE44;&#xC5B4;&#xC788;&#xB294;&#xB370; &#xADF8; &#xBD80;&#xBD84;&#xC744; &#xC0AD;&#xC81C;&#xD558;&#xB294; &#xAC83;&#xC774;&#xB2E4;. <code>unshift</code> &#xC5ED;&#xC2DC; &#xCC98;&#xC74C;&#xC5D0; &#xBE48; &#xC778;&#xB371;&#xC2A4;&#xB97C; 2&#xAC1C; &#xCD94;&#xAC00;&#xD55C;&#xB2E4;. &#xADF8; &#xD6C4; &#xC55E;&#xC5D0;&#xC11C;&#xBD80;&#xD130; 2&#xCE78;&#xC529; &#xBC00;&#xC5B4;&#xC11C; &#xB4A4;&#xB85C; &#xB300;&#xC785;&#xD55C;&#xB2E4;. &#xADF8;&#xB807;&#xAC8C; &#xB418;&#xBA74; &#xCC98;&#xC74C; 2&#xCE78;&#xC774; &#xBE44;&#xB294;&#xB370; &#xADF8;&#xACF3;&#xC5D0; &#xC6B0;&#xB9AC;&#xAC00; &#xB300;&#xC785;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xAC12; 2&#xAC1C;&#xB97C; &#xB123;&#xB294; &#xAC83;&#xC774;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xD2B9;&#xC9D5; &#xB54C;&#xBB38;&#xC5D0; &#xBC30;&#xC5F4;&#xC774; &#xD06C;&#xBA74; &#xD074;&#xC218;&#xB85D; &#xC774;&#xB7EC;&#xD55C; &#xB0AD;&#xBE44;&#xAC00; &#xC2EC;&#xD574;&#xC9C4;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; shift&#xC640; unshift&#xB294; &#xBC18;&#xB4DC;&#xC2DC; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD560; &#xB54C;&#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xC790;.</p>
-<h3 id="5-splice">5. splice</h3>
-<p>splice &#xB294; &#xBC30;&#xC5F4;&#xC5D0;&#xC11C; &#xC77C;&#xC815;&#xBD80;&#xBD84;&#xC744; &#xC9C0;&#xC6B0;&#xACE0; &#xADF8; &#xBD80;&#xBD84;&#xC5D0; &#xC0BD;&#xC785;&#xD560; &#xC218; &#xC788;&#xB294; &#xBA54;&#xC18C;&#xB4DC; &#xC774;&#xB2E4;.</p>
-<p><strong>[how to use]</strong></p>
-<pre><code class="language-javascript">array.splice(startIndex, endIndex, insertElmt1, insertElmt2 .....)</code></pre>
-<p><strong>[SOURCE]</strong></p>
-<pre><code class="language-javascript">const fruits = [&apos;apple&apos;, &apos;banana&apos;, &apos;melon&apos;, &apos;mango&apos;, &apos;pear&apos;];
-console.log(fruits);
-
-fruits.splice(1, 3, &apos;**&apos;, &apos;**2&apos;);
-console.log(fruits);</code></pre>
-<p><strong>[CONSOLE]</strong></p>
-<pre><code>[ &apos;apple&apos;, &apos;banana&apos;, &apos;melon&apos;, &apos;mango&apos;, &apos;pear&apos; ]
-[ &apos;apple&apos;, &apos;**&apos;, &apos;**2&apos;, &apos;pear&apos; ]</code></pre><h3 id="6-searching">6. searching</h3>
-<ul>
-<li><strong>includes</strong> : &#xD574;&#xB2F9; element &#xAC00; &#xBC30;&#xC5F4;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294;&#xC9C0;&#xB97C; true, false &#xB85C; return</li>
-<li><strong>indexOf</strong> : &#xD574;&#xB2F9; element &#xAC00; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xBC30;&#xC5F4;&#xC758; index&#xB97C; return(&#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; -1)</li>
-</ul>
-<p><strong>[SOURCE]</strong></p>
-<pre><code class="language-javascript">const fruits = [&apos;apple&apos;, &apos;banana&apos;, &apos;melon&apos;, &apos;mango&apos;, &apos;pear&apos;];
-
-console.log(fruits.includes(&apos;apple&apos;));
-console.log(fruits.includes(&apos;carrot&apos;));
-console.log(fruits.includes(&apos;pear&apos;));
-console.log(fruits.indexOf(&apos;carrot&apos;));</code></pre>
-<p><strong>[CONSOLE]</strong></p>
-<pre><code>true
-false
-true
--1</code></pre><h2 id="5-json-_-javascript-">5. JSON _ javascript &#xC11C;&#xBC84;&#xD1B5;&#xC2E0;</h2>
-<p>JSON(Javascript Object Notation) &#xC740; &#xAE30;&#xC874;&#xC758; XML &#xC744; &#xC774;&#xC6A9;&#xD55C; &#xD1B5;&#xC2E0;&#xC758; &#xBD88;&#xD3B8;&#xD568;&#xC744; &#xD574;&#xC18C;&#xD558;&#xACE0;&#xC790; &#xB098;&#xC628; &#xD3EC;&#xB9F7;&#xC774;&#xB2E4;. &#xAE30;&#xC874;&#xC758; XML &#xC740; &#xC9C0;&#xB098;&#xCE58;&#xAC8C; &#xB9CE;&#xC740; &#xD0DC;&#xADF8;&#xB85C; &#xC778;&#xD574; &#xAC00;&#xB3C5;&#xC131;&#xC774; &#xB5A8;&#xC5B4;&#xC9C0;&#xACE0; &#xC11C;&#xBC84;&#xC5D0; &#xC804;&#xC1A1;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xD14D;&#xC2A4;&#xD2B8;&#xC758; &#xC591;&#xC774; &#xACFC;&#xB3C4;&#xD558;&#xAC8C; &#xB9CE;&#xC544;&#xC9C0;&#xB294; &#xBB38;&#xC81C;&#xC810;&#xC774; &#xBC1C;&#xC0DD;&#xD588;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xBB38;&#xC81C;&#xC810;&#xC744; JSON &#xC740; &#xC11C;&#xBC84;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC744; javascript&#xC758; Object &#xD3EC;&#xB9F7;&#xC744; &#xB530;&#xB974;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xD574;&#xACB0;&#xD588;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; JSON &#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC11C;&#xBC84;&#xC5D0; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC804;&#xB2EC;&#xD560; &#xB54C; <strong>js Object</strong> &#xC758; <strong>key-value pair</strong> &#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</p>
-<ul>
-<li>client to server
-&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; object &#xD615;&#xD0DC;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; <code>JSON.stringify</code> &#xB77C;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; JSON &#xC744; &#xB9CC;&#xB4E0;&#xB2E4;. &#xC774;&#xB807;&#xAC8C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4; JSON &#xC744; &#xC11C;&#xBC84;&#xC5D0; &#xC804;&#xB2EC;&#xD55C;&#xB2E4;. &#xC774;&#xB807;&#xAC8C; <strong>js&#xC758; object</strong>&#xB97C; <strong>JSON &#xC73C;&#xB85C; &#xB9CC;&#xB4DC;&#xB294; &#xAC83;</strong>&#xC744; <strong>serialize</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;.</li>
-<li>server to client
-&#xC11C;&#xBC84;&#xC5D0;&#xC11C; JSON &#xC744; &#xBC1B;&#xC544;&#xC624;&#xACE0; &#xADF8; JSON &#xC744; <code>JSON.parse</code> &#xB77C;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; js &#xC758; object&#xB85C; &#xBCC0;&#xD658;&#xD55C;&#xB2E4;. &#xC774;&#xB807;&#xAC8C; &#xBCC0;&#xD658;&#xB41C; &#xC815;&#xBCF4;&#xB97C; js &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;. &#xC774;&#xB807;&#xAC8C; <strong>JSON</strong> &#xC744; <strong>js&#xC758; object&#xB85C; &#xB9CC;&#xB4DC;&#xB294; &#xAC83;</strong>&#xC744; <strong>deserialize</strong> &#xB77C;&#xACE0; &#xD55C;&#xB2E4;.</li>
-</ul>
-<p><img src="./imgFolder/DRCD_js_IMG12.png" alt="JSON &#xD1B5;&#xC2E0; img"></p>
-<h3 id="1-object-to-json">1. Object to JSON</h3>
-<p>js &#xC5D0;&#xC11C; boolean&#xACFC; &#xBB38;&#xC790;&#xC5F4;&#xC744; JSON&#xC73C;&#xB85C; &#xB118;&#xACA8;&#xBCF4;&#xC790;</p>
-<p><strong>[SOURCE]</strong></p>
-<pre><code class="language-javascript">let json = JSON.stringify(true);
-console.log(json);
-
-json = JSON.stringify([&apos;apple&apos;, &apos;banana&apos;]);
-console.log(json);</code></pre>
-<p><strong>[CONSOLE]</strong></p>
-<pre><code>true
-[&quot;apple&quot;,&quot;banana&quot;]</code></pre><p>JSON &#xC5D0;&#xC11C; &#xBB38;&#xC790;&#xC5F4;&#xC740; &#xBB34;&#xC870;&#xAC74; double quotation(<code>&quot;</code>) &#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xD55C;&#xB2E4;. <br>
-&#xB300;&#xBD80;&#xBD84;&#xC758; js &#xC758; object &#xB294; &#xC804;&#xB2EC;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC77C;&#xBD80; js &#xC758; &#xC790;&#xB8CC;&#xD615;&#xC774; &#xC804;&#xB2EC;&#xC774; &#xBD88;&#xAC00;&#xD558;&#xB2E4;.</p>
-<p><strong>[SOURCE]</strong></p>
-<pre><code class="language-javascript">const dog = {
-    name : &apos;mandu&apos;,
-    color : &apos;white&apos;,
-    size : null,
-    birthDate : new Date(),
-    jump : ()=&gt; {
-        console.log(`${name} can jump`);
+const userStorage = new UserStorage();
+const id = prompt(&apos;enter your id&apos;);
+const password = prompt(&apos;enter your password&apos;);
+userStorage.loginUser(
+    id,
+    password,
+    user =&gt; {
+        userStorage.getRoles(
+            id,
+            userWithRole =&gt; {
+                alert(`Hello ${userWithRole.name}, your role is ${userWithRole.role}`);
+            },
+            error =&gt; {
+                console.log(error);
+            }
+        );
     },
-    Symbol: Symbol(&apos;id&apos;)
-}
-
-json = JSON.stringify(dog);
-console.log(json);</code></pre>
-<p><strong>[CONSOLE]</strong></p>
-<pre><code>{&quot;name&quot;:&quot;mandu&quot;,&quot;color&quot;:&quot;white&quot;,&quot;size&quot;:null,&quot;birthDate&quot;:&quot;2020-10-06T05:34:49.417Z&quot;}</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB4EF; <code>Symbol : Symbol(&apos;id&apos;)</code> &#xBD80;&#xBD84;&#xC740; &#xC804;&#xB2EC;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xC558;&#xB2E4;. &#xB610;&#xD55C; jump &#xB77C;&#xB294; &#xD568;&#xC218;&#xC5ED;&#xC2DC; &#xD3EC;&#xD568;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xC558;&#xB2E4;. JSON&#xC740; js&#xC758; &#xBB38;&#xBC95;&#xACFC; &#xC720;&#xC0AC;&#xD558;&#xB098; &#xB2E4;&#xC18C; &#xCC28;&#xC774;&#xAC00; &#xC788;&#xC744; &#xC218; &#xC788;&#xC73C;&#xBBC0;&#xB85C; &#xC790;&#xB8CC;&#xD615;&#xC744; &#xC2E0;&#xACBD;&#xC744; &#xC368;&#xC57C; &#xD55C;&#xB2E4;.<br></p>
-<p>&#xB610;&#xD55C; JSON &#xC5D0;&#xC11C; Object&#xB97C; &#xC804;&#xB2EC;&#xD560; &#xB54C; &#xC77C;&#xBD80; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB9CC; &#xC804;&#xB2EC;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;. &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xC544;&#xB798; &#xC18C;&#xC2A4;&#xB97C; &#xCD94;&#xAC00;&#xD574;&#xC11C; &#xC2E4;&#xD589;&#xD574; &#xBCF4;&#xC790;.</p>
-<p><strong>[SOURCE]</strong></p>
-<pre><code class="language-javascript">json = JSON.stringify(dog, [&apos;name&apos;, &apos;color&apos;])
-console.log(json);</code></pre>
-<p><strong>[CONSOLE]</strong></p>
-<pre><code>{&quot;name&quot;:&quot;mandu&quot;,&quot;color&quot;:&quot;white&quot;}</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC640; &#xAC19;&#xC774; &#xC77C;&#xBD80; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB9CC; &#xC804;&#xB2EC;&#xC744; &#xD588;&#xB2E4;.</p>
-<p>&#xC815;&#xB9AC;&#xD558;&#xBA74;</p>
-<ul>
-<li>&#xBC30;&#xC5F4;&#xC774;&#xB098; boolean &#xB3C4; &#xC804;&#xB2EC;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</li>
-<li>javascript &#xC5D0;&#xC11C; JSON &#xD615;&#xD0DC;&#xB85C; &#xBCC0;&#xD658;&#xD560; &#xB54C; &#xD568;&#xC218;, Symbol &#xB4F1;&#xC740; &#xC804;&#xB2EC;&#xC774; &#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</li>
-<li>JSON &#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xD560; &#xB54C; &#xC77C;&#xBD80;&#xB9CC; &#xC804;&#xB2EC;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</li>
-</ul>
-<h3 id="2-json-to-object">2. JSON to Object</h3>
-<p>JSON &#xC744; js &#xC758; object&#xB85C; &#xBCC0;&#xD658;&#xD560; &#xB54C;&#xB294; stringify.parse &#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;. &#xC5EC;&#xAE30;&#xC11C; &#xC8FC;&#xC758;&#xD574;&#xC57C; &#xD560; &#xC810;&#xC774; &#xBA87;&#xAC00;&#xC9C0; &#xC788;&#xB2E4;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xC790;</p>
-<p><strong>[SOURCE]</strong></p>
-<pre><code class="language-javascript">const dog = {
-    name : &apos;mandu&apos;,
-    color : &apos;white&apos;,
-    size : null,
-    birthDate : new Date(),
-    jump : ()=&gt; {
-        console.log(`${name} can jump`);
-    },
-    Symbol: Symbol(&apos;id&apos;)
-}
-
-json = JSON.stringify(dog);
-const obj = JSON.parse(json);
-console.log(obj);</code></pre>
-<p><strong>[CONSOLE]</strong></p>
-<pre><code>{
-  name: &apos;mandu&apos;,
-  color: &apos;white&apos;,
-  size: null,
-  birthDate: &apos;2020-10-07T04:57:26.745Z&apos;
-}</code></pre><p>  &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; <code>dog</code> &#xB77C;&#xB294; object &#xB97C; &#xC0DD;&#xC131;&#xD558;&#xACE0; <code>json</code> &#xC774;&#xB77C;&#xB294; &#xBCC0;&#xC218;&#xC5D0; <code>dog</code> &#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; JSON &#xD615;&#xD0DC;&#xB85C; &#xC800;&#xC7A5;&#xD588;&#xB2E4;. &#xADF8; &#xD6C4; <code>obj</code> &#xB77C;&#xB294; &#xBCC0;&#xC218;&#xC5D0; <code>json</code> &#xC774;&#xB77C;&#xB294; JSON &#xD615;&#xD0DC;&#xC758; &#xAC1D;&#xCCB4;&#xB97C; &#xB2E4;&#xC2DC; &#xC6D0;&#xB798;&#xC758; &#xAC1D;&#xCCB4;&#xB85C; &#xB3CC;&#xB824;&#xB193;&#xC558;&#xB2E4;. &#xC774; &#xB54C; &#xC870;&#xC2EC;&#xD574;&#xC57C; &#xD560; &#xAC83;&#xC774; &#xC788;&#xB2E4;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xC790;</p>
-<p><strong>[SOURCE]</strong></p>
-<pre><code class="language-javascript">const dog = {
-    name : &apos;mandu&apos;,
-    color : &apos;white&apos;,
-    size : null,
-    birthDate : new Date(),
-    jump : ()=&gt; {
-        console.log(`${name} can jump`);
-    },
-    Symbol: Symbol(&apos;id&apos;)
-}
-
-json = JSON.stringify(dog);
-const obj = JSON.parse(json);
-console.log(dog.birthDate.getDate());</code></pre>
-<p><strong>[CONSOLE]</strong></p>
-<pre><code>[Function: getDate]
-undefined</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; <code>dog</code> &#xAC1D;&#xCCB4;&#xC548;&#xC758; <code>birthDate</code> &#xC774;&#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xB294;&#xB370; &#xC774;&#xB294; <code>Date</code> &#xB77C;&#xB294; &#xD45C;&#xC900;&#xB0B4;&#xC7A5;&#xAC1D;&#xCCB4;&#xB97C; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xAC1D;&#xCCB4;&#xC774;&#xB2E4;. &#xADF8;&#xB807;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>dog.birthDate.getDate()</code> &#xB77C;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xD574;&#xB2F9; <code>day</code> &#xB97C; return &#xD55C;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; <code>console.log(obj.birthDate.getDate());</code> &#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xB420;&#xAE4C;?</p>
-<p><strong>[SOURCE]</strong></p>
-<pre><code class="language-javascript">//&#xC704;&#xC640; &#xAC19;&#xC740; &#xC18C;&#xC2A4;
-console.log(obj.birthDate.getDate());</code></pre>
-<p><strong>[CONSOLE]</strong></p>
-<pre><code>TypeError: obj.birthDate.getDate is not a function</code></pre><p>&#xC704;&#xC758; &#xACB0;&#xACFC;&#xAC12;&#xACFC; &#xAC19;&#xC774; &#xC624;&#xB958;&#xAC00; &#xB72C;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xC810;&#xC740; JSON &#xC758; &#xD2B9;&#xC9D5; &#xB54C;&#xBB38;&#xC5D0; &#xBC1C;&#xC0DD;&#xD558;&#xB294;&#xB370; JSON &#xC740; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; key-value &#xB97C; &#xC30D;&#xC73C;&#xB85C; &#xAC00;&#xC9C0;&#xB294; &#xC815;&#xBCF4;&#xB4E4;&#xC744; &#xC800;&#xC7A5;&#xD558;&#xB294;&#xB370; &#xC774; &#xB54C; &#xC774; <strong>value &#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; &#xAC12;&#xB4E4;&#xC740; &#xBB38;&#xC790;&#xC5F4;&#xB85C; &#xC800;&#xC7A5;&#xC774; &#xB41C;&#xB2E4;.</strong> &#xC774;&#xB294; &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xBA74; &#xC790;&#xBA85;&#xD558;&#xB2E4;.</p>
-<p><strong>[SOURCE]</strong></p>
-<pre><code class="language-javascript">const dog = {
-    name : &apos;mandu&apos;,
-    color : &apos;white&apos;,
-    size : null,
-    birthDate : new Date(),
-    jump : ()=&gt; {
-        console.log(`${name} can jump`);
-    },
-    Symbol: Symbol(&apos;id&apos;)
-}
-
-json = JSON.stringify(dog);
-const obj = JSON.parse(json);
-
-console.log(typeof dog.birthDate);
-console.log(typeof obj.birthDate);</code></pre>
-<p><strong>[CONSOLE]</strong></p>
-<pre><code>object
-string</code></pre><p><code>dog</code> &#xC758; <code>birthDate</code> &#xC758; &#xD0C0;&#xC785;&#xC740; object &#xC778; &#xAC83;&#xC5D0; &#xBC18;&#xD574; <code>obj</code> &#xC758; <code>birthDate</code> &#xC758; &#xD0C0;&#xC785;&#xC740; string &#xC774;&#xB2E4;. &#xADF8;&#xB807;&#xB2E4;&#xBA74; Date() &#xAC1D;&#xCCB4;&#xB97C; &#xB2E4;&#xC2DC; &#xC4F0;&#xB824;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xD574;&#xC57C; &#xD560;&#xAE4C;? &#xC544;&#xB798; &#xC18C;&#xC2A4;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xB77C;</p>
-<p><strong>[SOURCE]</strong></p>
-<pre><code class="language-javascript">const dog = {
-    name : &apos;mandu&apos;,
-    color : &apos;white&apos;,
-    size : null,
-    birthDate : new Date(),
-    jump : ()=&gt; {
-        console.log(`${name} can jump`);
-    },
-    Symbol: Symbol(&apos;id&apos;)
-}
-
-
-json = JSON.stringify(dog);
-const obj = JSON.parse(json, (key, value)=&gt;{
-    return key === &apos;birthDate&apos; ? new Date(value) : value;
-});
-
-console.log(dog.birthDate.getDate());
-console.log(obj.birthDate.getDate());</code></pre>
-<p><strong>[CONSOLE]</strong></p>
-<pre><code>7
-7</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; <code>JSON.parse</code> &#xBA54;&#xC18C;&#xB4DC;&#xC5D0;&#xC11C; &#xCF5C;&#xBC31;&#xD568;&#xC218;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xB9CC;&#xC57D; &#xBC1B;&#xC544;&#xC624;&#xB294; <code>key</code> &#xAC12;&#xC774; <code>birthDate</code> &#xC774;&#xBA74; <code>new Date(value)</code> &#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB294; arrow function &#xC744; &#xCD94;&#xAC00;&#xD55C; &#xAC83;&#xC774;&#xB2E4;. &#xC774;&#xB807;&#xAC8C; &#xB418;&#xBA74; <code>birthDate</code> &#xC774;&#xB77C;&#xB294; key &#xAC12;&#xC740; <code>Date()</code> &#xB77C;&#xB294; &#xAC1D;&#xCCB4;&#xB97C; &#xAC00;&#xC9C0;&#xAC8C; &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>7</code>&#xC774;&#xB77C;&#xB294; &#xAC12;&#xC744; &#xBC49;&#xC5B4;&#xB0B8;&#xB2E4;.</p>
+    error =&gt; {
+        console.log(error);
+    }
+)</code></pre>
+<p><strong>[SOURCE-html]</strong></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;script src=&quot;test.js&quot; defer&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; &#xC544;&#xB798;&#xC758; &#xC5ED;&#xD560;&#xC744; &#xC218;&#xD589;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xC18C;&#xC2A4;&#xC774;&#xB2E4;.</p>
+<ol>
+<li><code>UserStorage</code> &#xB77C;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC120;&#xC5B8;&#xD55C;&#xB2E4;.</li>
+<li><code>UserStorage</code> &#xB294; <code>loginUser</code>, <code>getRoles</code> &#xB77C;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C4;&#xB2E4;.
+2-1. <code>loginUser</code> &#xB294; &#xC870;&#xAC74;&#xBB38;&#xC774; <code>true</code> &#xBA74; <code>onSuccess</code>(callback), &#xADF8; &#xC678;&#xB294; <code>onError</code> &#xB97C; &#xC2E4;&#xD589;&#xD55C;&#xB2E4;.
+2.2. <code>getRoles</code> &#xB294; &#xBC1B;&#xC544;&#xC628; <code>user</code> &#xAC00; <code>ellie</code> &#xBA74; <code>onSuccess</code>(callback), &#xADF8; &#xC678;&#xB294; <code>onError</code>&#xB97C; &#xC2E4;&#xD589;&#xD55C;&#xB2E4;.</li>
+<li><code>userStorage</code> &#xB77C;&#xB294; &#xBCC0;&#xC218;&#xC5D0; <code>UserStorage</code> &#xB77C;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC0C1;&#xC18D;&#xD558;&#xC5EC; &#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4E0;&#xB2E4;.</li>
+<li><code>prompt</code> &#xB85C; <code>id</code> &#xC640; <code>password</code>&#xB97C; &#xBC1B;&#xC544;&#xC628;&#xB2E4;.</li>
+<li><code>userStorage</code> &#xAC1D;&#xCCB4;&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xC778; <code>loginUser</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</li>
+<li><code>loginUser</code> &#xB294; <code>id</code>, <code>password</code>, <code>user</code>(callback), <code>error</code>(callback) &#xB97C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</li>
+<li><code>user</code>(parameter of loginUser) &#xB294; <code>user</code>, <code>userStorage.getRoles</code>(callback), <code>error</code>(callback) &#xB97C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB85C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</li>
+<li>&#xBC1B;&#xC544;&#xC628; <code>id</code> &#xAC00; <code>ellie</code>, <code>coder</code> &#xC77C; &#xB54C; <code>userWithRole</code>(callback), &#xADF8; &#xC678;&#xB294; <code>error</code>(callback) &#xB97C; &#xC2E4;&#xD589;&#xD55C;&#xB2E4;.</li>
+</ol>
+<p>&#xC704;&#xC758; &#xACFC;&#xC815;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB4EF;&#xC774; &#xC774;&#xB7F0;&#xC2DD;&#xC73C;&#xB85C; &#xC5F0;&#xC1C4;&#xC801;&#xC73C;&#xB85C; callback &#xC744; &#xD638;&#xCD9C;&#xD558;&#xACE0; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC774;&#xD574;&#xD558;&#xAE30;&#xB3C4; &#xD798;&#xB4E4; &#xBFD0;&#xB354;&#xB7EC;(&#xC18C;&#xC2A4;&#xAC00;&#xB3C5;&#xC131; down) &#xB9CC;&#xC57D;&#xC5D0; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xC744; &#xB54C; &#xC5B4;&#xB514;&#xC11C; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xAE30;&#xAC00; &#xC5B4;&#xB835;&#xB2E4;(&#xC720;&#xC9C0;&#xBCF4;&#xC218; &#xC6A9;&#xC774;&#xC131; down). &#xC774;&#xB7EC;&#xD55C; &#xC774;&#xC720;&#xB85C; &#xC774;&#xB7EC;&#xD55C; &#xC5F0;&#xC1C4; callback &#xC740; &#xC798; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xACE0; async-await, promise &#xB984; &#xB9CE;&#xC774; &#xC4F4;&#xB2E4;. &#xC774;&#xAC83;&#xB4E4;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xC790;.</p>
 </article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
   <svg t="1533629773982" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1035" xlink="http://www.w3.org/1999/xlink" width="40" height="40"><defs><style type="text/css">@font-face { font-family: uc-nexus-iconfont; src: url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff") format("woff"), url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf") format("truetype"); }
   </style></defs><path d="M536.255427 195.182354c-7.804756-7.804756-17.966187-11.615549-28.311813-11.615549-9.43693 0-18.874883 3.449565-26.496467 10.163477-2.360767 1.452071-4.356214 3.267417-6.352685 5.262864L218.47792 455.611735c-15.607466 15.60542-15.607466 40.834011 0 56.43943 15.607466 15.607466 41.558511 15.607466 57.167001 0l193.46013-192.733583 0 600.526219c0 22.1423 17.787108 39.927361 39.927361 39.927361 22.140253 0 39.927361-17.785062 39.927361-39.927361L548.959773 319.317583 737.15704 508.422522c15.607466 15.607466 40.469714 15.607466 56.078203 0 15.607466-15.607466 15.425318-40.834011-0.182149-56.441477L536.255427 195.182354 536.255427 195.182354z" p-id="1036" fill="#333"/><path d="M101.784174 143.097092l816.674071 0c22.140253 0 39.925315-17.785062 39.925315-39.927361 0-22.140253-17.784038-39.925315-39.925315-39.925315L101.784174 63.244416c-22.140253 0-39.927361 17.785062-39.927361 39.925315C61.856813 125.31203 79.643921 143.097092 101.784174 143.097092L101.784174 143.097092z" p-id="1037" fill="#333"/></svg>

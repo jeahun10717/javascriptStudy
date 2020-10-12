@@ -1,19 +1,46 @@
-const dog = {
-    name : 'mandu',
-    color : 'white',
-    size : null,
-    birthDate : new Date(),
-    jump : ()=> {
-        console.log(`${name} can jump`);
-    },
-    Symbol: Symbol('id')
+class UserStorage{
+    loginUser(id, password, onSuccess, onError){
+        setTimeout(()=>{
+            if(
+                (id==='ellie' && password==='dream') ||
+                (id==='coder' && password==='academy')
+            ){
+                onSuccess(id);
+            }else{
+                onError(new Error('not found'));
+            }
+        }, 2000);
+    }
+    getRoles(user, onSuccess, onError){
+        setTimeout(()=>{
+            if(user==='ellie'){
+                onSuccess({name : 'ellie', role : 'admin'});
+            } else {
+                onError(new Error('no access'))
+            }
+        }, 1000);
+    }
 }
 
-
-json = JSON.stringify(dog);
-const obj = JSON.parse(json, (key, value)=>{
-    return key === 'birthDate' ? new Date(value) : value;
-});
-
-console.log(dog.birthDate.getDate());
-console.log(obj.birthDate.getDate());
+const userStorage = new UserStorage();
+const id = prompt('enter your id');
+const password = prompt('enter your password');
+userStorage.loginUser(
+    id,
+    password,
+    user => {
+        user,
+        userStorage.getRoles(
+            id, 
+            userWithRole => {
+                alert(`Hello ${userWithRole.name}, your role is ${userWithRole.role}`);
+            },
+            error => {
+                console.log(error);
+            }
+        );
+    },
+    error => {
+        console.log(error);
+    }
+)
