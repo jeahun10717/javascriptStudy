@@ -2,7 +2,7 @@
 
 ## 1. CallBack
 
-### 1. Syncronous
+### 1. Syncronous & Asyncronous
 
 javascript는 동기(Syncronous)적으로 처리가 되는 언어이다. 동기처리란 코드의 요청과 실행이 연속적으로 일어나는 것을 의미한다.
 
@@ -148,9 +148,9 @@ userStorage.loginUser(
 
 위의 소스는 아래의 역할을 수행하기 위한 소스이다.
 1. `UserStorage` 라는 클래스를 선언한다.
-2. `UserStorage` 는 `loginUser`, `getRoles` 라는 메소드를 가진다.
-2-1. `loginUser` 는 조건문이 `true` 면 `onSuccess`(callback), 그 외는 `onError` 를 실행한다.
-2.2. `getRoles` 는 받아온 `user` 가 `ellie` 면 `onSuccess`(callback), 그 외는 `onError`를 실행한다.
+2. `UserStorage` 는 `loginUser`, `getRoles` 라는 메소드를 가진다.</br>
+ *  `loginUser` 는 조건문이 `true` 면 `onSuccess`(callback), 그 외는 `onError` 를 실행한다.</br>
+ *  `getRoles` 는 받아온 `user` 가 `ellie` 면 `onSuccess`(callback), 그 외는 `onError`를 실행한다.
 3. `userStorage` 라는 변수에 `UserStorage` 라는 클래스를 상속하여 객체를 만든다.
 4. `prompt` 로 `id` 와 `password`를 받아온다.
 5. `userStorage` 객체의 메소드인 `loginUser` 를 사용한다.
@@ -158,4 +158,6 @@ userStorage.loginUser(
 7. `user`(parameter of loginUser) 는 `user`, `userStorage.getRoles`(callback), `error`(callback) 를 매개변수로 사용한다.
 8. 받아온 `id` 가 `ellie`, `coder` 일 때 `userWithRole`(callback), 그 외는 `error`(callback) 를 실행한다.
 
-위의 과정에서 볼 수 있듯이 이런식으로 연쇄적으로 callback 을 호출하고 사용하면 이해하기도 힘들 뿐더러(소스가독성 down) 만약에 오류가 발생했을 때 어디서 오류가 발생했는지 확인하기가 어렵다(유지보수 용이성 down). 이러한 이유로 이러한 연쇄 callback 은 잘 사용하지 않고 async-await, promise 름 많이 쓴다. 이것들에 대해서 알아보자.
+위의 과정에서 볼 수 있듯이 이런식으로 연쇄적으로 callback 을 호출하고 사용하면 이해하기도 힘들 뿐더러(소스가독성 down) 만약에 오류가 발생했을 때 어디서 오류가 발생했는지 확인하기가 어렵다(유지보수 용이성 down). 이러한 이유로 이러한 연쇄 callback 은 잘 사용하지 않고 async-await, promise 를 많이 쓴다. 이것들에 대해서 알아보자.
+
+### 2. Promise
