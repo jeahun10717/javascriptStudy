@@ -149,8 +149,8 @@ userStorage.loginUser(
 위의 소스는 아래의 역할을 수행하기 위한 소스이다.
 1. `UserStorage` 라는 클래스를 선언한다.
 2. `UserStorage` 는 `loginUser`, `getRoles` 라는 메소드를 가진다.</br>
- *  `loginUser` 는 조건문이 `true` 면 `onSuccess`(callback), 그 외는 `onError` 를 실행한다.</br>
- *  `getRoles` 는 받아온 `user` 가 `ellie` 면 `onSuccess`(callback), 그 외는 `onError`를 실행한다.
+ *  2.1. `loginUser` 는 조건문이 `true` 면 `onSuccess`(callback), 그 외는 `onError` 를 실행한다.</br>
+ *  2.2. `getRoles` 는 받아온 `user` 가 `ellie` 면 `onSuccess`(callback), 그 외는 `onError`를 실행한다.
 3. `userStorage` 라는 변수에 `UserStorage` 라는 클래스를 상속하여 객체를 만든다.
 4. `prompt` 로 `id` 와 `password`를 받아온다.
 5. `userStorage` 객체의 메소드인 `loginUser` 를 사용한다.
@@ -161,3 +161,133 @@ userStorage.loginUser(
 위의 과정에서 볼 수 있듯이 이런식으로 연쇄적으로 callback 을 호출하고 사용하면 이해하기도 힘들 뿐더러(소스가독성 down) 만약에 오류가 발생했을 때 어디서 오류가 발생했는지 확인하기가 어렵다(유지보수 용이성 down). 이러한 이유로 이러한 연쇄 callback 은 잘 사용하지 않고 async-await, promise 를 많이 쓴다. 이것들에 대해서 알아보자.
 
 ### 2. Promise
+
+Promise 는 비동기 처리를 위해 javascript 에서 제공하는 기능이다. 기본적으로 promise 는 어떠한 기능을 성공적으로 처리하면 실행을 하고 성공적으로 실행하지 못하고 오류가 발생하면 error 메세지를 띄워준다. Promise 를 사용할 때는 아래 2가지를 고려해야 한다.
+* State
+1. operation 이 수행중일 때 : pending
+2. operation 이 완전히 수행됨 : fullfield state
+3. operation 이 완전히 수행되지 않음 : rejected state
+* Producer(서비스 제공자) & Consumer(서비스 사용자)
+
+#### 1. Producer
+
+Producer 는 Promise 를 사용하기 위해 만들어 두는 소스이다. Producer 의 생성방법은 아래와 같다.
+
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    //doing some heavy work(like network, read files)
+});
+```
+
+예를 들어보자.
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        resolve('ellie')
+    },2000);
+    // setTimeout(()=>{
+    //   reject(new Error())
+    // },1000)
+});
+```
+ 만약 우리가 정상적으로 값을 받아왔다면 그 값을 resolve를 사용하여 값을 전달하면 된다. 만약 성공적으로 실행되지 못하면 reject 를 사용하면 된다. 위의 예제는 네트워크에서 성공적으로 전달받은 값이 `ellie` 고 받아오는 시간이 2000ms 로 가정한 것이다. 네트워크에서 전달이 실패하면 주석으로 처리한 부분처럼 reject를 사용하면 된다. 위의 소스는 간단하게 resolve 에 대해 알아보기 위함이고 실무에서는 if 문으로 처리를 하면 된다. promise 의 사용을 위한 Producer 설정은 끝났으니 이제 Consumer 에 대해 알아보자.
+
+#### 2. Consumer : then, catch, finally
+
+**1. then**
+
+**[SOURCE]**
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        resolve('ellie')
+    },2000);
+});
+
+promise.then((value)=>{
+    console.log(value);
+})
+```
+
+**[CONSOLE]**
+```
+doing something
+ellie
+```
+
+promise.then은 promise 가 정상적으로 작동했다면 then 내부에 있는 함수를 value 라고 하는 인자를 전달받아서 실행한다. 이 value 라는 인자는 위에서 Promise 를 통해 정상적으로 전달받은 ellie 라는 값을 받는다. 만약 위의 Promise 의 생성에서 정상적인 값이 전달받지 못한다면 어떻게 될까?
+
+**[SOURCE]**
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    // setTimeout(()=>{
+    //     resolve('jeahun')
+    // },2000);
+    setTimeout(()=>{
+        reject(new Error('no network'))
+    },1000)
+});
+
+promise
+.then((value)=>{
+    console.log(value);
+})
+```
+
+위의 소스는 임의로 네트워크 통신에서 에러가 뜬 상황을 가정하여 만든 예제이다. 이러한 경우에 브라우저 환경에서 실행하면 아래와 같은 오류가 뜬다.
+
+![chrome-error_message](./imgFolder/DRCD_js_IMG15.png)
+
+이 메시지는 `Uncaught Error` 즉 코드 작성자가 잡지 못한 에러가 존재한다는 메세지인데 이러한 메세지는 프로그램이 작동하지 않을 수도 있다. 만약에 에러가 발생하면 브라우저가 아닌 코드 작성자가 컨트롤 해 주어야 한다. 이는 `catch` 를 통해 해결이 가능하다.
+
+**[SOURCE]**
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        reject(new Error('no network'))
+    },1000)
+});
+
+promise
+.then((value)=>{
+    console.log(value);
+})
+.catch((error)=>{
+    console.log(error);
+})
+```
+
+**[BROWSER]**
+![chrome-error_message_controled](./imgFolder/DRCD_js_IMG16.png)
+
+위의 결과창에서도 볼 수 있듯이 브라우저에서 에러를 캐치한 것이 아니라 사용자가 캐치했다. 이러한 경우에 에러메시지의 원인을 정확히 알 수 있고 그에 따라 수정도 용이하다. 이러한 에러의 감지를 `catch` 를 통해 이루어 낸다. 이렇게 `Promise` 에 `then`, `catch` 를 연속적으로 사용하는 것을 Promise chaining 이라고 한다.
+
+#### 3. Promise Chaining
+
+위에서 알아보았듯 `Promise` 에서 `then`, `catch` 를 연속적으로 사용하는 것을 Promise Chaning 이라고 한다. 밑의 소스를 보자.
+
+**[SOURCE]**
+```javascript
+let rlvVar = 1;
+
+const fetchNumber = new Promise((resolve, reject)=>{
+    setTimeout(() => resolve(rlvVar), 1000);
+})
+
+fetchNumber
+.then(num => num*2)
+.then(num => num*3)
+.then(num => {
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => resolve(num-1), 1000);
+    })
+})
+.then(num => console.log(num))
+```
+
+**[CONSOLE]**
+```
+5
+```
+
+위의 소스에서 볼 수 있듯이 `fetchNumber`에서 정상적으로 전달받은(resolve 를 통해) `rlvVar` 을 인자로 전달 받아 `then` 을 연속적으로 사용할 수 있다. 또한 `then` 은 새로운 `Promise` 를 리턴하고 그 리턴값을 인자로(reslove 를 통해) 받을수도 있다.

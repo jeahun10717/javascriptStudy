@@ -1,46 +1,15 @@
-class UserStorage{
-    loginUser(id, password, onSuccess, onError){
-        setTimeout(()=>{
-            if(
-                (id==='ellie' && password==='dream') ||
-                (id==='coder' && password==='academy')
-            ){
-                onSuccess(id);
-            }else{
-                onError(new Error('not found'));
-            }
-        }, 2000);
-    }
-    getRoles(user, onSuccess, onError){
-        setTimeout(()=>{
-            if(user==='ellie'){
-                onSuccess({name : 'ellie', role : 'admin'});
-            } else {
-                onError(new Error('no access'))
-            }
-        }, 1000);
-    }
-}
+let rlvVar = 1;
 
-const userStorage = new UserStorage();
-const id = prompt('enter your id');
-const password = prompt('enter your password');
-userStorage.loginUser(
-    id,
-    password,
-    user => {
-        user,
-        userStorage.getRoles(
-            id, 
-            userWithRole => {
-                alert(`Hello ${userWithRole.name}, your role is ${userWithRole.role}`);
-            },
-            error => {
-                console.log(error);
-            }
-        );
-    },
-    error => {
-        console.log(error);
-    }
-)
+const fetchNumber = new Promise((resolve, reject)=>{
+    setTimeout(() => resolve(rlvVar), 1000);
+})
+
+fetchNumber
+.then(num => num*2)
+.then(num => num*3)
+.then(num => {
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => resolve(num-1), 1000);
+    })
+})
+.then(num => console.log(num))

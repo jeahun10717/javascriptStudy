@@ -1,5 +1,8 @@
-const fruit = ['apple', 'banana']
-
-for (let i = 0; i < fruit.length; i++) {
-    console.log(fruit[i]);    
+function plus(a,b) {
+    return a+b;
 }
+const arrowPlus = (a, b)=>{a+b}
+
+const test = (a, b)=> a+b 
+
+console.log(test(14, 7));

@@ -646,7 +646,9 @@ const sum = (a, b)=>a+b
 console.log(sum(65, 55));
 ```
 
-위의 2개의 소스는 완전히 같은 기능을 한다. 일반적인 함수에 비해 function 이라는 키워드를 적지 않아도 된다는 점, 1줄 안에 간단한 함수는 선언이 가능하다는 점에서 일반적인 함수 선언에 비해 javascript 에서는 arrow function 이 많이 쓰인다.
+위의 2개의 소스는 완전히 같은 기능을 한다. 또한 위에서 볼 수 있듯이 return 만 존재하는 함수의 경우에 return 이 생략이 가능하다. 일반적인 함수에 비해 function 이라는 키워드를 적지 않아도 된다는 점, 1줄 안에 간단한 함수는 선언이 가능하다는 점에서 빈번히 사용된다. </br>
+[arrow function 에 대해 이 사이트를 참고하라](https://jeong-pro.tistory.com/110)
+
 
 #### 4. IIFE(Immediatly Ivoked Function Expression)
 

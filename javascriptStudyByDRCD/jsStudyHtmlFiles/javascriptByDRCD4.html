@@ -142,8 +142,8 @@ userStorage.loginUser(
 <ol>
 <li><code>UserStorage</code> &#xB77C;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC120;&#xC5B8;&#xD55C;&#xB2E4;.</li>
 <li><code>UserStorage</code> &#xB294; <code>loginUser</code>, <code>getRoles</code> &#xB77C;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C4;&#xB2E4;.<br><ul>
-<li><code>loginUser</code> &#xB294; &#xC870;&#xAC74;&#xBB38;&#xC774; <code>true</code> &#xBA74; <code>onSuccess</code>(callback), &#xADF8; &#xC678;&#xB294; <code>onError</code> &#xB97C; &#xC2E4;&#xD589;&#xD55C;&#xB2E4;.<br></li>
-<li><code>getRoles</code> &#xB294; &#xBC1B;&#xC544;&#xC628; <code>user</code> &#xAC00; <code>ellie</code> &#xBA74; <code>onSuccess</code>(callback), &#xADF8; &#xC678;&#xB294; <code>onError</code>&#xB97C; &#xC2E4;&#xD589;&#xD55C;&#xB2E4;.</li>
+<li>2.1. <code>loginUser</code> &#xB294; &#xC870;&#xAC74;&#xBB38;&#xC774; <code>true</code> &#xBA74; <code>onSuccess</code>(callback), &#xADF8; &#xC678;&#xB294; <code>onError</code> &#xB97C; &#xC2E4;&#xD589;&#xD55C;&#xB2E4;.<br></li>
+<li>2.2. <code>getRoles</code> &#xB294; &#xBC1B;&#xC544;&#xC628; <code>user</code> &#xAC00; <code>ellie</code> &#xBA74; <code>onSuccess</code>(callback), &#xADF8; &#xC678;&#xB294; <code>onError</code>&#xB97C; &#xC2E4;&#xD589;&#xD55C;&#xB2E4;.</li>
 </ul>
 </li>
 <li><code>userStorage</code> &#xB77C;&#xB294; &#xBCC0;&#xC218;&#xC5D0; <code>UserStorage</code> &#xB77C;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC0C1;&#xC18D;&#xD558;&#xC5EC; &#xAC1D;&#xCCB4;&#xB97C; &#xB9CC;&#xB4E0;&#xB2E4;.</li>
@@ -155,6 +155,98 @@ userStorage.loginUser(
 </ol>
 <p>&#xC704;&#xC758; &#xACFC;&#xC815;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB4EF;&#xC774; &#xC774;&#xB7F0;&#xC2DD;&#xC73C;&#xB85C; &#xC5F0;&#xC1C4;&#xC801;&#xC73C;&#xB85C; callback &#xC744; &#xD638;&#xCD9C;&#xD558;&#xACE0; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC774;&#xD574;&#xD558;&#xAE30;&#xB3C4; &#xD798;&#xB4E4; &#xBFD0;&#xB354;&#xB7EC;(&#xC18C;&#xC2A4;&#xAC00;&#xB3C5;&#xC131; down) &#xB9CC;&#xC57D;&#xC5D0; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xC744; &#xB54C; &#xC5B4;&#xB514;&#xC11C; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xAE30;&#xAC00; &#xC5B4;&#xB835;&#xB2E4;(&#xC720;&#xC9C0;&#xBCF4;&#xC218; &#xC6A9;&#xC774;&#xC131; down). &#xC774;&#xB7EC;&#xD55C; &#xC774;&#xC720;&#xB85C; &#xC774;&#xB7EC;&#xD55C; &#xC5F0;&#xC1C4; callback &#xC740; &#xC798; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xACE0; async-await, promise &#xB97C; &#xB9CE;&#xC774; &#xC4F4;&#xB2E4;. &#xC774;&#xAC83;&#xB4E4;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xC790;.</p>
 <h3 id="2-promise">2. Promise</h3>
+<p>Promise &#xB294; &#xBE44;&#xB3D9;&#xAE30; &#xCC98;&#xB9AC;&#xB97C; &#xC704;&#xD574; javascript &#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC774;&#xB2E4;. &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; promise &#xB294; &#xC5B4;&#xB5A0;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xC131;&#xACF5;&#xC801;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC2E4;&#xD589;&#xC744; &#xD558;&#xACE0; &#xC131;&#xACF5;&#xC801;&#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xACE0; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xBA74; error &#xBA54;&#xC138;&#xC9C0;&#xB97C; &#xB744;&#xC6CC;&#xC900;&#xB2E4;. Promise &#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB294; &#xC544;&#xB798; 2&#xAC00;&#xC9C0;&#xB97C; &#xACE0;&#xB824;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</p>
+<ul>
+<li>State</li>
+<li>operation &#xC774; &#xC218;&#xD589;&#xC911;&#xC77C; &#xB54C; : pending</li>
+<li>operation &#xC774; &#xC644;&#xC804;&#xD788; &#xC218;&#xD589;&#xB428; : fullfield state</li>
+<li>operation &#xC774; &#xC644;&#xC804;&#xD788; &#xC218;&#xD589;&#xB418;&#xC9C0; &#xC54A;&#xC74C; : rejected state</li>
+<li>Producer(&#xC11C;&#xBE44;&#xC2A4; &#xC81C;&#xACF5;&#xC790;) &amp; Consumer(&#xC11C;&#xBE44;&#xC2A4; &#xC0AC;&#xC6A9;&#xC790;)</li>
+</ul>
+<h4 id="1-producer">1. Producer</h4>
+<p>Producer &#xB294; Promise &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574; &#xB9CC;&#xB4E4;&#xC5B4; &#xB450;&#xB294; &#xC18C;&#xC2A4;&#xC774;&#xB2E4;. Producer &#xC758; &#xC0DD;&#xC131;&#xBC29;&#xBC95;&#xC740; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;.</p>
+<pre><code class="language-javascript">const promise = new Promise((resolve, reject)=&gt;{
+    //doing some heavy work(like network, read files)
+});</code></pre>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xC5B4;&#xBCF4;&#xC790;.</p>
+<pre><code class="language-javascript">const promise = new Promise((resolve, reject)=&gt;{
+    setTimeout(()=&gt;{
+        resolve(&apos;ellie&apos;)
+    },2000);
+    // setTimeout(()=&gt;{
+    //   reject(new Error())
+    // },1000)
+});</code></pre>
+<p> &#xB9CC;&#xC57D; &#xC6B0;&#xB9AC;&#xAC00; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xAC12;&#xC744; &#xBC1B;&#xC544;&#xC654;&#xB2E4;&#xBA74; &#xADF8; &#xAC12;&#xC744; resolve&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xAC12;&#xC744; &#xC804;&#xB2EC;&#xD558;&#xBA74; &#xB41C;&#xB2E4;. &#xB9CC;&#xC57D; &#xC131;&#xACF5;&#xC801;&#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xB418;&#xC9C0; &#xBABB;&#xD558;&#xBA74; reject &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB41C;&#xB2E4;. &#xC704;&#xC758; &#xC608;&#xC81C;&#xB294; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC5D0;&#xC11C; &#xC131;&#xACF5;&#xC801;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xBC1B;&#xC740; &#xAC12;&#xC774; <code>ellie</code> &#xACE0; &#xBC1B;&#xC544;&#xC624;&#xB294; &#xC2DC;&#xAC04;&#xC774; 2000ms &#xB85C; &#xAC00;&#xC815;&#xD55C; &#xAC83;&#xC774;&#xB2E4;. &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC5D0;&#xC11C; &#xC804;&#xB2EC;&#xC774; &#xC2E4;&#xD328;&#xD558;&#xBA74; &#xC8FC;&#xC11D;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xD55C; &#xBD80;&#xBD84;&#xCC98;&#xB7FC; reject&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB41C;&#xB2E4;. &#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; &#xAC04;&#xB2E8;&#xD558;&#xAC8C; resolve &#xC5D0; &#xB300;&#xD574; &#xC54C;&#xC544;&#xBCF4;&#xAE30; &#xC704;&#xD568;&#xC774;&#xACE0; &#xC2E4;&#xBB34;&#xC5D0;&#xC11C;&#xB294; if &#xBB38;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xB97C; &#xD558;&#xBA74; &#xB41C;&#xB2E4;. promise &#xC758; &#xC0AC;&#xC6A9;&#xC744; &#xC704;&#xD55C; Producer &#xC124;&#xC815;&#xC740; &#xB05D;&#xB0AC;&#xC73C;&#xB2C8; &#xC774;&#xC81C; Consumer &#xC5D0; &#xB300;&#xD574; &#xC54C;&#xC544;&#xBCF4;&#xC790;.</p>
+<h4 id="2-consumer-then-catch-finally">2. Consumer : then, catch, finally</h4>
+<p><strong>1. then</strong></p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">const promise = new Promise((resolve, reject)=&gt;{
+    setTimeout(()=&gt;{
+        resolve(&apos;ellie&apos;)
+    },2000);
+});
+
+promise.then((value)=&gt;{
+    console.log(value);
+})</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>doing something
+ellie</code></pre><p>promise.then&#xC740; promise &#xAC00; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xC791;&#xB3D9;&#xD588;&#xB2E4;&#xBA74; then &#xB0B4;&#xBD80;&#xC5D0; &#xC788;&#xB294; &#xD568;&#xC218;&#xB97C; value &#xB77C;&#xACE0; &#xD558;&#xB294; &#xC778;&#xC790;&#xB97C; &#xC804;&#xB2EC;&#xBC1B;&#xC544;&#xC11C; &#xC2E4;&#xD589;&#xD55C;&#xB2E4;. &#xC774; value &#xB77C;&#xB294; &#xC778;&#xC790;&#xB294; &#xC704;&#xC5D0;&#xC11C; Promise &#xB97C; &#xD1B5;&#xD574; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xBC1B;&#xC740; ellie &#xB77C;&#xB294; &#xAC12;&#xC744; &#xBC1B;&#xB294;&#xB2E4;. &#xB9CC;&#xC57D; &#xC704;&#xC758; Promise &#xC758; &#xC0DD;&#xC131;&#xC5D0;&#xC11C; &#xC815;&#xC0C1;&#xC801;&#xC778; &#xAC12;&#xC774; &#xC804;&#xB2EC;&#xBC1B;&#xC9C0; &#xBABB;&#xD55C;&#xB2E4;&#xBA74; &#xC5B4;&#xB5BB;&#xAC8C; &#xB420;&#xAE4C;?</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">const promise = new Promise((resolve, reject)=&gt;{
+    // setTimeout(()=&gt;{
+    //     resolve(&apos;jeahun&apos;)
+    // },2000);
+    setTimeout(()=&gt;{
+        reject(new Error(&apos;no network&apos;))
+    },1000)
+});
+
+promise
+.then((value)=&gt;{
+    console.log(value);
+})</code></pre>
+<p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xB294; &#xC784;&#xC758;&#xB85C; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xD1B5;&#xC2E0;&#xC5D0;&#xC11C; &#xC5D0;&#xB7EC;&#xAC00; &#xB72C; &#xC0C1;&#xD669;&#xC744; &#xAC00;&#xC815;&#xD558;&#xC5EC; &#xB9CC;&#xB4E0; &#xC608;&#xC81C;&#xC774;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0; &#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xD658;&#xACBD;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; &#xC624;&#xB958;&#xAC00; &#xB72C;&#xB2E4;.</p>
+<p><img src="./imgFolder/DRCD_js_IMG15.png" alt="chrome-error_message"></p>
+<p>&#xC774; &#xBA54;&#xC2DC;&#xC9C0;&#xB294; <code>Uncaught Error</code> &#xC989; &#xCF54;&#xB4DC; &#xC791;&#xC131;&#xC790;&#xAC00; &#xC7A1;&#xC9C0; &#xBABB;&#xD55C; &#xC5D0;&#xB7EC;&#xAC00; &#xC874;&#xC7AC;&#xD55C;&#xB2E4;&#xB294; &#xBA54;&#xC138;&#xC9C0;&#xC778;&#xB370; &#xC774;&#xB7EC;&#xD55C; &#xBA54;&#xC138;&#xC9C0;&#xB294; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC774; &#xC791;&#xB3D9;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xB2E4;. &#xB9CC;&#xC57D;&#xC5D0; &#xC5D0;&#xB7EC;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xBA74; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; &#xC544;&#xB2CC; &#xCF54;&#xB4DC; &#xC791;&#xC131;&#xC790;&#xAC00; &#xCEE8;&#xD2B8;&#xB864; &#xD574; &#xC8FC;&#xC5B4;&#xC57C; &#xD55C;&#xB2E4;. &#xC774;&#xB294; <code>catch</code> &#xB97C; &#xD1B5;&#xD574; &#xD574;&#xACB0;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">const promise = new Promise((resolve, reject)=&gt;{
+    setTimeout(()=&gt;{
+        reject(new Error(&apos;no network&apos;))
+    },1000)
+});
+
+promise
+.then((value)=&gt;{
+    console.log(value);
+})
+.catch((error)=&gt;{
+    console.log(error);
+})</code></pre>
+<p><strong>[BROWSER]</strong>
+<img src="./imgFolder/DRCD_js_IMG16.png" alt="chrome-error_message_controled"></p>
+<p>&#xC704;&#xC758; &#xACB0;&#xACFC;&#xCC3D;&#xC5D0;&#xC11C;&#xB3C4; &#xBCFC; &#xC218; &#xC788;&#xB4EF;&#xC774; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; &#xC5D0;&#xB7EC;&#xB97C; &#xCE90;&#xCE58;&#xD55C; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xB77C; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xCE90;&#xCE58;&#xD588;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0; &#xC5D0;&#xB7EC;&#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xC6D0;&#xC778;&#xC744; &#xC815;&#xD655;&#xD788; &#xC54C; &#xC218; &#xC788;&#xACE0; &#xADF8;&#xC5D0; &#xB530;&#xB77C; &#xC218;&#xC815;&#xB3C4; &#xC6A9;&#xC774;&#xD558;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xC5D0;&#xB7EC;&#xC758; &#xAC10;&#xC9C0;&#xB97C; <code>catch</code> &#xB97C; &#xD1B5;&#xD574; &#xC774;&#xB8E8;&#xC5B4; &#xB0B8;&#xB2E4;. &#xC774;&#xB807;&#xAC8C; <code>Promise</code> &#xC5D0; <code>then</code>, <code>catch</code> &#xB97C; &#xC5F0;&#xC18D;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC744; Promise chaining &#xC774;&#xB77C;&#xACE0; &#xD55C;&#xB2E4;.</p>
+<h4 id="3-promise-chaining">3. Promise Chaining</h4>
+<p>&#xC704;&#xC5D0;&#xC11C; &#xC54C;&#xC544;&#xBCF4;&#xC558;&#xB4EF; <code>Promise</code> &#xC5D0;&#xC11C; <code>then</code>, <code>catch</code> &#xB97C; &#xC5F0;&#xC18D;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC744; Promise Chaning &#xC774;&#xB77C;&#xACE0; &#xD55C;&#xB2E4;. &#xBC11;&#xC758; &#xC18C;&#xC2A4;&#xB97C; &#xBCF4;&#xC790;.</p>
+<p><strong>[SOURCE]</strong></p>
+<pre><code class="language-javascript">let rlvVar = 1;
+
+const fetchNumber = new Promise((resolve, reject)=&gt;{
+    setTimeout(() =&gt; resolve(rlvVar), 1000);
+})
+
+fetchNumber
+.then(num =&gt; num*2)
+.then(num =&gt; num*3)
+.then(num =&gt; {
+    return new Promise((resolve, reject)=&gt;{
+        setTimeout(() =&gt; resolve(num-1), 1000);
+    })
+})
+.then(num =&gt; console.log(num))</code></pre>
+<p><strong>[CONSOLE]</strong></p>
+<pre><code>5</code></pre><p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB4EF;&#xC774; <code>fetchNumber</code>&#xC5D0;&#xC11C; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xBC1B;&#xC740;(resolve &#xB97C; &#xD1B5;&#xD574;) <code>rlvVar</code> &#xC744; &#xC778;&#xC790;&#xB85C; &#xC804;&#xB2EC; &#xBC1B;&#xC544; <code>then</code> &#xC744; &#xC5F0;&#xC18D;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xB610;&#xD55C; <code>then</code> &#xC740; &#xC0C8;&#xB85C;&#xC6B4; <code>Promise</code> &#xB97C; &#xB9AC;&#xD134;&#xD558;&#xACE0; &#xADF8; &#xB9AC;&#xD134;&#xAC12;&#xC744; &#xC778;&#xC790;&#xB85C;(reslove &#xB97C; &#xD1B5;&#xD574;) &#xBC1B;&#xC744;&#xC218;&#xB3C4; &#xC788;&#xB2E4;.</p>
 </article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
   <svg t="1533629773982" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1035" xlink="http://www.w3.org/1999/xlink" width="40" height="40"><defs><style type="text/css">@font-face { font-family: uc-nexus-iconfont; src: url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff") format("woff"), url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf") format("truetype"); }
   </style></defs><path d="M536.255427 195.182354c-7.804756-7.804756-17.966187-11.615549-28.311813-11.615549-9.43693 0-18.874883 3.449565-26.496467 10.163477-2.360767 1.452071-4.356214 3.267417-6.352685 5.262864L218.47792 455.611735c-15.607466 15.60542-15.607466 40.834011 0 56.43943 15.607466 15.607466 41.558511 15.607466 57.167001 0l193.46013-192.733583 0 600.526219c0 22.1423 17.787108 39.927361 39.927361 39.927361 22.140253 0 39.927361-17.785062 39.927361-39.927361L548.959773 319.317583 737.15704 508.422522c15.607466 15.607466 40.469714 15.607466 56.078203 0 15.607466-15.607466 15.425318-40.834011-0.182149-56.441477L536.255427 195.182354 536.255427 195.182354z" p-id="1036" fill="#333"/><path d="M101.784174 143.097092l816.674071 0c22.140253 0 39.925315-17.785062 39.925315-39.927361 0-22.140253-17.784038-39.925315-39.925315-39.925315L101.784174 63.244416c-22.140253 0-39.927361 17.785062-39.927361 39.925315C61.856813 125.31203 79.643921 143.097092 101.784174 143.097092L101.784174 143.097092z" p-id="1037" fill="#333"/></svg>
