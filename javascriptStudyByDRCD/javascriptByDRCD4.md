@@ -1,6 +1,6 @@
 # JAVASCRIPT "studied by 드림코딩"</br>javascript part 4
 
-## 1. CallBack
+## 6. CallBack
 
 ### 1. Syncronous & Asyncronous
 
@@ -30,6 +30,7 @@ console.log('3');
 위의 소스에서 `setTimeout` 이라는 기능을 통해 `1000`(ms) 의 텀을 두고 실행을 하도록 했다. 그렇기 때문에 `1`, `2`, `3` 순서가 아닌 `1`, `3`, `2` 순서로 출력된 것이다. 이러한 것을 비동기(Asnycronous) 처리 라고 한다. 또한 위의 `setTimeout` 안에서 쓰인 함수는 지정된 시간동안 실행되지 않고 기다렸다가 실행되는데 이러한 함수를 콜백함수(CallBack Function)라고 한다. 하지만 이러한 콜백함수는 비동기에서만 쓰이는 것은 아니다. 동기적으로 사용할 때도 사용을 하는데 아래 내용을 보자.
 
 * **Syncronous callback**
+
 **[SOURCE]**
 ```javascript
 console.log('1');
@@ -291,3 +292,120 @@ fetchNumber
 ```
 
 위의 소스에서 볼 수 있듯이 `fetchNumber`에서 정상적으로 전달받은(resolve 를 통해) `rlvVar` 을 인자로 전달 받아 `then` 을 연속적으로 사용할 수 있다. 또한 `then` 은 새로운 `Promise` 를 리턴하고 그 리턴값을 인자로(reslove 를 통해) 받을수도 있다.
+
+#### 4. Promise VS Callback
+
+이제 예전에 작성해 봤던 콜백으로 작성된 코드를 Promise 를 사용하여 고쳐보자.
+
+1. **callback Source**</br>
+**[SOURCE-js]**
+```javascript
+class UserStorage{
+    loginUser(id, password, onSuccess, onError){
+        setTimeout(()=>{
+            if(
+                (id==='ellie' && password==='dream') ||
+                (id==='coder' && password==='academy')
+            ){
+                onSuccess(id);
+            }else{
+                onError(new Error('not found'));
+            }
+        }, 2000);
+    }
+    getRoles(user, onSuccess, onError){
+        setTimeout(()=>{
+            if(user==='ellie'){
+                onSuccess({name : 'ellie', role : 'admin'});
+            } else {
+                onError(new Error('no access'))
+            }
+        }, 1000);
+    }
+}
+
+const userStorage = new UserStorage();
+const id = prompt('enter your id');
+const password = prompt('enter your password');
+userStorage.loginUser(
+    id,
+    password,
+    user => {
+        userStorage.getRoles(
+            id,
+            userWithRole => {
+                alert(`Hello ${userWithRole.name}, your role is ${userWithRole.role}`);
+            },
+            error => {
+                console.log(error);
+            }
+        );
+    },
+    error => {
+        console.log(error);
+    }
+)
+```
+
+**[SOURCE-html]**
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="test.js" defer></script>
+    </head>
+    <body></body>
+</html>
+```
+
+2. **Promise Source**</br>
+html 소스는 callback Source 와 동일하다.
+
+**[SOURCE-js]**
+```javascript
+class UserStorage{
+    loginUser(id, password){
+        return new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                if(
+                    (id==='ellie' && password==='dream') ||
+                    (id==='coder' && password==='academy')
+                ){
+                    resolve(id);
+                }else{
+                    reject(new Error('not found'));
+                }
+            }, 2000);
+        });
+    }
+    getRoles(user){
+        return new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                if(user==='ellie'){
+                    resolve({name : 'ellie', role : 'admin'});
+                } else {
+                    reject(new Error('no access'))
+                }
+            }, 1000);
+        })
+    }
+}
+
+const userStorage = new UserStorage();
+const id = prompt('enter your id');
+const password = prompt('enter your password');
+userStorage.loginUser(id, password)
+.then(user=>userStorage.getRoles(user))
+.then(user=>alert(`Hello ${user.name}, your role is ${user.role}`))
+.catch(user=>console.log(user))
+```
+
+callback source 에 비해 promise source 가 훨씬 간결하고 보기도 편하다. 이러한 이유 때문에 Promise 를 많이 쓰게 될 것이다. 또한 여기서 `then`, `catch` 를 사용할 때 아래와 같이 씀으로써 더욱 소스를 간결하게 만들 수 있다.
+
+```javascript
+.then(userStorage.getRoles)
+.then(user=>alert(`Hello ${user.name}, your role is ${user.role}`))
+.catch(console.log)
+```
+
+`then` 에서 받아오는 매개변수(`user`)가 해당 arrow function 에서 바로 쓰일 경우(`userStorage.getRoles(user)`에서의 `user`) 생략하여 사용할 수 있다.

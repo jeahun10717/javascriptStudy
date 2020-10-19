@@ -1,15 +1,10 @@
-let rlvVar = 1;
-
-const fetchNumber = new Promise((resolve, reject)=>{
-    setTimeout(() => resolve(rlvVar), 1000);
-})
-
-fetchNumber
-.then(num => num*2)
-.then(num => num*3)
-.then(num => {
+function fetchUser(){
     return new Promise((resolve, reject)=>{
-        setTimeout(() => resolve(num-1), 1000);
+        //do newwork request in 10 secs...
+        resolve('ellie');
     })
-})
-.then(num => console.log(num))
+}
+const user = fetchUser();
+user.then(console.log);
+
+//some soure of UI...

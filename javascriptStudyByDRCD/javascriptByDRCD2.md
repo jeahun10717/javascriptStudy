@@ -2,7 +2,7 @@
 
 ## 3. Class
 
-Class 란 Object를 담는 그릇이라고 생각하면 편하다. 객체 지향 프로그래밍에서 Object를 묶어 주는 역할을 하는 것이 Class 이다. javascript 에서는 기본적으로 Class 라는 것이 존재하지 않는다. 하지만 ESMA 6 이후 prototype 이라는 javascript 가 제공하는 기능으로 Class 인 것처럼 사용할 수 있게 만들었다. Class 라는 기능이 따로 존재하는 다른 언어와는 차이가 있다.
+Class 란 Object를 담는 그릇이라고 생각하면 편하다. 객체 지향 프로그래밍에서 Object를 묶어 주는 역할을 하는 것이 Class 이다. javascript 에서는 기본적으로 Class 라는 것이 존재하지 않는다. 하지만 ESMA 6 이후 prototype 이라는 javascript 가 제공하는 기능으로 Class 처럼 동작할 수 있도록 만들어 주었다. Class 라는 기능이 따로 존재하는 다른 언어와는 차이가 있다.
 
 ### 1. Class Declaration
 
