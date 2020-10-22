@@ -1,6 +1,6 @@
 # JAVASCRIPT "studied by 드림코딩"</br>javascript part 4
 
-## 6. CallBack
+## 6. Asyncronous 비동기
 
 ### 1. Syncronous & Asyncronous
 
@@ -50,7 +50,7 @@ printImmediately(()=>console.log('hello?'));
 hello?
 2
 ```
-위의 소스에서 콜백함수는 print 이다. print 라는 콜백함수는 인자를 받기를 기다리고 있다가 printImmediately 함수의 실행부에서 애로우 함수를 인자로 전달받고 실행된다. 따라서 동기적으로 console.log('1'), console.log('1'), printImmediately() 가 차례로 실행되고 대기하고 있던 비동기함수 setTimeout 이 실행된 것이다.
+위의 소스에서 콜백함수는 `print` 이다. `print` 라는 콜백함수는 인자를 받기를 기다리고 있다가 `printImmediately` 함수의 실행부에서 애로우 함수를 인자로 전달받고 실행된다. 따라서 동기적으로 `console.log('1')`, `console.log('1')`, `printImmediately()` 가 차례로 실행되고 대기하고 있던 비동기함수 `setTimeout` 이 실행된 것이다.
 
 * **Asyncronous callback**
 **[SOURCE]**
@@ -76,7 +76,7 @@ printWithDelay(()=>console.log('async callback'), 2000);
 2
 async callback
 ```
-위의 소스는 printWithDelay 라고 하는 함수를 콜백함수를 받아서 사용하도록 만들었다. 또한 함수 안에 setTimeout 함수를 통해 비동기적으로 사용할수 있도록 만들었다. 위의 소스를 도식화 하면 아래와 같다.
+위의 소스는 `printWithDelay` 라고 하는 함수를 콜백함수를 받아서 사용하도록 만들었다. 또한 함수 안에 `setTimeout` 함수를 통해 비동기적으로 사용할수 있도록 만들었다. 위의 소스를 도식화 하면 아래와 같다.
 
 ![Asyncronous callback function](./imgFolder/DRCD_js_IMG14.png)
 
@@ -159,7 +159,7 @@ userStorage.loginUser(
 7. `user`(parameter of loginUser) 는 `user`, `userStorage.getRoles`(callback), `error`(callback) 를 매개변수로 사용한다.
 8. 받아온 `id` 가 `ellie`, `coder` 일 때 `userWithRole`(callback), 그 외는 `error`(callback) 를 실행한다.
 
-위의 과정에서 볼 수 있듯이 이런식으로 연쇄적으로 callback 을 호출하고 사용하면 이해하기도 힘들 뿐더러(소스가독성 down) 만약에 오류가 발생했을 때 어디서 오류가 발생했는지 확인하기가 어렵다(유지보수 용이성 down). 이러한 이유로 이러한 연쇄 callback 은 잘 사용하지 않고 async-await, promise 를 많이 쓴다. 이것들에 대해서 알아보자.
+위의 과정에서 볼 수 있듯이 이런식으로 연쇄적으로 callback 을 호출하고 사용하면 이해하기도 힘들 뿐더러(소스가독성 down) 만약에 오류가 발생했을 때 어디서 오류가 발생했는지 확인하기가 어렵다(유지보수 용이성 down). 이러한 이유로 이러한 연쇄 callback 은 잘 사용하지 않고 `async-await`, `promise` 를 많이 쓴다. 이것들에 대해서 알아보자.
 
 ### 2. Promise
 
@@ -191,7 +191,7 @@ const promise = new Promise((resolve, reject)=>{
     // },1000)
 });
 ```
- 만약 우리가 정상적으로 값을 받아왔다면 그 값을 resolve를 사용하여 값을 전달하면 된다. 만약 성공적으로 실행되지 못하면 reject 를 사용하면 된다. 위의 예제는 네트워크에서 성공적으로 전달받은 값이 `ellie` 고 받아오는 시간이 2000ms 로 가정한 것이다. 네트워크에서 전달이 실패하면 주석으로 처리한 부분처럼 reject를 사용하면 된다. 위의 소스는 간단하게 resolve 에 대해 알아보기 위함이고 실무에서는 if 문으로 처리를 하면 된다. promise 의 사용을 위한 Producer 설정은 끝났으니 이제 Consumer 에 대해 알아보자.
+만약 우리가 정상적으로 값을 받아왔다면 그 값을 resolve를 사용하여 값을 전달하면 된다. 만약 성공적으로 실행되지 못하면 reject 를 사용하면 된다. 위의 예제는 네트워크에서 성공적으로 전달받은 값이 `ellie` 고 받아오는 시간이 2000ms 로 가정한 것이다. 네트워크에서 전달이 실패하면 주석으로 처리한 부분처럼 reject를 사용하면 된다. 위의 소스는 간단하게 resolve 에 대해 알아보기 위함이고 실무에서는 if 문으로 처리를 하면 된다. promise 의 사용을 위한 Producer 설정은 끝났으니 이제 Consumer 에 대해 알아보자.
 
 #### 2. Consumer : then, catch, finally
 
@@ -216,7 +216,7 @@ doing something
 ellie
 ```
 
-promise.then은 promise 가 정상적으로 작동했다면 then 내부에 있는 함수를 value 라고 하는 인자를 전달받아서 실행한다. 이 value 라는 인자는 위에서 Promise 를 통해 정상적으로 전달받은 ellie 라는 값을 받는다. 만약 위의 Promise 의 생성에서 정상적인 값이 전달받지 못한다면 어떻게 될까?
+`promise.then`은 `promise` 가 정상적으로 작동했다면 `then` 내부에 있는 함수를 `value` 라고 하는 인자를 전달받아서 실행한다. 이 `value` 라는 인자는 위에서 `Promise` 를 통해 정상적으로 전달받은 `ellie` 라는 값을 받는다. 만약 위의 `Promise` 의 생성에서 정상적인 값이 전달받지 못한다면 어떻게 될까?
 
 **[SOURCE]**
 ```javascript
@@ -291,7 +291,7 @@ fetchNumber
 5
 ```
 
-위의 소스에서 볼 수 있듯이 `fetchNumber`에서 정상적으로 전달받은(resolve 를 통해) `rlvVar` 을 인자로 전달 받아 `then` 을 연속적으로 사용할 수 있다. 또한 `then` 은 새로운 `Promise` 를 리턴하고 그 리턴값을 인자로(reslove 를 통해) 받을수도 있다.
+위의 소스에서 볼 수 있듯이 `fetchNumber`에서 정상적으로 전달받은(resolve 를 통해) `rlvVar` 을 인자로 전달 받아 `then` 을 연속적으로 사용할 수 있다. 또한 `then` 은 새로운 `Promise` 를 리턴하고 그 리턴값을 인자로(resolve 를 통해) 받을수도 있다.
 
 #### 4. Promise VS Callback
 
@@ -409,3 +409,196 @@ callback source 에 비해 promise source 가 훨씬 간결하고 보기도 편�
 ```
 
 `then` 에서 받아오는 매개변수(`user`)가 해당 arrow function 에서 바로 쓰일 경우(`userStorage.getRoles(user)`에서의 `user`) 생략하여 사용할 수 있다.
+
+### 3. Async & Await
+
+Async-Await 은 Promise 를 간결하고 깔끔하게 쓸 때 사용한다. 간략한 사용법을 알아보자
+
+```javascript
+function fetchUser(){
+    // do network request in 10 sec...
+    return 'ellie';
+}
+
+const user = fetchUser();
+console.log(user);
+
+//some soure of UI...
+```
+
+위의 소스는 user 의 정보를 가져오는데 10 초가 걸린다고 가정한 소스이다. 이 때 user 의 정보를 가져오는데 10초가 걸리면 그 10초동안 이후의 UI 를 가져오는 소는 실행되지 못한다. 그렇다면 비동기로 한 번 처리해 보자.
+
+**[SOURCE]**
+ ```javascript
+ function fetchUser(){
+     return new Promise((resolve, reject)=>{
+         //do newwork request in 10 secs...
+         resolve('ellie');
+     })
+ }
+ const user = fetchUser();
+ user.then(console.log);
+console.log(user);
+ //some soure of UI...
+ ```
+
+**[BROWSER]**
+![promise example](./imgFolder/DRCD_js_IMG17.png)
+
+이런 식으로 사용자의 정보를 받아오는 부분을 비동기적으로 처리를 하게 되면 밑의 UI 를 가져오는 소스가 실행되는 동시에 사용자의 정보는 가져오는 상태가 된다. 이러한 소스에서 `Promise` 를 쓰지 않고 `async` 를 쓰게 되면 소스가 간단해 진다. 아래를 보자.
+
+#### 1. async
+
+**[SOURCE]**
+```javascript
+async function fetchUser(){
+    //do newwork request in 10 secs...
+    return `ellie`;
+}
+const user = fetchUser();
+user.then(console.log);
+console.log(user);
+```
+
+**[BROWSER]**
+![promise example](./imgFolder/DRCD_js_IMG17.png)
+
+위의 소스는 함수 앞에 async 를 씀으로써 함수 자체를 Promise 로 만들 수 있다. 이런 식으로 async 를 쓰면 코드를 간결하게 만들 수 있다.
+
+#### 2. await
+
+`await` 문은 `Promise`가 fulfill되거나 reject 될 때까지 `async` 함수의 실행을 일시 정지하고, `Promise`가 fulfill되면 `async` 함수를 일시 정지한 부분부터 실행한다. 이때  `await` 문의 반환값은 `Promise` 에서 fulfill된 값이 된다.
+
+**[SOURCE]**
+```javascript
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+async function getApple() {
+    await delay(1000);
+    return 'apple'
+}
+
+async function getBanana() {
+    await delay(1000);
+    return 'banana'
+}
+
+// async function getBanana(){
+//     return delay(1000).then(()=> 'banana')
+// }
+
+function pickFruits() {
+    return getApple().then(apple=>{
+        return getBanana().then(banana=>`${apple} + ${banana}`)
+    });
+}
+
+pickFruits().then(console.log);
+```
+
+`pickFruits` 에서 `Producer` 인 `getApple`, `getBanana` 를 consume 했다. 여기서 Promise Chain 을 사용했는데 이는 콜백지옥에서 봤던 문제가 그대로 발생하는 것을 알 수 있다. Promise chain 을 과도하게 사용하면 콜백함수와 마찬가지로 가독성이 떨어지고 유지보수가 힘들어진다. 이 때 `await`을 사용하면 코드를 간략화 할 수 있다.
+
+**[SOURCE]**
+```javascript
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+async function getApple() {
+    await delay(1000);
+    return 'apple'
+}
+
+async function getBanana() {
+    await delay(1000);
+    return 'banana'
+}
+
+async function pickFruits() {
+    const apple = await getApple();
+    const banana = await getBanana();
+    return `${apple} + ${banana}`
+}
+
+pickFruits().then(console.log);
+```
+
+async-await 을 사용하면 기존의 Promise 를 쓰는 것보다 가독성이 좋아진다. 또한 우리가 사용하는 문법과 유사한 형태로 작성이 되기 때문에 더욱 편하게 코드 작성이 가능하다.</br>
+async-await 역시 오류처리를 할 수 있는데 위의 async function pickFruits() 함수만 수정해보자.
+
+```javascript
+async function pickFruits() {
+    try {
+        const apple = await getApple();
+        const banana = await getBanana();
+        return `${apple} + ${banana}`
+    } catch (error) {
+      console.log(error);
+    }
+}
+```
+
+이런식으로 기존의 js 에서 사용하던 try-catch로 오류를 잡아낼 수 있다. 하지만 이렇게 async-await 이 유용하고 좋아보이지만 주의 해야 할 사항이 있다. 아래를 보자.
+
+**[SOURCE]**
+```javascript
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+async function getApple() {
+    await delay(1000);
+    return 'apple'
+}
+
+async function getBanana() {
+    await delay(1000);
+    return 'banana'
+}
+
+async function pickFruits() {
+    try {
+        const apple = await getApple();
+        const banana = await getBanana();
+        return `${apple} + ${banana}`
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+pickFruits().then(console.log);
+```
+
+이 소스에서 await 2개를 사용하면 getApple() 이 실행되는 1초이후에 getBanana() 가 1초동안 실행되어서 총 2초가 소요된다. 하지만 2개의 함수는 독립적이므로 이런 식으로 사용하면 낭비이다. 이를 해결하려면 아래와 같이 작성하면 된다.
+**[SOURCE_1]**
+```javascript
+async function pickFruits() {
+  try {
+    const apple = await getApple();
+    const banana = await getBanana();
+    return `${apple} + ${banana}`
+  } catch (error) {
+    console.log(error);
+  }
+}
+```
+**[SOURCE_2]**
+```javascript
+async function pickFruits() {
+    try {
+        const applePromise = getApple();
+        const bananaPromise = getBanana();
+        const apple = await applePromise;
+        const banana = await bananaPromise;
+        return `${apple} + ${banana}`
+    } catch (error) {
+        console.log(error);
+    }
+}
+```
+
+위의 SOURCE_1 은 async 한 pickFruits 함수에서 단일한 promise 안에 2개의 await 이 존재한다. 따라서 getApple 프로미스가 끝나고 getBanana 프로미스가 실행된다. 하지만 밑의 SOURCE_2 는 다른 변수에 프로미스를 저장하면 Promise 안의 코드블록이 바로 실행되므로 2개의 프로미스를 병렬로 실행하는 것이 된다. 따라서 1초가 소모된 후 await 을 걸어도 applePromise 의 리턴값만 전달해 주므로 시간낭비가 없다. 이러한 기능을 편하게 만들어주는 Promise 의 API 가 존재하는데 이에 대해 알아보자.
+
+#### 3. Promise APIs --> 나중에 복습할 때 다시 해 보기
