@@ -104,3 +104,78 @@ JAVASCRIPT "studied by 생활코딩" javascript part 3
   * 1. 복제
   * 2. 참조
   * 3. 함수에서의 참조와 복제
+
+## javascriptByDRCD1 index
+JAVASCRIPT "studied by 드림코딩"
+* 1. javascript와 html
+  * 1. head 에 js 파일 링크(src)
+  * 2. body 에 js 파일 링크(src)
+  * 3. head 에 js 파일 링크(async src)
+  * 4. head 에 js 파일 링크(defer src)
+  * 5. asnyc 와 defer 의 성능차이
+* 2. 변수 variable
+  * 1. var 과 let
+  * 2. const
+  * 3. 변수의 자료형 variable type
+  * 4. Dynamic Typing
+* 3. Operators
+  * 1. String Concatnation
+  * 2. Numberic Operators
+  * 3. Increment and Decrement Operators
+  * 4. Logical Operators
+  * 5. Equality
+* 4. 함수 function
+  * 1. Parameters
+    * 1. premitive parameters, object parameters
+    * 2. Default Parameters
+    * 3. Rest Parameters
+  * 2. Function Expression
+    * 1. 함수선언식(Function Declaration)
+    * 2. 함수표현식(Function Expression)
+  * 3. Arrow Function
+  * 4. IIFE(Immediatly Ivoked Function Expression)
+
+## javascriptByDRCD2 index
+JAVASCRIPT "studied by 드림코딩"
+* 3. Class
+  * 1. Class Declaration
+  * 2. Getter & Setter
+  * 3. Public & Private
+  * 4. static
+  * 5. inheritance of Class
+  * 6. instanceof(class checking)
+* 4. Object
+  * 1. Literals and Properties
+  * 2. Computed Properties
+  * 3. Property value Shorthand
+  * 4. Constructor Function
+  * 5. in Operator
+  * 6. for in & for of
+  * 7. clone
+
+## javascriptByDRCD3 index
+JAVASCRIPT "studied by 드림코딩"
+* 4. 배열 _ Array
+  * 1. 배열의 선언 _ Declaration
+  * 2. 배열의 접근 _ Index position
+  * 3. 배열의 순회 _ Looping over an array
+  * 4. 배열의 추가, 삭제 _ Addition, Deletion
+  * 5. splice
+  * 6. searching
+* 5. JSON _ javascript 서버통신
+  * 1. Object to JSON
+  * 2. JSON to Object
+
+## javascriptByDRCD4 index
+JAVASCRIPT "studied by 드림코딩"
+* 6. Asyncronous 비동기
+  * 1. Syncronous & Asyncronous
+  * 2. Promise
+    * 1. Producer
+    * 2. Consumer : then, catch, finally
+    * 3. Promise Chaining
+    * 4. Promise VS Callback
+  * 3. Async & Await
+    * 1. async
+    * 2. await
+    * 3. Promise APIs --> 나중에 복습할 때 다시 해 보기

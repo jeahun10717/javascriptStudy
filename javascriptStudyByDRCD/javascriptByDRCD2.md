@@ -569,7 +569,7 @@ jeahun
 
 위의 코드에서 `obj`와 `key` 라는 매개변수를 이용해 객체의 프로퍼티값을 가져오는 함수를 2개 만들었다. 이 때 `printValue` 함수는 `.`를 사용하여 출력값을 요청했지만 `undefined`가 떴고, `printValueOfCP` 함수는 `[]` 를 사용하여 출력값을 요청했고 정상적으로 `jeahun`을 출력했다. 이러한 특징 때문에 만약 key 값이 동적이고 수정이나 추가 같은 작업을 해야 할 때 즉 변하는 값일 때는 `[]`(computed property) 를 사용하는 것이 좋다.
 
-### 4. Property value Shorthand
+### 3. Property value Shorthand
 
 **[SOURCE]**
 ```javascript
@@ -610,7 +610,7 @@ const person3 = makePerson('jeahun', 24)
 const person4 = makePerson('steve', 3);
 ```
 
-### 5. Constructor Function
+### 4. Constructor Function
 
 **[SOURCE]**
 ```javascript
@@ -644,7 +644,7 @@ const person4 = new Person('steve', 3);
 
 위의 소스에서처럼 **객체를 생성하는 목적으로 사용하는 함수**를 **constructor function(생성자함수)** 라고 하며 위에서 볼 수 있듯이 빈 객체를 생성(`this={}`)하고 그 객체를 return하는 부분(`return this`)을 생략해서 사용한다.
 
-### 6. in Operator
+### 5. in Operator
 
 `in` 식별자는 타겟 객체에 해당 키가 존재하는지를 확인하는 기능이다. 기본적인 사용법은 아래와 같다.
 
@@ -678,7 +678,7 @@ true
 false
 ```
 
-### for in & for of
+### 6. for in & for of
 
 `for in` 과 `for of` 는 기본적으로 반복문의 구조를 따른다.
 * `for of` : 객체를 위한 반복문

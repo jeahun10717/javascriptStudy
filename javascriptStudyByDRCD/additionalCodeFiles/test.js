@@ -4,7 +4,7 @@ function delay(ms) {
 
 async function getApple() {
     await delay(1000);
-    // throw `error`;
+    // throw `error`
     return 'apple'
 }
 

@@ -423,7 +423,7 @@ printValueOfCP(person, &apos;name&apos;)</code></pre>
 <p><strong>[CONSOLE]</strong></p>
 <pre><code>undefined
 jeahun</code></pre><p>&#xC704;&#xC758; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; <code>obj</code>&#xC640; <code>key</code> &#xB77C;&#xB294; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xAC1D;&#xCCB4;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC12;&#xC744; &#xAC00;&#xC838;&#xC624;&#xB294; &#xD568;&#xC218;&#xB97C; 2&#xAC1C; &#xB9CC;&#xB4E4;&#xC5C8;&#xB2E4;. &#xC774; &#xB54C; <code>printValue</code> &#xD568;&#xC218;&#xB294; <code>.</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCD9C;&#xB825;&#xAC12;&#xC744; &#xC694;&#xCCAD;&#xD588;&#xC9C0;&#xB9CC; <code>undefined</code>&#xAC00; &#xB5B4;&#xACE0;, <code>printValueOfCP</code> &#xD568;&#xC218;&#xB294; <code>[]</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xCD9C;&#xB825;&#xAC12;&#xC744; &#xC694;&#xCCAD;&#xD588;&#xACE0; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; <code>jeahun</code>&#xC744; &#xCD9C;&#xB825;&#xD588;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xD2B9;&#xC9D5; &#xB54C;&#xBB38;&#xC5D0; &#xB9CC;&#xC57D; key &#xAC12;&#xC774; &#xB3D9;&#xC801;&#xC774;&#xACE0; &#xC218;&#xC815;&#xC774;&#xB098; &#xCD94;&#xAC00; &#xAC19;&#xC740; &#xC791;&#xC5C5;&#xC744; &#xD574;&#xC57C; &#xD560; &#xB54C; &#xC989; &#xBCC0;&#xD558;&#xB294; &#xAC12;&#xC77C; &#xB54C;&#xB294; <code>[]</code>(computed property) &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xB2E4;.</p>
-<h3 id="4-property-value-shorthand">4. Property value Shorthand</h3>
+<h3 id="3-property-value-shorthand">3. Property value Shorthand</h3>
 <p><strong>[SOURCE]</strong></p>
 <pre><code class="language-javascript">const person1 = {name : &apos;bob&apos;, age : 12};
 const person2 = {name : &apos;anne&apos;, age : 33};
@@ -452,7 +452,7 @@ const person1 = makePerson(&apos;bob&apos;, 12)
 const person2 = makePerson(&apos;anne&apos;, 33)
 const person3 = makePerson(&apos;jeahun&apos;, 24)
 const person4 = makePerson(&apos;steve&apos;, 3);</code></pre>
-<h3 id="5-constructor-function">5. Constructor Function</h3>
+<h3 id="4-constructor-function">4. Constructor Function</h3>
 <p><strong>[SOURCE]</strong></p>
 <pre><code class="language-javascript">function makePerson(name, age) {
     return {
@@ -477,7 +477,7 @@ const person2 = new Person(&apos;anne&apos;, 33)
 const person3 = new Person(&apos;jeahun&apos;, 24)
 const person4 = new Person(&apos;steve&apos;, 3);</code></pre>
 <p>&#xC704;&#xC758; &#xC18C;&#xC2A4;&#xC5D0;&#xC11C;&#xCC98;&#xB7FC; <strong>&#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xBAA9;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xD568;&#xC218;</strong>&#xB97C; <strong>constructor function(&#xC0DD;&#xC131;&#xC790;&#xD568;&#xC218;)</strong> &#xB77C;&#xACE0; &#xD558;&#xBA70; &#xC704;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xB4EF;&#xC774; &#xBE48; &#xAC1D;&#xCCB4;&#xB97C; &#xC0DD;&#xC131;(<code>this={}</code>)&#xD558;&#xACE0; &#xADF8; &#xAC1D;&#xCCB4;&#xB97C; return&#xD558;&#xB294; &#xBD80;&#xBD84;(<code>return this</code>)&#xC744; &#xC0DD;&#xB7B5;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</p>
-<h3 id="6-in-operator">6. in Operator</h3>
+<h3 id="5-in-operator">5. in Operator</h3>
 <p><code>in</code> &#xC2DD;&#xBCC4;&#xC790;&#xB294; &#xD0C0;&#xAC9F; &#xAC1D;&#xCCB4;&#xC5D0; &#xD574;&#xB2F9; &#xD0A4;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xB294;&#xC9C0;&#xB97C; &#xD655;&#xC778;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC774;&#xB2E4;. &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xC0AC;&#xC6A9;&#xBC95;&#xC740; &#xC544;&#xB798;&#xC640; &#xAC19;&#xB2E4;.</p>
 <pre><code class="language-javscript">&apos;key&apos; in obj</code></pre>
 <p><code>key</code> &#xAC12;&#xC774; <code>obj</code> &#xC548;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xBA74; <code>true</code>, &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; <code>false</code> &#xB97C; &#xB9AC;&#xD134;&#xD55C;&#xB2E4;.</p>
@@ -499,7 +499,7 @@ console.log(&apos;email&apos; in jeahun);</code></pre>
 <p><strong>[CONSOLE]</strong></p>
 <pre><code>true
 true
-false</code></pre><h3 id="for-in-for-of">for in &amp; for of</h3>
+false</code></pre><h3 id="6-for-in-for-of">6. for in &amp; for of</h3>
 <p><code>for in</code> &#xACFC; <code>for of</code> &#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xBC18;&#xBCF5;&#xBB38;&#xC758; &#xAD6C;&#xC870;&#xB97C; &#xB530;&#xB978;&#xB2E4;.</p>
 <ul>
 <li><code>for of</code> : &#xAC1D;&#xCCB4;&#xB97C; &#xC704;&#xD55C; &#xBC18;&#xBCF5;&#xBB38;</li>
