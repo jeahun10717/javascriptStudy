@@ -5,7 +5,8 @@
 * editor 가 atom 이므로 git 의 viewer에서 호환이 되지 않을 수도 있으므로 html 파일도 같이 올린다
   * git hub에서는 html 태그가 적용이 안되는 걸로 나와있다
 * 파일들의 index는 간략히 이 곳에 정리해 두었다
-## addStudy index
+
+##[addStudy index](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/addStudy.md)
 *추가공부
 * 1. 탬플릿 스트링(templete string)
 * 2. 정규표현식
@@ -28,7 +29,7 @@
   * 5.3 \d, \D
   * 6.1 \b
 
-## javascriptBySHCD1 index
+## [javascriptBySHCD1 index](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/javascriptBySHCD1.md)
 JAVASCRIPT "studied by 생활코딩" javascript part 1
 * 1. 함수(간략히)
   * 1. 선언
@@ -55,7 +56,7 @@ JAVASCRIPT "studied by 생활코딩" javascript part 1
   * 6. Regular Expression - capture
   * 7. 정규표현식의 사용 예
 
-## javascriptBySHCD2 index
+## [javascriptBySHCD2 index](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/javascriptBySHCD2.md)
 JAVASCRIPT "studied by 생활코딩" javascript part 2
 * 1. 유효범위 scope
   * 1. 지역변수와 전역변수
@@ -74,7 +75,8 @@ JAVASCRIPT "studied by 생활코딩" javascript part 2
     * 5. functionName.length 와 agunemts
     * 6. 함수의 호출 apply 메소드
 
-## javascriptBySHCD3 index
+## [javascriptBySHCD3 index](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/javascriptBySHCD3.md)
+
 JAVASCRIPT "studied by 생활코딩" javascript part 3
 * 1.객체 Object
   * 1. 객체 기초
@@ -105,7 +107,7 @@ JAVASCRIPT "studied by 생활코딩" javascript part 3
   * 2. 참조
   * 3. 함수에서의 참조와 복제
 
-## javascriptByDRCD1 index
+## [javascriptByDRCD1 index](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyByDRCD/javascriptByDRCD1.md)
 JAVASCRIPT "studied by 드림코딩"
 * 1. javascript와 html
   * 1. head 에 js 파일 링크(src)
@@ -135,7 +137,7 @@ JAVASCRIPT "studied by 드림코딩"
   * 3. Arrow Function
   * 4. IIFE(Immediatly Ivoked Function Expression)
 
-## javascriptByDRCD2 index
+## [javascriptByDRCD2 index](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyByDRCD/javascriptByDRCD2.md)
 JAVASCRIPT "studied by 드림코딩"
 * 3. Class
   * 1. Class Declaration
@@ -153,7 +155,7 @@ JAVASCRIPT "studied by 드림코딩"
   * 6. for in & for of
   * 7. clone
 
-## javascriptByDRCD3 index
+## [javascriptByDRCD3 index](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyByDRCD/javascriptByDRCD3.md)
 JAVASCRIPT "studied by 드림코딩"
 * 4. 배열 _ Array
   * 1. 배열의 선언 _ Declaration
@@ -166,7 +168,7 @@ JAVASCRIPT "studied by 드림코딩"
   * 1. Object to JSON
   * 2. JSON to Object
 
-## javascriptByDRCD4 index
+## [javascriptByDRCD4 index](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyByDRCD/javascriptByDRCD4.md)
 JAVASCRIPT "studied by 드림코딩"
 * 6. Asyncronous 비동기
   * 1. Syncronous & Asyncronous
