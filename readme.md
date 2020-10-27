@@ -6,7 +6,7 @@
   * git hub에서는 html 태그가 적용이 안되는 걸로 나와있다
 * 파일들의 index는 간략히 이 곳에 정리해 두었다
 
-##[addStudy index](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/addStudy.md)
+## [addStudy index](https://github.com/jeahun10717/javascriptStudy/blob/master/javascriptStudyBySHCD/addStudy.md)
 *추가공부
 * 1. 탬플릿 스트링(templete string)
 * 2. 정규표현식
