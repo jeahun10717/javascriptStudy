@@ -525,8 +525,8 @@ async function pickFruits() {
 pickFruits().then(console.log);
 ```
 
-async-await 을 사용하면 기존의 Promise 를 쓰는 것보다 가독성이 좋아진다. 또한 우리가 사용하는 문법과 유사한 형태로 작성이 되기 때문에 더욱 편하게 코드 작성이 가능하다.</br>
-async-await 역시 오류처리를 할 수 있는데 위의 async function pickFruits() 함수만 수정해보자.
+`async-await` 을 사용하면 기존의 `Promise` 를 쓰는 것보다 가독성이 좋아진다. 또한 우리가 사용하는 문법과 유사한 형태로 작성이 되기 때문에 더욱 편하게 코드 작성이 가능하다.</br>
+`async-await` 역시 오류처리를 할 수 있는데 위의 `async function pickFruits()` 함수만 수정해보자.
 
 ```javascript
 async function pickFruits() {
@@ -540,7 +540,7 @@ async function pickFruits() {
 }
 ```
 
-이런식으로 기존의 js 에서 사용하던 try-catch로 오류를 잡아낼 수 있다. 하지만 이렇게 async-await 이 유용하고 좋아보이지만 주의 해야 할 사항이 있다. 아래를 보자.
+이런식으로 기존의 js 에서 사용하던 `try-catch`로 오류를 잡아낼 수 있다. 하지만 이렇게 `async-await` 이 유용하고 좋아보이지만 주의 해야 할 사항이 있다. 아래를 보자.
 
 **[SOURCE]**
 ```javascript
@@ -571,7 +571,7 @@ async function pickFruits() {
 pickFruits().then(console.log);
 ```
 
-이 소스에서 await 2개를 사용하면 getApple() 이 실행되는 1초이후에 getBanana() 가 1초동안 실행되어서 총 2초가 소요된다. 하지만 2개의 함수는 독립적이므로 이런 식으로 사용하면 낭비이다. 이를 해결하려면 아래와 같이 작성하면 된다.
+이 소스에서 `await` 2개를 사용하면 `getApple()` 이 실행되는 1초이후에 `getBanana()` 가 1초동안 실행되어서 총 2초가 소요된다. 하지만 2개의 함수는 독립적이므로 이런 식으로 사용하면 낭비이다. 이를 해결하려면 아래와 같이 작성하면 된다.
 **[SOURCE_1]**
 ```javascript
 async function pickFruits() {
@@ -599,6 +599,6 @@ async function pickFruits() {
 }
 ```
 
-위의 SOURCE_1 은 async 한 pickFruits 함수에서 단일한 promise 안에 2개의 await 이 존재한다. 따라서 getApple 프로미스가 끝나고 getBanana 프로미스가 실행된다. 하지만 밑의 SOURCE_2 는 다른 변수에 프로미스를 저장하면 Promise 안의 코드블록이 바로 실행되므로 2개의 프로미스를 병렬로 실행하는 것이 된다. 따라서 1초가 소모된 후 await 을 걸어도 applePromise 의 리턴값만 전달해 주므로 시간낭비가 없다. 이러한 기능을 편하게 만들어주는 Promise 의 API 가 존재하는데 이에 대해 알아보자.
+위의 SOURCE_1 은 `async` 한 `pickFruits` 함수에서 단일한 `promise` 안에 2개의 `await` 이 존재한다. 따라서 `getApple` 프로미스가 끝나고 `getBanana` 프로미스가 실행된다. 하지만 밑의 SOURCE_2 는 다른 변수에 프로미스를 저장하면 `Promise` 안의 코드블록이 바로 실행되므로 2개의 프로미스를 병렬로 실행하는 것이 된다. 따라서 1초가 소모된 후 `await` 을 걸어도 `applePromise` 의 리턴값만 전달해 주므로 시간낭비가 없다. 이러한 기능을 편하게 만들어주는 `Promise` 의 API 가 존재하는데 이에 대해 알아보자.
 
 #### 3. Promise APIs --> 나중에 복습할 때 다시 해 보기
